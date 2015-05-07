@@ -1,0 +1,164 @@
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p, a {
+  font-size: 18px;
+}
+
+.text-red {
+  color: #d0021b;
+}
+
+.custom-red {
+  background-color: #d0021b;
+}
+.custom-red:hover {
+  background-color: #b70218;
+}
+.custom-red:focus {
+  background-color: #d0021b;
+}
+
+.decoration {
+  position: relative;
+}
+.decoration:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  border-bottom: 2px solid #d0021b;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav .brand-logo {
+  font-size: 20px;
+  padding-left: 30px;
+  background: url(../img/logo3.png) no-repeat left 10px;
+  background-size: 25px auto;
+}
+@media (min-width: 600px) {
+  nav .brand-logo {
+    font-size: 30px;
+  }
+}
+
+.avatar-img {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #fff;
+}
+.dropdown-content li > a:hover,
+.dropdown-content li > span:hover {
+  background-color: #d0021b;
+}
+
+#blog {
+  background: #eee url(../img/blackboard.png) no-repeat center top;
+  background-size: 100% 300px;
+  padding-top: 100px;
+}
+#blog .header {
+  height: 120px;
+  background-color: #d0021b;
+  color: #fff;
+  padding: 20px;
+}
+#blog .header .avatar-container {
+  display: table;
+}
+#blog .header .avatar {
+  display: table-cell;
+}
+#blog .header .avatar img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  vertical-align: middle;
+}
+#blog .header .details {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+#blog .header .details h5 {
+  margin-top: 5px;
+}
+#blog .header .details h6 {
+  color: #333333;
+}
+#blog .body {
+  background-color: #fff;
+  color: #333333;
+  font-size: 20px;
+  padding: 20px 40px;
+}
+#blog .body .title {
+  margin: 10px 0;
+}
+#blog .body .date {
+  color: #aaa;
+}
+#blog .body hr {
+  border: none;
+  border-bottom: 1px solid #aaa;
+}
+#blog .footer {
+  min-height: 60px;
+  padding: 20px;
+  background-color: #333333;
+  color: #fff;
+}
+#blog .footer .row {
+  margin-bottom: 0;
+}
+#blog .footer h4 {
+  margin: 0;
+}
+#blog .footer .fa-heart {
+  margin-top: 8px;
+}
+
+footer.page-footer {
+  background-color: #333333;
+  margin-top: 0;
+}
+footer.page-footer .footer-copyright {
+  background-color: #212121;
+}

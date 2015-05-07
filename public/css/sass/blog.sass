@@ -1,0 +1,57 @@
+@import compass
+@import colors
+@import typography
+@import header
+
+#blog
+	background: #eee url(../img/blackboard.png) no-repeat center top
+	background-size: 100% 300px
+	padding-top: 100px
+	.header
+		height: 120px
+		background-color: $custom-red
+		color: #fff
+		padding: 20px
+		.avatar-container
+			display: table
+		.avatar
+			display: table-cell
+			img
+				+border-radius(50%)
+				width: 80px
+				height: 80px
+				vertical-align: middle
+		.details
+			display: table-cell
+			vertical-align: middle
+			padding-left: 10px
+			h5
+				margin-top: 5px
+			h6
+				color: $medium-black
+
+	.body
+		background-color: #fff
+		color: $medium-black
+		font-size: 20px
+		padding: 20px 40px
+		.title
+			margin: 10px 0
+		.date
+			color: #aaa
+		hr
+			border: none
+			border-bottom: 1px solid #aaa
+	.footer
+		min-height: 60px
+		padding: 20px
+		background-color: $medium-black
+		color: #fff
+		.row
+			margin-bottom: 0
+		h4
+			margin: 0
+		.fa-heart
+			margin-top: 8px
+
+@import footer

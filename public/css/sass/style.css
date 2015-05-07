@@ -1,0 +1,94 @@
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 30px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 20px; }
+
+p, a {
+  font-size: 18px; }
+
+.text-red {
+  color: #d0021b; }
+
+.red {
+  background-color: #d0021b; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1 0 auto; }
+
+#banner {
+  background-color: #333333;
+  min-height: 600px;
+  background: url(../img/blackboard.png) no-repeat center;
+  background-size: cover; }
+  #banner h2 {
+    color: white;
+    font-weight: 300; }
+  #banner img {
+    width: 300px; }
+
+#about h2 {
+  font-weight: 500;
+  margin: 10px 0; }
+#about .module {
+  display: table-row;
+  margin-bottom: 50px; }
+#about .left-align {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%; }
+#about .right-align {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%; }
+#about .center-align {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%; }
+#about img {
+  width: 200px; }
+
+.input-field label {
+  color: black; }
+
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field textarea.materialize-textarea:focus + label {
+  color: black; }
+
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field textarea.materialize-textarea:focus {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black; }
+
+.input-field input[type=text].valid,
+.input-field input[type=email].valid,
+.input-field textarea.materialize-textarea.valid {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black; }
+
+.input-field input[type=text].invalid,
+.input-field input[type=email].invalid,
+.input-field textarea.materialize-textarea.invalid {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black; }
+
+.input-field .prefix.active {
+  color: black; }
+
+footer.page-footer {
+  background-color: #333333; }
+  footer.page-footer .footer-copyright {
+    background-color: #212121; }

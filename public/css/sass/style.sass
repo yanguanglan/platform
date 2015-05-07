@@ -1,0 +1,67 @@
+@import compass
+@import colors
+@import typography
+@import header
+
+#banner
+	min-height: 600px
+	background: $medium-black url(../img/blackboard.png) no-repeat center
+	background-size: cover
+	h2
+		color: #ffffff
+		font-weight: 300
+	img
+		width: 300px
+
+#subBanner
+	min-height: 50px
+	background-color: #eeeeee
+
+#about
+	h2
+		font-weight: 500
+		margin: 10px 0
+		border-bottom: 1px solid $dark-black
+	.module
+		margin-bottom: 50px
+		+respond-to(600px)
+			display: table-row
+	.left-align, .right-align, .center-align
+		vertical-align: middle
+		+respond-to(600px)
+			display: table-cell
+			width: 50%
+	.right-align
+		text-align: left
+		+respond-to(600px)
+			text-align: right
+	img
+		width: 200px
+#intermediate
+	min-height: 200px
+	background: $medium-black url(../img/blackboard.png) no-repeat center
+	h2
+		color: #ffffff
+		font-weight: 300
+	.left-align, .right-align
+		text-align: center
+	+respond-to(600px)
+		.left-align
+			text-align: left
+		.right-align
+			text-align: right
+#faq
+	.collapsible-header
+		font-size: 14px
+		background-color: $medium-black
+		color: #fff
+		&.active
+			background-color: $custom-red
+		+respond-to(600px)
+			font-size: 18px
+
+#news
+	background-color: #eeeeee
+
+@import forms
+@import footer
