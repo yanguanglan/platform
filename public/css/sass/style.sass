@@ -1,4 +1,5 @@
 @import compass
+@import mixins
 @import colors
 @import typography
 @import header
@@ -11,12 +12,8 @@
 		color: #ffffff
 		font-weight: 300
 	img
-		width: 300px
-
-#subBanner
-	min-height: 50px
-	background-color: #eeeeee
-
+		width: 100%
+		max-width: 300px
 #about
 	h2
 		font-weight: 500
@@ -40,6 +37,7 @@
 #intermediate
 	min-height: 200px
 	background: $medium-black url(../img/blackboard.png) no-repeat center
+	background-size: cover
 	h2
 		color: #ffffff
 		font-weight: 300

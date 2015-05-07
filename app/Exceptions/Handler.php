@@ -36,6 +36,11 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
+		if( ! \App::environment('local'))
+		{
+			return redirect()->route('error');
+		}
+
 		return parent::render($request, $e);
 	}
 

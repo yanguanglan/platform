@@ -7,11 +7,16 @@ main
 	flex: 1 0 auto
 nav .brand-logo
 	font-size: 20px
-	padding-left: 30px
-	background: url(../img/logo3.png) no-repeat left 10px
-	background-size: 25px auto
+	padding-left: 25px
+	background: url(../img/logo.png) no-repeat left 10px
+	+image-2x('../img/logo@2x.png', 18px, auto)
 	+respond-to(600px)
+		padding-left: 30px
+		font-size: 26px
+		+image-2x('../img/logo@2x.png', 22px, auto)
+	+respond-to(660px)
 		font-size: 30px
+		+image-2x('../img/logo@2x.png', 25px, auto)
 .avatar-img
 	vertical-align: middle
 	width: 30px

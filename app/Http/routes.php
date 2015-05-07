@@ -5,4 +5,5 @@ Route::resource('blog', 'BlogController', ['only' => ['index', 'show']]);
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
 Route::resource('contact', 'ContactController', ['only' => ['store']]);
 Route::resource('newsletter', 'NewsletterController', ['only' => ['store']]);
+Route::get('error', ['as' => 'error', 'uses' => 'PagesController@error']);
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);

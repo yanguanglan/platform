@@ -6,4 +6,9 @@ class PagesController extends Controller {
 	{
 		return view('partials.pages.home');
 	}
+
+	public function error()
+	{
+		return view('partials.pages.error');
+	}
 }
