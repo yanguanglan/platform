@@ -12,9 +12,13 @@ h4
 
 p, a
 	font-size: 18px
+	&.collection-item
+		font-size: 15px
+.markdown-body p
+	font-size: 16px
 
 .text-red
-	color: $custom-red
+	color: $custom-red !important
 
 .custom-red
 	background-color: $custom-red
@@ -34,3 +38,5 @@ p, a
 		margin: 0 auto
 		left: 0
 		right: 0
+.badge
+	+border-radius(2px)

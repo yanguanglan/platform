@@ -1,9 +1,14 @@
 <?php
 
-Route::resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
-Route::resource('blog', 'BlogController', ['only' => ['index', 'show']]);
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
-Route::resource('contact', 'ContactController', ['only' => ['store']]);
-Route::resource('newsletter', 'NewsletterController', ['only' => ['store']]);
-Route::get('error', ['as' => 'error', 'uses' => 'PagesController@error']);
-Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
+Route::group(['namespace' => 'API', 'prefix' => 'api'], function() {
+	resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
+	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
+	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+});
+
+resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
+resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
+resource('contact', 'ContactController', ['only' => ['store']]);
+resource('newsletter', 'NewsletterController', ['only' => ['store']]);
+get('error', ['as' => 'error', 'uses' => 'PagesController@error']);
+get('/', ['as' => 'home', 'uses' => 'PagesController@home']);

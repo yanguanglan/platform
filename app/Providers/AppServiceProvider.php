@@ -31,11 +31,6 @@ class AppServiceProvider extends ServiceProvider {
 		);
 
 		$this->app->bind(
-			'App\Repositories\Blog\BlogInterface',
-			'App\Repositories\Blog\BlogRepository'
-		);
-
-		$this->app->bind(
 			'App\Repositories\Contact\ContactInterface',
 			'App\Repositories\Contact\ContactRepository'
 		);
@@ -46,8 +41,18 @@ class AppServiceProvider extends ServiceProvider {
 		);
 
 		$this->app->bind(
+			'App\Repositories\Post\PostInterface',
+			'App\Repositories\Post\PostRepository'
+		);
+
+		$this->app->bind(
 			'App\Repositories\Recipe\RecipeInterface',
 			'App\Repositories\Recipe\RecipeRepository'
+		);
+
+		$this->app->bind(
+			'App\Repositories\Topic\TopicInterface',
+			'App\Repositories\Topic\TopicRepository'
 		);
 	}
 

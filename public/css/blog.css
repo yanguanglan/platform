@@ -17,9 +17,16 @@ h4 {
 p, a {
   font-size: 18px;
 }
+p.collection-item, a.collection-item {
+  font-size: 15px;
+}
+
+.markdown-body p {
+  font-size: 16px;
+}
 
 .text-red {
-  color: #d0021b;
+  color: #d0021b !important;
 }
 
 .custom-red {
@@ -45,6 +52,12 @@ p, a {
   margin: 0 auto;
   left: 0;
   right: 0;
+}
+
+.badge {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 body {
@@ -91,6 +104,11 @@ nav .brand-logo {
     background-image: url("../img/logo@2x.png");
     background-size: 25px auto;
   }
+}
+
+nav ul li:hover,
+nav ul li.active {
+  background-color: #d0021b;
 }
 
 .avatar-img {

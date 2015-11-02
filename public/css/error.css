@@ -17,9 +17,16 @@ h4 {
 p, a {
   font-size: 18px;
 }
+p.collection-item, a.collection-item {
+  font-size: 15px;
+}
+
+.markdown-body p {
+  font-size: 16px;
+}
 
 .text-red {
-  color: #d0021b;
+  color: #d0021b !important;
 }
 
 .custom-red {
@@ -45,6 +52,12 @@ p, a {
   margin: 0 auto;
   left: 0;
   right: 0;
+}
+
+.badge {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 body {
@@ -93,6 +106,11 @@ nav .brand-logo {
   }
 }
 
+nav ul li:hover,
+nav ul li.active {
+  background-color: #d0021b;
+}
+
 .avatar-img {
   vertical-align: middle;
   width: 30px;
@@ -123,20 +141,6 @@ nav .brand-logo {
 #banner img {
   width: 100%;
   max-width: 500px;
-}
-
-#faq .collapsible-header {
-  font-size: 14px;
-  background-color: #333333;
-  color: #fff;
-}
-#faq .collapsible-header.active {
-  background-color: #d0021b;
-}
-@media (min-width: 600px) {
-  #faq .collapsible-header {
-    font-size: 18px;
-  }
 }
 
 footer.page-footer {

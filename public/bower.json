@@ -1,0 +1,31 @@
+{
+  "name": "AngularJS Recipes",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Marios Fakiolas <fakiolasmarios@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "http://angularjs-recipes.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "angular-materialize": "*",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-messages": "~1.4.7",
+    "ng-showdown": "~1.0.1",
+    "github-markdown-css": "~2.1.0",
+    "angularUtils-disqus": "angular-utils-disqus#~0.4.0",
+    "angular-masonry": "~0.13.0"
+  }
+}

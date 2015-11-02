@@ -1,0 +1,55 @@
+<div id="recipe-header">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1>{{recipeCtl.recipe.title}}</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="recipe">
+	<div class="container">
+		<div class="row">
+			<div class="col l8 m8 s12">
+				<div class="card">
+					<div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div>
+				</div>
+
+				<div>
+					<dir-disqus disqus-shortname="angularjs-recipes" disqus-identifier="{{ recipeCtl.recipe.uuid }}" disqus-url="http://localhost:8000/#!/recipes/{{ recipeCtl.recipe.uuid }}">
+					</dir-disqus>
+				</div>
+			</div>
+
+			<div class="col l4 m4 s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Details</span>
+						<ul class="collection">
+							<li class="collection-item">
+								<strong>Created</strong> {{recipeCtl.recipe.human_read_created_at}}
+							</li>
+							<li class="collection-item">
+								<strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Topics</span>
+						<ul class="collection">
+							<a ng-href="#!/topics/{{topic.uuid}}/recipes" class="collection-item black-text" ng-repeat="topic in recipeCtl.topics">
+								<div>{{topic.title}}
+									<span class="badge custom-red white-text">{{topic.recipes.length}}</span>
+								</div>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

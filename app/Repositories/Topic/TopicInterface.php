@@ -1,0 +1,10 @@
+<?php namespace App\Repositories\Topic;
+
+
+interface TopicInterface {
+
+	public function index();
+
+	public function show($uuid);
+
+}

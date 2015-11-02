@@ -3,7 +3,6 @@
 		<div class="row">
 			<div class="col l6 s12">
 				<h5 class="white-text">Angular<span class="text-red">JS</span> Recipes</h5>
-
 				<p class="grey-text text-lighten-4">This is a non-profitable project created by developers who are tired
 					of paying for knowledge, experiences, recipes and tricks. Share your recipes and help build a strong
 					community. Because knowledge is power!</p>
@@ -11,9 +10,9 @@
 			<div class="col l2 offset-l2 s12">
 				<h5 class="white-text">Links</h5>
 				<ul>
-					<li><a class="grey-text text-lighten-3" href="{{route('recipes.index')}}">Recipes</a></li>
-					<li><a class="grey-text text-lighten-3" href="{{route('blog.index')}}">News</a></li>
-					<li><a class="grey-text text-lighten-3 modal-trigger" href="#contactModal">Contact</a></li>
+					<li><a class="grey-text text-lighten-3" href="#/recipes">Recipes</a></li>
+					<li><a class="grey-text text-lighten-3" href="#/blog">News</a></li>
+					<li><a class="grey-text text-lighten-3" href="#contactModal" modal>Contact</a></li>
 				</ul>
 			</div>
 			<div class="col l2 s12">
@@ -90,8 +89,7 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12 right-align">
-						<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i
-									class="mdi-content-send right"></i></button>
+						<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i class="mdi-content-send right"></i></button>
 					</div>
 				</div>
 			</form>
@@ -99,7 +97,7 @@
 	</div>
 </div>
 
-<div id="recipeModal" class="modal" ng-controller="RecipesController">
+<div id="recipeModal" class="modal">
 	<div class="modal-content">
 		<h2 class="center-align decoration">Stay Tuned</h2>
 
@@ -139,18 +137,19 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12 right-align">
-						<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i
-									class="mdi-content-send right"></i></button>
+						<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i class="mdi-content-send right"></i></button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
-<script type="text/javascript" src="{{asset('https://code.jquery.com/jquery-2.1.1.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/materialize.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/angular.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/angular-messages.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular/angular.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-route/angular-route.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-messages/angular-messages.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-materialize/src/angular-materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/recipes.js')}}"></script>
 </body>
 </html>

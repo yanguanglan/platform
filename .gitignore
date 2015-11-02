@@ -1,3 +1,9 @@
 /vendor
 /node_modules
+public/bower_components/
+public/.sass-cache/
+/bower_components
 .env
+.idea
+.DS_STORE
+composer.lock

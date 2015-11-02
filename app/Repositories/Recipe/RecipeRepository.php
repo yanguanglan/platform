@@ -11,4 +11,21 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 	{
 		$this->model = $model;
 	}
+
+	public function index()
+	{
+		$models = $this->model
+		->with('topic')
+		->orderBy('updated_at', 'desc')
+		->get();
+
+		return $models;
+	}
+
+	public function show($uuid)
+	{
+		$model = $this->model->where('uuid', $uuid)->first();
+
+		return $model;
+	}
 }
