@@ -24,7 +24,9 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 
 	public function show($uuid)
 	{
-		$model = $this->model->where('uuid', $uuid)->first();
+		$model = $this->model
+		->where('uuid', $uuid)
+		->firstOrFail();
 
 		return $model;
 	}

@@ -8,6 +8,11 @@ class Recipe extends Model {
 
 	public $appends = ['human_read_created_at', 'human_read_updated_at'];
 
+	public function getCodepenAttribute($value)
+	{
+		return 'http://codepen.io/angularjs-recipes/pen/' . $value;
+	}
+
 	public function getHumanReadCreatedAtAttribute()
 	{
 		return $this->created_at->diffForHumans();

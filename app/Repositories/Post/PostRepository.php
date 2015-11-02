@@ -14,14 +14,18 @@ class PostRepository extends AbstractRepository implements PostInterface {
 
 	public function index($take)
 	{
-		$models = $this->model->orderBy('updated_at', 'desc')->get();
+		$models = $this->model
+		->orderBy('updated_at', 'desc')
+		->get();
 
 		return $take ? $models->take($take) : $models;
 	}
 
 	public function show($uuid)
 	{
-		$model = $this->model->where('uuid', $uuid)->first();
+		$model = $this->model
+		->where('uuid', $uuid)
+		->firstOrFail();
 
 		return $model;
 	}

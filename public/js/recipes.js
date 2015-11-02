@@ -74,6 +74,10 @@ recipesApp
                     }
                 }
             })
+            .when('/error', {
+                controller: 'ErrorController as errorCtl',
+                templateUrl: 'js/partials/error.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -85,6 +89,9 @@ recipesApp
         };
     }])
     .controller('HomeController', [function() {
+
+    }])
+    .controller('ErrorController', [function() {
 
     }])
     .controller('RecipesController', ['recipes', 'topics', function(recipes, topics) {
@@ -158,7 +165,7 @@ recipesApp
             }
         };
     }])
-    .service('Recipe', ['$http', function($http) {
+    .service('Recipe', ['$http', '$location', function($http, $location) {
         return {
             all: function(take) {
                 var take = take || null;
@@ -170,6 +177,8 @@ recipesApp
                     })
                     .then(function(data) {
                         return data.data;
+                    }, function(err) {
+                        $location.path('/error');
                     });
             },
             get: function(uuid) {
@@ -177,11 +186,13 @@ recipesApp
                     .get('api/recipes/' + uuid)
                     .then(function(data) {
                         return data.data;
+                    }, function(err) {
+                        $location.path('/error');
                     });
             }
         };
     }])
-    .service('Topic', ['$http', function($http) {
+    .service('Topic', ['$http', '$location', function($http, $location) {
         return {
             all: function(take) {
                 var take = take || null;
@@ -193,6 +204,8 @@ recipesApp
                     })
                     .then(function(data) {
                         return data.data;
+                    }, function(err) {
+                        $location.path('/error');
                     });
             },
             get: function(uuid) {
@@ -200,11 +213,13 @@ recipesApp
                     .get('api/topics/' + uuid)
                     .then(function(data) {
                         return data.data;
+                    }, function(err) {
+                        $location.path('/error');
                     });
             }
         };
     }])
-    .service('Post', ['$http', function($http) {
+    .service('Post', ['$http', '$location', function($http, $location) {
         return {
             all: function(take) {
                 var take = take || null;
@@ -216,6 +231,8 @@ recipesApp
                     })
                     .then(function(data) {
                         return data.data;
+                    }, function(err) {
+                        $location.path('/error');
                     });
             },
             get: function(uuid) {
@@ -223,6 +240,8 @@ recipesApp
                     .get('api/posts/' + uuid)
                     .then(function(data) {
                         return data.data;
+                    }, function(err) {
+                        $location.path('/error');
                     });
             }
         };
