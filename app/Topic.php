@@ -10,7 +10,7 @@ class Topic extends Model {
 
 	public function recipes()
 	{
-		return $this->hasMany('App\Recipe');
+		return $this->belongsToMany('App\Recipe');
 	}
 
 }

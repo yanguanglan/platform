@@ -11,8 +11,8 @@
 			<div class="col l2 offset-l2 s12">
 				<h5 class="white-text">Links</h5>
 				<ul>
-					<li><a class="grey-text text-lighten-3" href="#/recipes">Recipes</a></li>
-					<li><a class="grey-text text-lighten-3" href="#/blog">News</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/recipes">Recipes</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/blog">News</a></li>
 					<li><a class="grey-text text-lighten-3" href="#contactModal" modal>Contact</a></li>
 				</ul>
 			</div>

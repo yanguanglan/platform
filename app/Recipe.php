@@ -18,9 +18,9 @@ class Recipe extends Model {
 		return $this->updated_at->diffForHumans();
 	}
 
-	public function topic()
+	public function topics()
 	{
-		return $this->belongsTo('App\Topic');
+		return $this->belongsToMany('App\Topic');
 	}
 
 }
