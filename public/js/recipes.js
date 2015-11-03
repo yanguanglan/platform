@@ -1,4 +1,4 @@
-var recipesApp = angular.module('recipesApp', ['ngRoute', 'ngMessages']);
+var recipesApp = angular.module('recipesApp', ['ngRoute']);
 
 recipesApp
     .config(function($locationProvider, $routeProvider) {
