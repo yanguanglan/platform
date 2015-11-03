@@ -23,13 +23,13 @@
 			</div>
 
 			<div class="col l4 m4 s12">
-				<div class="card">
+				<div class="card" ng-if="recipeCtl.recipe.github || recipeCtl.recipe.codepen">
 					<div class="card-content">
 						<span class="card-title black-text">Links</span>
 						<ul class="collection">
 							<li class="collection-item">
-								<a ng-href="{{recipeCtl.recipe.codepen}}" target="_blank" class="btn black"><i class="fa fa-codepen"></i></a>
-								<a ng-href="{{recipeCtl.recipe.github}}" target="_blank" class="btn white black-text"><i class="fa fa-github"></i></a>
+								<a ng-href="{{recipeCtl.recipe.codepen}}" target="_blank" class="btn black" ng-if="recipeCtl.recipe.codepen"><i class="fa fa-codepen"></i></a>
+								<a ng-href="{{recipeCtl.recipe.github}}" target="_blank" class="btn white black-text" ng-if="recipeCtl.recipe.github"><i class="fa fa-github"></i></a>
 							</li>
 						</ul>
 					</div>

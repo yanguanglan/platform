@@ -10,7 +10,7 @@ class Recipe extends Model {
 
 	public function getCodepenAttribute($value)
 	{
-		return 'http://codepen.io/angularjs-recipes/pen/' . $value;
+		return $value ? 'http://codepen.io/angularjs-recipes/pen/' . $value : null;
 	}
 
 	public function getHumanReadCreatedAtAttribute()
