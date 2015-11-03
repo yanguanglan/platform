@@ -39,8 +39,7 @@ module.exports = function(grunt) {
 			},
 			e2e: {
 				options: {
-					keepAlive: false,
-                    debug: true
+					keepAlive: false
 				}
 			},
 		},

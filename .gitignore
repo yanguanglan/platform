@@ -9,3 +9,5 @@ public/.sass-cache/
 .DS_STORE
 composer.lock
 
+
+tests/_output/*
