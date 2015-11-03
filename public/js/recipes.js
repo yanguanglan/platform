@@ -89,7 +89,7 @@ recipesApp
         };
     }])
     .controller('HomeController', [function() {
-
+        var homeCtl = this;
     }])
     .controller('ErrorController', [function() {
 
@@ -246,6 +246,18 @@ recipesApp
             }
         };
     }])
+    .directive('mixpanel', function() {
+        var linkFunction = function(scope, element, args) {
+            element.on('click', function() {
+                mixpanel.track(args.mixpanel);
+            });
+        };
+
+        return {
+            restrict: 'A',
+            link: linkFunction
+        }
+    })
     .directive('scroller', function() {
         return {
             restrict: 'A',
