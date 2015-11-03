@@ -8,6 +8,10 @@ recipesApp
                 controller: 'HomeController as homeCtl',
                 templateUrl: 'js/partials/home.html'
             })
+            .when('/coming', {
+                controller: 'ComingController as comingCtl',
+                templateUrl: 'js/partials/coming.html'
+            })
             .when('/recipes', {
                 controller: 'RecipesController as recipesCtl',
                 templateUrl: 'js/partials/recipes/index.html',
@@ -90,6 +94,9 @@ recipesApp
     }])
     .controller('HomeController', [function() {
         var homeCtl = this;
+    }])
+    .controller('ComingController', [function() {
+        var comingCtl = this;
     }])
     .controller('ErrorController', [function() {
 
