@@ -99,7 +99,7 @@
 	</div>
 </div>
 
-<div id="recipeModal" class="modal" ng-controller="RecipesController">
+<div id="recipeModal" class="modal" ng-controller="RequestController">
 	<div class="modal-content">
 		<h2 class="center-align decoration">Stay Tuned</h2>
 

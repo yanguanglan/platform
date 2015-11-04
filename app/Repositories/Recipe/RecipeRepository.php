@@ -12,14 +12,28 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 		$this->model = $model;
 	}
 
-	public function index()
+	public function index($sortBy)
 	{
 		$models = $this->model
 		->with('topics')
-		->orderBy('updated_at', 'desc')
 		->get();
 
-		return $models;
+		if ($sortBy == 'date')
+		{
+			return $models->sortByDesc('updated_at')->values();
+		}
+		else if ($sortBy == 'views')
+		{
+			return $models->sortByDesc('views')->values();
+		}
+		else if ($sortBy == 'likes')
+		{
+			return $models->sortByDesc('likes')->values();
+		}
+		else
+		{
+			return $models->sortByDesc('updated_at')->values();
+		}
 	}
 
 	public function show($uuid)

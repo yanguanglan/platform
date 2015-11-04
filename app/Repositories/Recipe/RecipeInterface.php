@@ -3,7 +3,7 @@
 
 interface RecipeInterface {
 
-	public function index();
+	public function index($sortBy);
 
 	public function show($uuid);
 

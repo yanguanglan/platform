@@ -14,9 +14,11 @@ class RecipesController extends Controller {
 		$this->recipe = $recipe;
 	}
 
-	public function index()
+	public function index(Request $request)
 	{
-		$recipes = $this->recipe->index();
+		$sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
+
+		$recipes = $this->recipe->index($sortBy);
 
 		return $recipes;
 	}

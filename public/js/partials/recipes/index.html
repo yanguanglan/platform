@@ -11,9 +11,14 @@
 <div id="recipes">
 	<div class="container">
 		<div class="row">
+			<div class="col s12">
+				<p>Sort By: <a class="waves-effect waves-black btn-flat" ng-click="recipesCtl.sortBy('date')">Date</a> | <a class="waves-effect waves-black btn-flat" ng-click="recipesCtl.sortBy('views')">Views</a> | <a class="waves-effect waves-black btn-flat" ng-click="recipesCtl.sortBy('likes')">Likes</a><input ng-model="recipesCtl.searchFilter" class="pull-right" placeholder="Search..." /></p>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col l8 m8 s12">
 				<div class="row" masonry>
-					<div class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in recipesCtl.recipes">
+					<div class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in recipesCtl.filteredRecipes">
 						<div class="card">
 							<div class="card-content">
 								<p class="card-title text-red">{{recipe.title}}</p>
@@ -23,6 +28,8 @@
 							</div>
 							<div class="card-action">
 								<a ng-href="#!/recipes/{{recipe.uuid}}">View</a>
+								<span class="pull-right">{{recipe.views}} <i class="mdi-action-visibility"></i></span>
+								<span class="pull-right">{{recipe.likes}} <i class="mdi-action-favorite"></i></span>
 							</div>
 						</div>
 					</div>
