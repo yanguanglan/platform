@@ -9,4 +9,5 @@ before_script:
   - composer install --prefer-source
 
 script:
-    - vendor/bin/behat --config behat.yml
+    - ls -l
+    - php vendor/bin/behat --config behat.yml
