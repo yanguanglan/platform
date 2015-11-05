@@ -6,8 +6,8 @@ php:
 
 before_script:
   - composer self-update
-  - composer install --dev
+  - composer install
 
 script:
-    - ls -l
-    - php vendor/bin/behat --config behat.yml
+    - php artisan serve
+    - vendor/bin/behat --config behat.yml
