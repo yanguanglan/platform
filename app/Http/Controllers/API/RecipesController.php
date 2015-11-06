@@ -18,16 +18,17 @@ class RecipesController extends Controller {
 	{
 		$sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
 
-		$recipes = $this->recipe->index($sortBy);
-
-		return $recipes;
+		return $this->recipe->index($sortBy);
 	}
 
-	public function show($uuid)
+	public function show(Request $request, $uuid)
 	{
-		$recipe = $this->recipe->show($uuid);
+        if($request->has('views'))
+        {
+            $this->recipe->updateViews($uuid);
+        }
 
-		return $recipe;
+		return $this->recipe->show($uuid);
 	}
 
 }

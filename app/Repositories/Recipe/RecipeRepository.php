@@ -44,4 +44,11 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 
 		return $model;
 	}
+
+    public function updateViews($uuid)
+    {
+        return \DB::table('recipes')
+        ->where('uuid', $uuid)
+        ->increment('views');
+    }
 }

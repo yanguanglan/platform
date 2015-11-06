@@ -31,6 +31,13 @@ abstract class AbstractRepository {
 		return $model->update($data);
 	}
 
+	public function updateByAttribute($key, $value, $data)
+	{
+		$model = $this->model->where($key, $value)->firstOrFail;
+
+		return $model->update($data);
+	}
+
 	public function destroy($id)
 	{
 		return $this->model->destroy($id);

@@ -33,7 +33,7 @@ recipesApp
 				templateUrl: 'js/partials/recipes/show.html',
 				resolve: {
 					recipe: function(Recipe, $route) {
-						return Recipe.get($route.current.params.uuid);
+						return Recipe.get($route.current.params.uuid, true);
 					},
 					topics: function(Topic) {
 						return Topic.all();
@@ -222,9 +222,14 @@ recipesApp
 						$location.path('/error');
 					});
 			},
-			get: function(uuid) {
+			get: function(uuid, views) {
+                var views = views || null;
 				return $http
-					.get('api/recipes/' + uuid)
+					.get('api/recipes/' + uuid, {
+                        params: {
+                            views: views
+                        }
+                    })
 					.then(function(data) {
 						return data.data;
 					}, function(err) {

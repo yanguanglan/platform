@@ -7,4 +7,6 @@ interface RecipeInterface {
 
 	public function show($uuid);
 
+    public function updateViews($uuid);
+
 }
