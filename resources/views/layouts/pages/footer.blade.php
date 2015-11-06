@@ -13,6 +13,7 @@
 				<ul>
 					<li><a class="grey-text text-lighten-3" href="#!/recipes">Recipes</a></li>
 					<li><a class="grey-text text-lighten-3" href="#!/blog">News</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/statistics">Statistics</a></li>
 					<li><a class="grey-text text-lighten-3" href="#contactModal" modal>Contact</a></li>
 				</ul>
 			</div>

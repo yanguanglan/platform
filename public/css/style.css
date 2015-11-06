@@ -171,6 +171,16 @@ nav ul li.active {
   margin: 50px 0;
 }
 
+#stats-header {
+  min-height: 200px;
+  background: #333333 url(../img/blackboard.png) no-repeat center;
+  background-size: cover;
+}
+
+#stats {
+  margin-top: -100px;
+}
+
 #banner {
   min-height: 600px;
   background: #333333 url(../img/blackboard.png) no-repeat center;
