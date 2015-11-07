@@ -14,7 +14,18 @@ recipesApp
 			})
             .when('/statistics', {
 				controller: 'StatsController as statsCtl',
-				templateUrl: 'js/partials/stats.html'
+				templateUrl: 'js/partials/stats.html',
+                resolve: {
+					recipes: function(Recipe) {
+						return Recipe.all();
+					},
+					topics: function(Topic) {
+						return Topic.all();
+					},
+                    posts: function(Post) {
+						return Post.all();
+					}
+				}
 			})
 			.when('/recipes', {
 				controller: 'RecipesController as recipesCtl',
@@ -102,8 +113,11 @@ recipesApp
 	.controller('FAQController', [function() {
 		var faqCtl = this;
 	}])
-	.controller('StatsController', [function() {
+	.controller('StatsController', ['posts', 'recipes', 'topics', function(posts, recipes, topics) {
 		var statsCtl = this;
+        statsCtl.posts = posts;
+        statsCtl.recipes = recipes;
+        statsCtl.topics = topics;
 	}])
 	.controller('ErrorController', [function() {
 
