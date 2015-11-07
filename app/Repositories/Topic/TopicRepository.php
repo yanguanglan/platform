@@ -27,7 +27,9 @@ class TopicRepository extends AbstractRepository implements TopicInterface {
 	{
 		$model = $this->model
 		->where('uuid', $uuid)
-		->with('recipes')
+		->with(['recipes.topics' =>function($q) {
+			$q->orderBy('title');
+		}])
 		->firstOrFail();
 
 		return $model;

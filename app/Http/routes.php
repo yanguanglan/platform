@@ -1,5 +1,9 @@
 <?php
 
+Route::group(['namespace' => 'DEMO', 'prefix' => 'demo'], function() {
+	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+});
+
 Route::group(['namespace' => 'API', 'prefix' => 'api'], function() {
 	resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
 	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);

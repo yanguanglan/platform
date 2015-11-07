@@ -15,7 +15,9 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 	public function index($sortBy)
 	{
 		$models = $this->model
-		->with('topics')
+		->with(['topics' => function($q){
+			$q->orderBy('title');
+		}])
 		->get();
 
 		if ($sortBy == 'date')

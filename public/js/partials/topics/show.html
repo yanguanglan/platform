@@ -16,11 +16,15 @@
 					<div class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in topicCtl.topic.recipes">
 						<div class="card">
 							<div class="card-content">
-								<span class="card-title text-red">{{topicCtl.topic.title}}</span>
-								<p>{{recipe.title}}</p>
+								<p class="card-title text-red">{{recipe.title}}</p>
+								<span class="chip" ng-repeat="topic in recipe.topics">
+									{{topic.title}}
+								</span>
 							</div>
 							<div class="card-action">
 								<a ng-href="#!/recipes/{{recipe.uuid}}">View</a>
+								<span class="pull-right">{{recipe.views}} <i class="mdi-action-visibility"></i></span>
+								<span class="pull-right">{{recipe.likes}} <i class="mdi-action-favorite"></i></span>
 							</div>
 						</div>
 					</div>
