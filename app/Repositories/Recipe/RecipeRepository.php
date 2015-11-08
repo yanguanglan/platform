@@ -15,7 +15,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 	public function index($sortBy)
 	{
 		$models = $this->model
-		->with(['topics' => function($q){
+		->with(['level', 'topics' => function($q){
 			$q->orderBy('title');
 		}])
 		->get();
@@ -42,6 +42,10 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 	{
 		$model = $this->model
 		->where('uuid', $uuid)
+		->with(['level', 'resources' => function($q)
+		{
+			$q->orderBy('title');
+		}])
 		->firstOrFail();
 
 		return $model;

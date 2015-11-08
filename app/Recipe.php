@@ -23,9 +23,19 @@ class Recipe extends Model {
 		return $this->updated_at->diffForHumans();
 	}
 
+	public function level()
+	{
+		return $this->belongsTo('App\Level');
+	}
+
 	public function topics()
 	{
 		return $this->belongsToMany('App\Topic');
+	}
+
+	public function resources()
+	{
+		return $this->belongsToMany('App\Resource');
 	}
 
 }
