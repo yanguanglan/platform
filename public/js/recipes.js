@@ -101,12 +101,6 @@ recipesApp
 				redirectTo: '/'
 			});
 	})
-	.controller('NavigationController', ['$location', function($location) {
-		var navigationCtl = this;
-		navigationCtl.isCurrentPath = function(path) {
-			return $location.path() == path;
-		};
-	}])
 	.controller('HomeController', [function() {
 		var homeCtl = this;
 	}])
@@ -376,6 +370,29 @@ recipesApp
 			}
 		};
 	})
+	.directive('activeMenu', ['$location', function($location) {
+		return {
+			restrict: 'A',
+			link: function(scope, element, args) {
+				var activeClass = args.activeMenu || 'active',
+					links = element.find('li');
+
+				scope.$on('$routeChangeStart', function() {
+					var path = $location.path();
+					links.removeClass(activeClass);
+
+					for (var i = 0, len = links.length; i < len; i++) {
+						var listItem = angular.element(links[i]),
+						href = listItem.find('a').attr('href');
+
+						if (href.indexOf(path) != -1) {
+							listItem.addClass(activeClass);
+						}
+					}
+				});
+			}
+		};
+	}])
 	.filter('offset', function() {
 		return function(input, start) {
 			start = +start;
