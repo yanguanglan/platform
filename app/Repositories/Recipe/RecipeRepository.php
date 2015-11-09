@@ -42,7 +42,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface {
 	{
 		$model = $this->model
 		->where('uuid', $uuid)
-		->with(['level', 'resources' => function($q)
+		->with(['exercises', 'level', 'resources' => function($q)
 		{
 			$q->orderBy('title');
 		}])

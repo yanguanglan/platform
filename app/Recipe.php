@@ -38,4 +38,9 @@ class Recipe extends Model {
 		return $this->belongsToMany('App\Resource');
 	}
 
+	public function exercises()
+	{
+		return $this->hasMany('App\Exercise');
+	}
+
 }
