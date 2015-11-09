@@ -383,9 +383,8 @@ recipesApp
 
 					for (var i = 0, len = links.length; i < len; i++) {
 						var listItem = angular.element(links[i]),
-						href = listItem.find('a').attr('href');
-
-						if (href.indexOf(path) != -1) {
+						href = listItem.find('a').attr('href').replace(/!|#/g, '');
+						if (href == path) {
 							listItem.addClass(activeClass);
 						}
 					}

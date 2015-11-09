@@ -65,6 +65,9 @@
 							<li class="collection-item">
 								<strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
 							</li>
+							<li class="collection-item">
+								<strong>Exercises</strong> {{recipeCtl.recipe.exercises.length}}
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -73,9 +76,8 @@
 					<div class="card-content">
 						<span class="card-title black-text">Resources</span>
 						<ul class="collection">
-							<li class="collection-item" ng-repeat="resource in recipeCtl.recipe.resources">
-								<a ng-href="{{resource.url}}" target="_blank">{{resource.title}}</a>
-							</li>
+							<a class="collection-item black-text" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">{{resource.title}}
+							</a>
 						</ul>
 					</div>
 				</div>
