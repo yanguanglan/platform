@@ -220,7 +220,7 @@ recipesApp
 		requestCtl.submit = function(valid) {
 			if (valid) {
 				$http
-					.post('request', {
+					.post('contact', {
 						name: requestCtl.request.name,
 						email: requestCtl.request.email,
 						message: requestCtl.request.message
@@ -230,16 +230,16 @@ recipesApp
 							Materialize.toast('<i class="mdi-action-highlight-remove"></i> Our server has some issues!', 4000, 'custom-red');
 						} else {
 							Materialize.toast('<i class="mdi-action-done"></i> ' + requestCtl.request.name + ', thank you!', 4000, 'green');
-							$('#contactModal').closeModal();
+							$('#requestModal').closeModal();
 
 							requestCtl.contact = {
 								name: '',
 								email: '',
 								message: ''
 							};
-							requestCtl.requestForm.name.$setPristine();
-							requestCtl.requestForm.email.$setPristine();
-							requestCtl.requestForm.message.$setPristine();
+							$scope.requestForm.name.$setPristine();
+							$scope.requestForm.email.$setPristine();
+							$scope.requestForm.message.$setPristine();
 						}
 					})
 					.error(function() {

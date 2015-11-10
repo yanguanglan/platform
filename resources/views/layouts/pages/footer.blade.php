@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<i class="mdi-action-account-circle prefix"></i>
-					<input id="icon_prefix" type="text" class="validate" name="name" ng-model="contact.name"
+					<input id="icon_prefix" type="text" class="validate" name="name" ng-model="contactCtl.contact.name"
 						   required>
 					<label for="icon_prefix">Name</label>
 
@@ -58,7 +58,7 @@
 				</div>
 				<div class="input-field col s6">
 					<i class="mdi-communication-email prefix"></i>
-					<input id="icon_email" type="email" class="validate" name="email" ng-model="contact.email"
+					<input id="icon_email" type="email" class="validate" name="email" ng-model="contactCtl.contact.email"
 						   required>
 					<label for="icon_email">Email</label>
 
@@ -78,7 +78,7 @@
 				<div class="input-field col s12">
 					<i class="mdi-editor-mode-edit prefix"></i>
 					<textarea id="icon_prefix2" class="materialize-textarea validate" name="message"
-							  ng-model="contact.message" required></textarea>
+							  ng-model="contactCtl.contact.message" required></textarea>
 					<label for="icon_prefix2">Message</label>
 
 					<div ng-messages="contactForm.message.$error" ng-if="contactForm.message.$dirty">
