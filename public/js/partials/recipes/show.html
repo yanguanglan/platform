@@ -32,7 +32,7 @@
 						</div>
 						<div class="row">
 							<div class="col s12">
-								<ul class="collapsible popout" data-collapsible="accordion">
+								<ul class="collapsible" data-collapsible="accordion">
 									<li ng-repeat="exercise in recipeCtl.recipe.exercises">
 										<div class="collapsible-header">{{$index + 1}}. {{exercise.title}}</div>
 										<div class="collapsible-body">
@@ -65,7 +65,7 @@
 							<li class="collection-item">
 								<strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
 							</li>
-							<li class="collection-item">
+							<li class="collection-item" ng-if="recipeCtl.recipe.exercises.length">
 								<strong>Exercises</strong> {{recipeCtl.recipe.exercises.length}}
 							</li>
 						</ul>

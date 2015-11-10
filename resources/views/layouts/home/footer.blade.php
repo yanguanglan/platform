@@ -97,12 +97,12 @@
 	</div>
 </div>
 
-<div id="recipeModal" class="modal">
+<div id="requestModal" class="modal" ng-controller="RequestRecipeController">
 	<div class="modal-content">
-		<h2 class="center-align decoration">Stay Tuned</h2>
+		<h2 class="center-align decoration">Request a Recipe</h2>
 
 		<div class="row">
-			<form class="col s12" name="recipesForm" ng-submit="submit(recipesForm.$valid)" novalidate>
+			<form class="col s12" name="requestForm" ng-submit="submit(requestForm.$valid)" novalidate>
 				<div class="row">
 					<div class="input-field col s6">
 						<i class="mdi-action-account-circle prefix"></i>
@@ -110,7 +110,7 @@
 							   required>
 						<label for="icon_prefix">Name</label>
 
-						<div ng-messages="recipesForm.name.$error" ng-if="recipesForm.name.$dirty">
+						<div ng-messages="requestForm.name.$error" ng-if="requestForm.name.$dirty">
 							<div ng-message="required">
 								<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter
 									your name</p>
@@ -123,7 +123,7 @@
 							   required>
 						<label for="icon_email">Email</label>
 
-						<div ng-messages="recipesForm.email.$error" ng-if="recipesForm.email.$dirty">
+						<div ng-messages="requestForm.email.$error" ng-if="requestForm.email.$dirty">
 							<div ng-message="required">
 								<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter
 									your email</p>
@@ -131,6 +131,21 @@
 							<div ng-message="email">
 								<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter
 									a valid email</p>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="mdi-editor-mode-edit prefix"></i>
+						<textarea id="icon_prefix2" class="materialize-textarea validate" name="message"
+								  ng-model="contact.message" required></textarea>
+						<label for="icon_prefix2">Request</label>
+
+						<div ng-messages="requestForm.message.$error" ng-if="requestForm.message.$dirty">
+							<div ng-message="required">
+								<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter
+									your request</p>
 							</div>
 						</div>
 					</div>

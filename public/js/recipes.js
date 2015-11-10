@@ -210,31 +210,73 @@ recipesApp
 		postCtl.posts = posts;
 	}])
 	.controller('RequestController', ['$scope', '$http', function($scope, $http) {
-
-	}])
-	.controller('ContactController', ['$scope', '$http', function($scope, $http) {
-		$scope.loading = false;
-		$scope.contact = {
+        var requestCtl = this;
+        requestCtl.loading = false;
+		requestCtl.request = {
 			name: '',
 			email: '',
 			message: ''
 		};
-		$scope.submit = function(valid) {
+		requestCtl.submit = function(valid) {
 			if (valid) {
 				$http
-					.post('contact', {
-						name: $scope.contact.name,
-						email: $scope.contact.email,
-						message: $scope.contact.message
+					.post('request', {
+						name: requestCtl.request.name,
+						email: requestCtl.request.email,
+						message: requestCtl.request.message
 					})
 					.success(function(data) {
 						if (data.error) {
 							Materialize.toast('<i class="mdi-action-highlight-remove"></i> Our server has some issues!', 4000, 'custom-red');
 						} else {
-							Materialize.toast('<i class="mdi-action-done"></i> ' + $scope.contact.name + ', thank you!', 4000, 'green');
+							Materialize.toast('<i class="mdi-action-done"></i> ' + requestCtl.request.name + ', thank you!', 4000, 'green');
 							$('#contactModal').closeModal();
 
-							$scope.contact = {
+							requestCtl.contact = {
+								name: '',
+								email: '',
+								message: ''
+							};
+							requestCtl.requestForm.name.$setPristine();
+							requestCtl.requestForm.email.$setPristine();
+							requestCtl.requestForm.message.$setPristine();
+						}
+					})
+					.error(function() {
+						Materialize.toast('<i class="mdi-action-highlight-remove"></i> Our server has some issues!', 4000, 'custom-red');
+					});
+			} else {
+				Materialize.toast('<i class="mdi-action-highlight-remove"></i> Please enter valid data!', 4000, 'custom-red');
+				$scope.requestForm.name.$setDirty();
+				$scope.requestForm.email.$setDirty();
+				$scope.requestForm.message.$setDirty();
+			}
+		};
+    }])
+	.controller('ContactController', ['$scope', '$http', function($scope, $http) {
+        var contactCtl = this;
+		contactCtl.loading = false;
+		contactCtl.contact = {
+			name: '',
+			email: '',
+			message: ''
+		};
+		contactCtl.submit = function(valid) {
+			if (valid) {
+				$http
+					.post('contact', {
+						name: contactCtl.contact.name,
+						email: contactCtl.contact.email,
+						message: contactCtl.contact.message
+					})
+					.success(function(data) {
+						if (data.error) {
+							Materialize.toast('<i class="mdi-action-highlight-remove"></i> Our server has some issues!', 4000, 'custom-red');
+						} else {
+							Materialize.toast('<i class="mdi-action-done"></i> ' + contactCtl.contact.name + ', thank you!', 4000, 'green');
+							$('#contactModal').closeModal();
+
+							contactCtl.contact = {
 								name: '',
 								email: '',
 								message: ''
