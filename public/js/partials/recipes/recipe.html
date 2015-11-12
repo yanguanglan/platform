@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-content">
+        <p class="card-title text-red">{{recipe.title}}</p>
+        <span class="chip" ng-repeat="topic in recipe.topics">
+            {{topic.title}}
+        </span>
+    </div>
+    <div class="card-action">
+        <a ng-href="#!/recipes/{{recipe.uuid}}">View</a>
+        <span class="pull-right">{{recipe.views}} <i class="mdi-action-visibility"></i></span>
+        <span class="pull-right">{{recipe.likes}} <i class="mdi-action-favorite"></i></span>
+    </div>
+</div>
