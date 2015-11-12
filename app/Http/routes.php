@@ -1,13 +1,14 @@
 <?php
 
-Route::group(['namespace' => 'DEMO', 'prefix' => 'demo'], function() {
-	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+Route::group(['namespace' => 'DEMO', 'prefix' => 'demo'], function () {
+    resource('posts', 'PostsController', ['only' => ['index', 'show']]);
 });
 
-Route::group(['namespace' => 'API', 'prefix' => 'api'], function() {
-	resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
-	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
-	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
+    resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
+    get('recipes-latest', 'RecipesController@latest');
+    resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
+    resource('posts', 'PostsController', ['only' => ['index', 'show']]);
 });
 
 resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
