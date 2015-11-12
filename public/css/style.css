@@ -49,21 +49,32 @@ h4 {
 }
 
 .beta, .ibeta, .fbeta {
-  overflow: visible;
   position: relative;
 }
 .beta:after, .ibeta:after, .fbeta:after {
   content: "beta";
   position: absolute;
   color: #fff;
-  font-size: 10px;
   font-weight: 100;
   letter-spacing: 1.2px;
 }
 
 .beta:after {
   top: -5px;
-  right: -28px;
+  right: 4px;
+  font-size: 8px;
+}
+@media (min-width: 600px) {
+  .beta:after {
+    font-size: 9px;
+    right: 2px;
+  }
+}
+@media (min-width: 660px) {
+  .beta:after {
+    font-size: 10px;
+    right: 0px;
+  }
 }
 
 .ibeta:after {
@@ -76,6 +87,7 @@ h4 {
 .fbeta:after {
   top: -5px;
   left: 14rem;
+  font-size: 10px;
 }
 
 .custom-red {
@@ -161,6 +173,10 @@ nav .brand-logo {
 nav ul li:hover,
 nav ul li.active {
   background-color: #d0021b;
+}
+
+nav .brand-logo {
+  padding-right: 28px;
 }
 
 .avatar-img {
