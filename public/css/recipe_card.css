@@ -1,4 +1,7 @@
 .card-recipe .card-banner {
+  -moz-border-radius: 2px 2px 0 0;
+  -webkit-border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   height: 151px;
   position: relative;
 }
@@ -48,6 +51,9 @@
 .card-recipe .card-action .card-view {
   font-size: 18px;
   color: #d0021b;
+}
+.card-recipe .card-action .card-view:hover {
+  color: #000;
 }
 .card-recipe .card-action .card-icons {
   font-size: 20px;
