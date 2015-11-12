@@ -1,103 +1,103 @@
 <div id="recipe-header">
-	<div class="container">
-		<div class="row">
-			<div class="col s12">
-				<h1>{{recipeCtl.recipe.title}}</h1>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>{{recipeCtl.recipe.title}}</h1>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="recipe">
-	<div class="container">
-		<div class="row">
-			<div class="col l9 m9 s12">
-				<!-- Recipe -->
-				<div class="card">
-					<!-- Markdown -->
-					<div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col l9 m9 s12">
+                <!-- Recipe -->
+                <div class="card">
+                    <!-- Markdown -->
+                    <div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div>
 
-					<!-- Codepen -->
-					<p data-height="268" data-theme-id="0" data-slug-hash="{{recipeCtl.recipe.codepen}}" data-default-tab="result" data-user="angularjs-recipes" class='codepen' ng-if="recipeCtl.recipe.codepen">See the Pen <a ng-href='http://codepen.io/angularjs-recipes/pen/{{recipeCtl.recipe.codepen}}'>{{recipeCtl.recipe.title}}</a> by AngularJS Recipes (<a href='http://codepen.io/angularjs-recipes'>@angularjs-recipes</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-					<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-				</div>
+                    <!-- Codepen -->
+                    <codepen recipe="recipeCtl.recipe"></codepen>
+                    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+                </div>
 
-				<div class="card" ng-if="recipeCtl.recipe.exercises.length">
-					<div class="card-content">
-						<div class="row">
-							<div class="col s12">
-								<h2>Exercises</h2>
-								<div class="divider"></div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s12">
-								<ul class="collapsible" data-collapsible="accordion">
-									<li ng-repeat="exercise in recipeCtl.recipe.exercises">
-										<div class="collapsible-header">{{$index + 1}}. {{exercise.title}}</div>
-										<div class="collapsible-body">
-											<div class="markdown-body" markdown-to-html="exercise.content"></div>
+                <div class="card" ng-if="recipeCtl.recipe.exercises.length">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s12">
+                                <h2>Exercises</h2>
+                                <div class="divider"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <ul class="collapsible" data-collapsible="accordion">
+                                    <li ng-repeat="exercise in recipeCtl.recipe.exercises">
+                                        <div class="collapsible-header">{{$index + 1}}. {{exercise.title}}</div>
+                                        <div class="collapsible-body">
+                                            <div class="markdown-body" markdown-to-html="exercise.content"></div>
 
                                             <!-- Codepen -->
-                        					<p data-height="268" data-theme-id="0" data-slug-hash="{{exercise.codepen}}" data-default-tab="result" data-user="angularjs-recipes" class='codepen' ng-if="exercise.codepen">See the Pen <a ng-href='http://codepen.io/angularjs-recipes/pen/{{exercise.codepen}}'>{{exercise.title}}</a> by AngularJS Recipes (<a href='http://codepen.io/angularjs-recipes'>@angularjs-recipes</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                                            <codepen recipe="exercise"></codepen>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Disqus Comments -->
-				<div class="card">
-					<div class="card-content">
-						<dir-disqus disqus-shortname="angularjs-recipes" disqus-identifier="{{ recipeCtl.recipe.uuid }}" disqus-url="http://localhost:8000/#!/recipes/{{ recipeCtl.recipe.uuid }}">
-						</dir-disqus>
-					</div>
-				</div>
-			</div>
+                <!-- Disqus Comments -->
+                <div class="card">
+                    <div class="card-content">
+                        <dir-disqus disqus-shortname="angularjs-recipes" disqus-identifier="{{ recipeCtl.recipe.uuid }}" disqus-url="http://localhost:8000/#!/recipes/{{ recipeCtl.recipe.uuid }}">
+                        </dir-disqus>
+                    </div>
+                </div>
+            </div>
 
-			<div class="col l3 m3 s12">
-				<div class="card">
-					<div class="card-content">
-						<span class="card-title black-text">Details</span>
-						<ul class="collection">
-							<li class="collection-item">
-								<strong>Version</strong> {{recipeCtl.recipe.version}}
-							</li>
-							<li class="collection-item">
-								<strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
-							</li>
-							<li class="collection-item" ng-if="recipeCtl.recipe.exercises.length">
-								<strong>Exercises</strong> {{recipeCtl.recipe.exercises.length}}
-							</li>
-						</ul>
-					</div>
-				</div>
+            <div class="col l3 m3 s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title black-text">Details</span>
+                        <ul class="collection">
+                            <li class="collection-item">
+                                <strong>Version</strong> {{recipeCtl.recipe.version}}
+                            </li>
+                            <li class="collection-item">
+                                <strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
+                            </li>
+                            <li class="collection-item" ng-if="recipeCtl.recipe.exercises.length">
+                                <strong>Exercises</strong> {{recipeCtl.recipe.exercises.length}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-				<div class="card" ng-if="recipeCtl.recipe.resources.length">
-					<div class="card-content">
-						<span class="card-title black-text">Resources</span>
-						<ul class="collection">
-							<a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">{{resource.title}}
+                <div class="card" ng-if="recipeCtl.recipe.resources.length">
+                    <div class="card-content">
+                        <span class="card-title black-text">Resources</span>
+                        <ul class="collection">
+                            <a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">{{resource.title}}
 							</a>
-						</ul>
-					</div>
-				</div>
+                        </ul>
+                    </div>
+                </div>
 
-				<div class="card">
-					<div class="card-content">
-						<span class="card-title black-text">Topics</span>
-						<ul class="collection">
-							<a ng-href="#!/topics/{{topic.uuid}}/recipes" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" class="collection-item black-text" ng-repeat="topic in recipeCtl.topics">
-								<div>{{topic.title}}
-									<span class="badge custom-red white-text">{{topic.recipes.length}}</span>
-								</div>
-							</a>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title black-text">Topics</span>
+                        <ul class="collection">
+                            <a ng-href="#!/topics/{{topic.uuid}}/recipes" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" class="collection-item black-text" ng-repeat="topic in recipeCtl.topics">
+                                <div>{{topic.title}}
+                                    <span class="badge custom-red white-text">{{topic.recipes.length}}</span>
+                                </div>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,34 +1,38 @@
-<?php namespace App\Http\Controllers\API;
+<?php
 
-use App\Http\Requests;
+namespace App\Http\Controllers\API;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Recipe\RecipeInterface as Recipe;
 
-class RecipesController extends Controller {
+class RecipesController extends Controller
+{
+    protected $recipe;
 
-	protected $recipe;
+    public function __construct(Recipe $recipe)
+    {
+        $this->recipe = $recipe;
+    }
 
-	public function __construct(Recipe $recipe)
-	{
-		$this->recipe = $recipe;
-	}
+    public function index(Request $request)
+    {
+        $sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
 
-	public function index(Request $request)
-	{
-		$sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
+        return $this->recipe->index($sortBy);
+    }
 
-		return $this->recipe->index($sortBy);
-	}
+    public function latest()
+    {
+        return $this->recipe->latest();
+    }
 
-	public function show(Request $request, $uuid)
-	{
-        if($request->has('views'))
-        {
+    public function show(Request $request, $uuid)
+    {
+        if ($request->has('views')) {
             $this->recipe->updateViews($uuid);
         }
 
-		return $this->recipe->show($uuid);
-	}
-
+        return $this->recipe->show($uuid);
+    }
 }

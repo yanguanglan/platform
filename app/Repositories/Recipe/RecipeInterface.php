@@ -5,6 +5,8 @@ interface RecipeInterface {
 
 	public function index($sortBy);
 
+	public function latest();
+
 	public function show($uuid);
 
     public function updateViews($uuid);
