@@ -469,4 +469,10 @@ recipesApp
             start = +start;
             return input.slice(start);
         }
+    })
+    .filter('dateToISO', function() {
+        return function(input) {
+            input = new Date(input).toISOString();
+            return input;
+        };
     });
