@@ -7,19 +7,23 @@ main
 	flex: 1 0 auto
 nav .brand-logo
 	font-size: 20px
-	padding-left: 25px
-	background: url(../img/logo.png) no-repeat left 18px
-	+image-2x('../img/logo@2x.png', 18px, auto)
+	padding-left: 28px
+	background: url(../img/logo.png) no-repeat left center
+	background-size: 25px
+	+image-2x('../img/logo@2x.png', 25px, auto)
 	+respond-to(600px)
-		padding-left: 30px
+		padding-left: 38px
 		font-size: 26px
-		+image-2x('../img/logo@2x.png', 22px, auto)
+		background-size: 35px
+		+image-2x('../img/logo@2x.png', 35px, auto)
 	+respond-to(660px)
 		font-size: 30px
-		+image-2x('../img/logo@2x.png', 25px, auto)
+		padding-left: 43px
+		+image-2x('../img/logo@2x.png', 40px, auto)
 nav ul li:hover,
 nav ul li.active
 	background-color: $custom-red
+
 .avatar-img
 	vertical-align: middle
 	width: 30px

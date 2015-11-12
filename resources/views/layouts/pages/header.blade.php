@@ -23,7 +23,7 @@
 	<div class="navbar-fixed">
 		<nav class="grey darken-4" role="navigation">
 			<div class="nav-wrapper container">
-				<a id="logo-container" href="#!/" class="brand-logo waves-effect waves-light">Angular<span class="text-red">JS</span>
+				<a id="logo-container" href="#!/" class="brand-logo waves-effect waves-light beta">Angular<span class="text-red">JS</span>
 				Recipes</a>
 				<ul class="right hide-on-med-and-down" active-menu>
 					<li><a href="#!/recipes" class="waves-effect waves-light">Recipes</a></li>

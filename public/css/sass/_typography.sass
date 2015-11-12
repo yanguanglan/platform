@@ -15,6 +15,33 @@ h4
 .text-red
 	color: $custom-red !important
 
+// CSS FOR BETA SYMBOL
+.beta,.ibeta,.fbeta
+	overflow: visible
+	position: relative
+	&:after
+		content: "beta"
+		position: absolute
+		color: #fff
+		font-size: 10px
+		font-weight: 100
+		letter-spacing: 1.2px
+.beta
+	&:after
+		top: -5px
+		right: -28px
+.ibeta
+	&:after
+		top: -20px
+		font-size: 8px
+		right: -23px
+		letter-spacing: 1px
+.fbeta
+	&:after
+		top: -5px
+		left: 14rem
+// CSS FOR BETA SYMBOL
+
 .custom-red
 	background-color: $custom-red
 	&:hover
