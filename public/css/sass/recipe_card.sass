@@ -1,0 +1,64 @@
+@import compass
+.card-recipe
+    .card-banner
+        height: 151px
+        position: relative
+        .version-logo 
+            display: block
+            width: 90%
+            max-width: 313px
+            padding-top: 24px
+            margin: auto
+            margin-bottom: 20px
+        .chip
+            display: inline-block
+            background: none
+            color: #fff
+            padding-left: 16px
+            padding-right: 0px
+            padding-bottom: 16px
+            font-size: 16px
+            font-weight: 300
+        .card-level
+            position: absolute
+            display: block
+            right: 16px
+            bottom: 8px
+    .card-content
+        padding: 24px 16px 
+        .card-title
+            font-size: 22px
+            line-height: 28px
+            font-weight: 400
+            color: #212121
+            margin-bottom: 7px
+        .card-date
+            font-size: 16px
+            color: #727272
+            font-weight: 400
+    .card-action
+        border: none
+        padding: 0px 16px 24px 
+        .card-view
+            font-size: 18px
+            color: #d0021b
+        .card-icons
+            font-size: 20px
+            padding-right: 16px
+            padding-left: 5px
+        .mdi-action-visibility
+            padding-right: 0px
+            &:before
+                position: relative
+                top: 2px
+    &.v1
+        .card-banner
+            background: #2b2b2b
+    &.v2
+        .card-banner
+            +background-image(linear-gradient(to bottom left, #0E66C4 0%, #044695 100%))
+        .version-logo 
+            width: 73%
+            max-width: 256px
+
+

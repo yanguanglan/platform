@@ -31,7 +31,7 @@
 	<div class="footer-copyright">
 		<div class="container">
 			<span class="ibeta">
-			Angular<span class="text-red">JS</span> Recipes &copy; 2015 
+			Angular<span class="text-red">JS</span> Recipes
 			{{--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>--}}
 			</span>
 		</div> 
