@@ -17,19 +17,24 @@ h4
 
 // CSS FOR BETA SYMBOL
 .beta,.ibeta,.fbeta
-	overflow: visible
 	position: relative
 	&:after
 		content: "beta"
 		position: absolute
 		color: #fff
-		font-size: 10px
 		font-weight: 100
 		letter-spacing: 1.2px
 .beta
 	&:after
 		top: -5px
-		right: -28px
+		right: 4px
+		font-size: 8px
+		+respond-to(600px)
+			font-size: 9px
+			right: 2px
+		+respond-to(660px)
+			font-size: 10px
+			right: 0px
 .ibeta
 	&:after
 		top: -20px
@@ -40,6 +45,7 @@ h4
 	&:after
 		top: -5px
 		left: 14rem
+		font-size: 10px
 // CSS FOR BETA SYMBOL
 
 .custom-red
