@@ -1,13 +1,19 @@
 <footer class="page-footer">
 	<div class="container">
 		<div class="row">
-			<div class="col l6 s12">
+			<div class="col l5 s12">
 				<h5 class="white-text fbeta">Angular<span class="text-red">JS</span> Recipes</h5>
 				<p class="grey-text text-lighten-4">This is a non-profitable project created by developers who are tired
 					of paying for knowledge, experiences, recipes and tricks. Share your recipes and help build a strong
 					community. Because knowledge is power!</p>
 			</div>
-			<div class="col l2 offset-l2 s12">
+            <div class="col offset-l1 l2 s12">
+				<h5 class="white-text">Links</h5>
+				<ul>
+					<li><a class="grey-text text-lighten-3" href="#!/about">About</a></li>
+				</ul>
+			</div>
+			<div class="col l2 s12">
 				<h5 class="white-text">Links</h5>
 				<ul>
 					<li><a class="grey-text text-lighten-3" href="#!/recipes">Recipes</a></li>
@@ -34,8 +40,8 @@
 			Angular<span class="text-red">JS</span> Recipes
 			{{--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>--}}
 			</span>
-		</div> 
-		
+		</div>
+
 	</div>
 </footer>
 

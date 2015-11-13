@@ -27,14 +27,14 @@
 				Recipes</a>
 				<ul class="right hide-on-med-and-down" active-menu>
 					<li><a href="#!/recipes" class="waves-effect waves-light">Recipes</a></li>
-					<li><a href="#!/blog" class="waves-effect waves-light">News</a></li>
+					<li><a href="#!/series" class="waves-effect waves-light">Series</a></li>
 					<li><a href="#contactModal" class="waves-effect waves-light" modal>Contact</a></li>
 				</ul>
 
 				<ul id="nav-mobile" class="side-nav" active-menu>
 					<li><a href="#!/" class="waves-effect waves-light">Home</a></li>
 					<li><a href="#!/recipes" class="waves-effect waves-light">Recipes</a></li>
-					<li><a href="#!/blog" class="waves-effect waves-light">News</a></li>
+					<li><a href="#!/series" class="waves-effect waves-light">Series</a></li>
 					<li><a href="#contactModal" class="waves-effect waves-light" modal>Contact</a></li>
 				</ul>
 				<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-closeonclick="true"><i class="mdi-navigation-menu"></i></a>

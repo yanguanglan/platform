@@ -7,6 +7,7 @@ Route::group(['namespace' => 'DEMO', 'prefix' => 'demo'], function () {
 Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
     resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
     get('recipes-latest', 'RecipesController@latest');
+    resource('series', 'SeriesController', ['only' => ['index', 'show']]);
     resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
     resource('posts', 'PostsController', ['only' => ['index', 'show']]);
 });
