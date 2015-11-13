@@ -305,6 +305,7 @@ nav .brand-logo {
   font-weight: 400;
   color: #212121;
   margin-bottom: 7px;
+  display: block;
 }
 .card-recipe .card-content .card-date {
   font-size: 16px;
