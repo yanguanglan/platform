@@ -213,6 +213,14 @@ nav .brand-logo {
   margin: 50px 0;
 }
 
+#lesson-header {
+  background-color: #fbc02d;
+  color: #fff;
+}
+#lesson-header h1 {
+  margin: 50px 0;
+}
+
 #post-header {
   background-color: #fbc02d;
   color: #fff;

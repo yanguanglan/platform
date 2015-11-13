@@ -41,6 +41,11 @@ class AppServiceProvider extends ServiceProvider {
 		);
 
 		$this->app->bind(
+			'App\Repositories\Lesson\LessonInterface',
+			'App\Repositories\Lesson\LessonRepository'
+		);
+
+		$this->app->bind(
 			'App\Repositories\Post\PostInterface',
 			'App\Repositories\Post\PostRepository'
 		);

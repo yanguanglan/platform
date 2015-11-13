@@ -17,7 +17,17 @@ class SerieRepository extends AbstractRepository implements SerieInterface
     public function index()
     {
         $models = $this->model
-        ->with('recipes')
+        ->with('lessons')
+        ->get();
+
+        return $models;
+    }
+
+    public function latest()
+    {
+        $models = $this->model
+        ->orderBy('updated_at', 'desc')
+        ->take(3)
         ->get();
 
         return $models;
@@ -27,7 +37,9 @@ class SerieRepository extends AbstractRepository implements SerieInterface
     {
         $model = $this->model
         ->where('uuid', $uuid)
-        ->with('recipes')
+        ->with(['lessons' => function($q){
+            $q->orderBy('order');
+        }])
         ->firstOrFail();
 
         return $model;
