@@ -1,0 +1,47 @@
+<div id="lesson-header">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1>{{lessonCtl.lesson.title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="lesson">
+    <div class="container">
+        <div class="row">
+            <div class="col l9 m9 s12">
+                <!-- lesson -->
+                <div class="card">
+                    <!-- Markdown -->
+                    <div class="card-content markdown-body" markdown-to-html="lessonCtl.lesson.content"></div>
+                </div>
+
+                <!-- Disqus Comments -->
+                <div class="card">
+                    <div class="card-content">
+                        <dir-disqus disqus-shortname="angularjs-lessons" disqus-identifier="{{ lessonCtl.lesson.uuid }}" disqus-url="http://localhost:8000/#!/lessons/{{ lessonCtl.lesson.uuid }}">
+                        </dir-disqus>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col l3 m3 s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title black-text">Details</span>
+                        <ul class="collection">
+                            <li class="collection-item">
+                                <strong>Version</strong> {{lessonCtl.serie.version}}
+                            </li>
+                            <li class="collection-item">
+                                <strong>Updated</strong> {{lessonCtl.lesson.human_read_updated_at}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

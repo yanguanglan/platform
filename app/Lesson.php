@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Serie extends Model {
+class Lesson extends Model {
 
 	protected $guarded = ['id', 'created_at', 'updated_at'];
 
@@ -18,9 +18,9 @@ class Serie extends Model {
 		return $this->updated_at->diffForHumans();
 	}
 
-	public function lessons()
+	public function serie()
 	{
-		return $this->hasMany('App\Lesson');
+		return $this->belongsTo('App\Serie');
 	}
 
 }

@@ -8,6 +8,8 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
     resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
     get('recipes-latest', 'RecipesController@latest');
     resource('series', 'SeriesController', ['only' => ['index', 'show']]);
+    get('series-latest', 'SeriesController@latest');
+    resource('lessons', 'LessonsController', ['only' => ['show']]);
     resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
     resource('posts', 'PostsController', ['only' => ['index', 'show']]);
 });

@@ -10,6 +10,9 @@ recipesApp
                 resolve: {
                     recipes: function(Recipe) {
                         return Recipe.latest();
+                    },
+                    series: function(Serie) {
+                        return Serie.latest();
                     }
                 }
             })
@@ -90,6 +93,27 @@ recipesApp
                     }
                 }
             })
+            .when('/series/:uuid/lessons', {
+                controller: 'SerieController as serieCtl',
+                templateUrl: 'js/partials/series/show.html',
+                resolve: {
+                    serie: function(Serie, $route) {
+                        return Serie.get($route.current.params.uuid);
+                    }
+                }
+            })
+            .when('/series/:serieID/lessons/:lessonID', {
+                controller: 'LessonController as lessonCtl',
+                templateUrl: 'js/partials/lessons/show.html',
+                resolve: {
+                    lesson: function(Lesson, $route) {
+                        return Lesson.get($route.current.params.lessonID);
+                    },
+                    serie: function(Serie, $route) {
+                        return Serie.get($route.current.params.serieID);
+                    }
+                }
+            })
             .when('/blog', {
                 controller: 'BlogController as blogCtl',
                 templateUrl: 'js/partials/posts/index.html',
@@ -119,9 +143,10 @@ recipesApp
                 redirectTo: '/'
             });
     })
-    .controller('HomeController', ['recipes', function(recipes) {
+    .controller('HomeController', ['recipes', 'series', function(recipes, series) {
         var homeCtl = this;
         homeCtl.recipes = recipes;
+        homeCtl.series = series;
     }])
     .controller('AboutController', [function() {
         var aboutCtl = this;
@@ -216,6 +241,15 @@ recipesApp
     .controller('SeriesController', ['series', function(series) {
         var seriesCtl = this;
         seriesCtl.series = series;
+    }])
+    .controller('SerieController', ['serie', function(serie) {
+        var serieCtl = this;
+        serieCtl.serie = serie;
+    }])
+    .controller('LessonController', ['lesson', 'serie', function(lesson, serie) {
+        var lessonCtl = this;
+        lessonCtl.lesson = lesson;
+        lessonCtl.serie = serie;
     }])
     .controller('TopicsController', ['topics', function(topics) {
         var topicsCtl = this;
@@ -379,6 +413,37 @@ recipesApp
                     }, function(err) {
                         $location.path('/error');
                     });
+            },
+            get: function(uuid) {
+                return $http
+                    .get('api/series/' + uuid)
+                    .then(function(data) {
+                        return data.data;
+                    }, function(err) {
+                        $location.path('/error');
+                    });
+            },
+            latest: function() {
+                return $http
+                    .get('api/series-latest')
+                    .then(function(data) {
+                        return data.data;
+                    }, function(err) {
+                        $location.path('/error');
+                    });
+            }
+        };
+    }])
+    .service('Lesson', ['$http', '$location', function($http, $location) {
+        return {
+            get: function(uuid) {
+                return $http
+                    .get('api/lessons/' + uuid)
+                    .then(function(data) {
+                        return data.data;
+                    }, function(err) {
+                        $location.path('/error');
+                    });
             }
         };
     }])
@@ -491,6 +556,12 @@ recipesApp
         return {
             restrict: 'E',
             templateUrl: 'js/partials/recipes/recipe.html'
+        }
+    })
+    .directive('serie', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'js/partials/series/serie.html'
         }
     })
     .directive('codepen', function() {

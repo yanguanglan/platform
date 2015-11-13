@@ -20,6 +20,11 @@ class SeriesController extends Controller
         return $this->serie->index();
     }
 
+    public function latest()
+    {
+        return $this->serie->latest();
+    }
+
     public function show(Request $request, $uuid)
     {
         if ($request->has('views')) {
