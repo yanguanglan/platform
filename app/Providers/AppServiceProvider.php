@@ -51,6 +51,11 @@ class AppServiceProvider extends ServiceProvider {
 		);
 
 		$this->app->bind(
+			'App\Repositories\Serie\SerieInterface',
+			'App\Repositories\Serie\SerieRepository'
+		);
+
+		$this->app->bind(
 			'App\Repositories\Topic\TopicInterface',
 			'App\Repositories\Topic\TopicRepository'
 		);

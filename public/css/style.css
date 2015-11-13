@@ -205,6 +205,14 @@ nav .brand-logo {
   margin: 50px 0;
 }
 
+#serie-header {
+  background-color: #fbc02d;
+  color: #fff;
+}
+#serie-header h1 {
+  margin: 50px 0;
+}
+
 #post-header {
   background-color: #fbc02d;
   color: #fff;

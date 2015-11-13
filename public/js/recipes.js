@@ -13,6 +13,10 @@ recipesApp
                     }
                 }
             })
+            .when('/about', {
+                controller: 'AboutController as aboutCtl',
+                templateUrl: 'js/partials/about.html'
+            })
             .when('/faq', {
                 controller: 'FAQController as faqCtl',
                 templateUrl: 'js/partials/faq.html'
@@ -77,6 +81,15 @@ recipesApp
                     }
                 }
             })
+            .when('/series', {
+                controller: 'SeriesController as seriesCtl',
+                templateUrl: 'js/partials/series/index.html',
+                resolve: {
+                    series: function(Serie) {
+                        return Serie.all();
+                    }
+                }
+            })
             .when('/blog', {
                 controller: 'BlogController as blogCtl',
                 templateUrl: 'js/partials/posts/index.html',
@@ -109,6 +122,9 @@ recipesApp
     .controller('HomeController', ['recipes', function(recipes) {
         var homeCtl = this;
         homeCtl.recipes = recipes;
+    }])
+    .controller('AboutController', [function() {
+        var aboutCtl = this;
     }])
     .controller('FAQController', [function() {
         var faqCtl = this;
@@ -196,6 +212,10 @@ recipesApp
         var recipeCtl = this;
         recipeCtl.recipe = recipe;
         recipeCtl.topics = topics;
+    }])
+    .controller('SeriesController', ['series', function(series) {
+        var seriesCtl = this;
+        seriesCtl.series = series;
     }])
     .controller('TopicsController', ['topics', function(topics) {
         var topicsCtl = this;
@@ -336,6 +356,24 @@ recipesApp
             latest: function() {
                 return $http
                     .get('api/recipes-latest')
+                    .then(function(data) {
+                        return data.data;
+                    }, function(err) {
+                        $location.path('/error');
+                    });
+            }
+        };
+    }])
+    .service('Serie', ['$http', '$location', function($http, $location) {
+        return {
+            all: function(sortBy) {
+                var sortBy = sortBy || null;
+                return $http
+                    .get('api/series', {
+                        params: {
+                            sortBy: sortBy
+                        }
+                    })
                     .then(function(data) {
                         return data.data;
                     }, function(err) {
