@@ -18,11 +18,10 @@
                     <div class="card-content markdown-body" markdown-to-html="lessonCtl.lesson.content"></div>
                 </div>
 
-                <!-- Disqus Comments -->
                 <div class="card">
-                    <div class="card-content">
-                        <dir-disqus disqus-shortname="angularjs-lessons" disqus-identifier="{{ lessonCtl.lesson.uuid }}" disqus-url="http://localhost:8000/#!/lessons/{{ lessonCtl.lesson.uuid }}">
-                        </dir-disqus>
+                    <div class="card-content clear">
+                        <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous}}" class="btn left custom-red" ng-if="lessonCtl.previousPageExists()"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
+                        <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next}}" class="btn right custom-red" ng-if="lessonCtl.nextPageExists()"><i class="mdi-navigation-chevron-right right"></i> Next</a>
                     </div>
                 </div>
             </div>
@@ -38,6 +37,18 @@
                             <li class="collection-item">
                                 <strong>Updated</strong> {{lessonCtl.lesson.human_read_updated_at}}
                             </li>
+                            <li class="collection-item">
+                                <a ng-href="{{lessonCtl.serie.github}}" class="btn btn-block black" target="_blank"><i class="fa fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title black-text">Lessons</span>
+                        <ul class="collection">
+                            <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lesson.uuid}}" class="collection-item" ng-class="lessonCtl.activeLesson(lesson.uuid, lessonCtl.lesson.uuid)" ng-repeat="lesson in lessonCtl.serie.lessons">{{$index + 1}}. {{lesson.title}}</a>
                         </ul>
                     </div>
                 </div>

@@ -48,6 +48,12 @@ h4 {
   color: #d0021b !important;
 }
 
+.clear:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
 .beta, .ibeta, .fbeta {
   position: relative;
 }

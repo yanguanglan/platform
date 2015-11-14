@@ -14,7 +14,11 @@ h4
 
 .text-red
 	color: $custom-red !important
-
+.clear
+	&:after
+		display: table
+		clear: both
+		content: ''
 // CSS FOR BETA SYMBOL
 .beta,.ibeta,.fbeta
 	position: relative
