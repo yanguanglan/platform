@@ -209,6 +209,93 @@ nav .brand-logo {
 }
 #recipe-header h1 {
   margin: 50px 0;
+  margin: 40px 0 0 0;
+}
+#recipe-header p {
+  font-size: 16px;
+  margin: 5px 0 40px 0;
+}
+#recipe-header p i {
+  margin: 3px;
+}
+#recipe-header .row {
+  margin-bottom: 0;
+}
+
+.gray-banner {
+  background-color: #9B9B9B;
+  height: 65px;
+  margin-bottom: 30px;
+}
+.gray-banner nav {
+  background-color: #9B9B9B;
+  box-shadow: none;
+}
+.gray-banner nav ul i {
+  display: inline-block;
+  font-size: 24px;
+  vertical-align: top;
+  padding-right: 5px;
+}
+.gray-banner nav ul li {
+  text-align: center;
+  min-width: 80px;
+  font-size: 16px;
+}
+.gray-banner nav ul li .sort {
+  width: 80px !important;
+}
+.gray-banner nav ul li:hover {
+  background-color: #9B9B9B;
+}
+.gray-banner nav ul li:hover a {
+  font-size: 15px;
+  color: #4a4a4a;
+}
+.gray-banner nav ul .active {
+  color: #d0021b;
+}
+.gray-banner nav input {
+  display: inline-block;
+  width: 190px;
+  height: 30px;
+  margin-top: 17px;
+  color: #2b2b2b;
+}
+.gray-banner nav input:focus {
+  outline-color: #727272;
+  outline-width: 4px;
+}
+@media only screen and (min-width: 380px) {
+  .gray-banner nav input {
+    width: 250px;
+  }
+}
+.gray-banner .sort-button {
+  display: inline-block;
+}
+.gray-banner #nav-mobile {
+  display: block;
+}
+@media only screen and (max-width: 760px) {
+  .gray-banner #nav-mobile {
+    display: none;
+  }
+}
+.gray-banner .sort-button {
+  line-height: 64px;
+  display: none;
+}
+.gray-banner .sort-button .active {
+  color: #d0021b;
+}
+.gray-banner .sort-button a {
+  font-size: 16px;
+}
+@media only screen and (max-width: 760px) {
+  .gray-banner .sort-button {
+    display: inline-block;
+  }
 }
 
 #serie-header {

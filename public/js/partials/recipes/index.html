@@ -3,21 +3,50 @@
         <div class="row">
             <div class="col s12">
                 <h1>Recipes List</h1>
+                <p>
+                    <span class="recipes-count">132</span>
+                    <i class="mdi-social-school card-icons"></i>Total Recipes
+               </p>
             </div>
         </div>
     </div>
 </div>
 
 <div id="recipes">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <p>Sort By: <a class="waves-effect waves-black btn-flat" ng-click="recipesCtl.sortBy('date')">Date</a> | <a class="waves-effect waves-black btn-flat" ng-click="recipesCtl.sortBy('views')">Views</a> | <a class="waves-effect waves-black btn-flat"
-                    ng-click="recipesCtl.sortBy('likes')">Likes</a>
-                    <input ng-model="recipesCtl.searchFilter" class="pull-right" placeholder="Search..." />
-                </p>
+    <div class="gray-banner">
+        <div class="container">
+            <div class="row">
+                    <nav>
+                        <div class="nav-wrapper">
+                                <input ng-model="recipesCtl.searchFilter" class="pull-right" placeholder="Search..." />
+
+                                <ul id="nav-mobile" class="left">
+                                   <li class"sort"><i class="mdi-action-list short-list"></i>Sort By:</li> 
+                                    <li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('version')">Version</a></li>
+                                </ul>
+                    
+                                <div class="sort-button">
+                                    <ul>
+                                        <li>
+                                            <a class="dropdown-button" href="#!" data-activates="dropdown1">Sort By<i class="mdi-hardware-keyboard-arrow-down"></i></a>
+                                            <ul id='dropdown1' class='dropdown-content'>
+                                                <li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
+                                                <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
+                                                <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
+                                                <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('version')">Version</a></li>
+                                            </ul>   
+                                        </li>
+                                    </ul> 
+                                </div>
+                        </div>
+                    </nav>
             </div>
         </div>
+    </div>
+        <div class="container">
         <div class="row">
             <div class="col l9 s12">
                 <div class="row" masonry reload-on-resize load-images="false">
