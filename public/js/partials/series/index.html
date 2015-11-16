@@ -1,23 +1,23 @@
 <div id="serie-header">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h1>Series List</h1>
-                 <p>
-                    <span class="recipes-count">12</span>
-                    <i class="mdi-action-extension card-icons"></i>Total Series
-                 </p>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1>Series List</h1>
+				<p>
+					<span class="recipes-count">{{seriesCtl.series.length}}</span>
+					<i class="mdi-action-extension card-icons"></i>Total Series
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="series">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <serie class="col l4 m6 s12" ng-repeat="serie in seriesCtl.series"></serie>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<serie class="col l4 m6 s12" ng-repeat="serie in seriesCtl.series"></serie>
+			</div>
+		</div>
+	</div>
 </div>

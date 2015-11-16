@@ -1,89 +1,89 @@
 <div id="recipe-header">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h1>Recipes List</h1>
-                <p>
-                    <span class="recipes-count">132</span>
-                    <i class="mdi-social-school card-icons"></i>Total Recipes
-               </p>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1>Recipes List</h1>
+				<p>
+					<span class="recipes-count">{{recipesCtl.recipes.length}}</span>
+					<i class="mdi-social-school card-icons"></i>Total Recipes
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="recipes">
-    <div class="gray-banner">
-        <div class="container">
-            <div class="row">
-                    <nav>
-                        <div class="nav-wrapper">
-                                <input ng-model="recipesCtl.searchFilter" class="pull-right" placeholder="Search..." />
+	<div class="gray-banner">
+		<div class="container">
+			<div class="row">
+				<nav>
+					<div class="nav-wrapper">
+						<input ng-model="recipesCtl.searchFilter" class="pull-right" placeholder="Search..." />
 
-                                <ul id="nav-mobile" class="left">
-                                   <li class"sort"><i class="mdi-action-list short-list"></i>Sort By:</li> 
-                                    <li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
-                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
-                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
-                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('version')">Version</a></li>
-                                </ul>
-                    
-                                <div class="sort-button">
-                                    <ul>
-                                        <li>
-                                            <a class="dropdown-button" href="#!" data-activates="dropdown1">Sort By<i class="mdi-hardware-keyboard-arrow-down"></i></a>
-                                            <ul id='dropdown1' class='dropdown-content'>
-                                                <li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
-                                                <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
-                                                <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
-                                                <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('version')">Version</a></li>
-                                            </ul>   
-                                        </li>
-                                    </ul> 
-                                </div>
-                        </div>
-                    </nav>
-            </div>
-        </div>
-    </div>
-        <div class="container">
-        <div class="row">
-            <div class="col l9 s12">
-                <div class="row" masonry reload-on-resize load-images="false">
-                    <recipe class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe>
-                </div>
+						<ul id="nav-mobile" class="left">
+							<li class "sort"><i class="mdi-action-list short-list"></i>Sort By:</li>
+							<li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
+							<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
+							<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
+							<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('version')">Version</a></li>
+						</ul>
 
-                <div class="row">
-                    <div class="col s12 center">
-                        <ul class="pagination">
-                            <li class="waves-effect" ng-class="recipesCtl.previousPageDisabled()">
-                                <a href="javascript:void(0)" ng-click="recipesCtl.stepDown()"><i class="mdi-navigation-chevron-left"></i></a>
-                            </li>
-                            <li class="waves-effect" ng-repeat="n in recipesCtl.range(1, recipesCtl.pagesNumber)" ng-class="{'active red' : recipesCtl.currentPage == n - 1}">
-                                <a href="javascript:void(0)" ng-click="recipesCtl.step(n)">{{n}}</a>
-                            </li>
-                            <li class="waves-effect" ng-class="recipesCtl.nextPageDisabled()">
-                                <a href="javascript:void(0)" ng-click="recipesCtl.stepUp()"><i class="mdi-navigation-chevron-right"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+						<div class="sort-button">
+							<ul>
+								<li>
+									<a class="dropdown-button" href="#!" data-activates="dropdown1">Sort By<i class="mdi-hardware-keyboard-arrow-down"></i></a>
+									<ul id='dropdown1' class='dropdown-content'>
+										<li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
+										<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
+										<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
+										<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('version')">Version</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col l9 s12">
+				<div class="row" masonry reload-on-resize load-images="false">
+					<recipe class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe>
+				</div>
 
-            <div class="col l3 hide-on-med-and-down">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Topics</span>
-                        <ul class="collection">
-                            <a ng-href="#!/topics/{{topic.uuid}}/recipes" class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" ng-repeat="topic in recipesCtl.topics">
-                                <div>{{topic.title}}
-                                    <span class="badge custom-red white-text">{{topic.recipes.length}}</span>
-                                </div>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="row">
+					<div class="col s12 center">
+						<ul class="pagination">
+							<li class="waves-effect" ng-class="recipesCtl.previousPageDisabled()">
+								<a href="javascript:void(0)" ng-click="recipesCtl.stepDown()"><i class="mdi-navigation-chevron-left"></i></a>
+							</li>
+							<li class="waves-effect" ng-repeat="n in recipesCtl.range(1, recipesCtl.pagesNumber)" ng-class="{'active red' : recipesCtl.currentPage == n - 1}">
+								<a href="javascript:void(0)" ng-click="recipesCtl.step(n)">{{n}}</a>
+							</li>
+							<li class="waves-effect" ng-class="recipesCtl.nextPageDisabled()">
+								<a href="javascript:void(0)" ng-click="recipesCtl.stepUp()"><i class="mdi-navigation-chevron-right"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col l3 hide-on-med-and-down">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Topics</span>
+						<ul class="collection">
+							<a ng-href="#!/topics/{{topic.uuid}}/recipes" class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" ng-repeat="topic in recipesCtl.topics">
+								<div>{{topic.title}}
+									<span class="badge custom-red white-text">{{topic.recipes.length}}</span>
+								</div>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
