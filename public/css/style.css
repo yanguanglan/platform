@@ -217,6 +217,14 @@ nav .brand-logo {
 }
 #serie-header h1 {
   margin: 50px 0;
+  margin: 40px 0 0 0;
+}
+#serie-header p {
+  font-size: 16px;
+  margin: 5px 0 40px 0;
+}
+#serie-header i {
+  margin: 3px;
 }
 
 #lesson-header {
