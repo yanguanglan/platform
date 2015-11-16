@@ -13,6 +13,11 @@ class Serie extends Model {
 		return $this->created_at->diffForHumans();
 	}
 
+    public function getImageAttribute()
+	{
+		return asset('img/series/' . $this->attributes['image']);
+	}
+
 	public function getHumanReadUpdatedAtAttribute()
 	{
 		return $this->updated_at->diffForHumans();

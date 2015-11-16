@@ -26,6 +26,7 @@ class SerieRepository extends AbstractRepository implements SerieInterface
     public function latest()
     {
         $models = $this->model
+        ->with('lessons')
         ->orderBy('updated_at', 'desc')
         ->take(3)
         ->get();
