@@ -182,6 +182,10 @@ nav ul li.active {
   background-color: #d0021b;
 }
 
+nav ul li {
+  height: 64px;
+}
+
 nav .brand-logo {
   padding-right: 28px;
 }
