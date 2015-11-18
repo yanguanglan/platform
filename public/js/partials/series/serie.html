@@ -3,12 +3,14 @@
         <img class="version-logo" ng-if="serie.release == 1" ng-src="img/angular1.svg" alt="angular version 1">
         <img class="version-logo" ng-if="serie.release == 2" ng-src="img/angular2.svg" alt="angular version 2">
         <img class="serie-card-title" ng-src="{{serie.image}}" alt="serie portofolio">
-        <div class="lessons-count">
-            <span>{{serie.lessons.length}}</span>
-        </div>
-        <a class="lessons-link">Lessons
+<!-- a tag -->
+        <a class="lessons-link" ng-href="#!/series/{{serie.uuid}}/lessons">
+            <span class="lessons-count">{{serie.lessons.length}}</span>
+        Lessons
         </a>
+<!-- a tag -->
     </div>
+
     <div class="card-content">
         <a class="card-title" ng-href="#!/series/{{serie.uuid}}/lessons">{{serie.title}}</a>
         <span class="card-date">{{serie.updated_at | dateToISO | date:'MMMM d y, h:mm a'}}</span>

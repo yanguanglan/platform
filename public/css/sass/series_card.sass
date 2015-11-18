@@ -18,33 +18,28 @@
             margin: auto
             max-width: 90%
             padding-top: 60px
-        .lessons-count
-            display: inline-block
-            position: absolute
-            width: 24px
-            height: 24px
-            bottom: 17px
-            left: 16px
-            padding: 2px
-            text-align: center
-            background-color: #fff
-            font-weight: 900
-            font-size: 14px
-            +border-radius(50%)
-            .v1
-                display: inline-block
-                margin: 0 auto
-                color: #2b2b2b
-            .v2
-                color: #0853A9
         .lessons-link
             display: inline-block
             position: absolute
             bottom: 16px
             color: #fff
-            left: 42px
+            left: 16px
             font-size: 16px
             font-weight: 400
+            height: 24px
+        .lessons-count
+            display: inline-block
+            width: 24px
+            height: 24px
+            padding-top: 2px
+            text-align: center
+            background-color: #fff
+            font-weight: 900
+            font-size: 14px
+            +border-radius(50%)
+            color: #2b2b2b
+
+
     .card-content
         padding: 24px 16px
         .card-title
@@ -79,5 +74,7 @@
         .card-banner
             background: #2b2b2b
     &.v2
+        .lessons-count
+            color: #0C5EB9
         .card-banner
             +background-image(linear-gradient(to bottom left, #0E66C4 0%, #044695 100%))
