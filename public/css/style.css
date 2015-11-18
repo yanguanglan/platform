@@ -217,14 +217,14 @@ nav .brand-logo {
 #recipe-header p i {
   margin: 3px;
 }
-#recipe-header .row {
+#recipe-header .head-row {
   margin-bottom: 0;
 }
 
 .gray-banner {
   background-color: #9B9B9B;
   height: 65px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .gray-banner nav {
   background-color: #9B9B9B;
