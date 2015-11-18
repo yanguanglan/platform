@@ -4,6 +4,38 @@ footer
 		margin-top: 0
 		.footer-copyright
 			background-color: $dark-black
+			.social-icons
+				display: inline-block
+				margin: 20px auto
+				list-style: none
+				padding: 0
+				font-size: 22px
+				li
+					margin-left: 20px
+					display: inline-block
+					.social
+						display: inline-block
+						position: relative
+						width: 25px
+						height: 25px
+						&:before
+							position: absolute
+							font-family: FontAwesome
+							color: white
+							+translate(-50%, -50%)
+							+transition(all 0.2s linear)
+						&:hover
+							&:before
+								color: $custom-red
+						&.tw
+							&:before
+								content: "\f099"
+						&.gt
+							&:before
+								content: "\f09b"
+						&.cp
+							&:before
+								content: "\f1cb"
 	.logo
 		width: 20px
 		height: auto

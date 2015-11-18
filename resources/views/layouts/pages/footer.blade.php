@@ -42,6 +42,13 @@
 			Angular<span class="text-red">JS</span> Recipes
 			{{--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>--}}
 			</span>
+			<div class="right">
+				<ul class="social-icons">
+					<li><a href="#" rel="" title="" class="social tw"></a></li>
+					<li><a href="#" rel="" title="" class="social gt"></a></li>
+					<li><a href="#" rel="" title="" class="social cp"></a></li>
+				</ul>
+			</div>
 		</div>
 
 	</div>
