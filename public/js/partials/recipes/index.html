@@ -47,8 +47,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col l9 s12">
-				<div class="row" masonry reload-on-resize load-images="false">
-					<recipe class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe>
+				<div class="row">
+					<recipe class="col s12 m6 l6" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe>
 				</div>
 
 				<div class="row">
