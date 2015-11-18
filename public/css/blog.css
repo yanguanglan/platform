@@ -1,3 +1,4 @@
+@charset "UTF-8";
 h1 {
   font-size: 40px;
 }
@@ -251,6 +252,48 @@ footer.page-footer {
 }
 footer.page-footer .footer-copyright {
   background-color: #212121;
+}
+footer.page-footer .footer-copyright .social-icons {
+  display: inline-block;
+  margin: 20px auto;
+  list-style: none;
+  padding: 0;
+  font-size: 22px;
+}
+footer.page-footer .footer-copyright .social-icons li {
+  margin-left: 20px;
+  display: inline-block;
+}
+footer.page-footer .footer-copyright .social-icons li .social {
+  display: inline-block;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+footer.page-footer .footer-copyright .social-icons li .social:before {
+  position: absolute;
+  font-family: FontAwesome;
+  color: white;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+footer.page-footer .footer-copyright .social-icons li .social:hover:before {
+  color: #d0021b;
+}
+footer.page-footer .footer-copyright .social-icons li .social.tw:before {
+  content: "";
+}
+footer.page-footer .footer-copyright .social-icons li .social.gt:before {
+  content: "";
+}
+footer.page-footer .footer-copyright .social-icons li .social.cp:before {
+  content: "";
 }
 footer .logo {
   width: 20px;
