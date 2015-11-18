@@ -185,6 +185,9 @@ nav ul li.active {
 nav ul li {
   height: 64px;
 }
+nav ul li a {
+  margin-top: -1px;
+}
 
 nav .brand-logo {
   padding-right: 28px;
