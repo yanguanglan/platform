@@ -6,7 +6,6 @@
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/materialize/dist/css/materialize.min.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/github-markdown-css/github-markdown.css')}}" media="screen,projection" />
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css">
 	<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" media="screen,projection" />
 	<title>AngularJS Recipes</title>
 	<base href="{{url('/')}}" />

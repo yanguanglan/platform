@@ -44,9 +44,9 @@
 			</span>
 			<div class="right">
 				<ul class="social-icons">
-					<li><a href="#" rel="" title="" class="social tw"></a></li>
-					<li><a href="#" rel="" title="" class="social gt"></a></li>
-					<li><a href="#" rel="" title="" class="social cp"></a></li>
+					<li><a href="https://twitter.com/angular_recipes" target="_blank" title="Twitter" class="social tw"></a></li>
+					<li><a href="https://github.com/angularjs-recipes" target="_blank" title="Github" class="social gt"></a></li>
+					<li><a href="http://codepen.io/angularjs-recipes/" target="_blank" title="Codepen" class="social cp"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -186,9 +186,6 @@
 <script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-materialize/src/angular-materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angularUtils-disqus/dirDisqus.js')}}"></script>
-<script type="text/javascript" src="{{asset('bower_components/masonry/dist/masonry.pkgd.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('bower_components/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('bower_components/angular-masonry/angular-masonry.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/recipes.js')}}"></script>
 </body>
 </html>

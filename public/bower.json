@@ -25,7 +25,6 @@
     "angular-messages": "~1.4.7",
     "ng-showdown": "~1.0.1",
     "github-markdown-css": "~2.1.0",
-    "angularUtils-disqus": "angular-utils-disqus#~0.4.0",
-    "angular-masonry": "~0.13.0"
+    "angularUtils-disqus": "angular-utils-disqus#~0.4.0"
   }
 }
