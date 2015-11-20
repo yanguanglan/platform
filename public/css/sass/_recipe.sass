@@ -12,10 +12,24 @@
 		margin: 44px 0 44px 0
 	.no-margin-bottom
 		margin-bottom: 0
+#search
+	background-color: black
+	display: block
+	margin-bottom: 20px
+	input
+		&:focus
+			border-bottom: 1px solid $custom-red
+			box-shadow: 0 1px 0 0 $custom-red
 .gray-banner
 	background-color: #9B9B9B
 	height: 65px
 	margin-bottom: 20px
+	#toggle-search
+		height: 65px
+		display: block
+		padding: 0 15px
+		&:hover
+			background-color: $custom-red
 	nav
 		background-color: #9B9B9B
 		box-shadow: none

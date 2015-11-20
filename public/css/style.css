@@ -232,10 +232,28 @@ nav .brand-logo {
   margin-bottom: 0;
 }
 
+#search {
+  background-color: black;
+  display: block;
+  margin-bottom: 20px;
+}
+#search input:focus {
+  border-bottom: 1px solid #d0021b;
+  box-shadow: 0 1px 0 0 #d0021b;
+}
+
 .gray-banner {
   background-color: #9B9B9B;
   height: 65px;
   margin-bottom: 20px;
+}
+.gray-banner #toggle-search {
+  height: 65px;
+  display: block;
+  padding: 0 15px;
+}
+.gray-banner #toggle-search:hover {
+  background-color: #d0021b;
 }
 .gray-banner nav {
   background-color: #9B9B9B;
