@@ -216,14 +216,17 @@ nav .brand-logo {
   color: #fff;
 }
 #recipe-header h1 {
-  margin: 40px 0;
+  margin: 53px 0;
 }
 #recipe-header p {
   font-size: 16px;
-  margin: -35px 0 40px 0;
+  margin: -52px 0 40px 0;
 }
 #recipe-header p i {
   margin: 3px;
+}
+#recipe-header .recipe-list-title {
+  margin: 44px 0 44px 0;
 }
 #recipe-header .no-margin-bottom {
   margin-bottom: 0;
@@ -319,12 +322,12 @@ nav .brand-logo {
 }
 #serie-header .serie-card-title {
   display: block;
-  margin: 42px 0;
-  height: 40px;
+  margin: 53px 0;
+  height: 44px;
 }
 #serie-header p {
   font-size: 16px;
-  margin: -35px 0 40px 0;
+  margin: -44px 0 40px 0;
 }
 #serie-header i {
   margin: 3px;
