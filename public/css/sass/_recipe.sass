@@ -1,3 +1,5 @@
+@import colors
+
 #recipe-header
 	background-color: $custom-red
 	color: #fff
@@ -13,72 +15,160 @@
 		margin: 44px 0 44px 0
 	.no-margin-bottom
 		margin-bottom: 0
-#search
-	background-color: black
-	display: block
-	input
-		box-shadow: none
-		&:focus
-			border-bottom: 1px solid $custom-red
+	.no-padding-left
+		padding-left: 0
 
-.gray-banner
-	background-color: #9B9B9B
-	height: 65px
-	margin-bottom: 0px
-	#toggle-search
-		height: 65px
+	// search bar
+	#search
+		background-color: $dark-black
 		display: block
-		padding: 0 15px
+		input
+			box-shadow: none
+			&:focus
+				border-bottom: 1px solid $custom-red
+	//end of CSS for search bar
+
+	//search button
+	#toggle-search
+		height: 64px
+		display: block
+		padding: 5px 15px
+		i
+			font-size: 36px
+			color: white
 		&:hover
 			background-color: $custom-red
-	nav
-		background-color: #9B9B9B
-		box-shadow: none
-		ul
+		@media only screen and (max-width : 380px)
+			padding: 12px 9px
 			i
-				display: inline-block
-				font-size: 24px
-				vertical-align: top
-				padding-right: 5px
-			li
-				text-align: center
-				min-width: 80px
-				font-size: 16px
-				.sort
-					width: 80px !important
-				&:hover
-					background-color: #9B9B9B
-					a
-						font-size: 15px
-						color: #4a4a4a
-			.active
-				color: #d0021b
-		input
-			display: inline-block
-			width: 190px
-			height: 30px
-			margin-top: 17px
-			color: #2b2b2b
-			border: none
-			padding-left: 5px
-			+border-radius(2px)
-			&:focus
-				outline-color: #727272
-				outline-width: 3px
-			@media only screen and (min-width : 380px)
-				width: 250px
-	.sort-button
+				font-size: 25px
+
+
+	//End of CSS search button
+
+	//Check box for Angular version
+	.check-v-angular
+		margin-left: 5px
 		display: inline-block
-	#nav-mobile
+		height: 64px
+		padding-top: 20px
+		p
+			display: inline-block
+			padding-left: 5px
+			font-size: 16px
+			margin: 0 auto
+		@media only screen and (max-width : 380px)
+			font-size: 13px
+
+		label
+			padding-left: 23px
+			color: white
+			font-size: 16px
+			@media only screen and (max-width : 380px)
+				font-size: 13px
+		.filled-in:checked+label:after
+			background-color: $custom-red
+			border: 2px solid $custom-red
+		.filled-in:checked+label:before
+			border-right: 2px solid white
+			border-bottom: 2px solid white
+		.filled-in:not(:checked)+label:after
+			background-color: white
+			border: 2px solid #838383
+	// End CSS Check box for Angular version
+
+.gray-banner
+	background-color: $custom-gray
+	height: 64px
+	margin-bottom: 0px
+	//Sort By: Single 3 Buttons
+	#sort-list
+		display: inline-block
+		margin-left: 35px
+	.btn-flat
+		background-color: white
+		padding: 0px 15px
+		color: $dark-black
+		&:hover
+			background-color: $custom-red
+			color: white
+	ul
+		li
+			display: inline-block
+			font-size: 16px
+			&:hover
+				background-color: $custom-gray
+		.active
+			color: white
+			background-color: $custom-red
+		li+li
+			margin-left: 10px
+		li
+			&:first-child
+				margin-left: 14px
+	#sort-list
 		display: block
 		@media only screen and (max-width : 760px)
 			display: none
+			//End CSS for Sort By: Single 3 Buttons
+
 	.sort-button
-		line-height: 64px
-		.active
-			color: #d0021b
-		a
-			font-size: 16px
 		display: none
+		line-height: 64px
+		height: 64px
+		width: 90px
+		@media only screen and (max-width : 380px)
+			font-size: 13px
+			width: 75px
+		ul
+			margin-top: 0
+			li
+				height: 64px
+				text-align: center
+		.dropdown-button
+			margin: 0
+			display: inline-block
+			width: 90px
+			height: 64px
+			font-size: 16px
+			color: white
+			height: 64px
+			@media only screen and (max-width : 380px)
+				font-size: 13px
+				width: 75px
+			&ul
+				margin: 0
+			a
+				height: 64px
+
+			&:hover
+				background-color: $custom-red
+			span
+				display: inline-block
+				height: 64px
+			// i
+			// 	display: inline-block
+		#dropdown1
+			background-color: white
+			padding: 0px
+			li
+				display: list-item
+				margin-left: 0px
+				text-align: left
+				background-color: white
+				border-bottom: 1px solid #F2F2F2
+				height: 64px
+				a
+					text-align: center
+					height: 65px
+					color: $dark-black
+					padding: 22px
+					&:hover
+						color: white
+			@media only screen and (max-width : 380px)
+				width: 75px
+			.active
+				color: white
+			// color: #d0021b
 		@media only screen and (max-width : 760px)
 			display: inline-block
