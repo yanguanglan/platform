@@ -167,7 +167,9 @@ recipesApp
         var recipesCtl = this;
         recipesCtl.recipes = recipes;
         recipesCtl.topics = topics;
+        recipesCtl.showSearchForm = false;
         recipesCtl.searchFilter = '';
+        recipesCtl.sortByType = 'date';
         recipesCtl.pageItems = 10;
         recipesCtl.currentPage = 0;
         recipesCtl.range = function(min, max, step) {
@@ -209,6 +211,7 @@ recipesApp
 
         recipesCtl.sortBy = function(type) {
             if (type == 'date' || type == 'views' || type == 'likes') {
+                recipesCtl.sortByType = type;
                 Recipe.all(type).then(function(data) {
                     recipesCtl.recipes = data;
                 });
@@ -381,46 +384,54 @@ recipesApp
             }
         };
     }])
-    .service('Recipe', ['$http', '$location', function($http, $location) {
-        return {
-            all: function(sortBy) {
-                var sortBy = sortBy || null;
-                return $http
-                    .get('api/recipes', {
-                        params: {
-                            sortBy: sortBy
-                        }
-                    })
-                    .then(function(data) {
-                        return data.data;
-                    }, function(err) {
-                        $location.path('/error');
-                    });
-            },
-            get: function(uuid, views) {
-                var views = views || null;
-                return $http
-                    .get('api/recipes/' + uuid, {
-                        params: {
-                            views: views
-                        }
-                    })
-                    .then(function(data) {
-                        return data.data;
-                    }, function(err) {
-                        $location.path('/error');
-                    });
-            },
-            latest: function() {
-                return $http
-                    .get('api/recipes-latest')
-                    .then(function(data) {
-                        return data.data;
-                    }, function(err) {
-                        $location.path('/error');
-                    });
-            }
+    .factory('Recipe', ['$http', '$location', function($http, $location) {
+        var service = {
+            all: all,
+            get: get,
+            latest: latest
         };
+
+        return service;
+
+        function all(sortBy) {
+            var sortBy = sortBy || null;
+            return $http
+                .get('api/recipes', {
+                    params: {
+                        sortBy: sortBy
+                    }
+                })
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    $location.path('/error');
+                });
+        };
+
+        function get(uuid, views) {
+            var views = views || null;
+            return $http
+                .get('api/recipes/' + uuid, {
+                    params: {
+                        views: views
+                    }
+                })
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    $location.path('/error');
+                });
+        };
+
+        function latest() {
+            return $http
+                .get('api/recipes-latest')
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    $location.path('/error');
+                });
+        }
     }])
     .service('Serie', ['$http', '$location', function($http, $location) {
         return {
