@@ -10,20 +10,18 @@
             </div>
         </div>
     </div>
+
     <div class="gray-banner">
         <div class="container">
             <div class="row">
                 <div class="col s12 no-padding-left">
-                    <!-- search button -->
+
                     <a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="recipesCtl.showSearchForm = !recipesCtl.showSearchForm">
                         <i class="large mdi-action-search"></i>
                     </a>
-                    <!-- search button -->
 
                     <form action="#" class="check-v-angular left">
-                        <p>
-                            Angular:
-                        </p>
+                        <p>Angular:</p>
                         <p>
                             <input type="checkbox" class="filled-in" id="Angular-v-1" checked="checked" />
                             <label for="Angular-v-1">v.1</label>
@@ -46,10 +44,9 @@
                             <li>
                                 <a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Sort By<i class="mdi-navigation-arrow-drop-down"></i></a>
                                 <ul id='dropdown1' class='dropdown-content'>
-                                    <li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')">Date</a></li>
-                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')">Views</a></li>
-                                    <div class="divider"></div>
-                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')">Likes</a></li>
+                                    <li><a class="waves-effect waves-black active" ng-click="recipesCtl.sortBy('date')" ng-class="{active: recipesCtl.sortByType == 'date'}">Date</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')" ng-class="{active: recipesCtl.sortByType == 'views'}">Views</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}">Likes</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -58,15 +55,15 @@
             </div>
         </div>
     </div>
-    <!-- Search Bar -->
+    
     <div class="row white-text no-margin-bottom" id="search" ng-show="recipesCtl.showSearchForm">
         <div class="container">
             <form class="col s12 no-padding-left">
                 <input class="form-control" ng-model="recipesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
+                <a class="clear-button" href="#"><i class="mdi-navigation-cancel"></i></a>
             </form>
         </div>
     </div>
-    <!-- End Search Bar -->
 </div>
 
 <div id="recipes">
