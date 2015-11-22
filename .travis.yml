@@ -9,5 +9,5 @@ before_script:
   - composer install
 
 script:
-    - vendor/bin/codecept run --environment production
+    - vendor/bin/codecept run --env production
     # - vendor/bin/behat --config behat.yml
