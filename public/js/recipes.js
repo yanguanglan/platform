@@ -172,6 +172,10 @@ recipesApp
         recipesCtl.sortByType = 'date';
         recipesCtl.pageItems = 10;
         recipesCtl.currentPage = 0;
+        recipesCtl.toggleSearchForm = function() {
+            recipesCtl.searchFilter = '';
+            recipesCtl.showSearchForm = !recipesCtl.showSearchForm;
+        };
         recipesCtl.clearSearch = function() {
             recipesCtl.searchFilter = '';
         };

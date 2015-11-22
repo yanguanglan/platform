@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col s12 no-padding-left">
 
-                    <a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="recipesCtl.showSearchForm = !recipesCtl.showSearchForm">
+                    <a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="recipesCtl.toggleSearchForm()">
                         <i class="large mdi-action-search"></i>
                     </a>
 
@@ -70,11 +70,11 @@
     <div class="container">
         <div class="row">
             <div class="col l9 s12">
-                <div class="row">
+                <div class="row" ng-if="recipesCtl.filteredRecipes.length">
                     <recipe class="col s12 m6 l6" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe>
                 </div>
 
-                <div class="row">
+                <div class="row" ng-if="recipesCtl.filteredRecipes.length">
                     <div class="col s12 center">
                         <ul class="pagination">
                             <li class="waves-effect" ng-class="recipesCtl.previousPageDisabled()">
@@ -87,6 +87,12 @@
                                 <a href="javascript:void(0)" ng-click="recipesCtl.stepUp()"><i class="mdi-navigation-chevron-right"></i></a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="row" ng-if="!recipesCtl.filteredRecipes.length">
+                    <div class="col s12 center">
+                        <h2>No results found for "{{recipesCtl.searchFilter}}"</h2>
                     </div>
                 </div>
             </div>
