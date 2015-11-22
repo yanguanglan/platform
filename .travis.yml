@@ -14,5 +14,4 @@ before_script:
   # - grunt test
 
 script:
-    # - vendor/bin/codecept run --env production
-    # - vendor/bin/behat --config behat.yml
+    - vendor/bin/phpunit
