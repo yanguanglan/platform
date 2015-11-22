@@ -174,7 +174,7 @@ recipesApp
         recipesCtl.currentPage = 0;
         recipesCtl.v1 = true;
         recipesCtl.v2 = true;
-        recipesCtl.version = true;
+        recipesCtl.version = 'all';
         recipesCtl.toggleVersion = function() {
             var v1 = recipesCtl.v1,
             v2 = recipesCtl.v2, version;
