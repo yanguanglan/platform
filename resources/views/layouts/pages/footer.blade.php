@@ -57,15 +57,12 @@
 <div id="contactModal" class="modal" ng-controller="ContactController as contactCtl">
 	<div class="modal-content">
 		<div class="modal-header yellow-bg">
-					<h2 class="left-align decoration">Contact Us</h2>
-<!-- close button  -->
-					<a class="pull-right" href="#" aria-label="Close">
-						<i class="mdi-navigation-cancel"></i>
-					</a>
-<!-- close button  -->
-			</div>
-
+			<h2 class="left-align decoration">Contact Us</h2>
+			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
+				<i class="mdi-navigation-cancel"></i>
+			</a>
 		</div>
+
 		<form class="col s12 modal-form-padding" name="contactForm" ng-submit="contactCtl.submit(contactForm.$valid)" novalidate>
 			<div class="row">
 				<div class="input-field col s12 m6">
@@ -127,12 +124,10 @@
 <div id="requestModal" class="modal" ng-controller="RequestController as requestCtl">
 	<div class="modal-content">
 		<div class="modal-header red-bg">
-					<h2 class="left-align decoration">Request a Recipe</h2>
-<!-- close button  -->
-					<a class="pull-right" href="#" aria-label="Close">
-						<i class="mdi-navigation-cancel"></i>
-					</a>
-<!-- close button  -->
+			<h2 class="left-align decoration">Request a Recipe</h2>
+			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
+				<i class="mdi-navigation-cancel"></i>
+			</a>
 		</div>
 
 

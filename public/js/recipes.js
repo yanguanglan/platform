@@ -172,6 +172,9 @@ recipesApp
         recipesCtl.sortByType = 'date';
         recipesCtl.pageItems = 10;
         recipesCtl.currentPage = 0;
+        recipesCtl.clearSearch = function() {
+            recipesCtl.searchFilter = '';
+        };
         recipesCtl.range = function(min, max, step) {
             step = (step == undefined) ? 1 : step;
             var input = [],
