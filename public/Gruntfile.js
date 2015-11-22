@@ -29,20 +29,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        protractor: {
-            options: {
-                configFile: "node_modules/grunt-protractor-runner/node_modules/protractor/example/conf.js", // Default config file
-                noColor: false, // If true, protractor will not use colors in its output.
-                args: {
-                    // Arguments passed to the command
-                }
-            },
-            e2e: {
-                options: {
-                    keepAlive: false
-                }
-            },
-        },
         watch: {
             css: {
                 files: ['css/sass/*.sass'],
@@ -60,5 +46,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('default', ['compass', 'watch']);
-    grunt.registerTask('tests', ['connect:test', 'protractor:e2e']);
 };

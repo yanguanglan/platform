@@ -7,7 +7,12 @@ php:
 before_script:
   - composer self-update
   - composer install
+  # - cd public
+  # - sudo apt-get install -y nodejs
+  # - sudo apt-get install -y build-essential
+  # - sudo npm install && bower install
+  # - grunt test
 
 script:
-    - vendor/bin/codecept run --env production
+    # - vendor/bin/codecept run --env production
     # - vendor/bin/behat --config behat.yml
