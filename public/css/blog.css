@@ -81,6 +81,34 @@ h4 {
   background-color: #d0021b;
 }
 
+.custom-gray {
+  background-color: #9B9B9B;
+}
+.custom-gray:hover {
+  background-color: #8e8e8e;
+}
+.custom-gray:focus {
+  background-color: #9B9B9B;
+}
+
+.custom-yellow {
+  background-color: #fbc02d;
+}
+.custom-yellow:hover {
+  background-color: #fbb814;
+}
+.custom-yellow:focus {
+  background-color: #fbc02d;
+}
+
+.red-bg {
+  background-color: #d0021b;
+}
+
+.yellow-bg {
+  background-color: #fbc02d;
+}
+
 .decoration {
   position: relative;
 }
@@ -302,4 +330,48 @@ footer.page-footer .footer-copyright .social-icons li .social.cp:before {
 footer .logo {
   width: 20px;
   height: auto;
+}
+
+.modal {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.modal .modal-content {
+  padding: 0;
+}
+
+.modal-form-padding {
+  padding: 25px;
+}
+
+.modal-header {
+  padding: 21px 15px;
+  height: 64px;
+}
+.modal-header h2 {
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+}
+.modal-header h2:after {
+  display: none;
+}
+.modal-header a {
+  display: inline-block;
+  color: #fff;
+  font-size: 25px;
+  margin-top: -9px;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.modal-header a:hover {
+  color: #9B9B9B;
+  text-shadow: rgba(128, 128, 128, 0.2) 0px 0px 10px;
+}
+.modal-header a:active {
+  color: #686868;
 }

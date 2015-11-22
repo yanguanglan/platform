@@ -39,3 +39,29 @@ footer
 	.logo
 		width: 20px
 		height: auto
+.modal
+	+border-radius(4px)
+.modal .modal-content
+	padding: 0
+.modal-form-padding
+	padding: 25px
+.modal-header
+	padding: 21px 15px
+	height: 64px
+	h2
+		color: #fff
+		display: inline-block
+		font-size: 20px
+		&:after
+			display: none
+	a
+		display: inline-block
+		color: #fff
+		font-size: 25px
+		margin-top: -9px
+		+transition(all 0.1s linear)
+		&:hover
+			color: $custom-gray
+			+text-shadow(rgba(gray, 0.2) 0px 0px 10px)
+		&:active
+			color: darken($custom-gray, 20%)
