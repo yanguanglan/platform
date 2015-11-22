@@ -56,11 +56,19 @@
 
 <div id="contactModal" class="modal" ng-controller="ContactController as contactCtl">
 	<div class="modal-content">
-		<h2 class="center-align decoration">Contact Us</h2>
+		<div class="modal-header yellow-bg">
+					<h2 class="left-align decoration">Contact Us</h2>
+<!-- close button  -->
+					<a class="pull-right" href="#" aria-label="Close">
+						<i class="mdi-navigation-cancel"></i>
+					</a>
+<!-- close button  -->
+			</div>
 
-		<form class="col s12" name="contactForm" ng-submit="contactCtl.submit(contactForm.$valid)" novalidate>
+		</div>
+		<form class="col s12 modal-form-padding" name="contactForm" ng-submit="contactCtl.submit(contactForm.$valid)" novalidate>
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s12 m6">
 					<i class="mdi-action-account-circle prefix"></i>
 					<input id="icon_prefix" type="text" class="validate" name="name" ng-model="contactCtl.contact.name"
 						   required>
@@ -73,7 +81,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="input-field col s6">
+				<div class="input-field col s12 m6">
 					<i class="mdi-communication-email prefix"></i>
 					<input id="icon_email" type="email" class="validate" name="email" ng-model="contactCtl.contact.email"
 						   required>
@@ -108,7 +116,7 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 right-align">
-					<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i
+					<button type="submit" class="waves-effect waves-light btn custom-gray">Submit <i
 								class="mdi-content-send right"></i></button>
 				</div>
 			</div>
@@ -118,11 +126,19 @@
 
 <div id="requestModal" class="modal" ng-controller="RequestController as requestCtl">
 	<div class="modal-content">
-		<h2 class="center-align decoration">Request a Recipe</h2>
+		<div class="modal-header red-bg">
+					<h2 class="left-align decoration">Request a Recipe</h2>
+<!-- close button  -->
+					<a class="pull-right" href="#" aria-label="Close">
+						<i class="mdi-navigation-cancel"></i>
+					</a>
+<!-- close button  -->
+		</div>
 
-		<form class="col s12" name="requestForm" ng-submit="requestCtl.submit(requestForm.$valid)" novalidate>
+
+		<form class="col s12 modal-form-padding" name="requestForm" ng-submit="requestCtl.submit(requestForm.$valid)" novalidate>
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s12 m6">
 					<i class="mdi-action-account-circle prefix"></i>
 					<input id="icon_prefix" type="text" class="validate" name="name" ng-model="requestCtl.request.name"
 						   required>
@@ -135,7 +151,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="input-field col s6">
+				<div class="input-field col s12 m6">
 					<i class="mdi-communication-email prefix"></i>
 					<input id="icon_email" type="email" class="validate" name="email" ng-model="requestCtl.request.email"
 						   required>
