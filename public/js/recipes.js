@@ -172,6 +172,28 @@ recipesApp
         recipesCtl.sortByType = 'date';
         recipesCtl.pageItems = 10;
         recipesCtl.currentPage = 0;
+        recipesCtl.v1 = true;
+        recipesCtl.v2 = true;
+        recipesCtl.version = true;
+        recipesCtl.toggleVersion = function() {
+            var v1 = recipesCtl.v1,
+            v2 = recipesCtl.v2, version;
+            if (v1 && v2) {
+                version = 'all';
+            } else if (v1) {
+                version = 1;
+            } else if(v2) {
+                version = 2;
+            } else {
+                version = 'none';
+            }
+
+            recipesCtl.version = version;
+
+            Recipe.all(recipesCtl.sortByType, version).then(function(data) {
+                recipesCtl.recipes = data;
+            });
+        };
         recipesCtl.toggleSearchForm = function() {
             recipesCtl.searchFilter = '';
             recipesCtl.showSearchForm = !recipesCtl.showSearchForm;
@@ -219,7 +241,7 @@ recipesApp
         recipesCtl.sortBy = function(type) {
             if (type == 'date' || type == 'views' || type == 'likes') {
                 recipesCtl.sortByType = type;
-                Recipe.all(type).then(function(data) {
+                Recipe.all(type, recipesCtl.version).then(function(data) {
                     recipesCtl.recipes = data;
                 });
             }
@@ -400,12 +422,14 @@ recipesApp
 
         return service;
 
-        function all(sortBy) {
-            var sortBy = sortBy || null;
+        function all(sortBy, versionBy) {
+            var sortBy = sortBy || 'date',
+            versionBy = versionBy || 'all';
             return $http
                 .get('api/recipes', {
                     params: {
-                        sortBy: sortBy
+                        sortBy: sortBy,
+                        versionBy: versionBy
                     }
                 })
                 .then(function(data) {

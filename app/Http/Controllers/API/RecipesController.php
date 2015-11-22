@@ -18,8 +18,9 @@ class RecipesController extends Controller
     public function index(Request $request)
     {
         $sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
+        $versionBy = $request->has('versionBy') ? $request->input('versionBy') : null;
 
-        return $this->recipe->index($sortBy);
+        return $this->recipe->index($sortBy, $versionBy);
     }
 
     public function latest()

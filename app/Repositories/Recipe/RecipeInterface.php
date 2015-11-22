@@ -3,7 +3,7 @@
 
 interface RecipeInterface {
 
-	public function index($sortBy);
+	public function index($sortBy, $versionBy);
 
 	public function latest();
 

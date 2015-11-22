@@ -14,13 +14,25 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
         $this->model = $model;
     }
 
-    public function index($sortBy)
+    public function index($sortBy = 'date', $versionBy = 'all')
     {
-        $models = $this->model
-        ->with(['level', 'topics' => function ($q) {
-            $q->orderBy('title');
-        }])
-        ->get();
+        if ($versionBy == 'all')
+        {
+            $models = $this->model
+            ->with(['level', 'topics' => function ($q) {
+                $q->orderBy('title');
+            }])
+            ->get();
+        }
+        else
+        {
+            $models = $this->model
+            ->where('release', $versionBy)
+            ->with(['level', 'topics' => function ($q) {
+                $q->orderBy('title');
+            }])
+            ->get();
+        }
 
         if ($sortBy == 'date') {
             return $models->sortByDesc('updated_at')->values();

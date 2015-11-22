@@ -23,11 +23,11 @@
                     <form action="#" class="check-v-angular left">
                         <p>Angular:</p>
                         <p>
-                            <input type="checkbox" class="filled-in" id="Angular-v-1" checked="checked" />
+                            <input type="checkbox" ng-model="recipesCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="recipesCtl.toggleVersion()" />
                             <label for="Angular-v-1">v.1</label>
                         </p>
                         <p>
-                            <input type="checkbox" class="filled-in" id="Angular-v-2" checked="checked" />
+                            <input type="checkbox" ng-model="recipesCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="recipesCtl.toggleVersion()" />
                             <label for="Angular-v-2">v.2</label>
                         </p>
                     </form>
@@ -92,7 +92,8 @@
 
                 <div class="row" ng-if="!recipesCtl.filteredRecipes.length">
                     <div class="col s12 center">
-                        <h2>No results found for "{{recipesCtl.searchFilter}}"</h2>
+                        <h2 ng-if="recipesCtl.searchFilter">No results found for "{{recipesCtl.searchFilter}}"</h2>
+                        <h2 ng-if="!recipesCtl.searchFilter">No results found</h2>
                     </div>
                 </div>
             </div>
