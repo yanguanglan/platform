@@ -238,12 +238,44 @@ nav .brand-logo {
 #recipe-header #search {
   background-color: #212121;
   display: block;
+  position: relative;
 }
 #recipe-header #search input {
   box-shadow: none;
+  display: inline-block;
 }
 #recipe-header #search input:focus {
   border-bottom: 1px solid #d0021b;
+}
+#recipe-header #search .clear-button {
+  position: absolute;
+  color: #fff;
+  font-size: 16px;
+  top: 15%;
+  right: 8.5%;
+}
+#recipe-header #search .clear-button:hover {
+  color: #d0021b;
+}
+@media only screen and (min-width: 601px) {
+  #recipe-header #search .clear-button {
+    right: 10%;
+  }
+}
+@media only screen and (min-width: 675px) {
+  #recipe-header #search .clear-button {
+    right: 9.5%;
+  }
+}
+@media only screen and (min-width: 880px) {
+  #recipe-header #search .clear-button {
+    right: 9.5%;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  #recipe-header #search .clear-button {
+    right: 9%;
+  }
 }
 #recipe-header #toggle-search {
   height: 64px;
@@ -350,7 +382,7 @@ nav .brand-logo {
 }
 .gray-banner .sort-button {
   display: none;
-  line-height: 64px;
+  line-height: 62px;
   height: 64px;
   width: 90px;
 }
@@ -371,8 +403,6 @@ nav .brand-logo {
   margin: 0;
   display: inline-block;
   width: 90px;
-  height: 64px;
-  font-size: 16px;
   color: white;
   height: 64px;
 }
@@ -409,7 +439,7 @@ nav .brand-logo {
 }
 .gray-banner .sort-button #dropdown1 li a {
   text-align: center;
-  height: 65px;
+  height: 64px;
   color: #212121;
   padding: 22px;
 }

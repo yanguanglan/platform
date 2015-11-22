@@ -22,10 +22,28 @@
 	#search
 		background-color: $dark-black
 		display: block
+		position: relative
 		input
 			box-shadow: none
+			display: inline-block
 			&:focus
 				border-bottom: 1px solid $custom-red
+		.clear-button
+			position: absolute
+			color: #fff
+			font-size: 16px
+			&:hover
+				color: $custom-red
+			top: 15%
+			right: 8.5%
+			@media only screen and (min-width : 601px)
+				right: 10%
+			@media only screen and (min-width : 675px)
+				right: 9.5%
+			@media only screen and (min-width : 880px)
+				right: 9.5%
+			@media only screen and (min-width : 1080px)
+				right: 9%
 	//end of CSS for search bar
 
 	//search button
@@ -114,7 +132,7 @@
 
 	.sort-button
 		display: none
-		line-height: 64px
+		line-height: 62px
 		height: 64px
 		width: 90px
 		@media only screen and (max-width : 380px)
@@ -129,8 +147,6 @@
 			margin: 0
 			display: inline-block
 			width: 90px
-			height: 64px
-			font-size: 16px
 			color: white
 			height: 64px
 			@media only screen and (max-width : 380px)
@@ -146,8 +162,6 @@
 			span
 				display: inline-block
 				height: 64px
-			// i
-			// 	display: inline-block
 		#dropdown1
 			background-color: white
 			padding: 0px
@@ -160,7 +174,7 @@
 				height: 64px
 				a
 					text-align: center
-					height: 65px
+					height: 64px
 					color: $dark-black
 					padding: 22px
 					&:hover
@@ -169,6 +183,5 @@
 				width: 75px
 			.active
 				color: white
-			// color: #d0021b
 		@media only screen and (max-width : 760px)
 			display: inline-block
