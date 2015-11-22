@@ -7,9 +7,25 @@
 class_name: FunctionalTester
 modules:
     enabled:
-        # add framework module here
         - \Helper\Functional
         - Laravel5
         - REST:
-           depends: PhpBrowser
-           url: 'http://localhost:8000/api/'
+            depends: PhpBrowser
+            url: 'http://localhost:8001/api/'
+env:
+    local:
+        modules:
+            enabled:
+                - \Helper\Functional
+                - Laravel5
+                - REST:
+                    depends: PhpBrowser
+                    url: 'http://localhost:8001/api/'
+    production:
+        modules:
+            enabled:
+                - \Helper\Functional
+                - Laravel5
+                - REST:
+                    depends: PhpBrowser
+                    url: 'http://angularjs-recipes.com/api/'
