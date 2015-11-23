@@ -1,31 +1,30 @@
-<?php namespace App\Http\Controllers\API;
+<?php
 
-use App\Http\Requests;
+namespace App\Http\Controllers\API;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Topic\TopicInterface as Topic;
 
-class TopicsController extends Controller {
+class TopicsController extends Controller
+{
+    protected $topic;
 
-	protected $topic;
+    public function __construct(Topic $topic)
+    {
+        $this->topic = $topic;
+    }
 
-	public function __construct(Topic $topic)
-	{
-		$this->topic = $topic;
-	}
+    public function index(Request $request)
+    {
+        return $this->topic->index();
+    }
 
-	public function index()
-	{
-		$topics = $this->topic->index();
+    public function show(Request $request, $uuid)
+    {
+        $sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
+        $versionBy = $request->has('versionBy') ? $request->input('versionBy') : null;
 
-		return $topics;
-	}
-
-	public function show($uuid)
-	{
-		$topic = $this->topic->show($uuid);
-
-		return $topic;
-	}
-
+        return $this->topic->show($uuid, $sortBy, $versionBy);
+    }
 }

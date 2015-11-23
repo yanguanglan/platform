@@ -1,9 +1,66 @@
 <div id="recipe-header">
     <div class="container">
-        <div class="row">
+        <div class="row no-margin-bottom">
             <div class="col s12">
-                <h1>{{topicCtl.topic.title}} Recipes</h1>
+                <h1 class="recipe-list-title">{{topicCtl.topic.title}} Recipes</h1>
+                <p>
+                    <span class="recipes-count">{{topicCtl.topic.recipes.length}}</span>
+                    <i class="mdi-social-school card-icons"></i> Recipes
+                </p>
             </div>
+        </div>
+    </div>
+
+    <div class="gray-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 no-padding-left">
+                    <a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="topicCtl.toggleSearchForm()">
+                        <i class="large mdi-action-search"></i>
+                    </a>
+
+                    <form action="#" class="check-v-angular left">
+                        <p>Angular:</p>
+                        <p>
+                            <input type="checkbox" ng-model="topicCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="topicCtl.toggleVersion()" />
+                            <label for="Angular-v-1">v.1</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" ng-model="topicCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="topicCtl.toggleVersion()" />
+                            <label for="Angular-v-2">v.2</label>
+                        </p>
+                    </form>
+
+                    <ul id="sort-list" class="left">
+                        <li class "sort"> Sort By:</li>
+                        <li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('date')" ng-class="{active: topicCtl.sortByType == 'date'}">Date</a></li>
+                        <li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('views')" ng-class="{active: topicCtl.sortByType == 'views'}">Views</a></li>
+                        <li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('likes')" ng-class="{active: topicCtl.sortByType == 'likes'}">Likes</a></li>
+                    </ul>
+
+                    <div class="sort-button">
+                        <ul>
+                            <li>
+                                <a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Sort By<i class="mdi-navigation-arrow-drop-down"></i></a>
+                                <ul id='dropdown1' class='dropdown-content'>
+                                    <li><a class="waves-effect waves-black active" ng-click="topicCtl.sortBy('date')" ng-class="{active: topicCtl.sortByType == 'date'}">Date</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="topicCtl.sortBy('views')" ng-class="{active: topicCtl.sortByType == 'views'}">Views</a></li>
+                                    <li><a class="waves-effect waves-black" ng-click="topicCtl.sortBy('likes')" ng-class="{active: topicCtl.sortByType == 'likes'}">Likes</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row white-text no-margin-bottom" id="search" ng-show="topicCtl.showSearchForm">
+        <div class="container">
+            <form class="col s12 no-padding-left">
+                <input class="form-control" ng-model="topicCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
+                <a class="clear-button" href="javascript:void(0)" ng-click="topicCtl.clearSearch()"><i class="mdi-navigation-cancel"></i></a>
+            </form>
         </div>
     </div>
 </div>
@@ -12,8 +69,31 @@
     <div class="container">
         <div class="row">
             <div class="col l9 s12">
-                <div class="row" masonry>
-                    <recipe class="col s12 m6 l6 masonry-brick" ng-repeat="recipe in topicCtl.topic.recipes"></recipe>
+                <div class="row" ng-if="topicCtl.filteredRecipes.length">
+                    <recipe class="col s12 m6 l6" ng-repeat="recipe in topicCtl.filteredRecipes | offset: topicCtl.currentPage * topicCtl.pageItems | limitTo: topicCtl.pageItems"></recipe>
+                </div>
+
+                <div class="row" ng-if="topicCtl.filteredRecipes.length">
+                    <div class="col s12 center">
+                        <ul class="pagination">
+                            <li class="waves-effect" ng-class="topicCtl.previousPageDisabled()">
+                                <a href="javascript:void(0)" ng-click="topicCtl.stepDown()"><i class="mdi-navigation-chevron-left"></i></a>
+                            </li>
+                            <li class="waves-effect" ng-repeat="n in topicCtl.range(1, topicCtl.pagesNumber)" ng-class="{'active red' : topicCtl.currentPage == n - 1}">
+                                <a href="javascript:void(0)" ng-click="topicCtl.step(n)">{{n}}</a>
+                            </li>
+                            <li class="waves-effect" ng-class="topicCtl.nextPageDisabled()">
+                                <a href="javascript:void(0)" ng-click="topicCtl.stepUp()"><i class="mdi-navigation-chevron-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row" ng-if="!topicCtl.filteredRecipes.length">
+                    <div class="col s12 center">
+                        <h2 ng-if="topicCtl.searchFilter">No results found for "{{topicCtl.searchFilter}}"</h2>
+                        <h2 ng-if="!topicCtl.searchFilter">No results found</h2>
+                    </div>
                 </div>
             </div>
 

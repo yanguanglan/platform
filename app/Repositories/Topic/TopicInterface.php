@@ -5,6 +5,6 @@ interface TopicInterface {
 
 	public function index();
 
-	public function show($uuid);
+	public function show($uuid, $sortBy, $versionBy);
 
 }
