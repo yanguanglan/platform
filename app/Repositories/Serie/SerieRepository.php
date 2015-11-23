@@ -14,13 +14,31 @@ class SerieRepository extends AbstractRepository implements SerieInterface
         $this->model = $model;
     }
 
-    public function index()
+    public function index($sortBy = 'date', $versionBy = 'all')
     {
-        $models = $this->model
-        ->with('lessons')
-        ->get();
+        if ($versionBy == 'all')
+        {
+            $models = $this->model
+            ->with('lessons')
+            ->get();
+        }
+        else
+        {
+            $models = $this->model
+            ->where('release', $versionBy)
+            ->with('lessons')
+            ->get();
+        }
 
-        return $models;
+        if ($sortBy == 'date') {
+            return $models->sortByDesc('updated_at')->values();
+        } elseif ($sortBy == 'views') {
+            return $models->sortByDesc('views')->values();
+        } elseif ($sortBy == 'likes') {
+            return $models->sortByDesc('likes')->values();
+        } else {
+            return $models->sortByDesc('updated_at')->values();
+        }
     }
 
     public function latest()

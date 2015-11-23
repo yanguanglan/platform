@@ -99,7 +99,7 @@ angular
 				templateUrl: 'js/partials/series/show.html',
 				resolve: {
 					serie: function(Serie, $route) {
-						return Serie.get($route.current.params.uuid);
+						return Serie.get($route.current.params.uuid, true);
 					}
 				}
 			})
@@ -272,9 +272,107 @@ angular
 		recipeCtl.recipe = recipe;
 		recipeCtl.topics = topics;
 	}])
-	.controller('SeriesController', ['series', function(series) {
+	.controller('SeriesController', ['$scope', 'filterFilter', 'series', 'Serie', function($scope, filterFilter, series, Serie) {
 		var seriesCtl = this;
 		seriesCtl.series = series;
+        seriesCtl.showSearchForm = false;
+		seriesCtl.searchFilter = '';
+		seriesCtl.sortByType = 'date';
+		seriesCtl.pageItems = 10;
+		seriesCtl.currentPage = 0;
+		seriesCtl.v1 = true;
+		seriesCtl.v2 = true;
+		seriesCtl.version = 'all';
+		seriesCtl.toggleVersion = function() {
+			var v1 = seriesCtl.v1,
+				v2 = seriesCtl.v2,
+				version;
+			if (v1 && v2) {
+				version = 'all';
+			} else if (v1) {
+				version = 1;
+			} else if (v2) {
+				version = 2;
+			} else {
+				version = 'none';
+			}
+
+			seriesCtl.version = version;
+
+			Serie.all(seriesCtl.sortByType, seriesCtl.version).then(function(data) {
+				seriesCtl.series = data;
+			});
+		};
+		seriesCtl.toggleSearchForm = function() {
+			seriesCtl.searchFilter = '';
+			seriesCtl.showSearchForm = !seriesCtl.showSearchForm;
+		};
+		seriesCtl.clearSearch = function() {
+			seriesCtl.searchFilter = '';
+		};
+		seriesCtl.range = function(min, max, step) {
+			step = (step == undefined) ? 1 : step;
+			var input = [],
+				i = min;
+			while (i <= max) {
+				input.push(i);
+				i += step;
+			}
+			return input;
+		};
+		seriesCtl.stepDown = function() {
+			if (seriesCtl.currentPage > 0) {
+				seriesCtl.currentPage -= 1;
+			}
+
+			return seriesCtl.currentPage;
+		};
+		seriesCtl.step = function(n) {
+			if (seriesCtl.currentPage != n - 1) {
+				seriesCtl.currentPage = n - 1;
+			}
+
+			return seriesCtl.currentPage;
+		};
+		seriesCtl.stepUp = function() {
+			if (seriesCtl.currentPage < (seriesCtl.pagesNumber - 1)) {
+				seriesCtl.currentPage += 1;
+			}
+			return seriesCtl.currentPage;
+		};
+		seriesCtl.previousPageDisabled = function() {
+			return seriesCtl.currentPage === 0 ? 'disabled' : null;
+		};
+		seriesCtl.nextPageDisabled = function() {
+			return seriesCtl.currentPage === seriesCtl.pagesNumber - 1 ? 'disabled' : null;
+		};
+
+		seriesCtl.sortBy = function(type) {
+			if (type == 'date' || type == 'views' || type == 'likes') {
+				seriesCtl.sortByType = type;
+				Serie.all(seriesCtl.sortByType, seriesCtl.version).then(function(data) {
+					seriesCtl.series = data;
+				});
+			}
+		};
+
+		$scope.$watch(angular.bind(seriesCtl, function() {
+			return seriesCtl.series;
+		}), function(newVal, oldVal) {
+			if (!angular.equals(newVal, seriesCtl.filteredSeries)) {
+				seriesCtl.filteredSeries = filterFilter(newVal, seriesCtl.searchFilter);
+				seriesCtl.pagesNumber = Math.ceil(seriesCtl.filteredSeries.length / seriesCtl.pageItems);
+			}
+		});
+
+		$scope.$watch(angular.bind(seriesCtl, function() {
+			return seriesCtl.searchFilter;
+		}), function(newVal, oldVal) {
+			if (newVal != oldVal) {
+				seriesCtl.filteredSeries = filterFilter(seriesCtl.series, newVal);
+				seriesCtl.pagesNumber = Math.ceil(seriesCtl.filteredSeries.length / seriesCtl.pageItems);
+			}
+		});
 	}])
 	.controller('SerieController', ['serie', function(serie) {
 		var serieCtl = this;
@@ -563,7 +661,7 @@ angular
 				}, function(err) {
 					$location.path('/error');
 				});
-		}
+		};
 	}])
 	.factory('Serie', ['$http', '$location', function($http, $location) {
 		var service = {
@@ -574,12 +672,15 @@ angular
 
 		return service;
 
-		function all(sortBy) {
-			var sortBy = sortBy || null;
+        function all(sortBy, versionBy) {
+            var sortBy = sortBy || 'date',
+            versionBy = versionBy || 'all';
+
 			return $http
 				.get('api/series', {
-					params: {
-						sortBy: sortBy
+                    params: {
+						sortBy: sortBy,
+						versionBy: versionBy
 					}
 				})
 				.then(function(data) {
@@ -589,9 +690,15 @@ angular
 				});
 		};
 
-		function get(uuid) {
+		function get(uuid, views) {
+            var views = views || null;
+            
 			return $http
-				.get('api/series/' + uuid)
+				.get('api/series/' + uuid, {
+                    params: {
+                        views: views
+                    }
+                })
 				.then(function(data) {
 					return data.data;
 				}, function(err) {

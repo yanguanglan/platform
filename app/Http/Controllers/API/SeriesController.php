@@ -17,7 +17,10 @@ class SeriesController extends Controller
 
     public function index(Request $request)
     {
-        return $this->serie->index();
+        $sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
+        $versionBy = $request->has('versionBy') ? $request->input('versionBy') : null;
+
+        return $this->serie->index($sortBy, $versionBy);
     }
 
     public function latest()

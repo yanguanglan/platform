@@ -3,7 +3,7 @@
 
 interface SerieInterface {
 
-	public function index();
+	public function index($sortBy, $versionBy);
 
     public function latest();
 
