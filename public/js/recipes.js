@@ -1,8 +1,9 @@
-angular.module('recipesApp', ['ngRoute', 'ngMessages', 'ngSanitize', 'ng-showdown', 'ui.materialize', 'angularUtils.directives.dirDisqus']);
+angular.module('recipesApp', ['ngRoute', 'ngMessages', 'ngSanitize', 'ngAnimate', 'angular-loading-bar', 'ng-showdown', 'ui.materialize', 'angularUtils.directives.dirDisqus']);
 
 angular
 	.module('recipesApp')
-	.config(function($locationProvider, $routeProvider) {
+	.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = false;
 		$locationProvider.hashPrefix('!');
 		$routeProvider
 			.when('/', {
@@ -143,7 +144,7 @@ angular
 			.otherwise({
 				redirectTo: '/'
 			});
-	})
+	}])
 	.controller('HomeController', ['recipes', 'series', function(recipes, series) {
 		var homeCtl = this;
 		homeCtl.recipes = recipes;
@@ -692,7 +693,7 @@ angular
 
 		function get(uuid, views) {
             var views = views || null;
-            
+
 			return $http
 				.get('api/series/' + uuid, {
                     params: {

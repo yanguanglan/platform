@@ -191,7 +191,9 @@
 <script type="text/javascript" src="{{asset('bower_components/angular/angular.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-route/angular-route.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-messages/angular-messages.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-animate/angular-animate.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-sanitize/angular-sanitize.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-loading-bar/build/loading-bar.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/showdown/dist/showdown.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/ng-showdown/dist/ng-showdown.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.min.js')}}"></script>

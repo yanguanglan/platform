@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> @include('partials.favicons')
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/materialize/dist/css/materialize.min.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/font-awesome/css/font-awesome.min.css')}}" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/angular-loading-bar/build/loading-bar.min.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/github-markdown-css/github-markdown.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" media="screen,projection" />
 	<title>AngularJS Recipes</title>
