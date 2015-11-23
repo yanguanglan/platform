@@ -1,6 +1,7 @@
-var recipesApp = angular.module('recipesApp', ['ngRoute', 'ngMessages', 'ngSanitize', 'ng-showdown', 'ui.materialize', 'angularUtils.directives.dirDisqus']);
+angular.module('recipesApp', ['ngRoute', 'ngMessages', 'ngSanitize', 'ng-showdown', 'ui.materialize', 'angularUtils.directives.dirDisqus']);
 
-recipesApp
+angular
+    .module('recipesApp')
     .config(function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
         $routeProvider

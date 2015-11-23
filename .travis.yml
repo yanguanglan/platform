@@ -5,13 +5,8 @@ php:
   - hhvm
 
 before_script:
-  # - composer self-update
-  # - composer install
-  # - cd public
-  # - sudo apt-get install -y nodejs
-  # - sudo apt-get install -y build-essential
-  # - sudo npm install && bower install
-  # - grunt test
+  - composer self-update
+  - composer install
 
 script:
     # - vendor/bin/phpunit
