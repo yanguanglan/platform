@@ -199,6 +199,30 @@
 <script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-materialize/src/angular-materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angularUtils-disqus/dirDisqus.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('js/app.module.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/app.routes.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/home.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/about.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/faq.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/stats.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/error.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/request.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/contact.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/recipes/index.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/recipes/show.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/series/index.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/series/show.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/lessons/show.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/topics/index.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/topics/show.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/posts/index.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/posts/show.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/recipe.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/topic.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/serie.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/lesson.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/post.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/recipes.js')}}"></script>
 </body>
 </html>
