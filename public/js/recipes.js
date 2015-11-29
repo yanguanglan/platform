@@ -59,6 +59,12 @@ angular
 			templateUrl: 'js/partials/recipes/recipe.html'
 		}
 	})
+	.directive('recipeItem', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'js/partials/recipes/recipe-item.html'
+		}
+	})
 	.directive('serie', function() {
 		return {
 			restrict: 'E',

@@ -1,0 +1,10 @@
+<div>
+    <h3>{{recipe.title}}</h3>
+    <p>{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
+    <div class="">
+        <span ng-repeat="topic in recipe.topics">{{topic.title}}</span>
+        <span class="pull-right">{{recipe.views}}</span>
+        <span class="pull-right">{{recipe.likes}}</span>
+    </div>
+    <div class="divider"></div>
+</div>
