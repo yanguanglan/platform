@@ -1,4 +1,3 @@
-/* line 3, sass/recipe_card.sass */
 .card-recipe .card-banner {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;
@@ -6,7 +5,6 @@
   height: 151px;
   position: relative;
 }
-/* line 7, sass/recipe_card.sass */
 .card-recipe .card-banner .version-logo {
   display: block;
   width: 90%;
@@ -15,7 +13,6 @@
   margin: auto;
   margin-bottom: 20px;
 }
-/* line 14, sass/recipe_card.sass */
 .card-recipe .card-banner .chip {
   display: inline-block;
   background: none;
@@ -26,49 +23,41 @@
   font-size: 16px;
   font-weight: 300;
 }
-/* line 23, sass/recipe_card.sass */
 .card-recipe .card-banner .card-level {
   position: absolute;
   display: block;
   right: 16px;
   bottom: 8px;
 }
-/* line 28, sass/recipe_card.sass */
 .card-recipe .card-content {
   padding: 24px 16px;
   min-height: 195px;
 }
 @media only screen and (min-width: 320px) {
-  /* line 28, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 165px;
   }
 }
 @media only screen and (min-width: 466px) {
-  /* line 28, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 135px;
   }
 }
 @media only screen and (min-width: 601px) {
-  /* line 28, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 195px;
   }
 }
 @media only screen and (min-width: 731px) {
-  /* line 28, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 165px;
   }
 }
 @media only screen and (min-width: 1321px) {
-  /* line 28, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 135px;
   }
 }
-/* line 41, sass/recipe_card.sass */
 .card-recipe .card-content .card-title {
   font-size: 22px;
   line-height: 28px;
@@ -77,46 +66,37 @@
   margin-bottom: 7px;
   display: block;
 }
-/* line 48, sass/recipe_card.sass */
 .card-recipe .card-content .card-date {
   font-size: 16px;
   color: #727272;
   font-weight: 400;
 }
-/* line 52, sass/recipe_card.sass */
 .card-recipe .card-action {
   border: none;
   padding: 0px 16px 24px;
 }
-/* line 55, sass/recipe_card.sass */
 .card-recipe .card-action .card-view {
   font-size: 18px;
   color: #d0021b;
 }
-/* line 58, sass/recipe_card.sass */
 .card-recipe .card-action .card-view:hover {
   color: #000;
 }
-/* line 60, sass/recipe_card.sass */
 .card-recipe .card-action .card-icons {
   font-size: 20px;
   padding-right: 16px;
   padding-left: 5px;
 }
-/* line 64, sass/recipe_card.sass */
 .card-recipe .card-action .mdi-action-visibility {
   padding-right: 0px;
 }
-/* line 66, sass/recipe_card.sass */
 .card-recipe .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
 }
-/* line 70, sass/recipe_card.sass */
 .card-recipe.v1 .card-banner {
   background: #2b2b2b;
 }
-/* line 73, sass/recipe_card.sass */
 .card-recipe.v2 .card-banner {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlNjZjNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA0NDY5NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -125,7 +105,6 @@
   background-image: -webkit-linear-gradient(bottom, #0e66c4 0%, #044695 100%);
   background-image: linear-gradient(to top right, #0e66c4 0%, #044695 100%);
 }
-/* line 75, sass/recipe_card.sass */
 .card-recipe.v2 .version-logo {
   width: 73%;
   max-width: 256px;
