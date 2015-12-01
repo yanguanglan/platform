@@ -222,6 +222,10 @@ nav ul li {
   height: 64px;
 }
 
+.waves-fix {
+  top: -1px;
+}
+
 nav .brand-logo {
   padding-right: 28px;
 }
