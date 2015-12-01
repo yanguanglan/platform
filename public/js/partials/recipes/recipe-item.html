@@ -1,15 +1,24 @@
-<div>
-    <div class="list-version pull-left" ng-class="{'l-v1': recipe.release == 1, 'l-v2': recipe.release == 2}">
+<div id="recipes-list">
+    <a class="list-version pull-left" ng-href="#!/recipes/{{recipe.uuid}}" ng-class="{'l-v1': recipe.release == 1, 'l-v2': recipe.release == 2}" >
       <img class="version-logo" ng-if="recipe.release == 1" ng-src="img/angular_list_1.svg" alt="angular version 1">
       <img class="version-logo" ng-if="recipe.release == 2" ng-src="img/angular_list_2.svg" alt="angular version 2">
-    </div>
+    </a>
     <div class="pull-left list-content">
-      <h5 class="list-tile">{{recipe.title}}</h5>
-      <p class="list-date">{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
-      <span class="topic-list" ng-repeat="topic in recipe.topics">{{topic.title}}</span>
+    <a ng-href="#!/recipes/{{recipe.uuid}}"><h5 class="list-tile">{{recipe.title}}</h5></a>
 
+      <p class="list-date">{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
+      <div class="left-info-icons pull-right">
         <span class="pull-right list-icons">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-        <span class="pull-right list-icons">{{recipe.likes}}<i class="mdi-action-thumb-up card-icons"></i></span>
-    <div class="divider"></div>
+        <span class="pull-right list-icons no-margin-left">{{recipe.likes}}<i class="mdi-action-thumb-up card-icons"></i></span>
+      </div>
+      <div class="right-info-icons">
+        <span class="list-icons no-margin-left">{{recipe.likes}}<i class="mdi-action-thumb-up card-icons"></i></span>
+        <span class="list-icons">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
+      </div>
+        <a class="chip" ng-href="#!/topics/{{topic.uuid}}/recipes" ng-repeat="topic in recipe.topics" tooltipped data-position="top" data-delay="50" data-tooltip="All recipes about {{topic.title}}">
+            {{topic.title}}
+        </a>
+        <div class="divider"></div>
     </div>
+
 </div>

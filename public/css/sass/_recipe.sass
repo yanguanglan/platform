@@ -187,20 +187,37 @@
 			display: inline-block
 
 // Recipes-list-view
+a
+	color: inherit
 .list-tile
 	line-height: 20px
 	font-size: 20px
-	margin-top: 10px
+	margin: 10px 0 0
 .list-date
+	display: inline-block
 	color: $medium-black
-	margin: 5px 0px
-.topic-list
-	color: #727272
-	margin-right: 10px
+	margin: 5px 10px 0 0 !important
+	font-size: 16px
+	@media only screen and (min-width : 601px)
+		display: block
 .divider
 	margin-top: 10px
+.left-info-icons
+	display: none
+	@media only screen and (min-width : 420px)
+		display: inline-block
+		padding-top: 3px
+	@media only screen and (min-width : 600px)
+		display: block
+.right-info-icons
+	display: inline-block
+	@media only screen and (min-width : 420px)
+		display: none
 .list-icons
 	margin-left: 10px
+	font-size: 16px
+.no-margin-left
+	margin-left: 0
 .list-version
 	+border-radius(100%)
 	width: 70px
@@ -218,3 +235,15 @@
 	margin: auto
 	width: 70%
 	margin-top: 10px
+
+#recipes-list
+	.chip
+		display: none
+		background: none
+		color: #727272
+		padding-left: 0
+		margin-right: 5px
+		font-size: 15px
+		font-weight: 300
+		@media only screen and (min-width : 601px)
+			display: inline-block
