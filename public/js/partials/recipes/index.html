@@ -34,7 +34,7 @@
                     </form>
 
                     <ul id="sort-list" class="left">
-                        <li class "sort"> Sort By:</li>
+                        <li class "sort">Sort By:</li>
                         <li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.sortBy('date')" ng-class="{active: recipesCtl.sortByType == 'date'}">Date</a></li>
                         <li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.sortBy('views')" ng-class="{active: recipesCtl.sortByType == 'views'}">Views</a></li>
                         <li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}">Likes</a></li>
@@ -52,6 +52,11 @@
                             </li>
                         </ul>
                     </div>
+                    <ul id="view-as-btns" class="left">
+                        <li class "View-like">View as:</li>
+                        <li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.sortBy('date')" ng-class="{active: recipesCtl.sortByType == 'date'}"><i class="medium mdi-action-list"></i></a></li>
+                        <li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.sortBy('views')" ng-class="{active: recipesCtl.sortByType == 'views'}"><i class="medium mdi-action-view-module"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
