@@ -275,6 +275,8 @@ nav .brand-logo {
 #recipe-header #search {
   background-color: #212121;
   display: block;
+}
+#recipe-header #search .relative-for-clear-btn {
   position: relative;
 }
 #recipe-header #search input {
@@ -287,31 +289,28 @@ nav .brand-logo {
 #recipe-header #search .clear-button {
   position: absolute;
   color: #fff;
-  font-size: 16px;
-  top: 15%;
-  right: 8.5%;
+  font-size: 20px;
+  top: 4px;
+  right: 9px;
 }
 #recipe-header #search .clear-button:hover {
   color: #d0021b;
 }
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 381px) {
   #recipe-header #search .clear-button {
-    right: 10%;
+    right: 19px;
+    font-size: 25px;
+    top: 3px;
   }
 }
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 992px) {
   #recipe-header #search .clear-button {
-    right: 9.5%;
+    top: 4px;
   }
 }
-@media only screen and (min-width: 880px) {
+@media only screen and (min-width: 1200px) {
   #recipe-header #search .clear-button {
-    right: 9.5%;
-  }
-}
-@media only screen and (min-width: 1080px) {
-  #recipe-header #search .clear-button {
-    right: 9%;
+    top: 5px;
   }
 }
 #recipe-header #toggle-search {
@@ -366,8 +365,8 @@ nav .brand-logo {
   border: 2px solid #d0021b;
 }
 #recipe-header .check-v-angular .filled-in:checked + label:before {
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
 }
 #recipe-header .check-v-angular .filled-in:not(:checked) + label:after {
   background-color: white;
@@ -572,12 +571,14 @@ nav .brand-logo {
   font-size: 16px;
   margin: -44px 0 40px 0;
 }
-#serie-header i {
+#serie-header p i {
   margin: 3px;
 }
 #serie-header #search {
   background-color: #212121;
   display: block;
+}
+#serie-header #search .relative-for-clear-btn {
   position: relative;
 }
 #serie-header #search input {
@@ -590,31 +591,28 @@ nav .brand-logo {
 #serie-header #search .clear-button {
   position: absolute;
   color: #fff;
-  font-size: 16px;
-  top: 15%;
-  right: 8.5%;
+  font-size: 20px;
+  top: 4px;
+  right: 9px;
 }
 #serie-header #search .clear-button:hover {
   color: #fbc02d;
 }
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 381px) {
   #serie-header #search .clear-button {
-    right: 10%;
+    right: 19px;
+    font-size: 25px;
+    top: 3px;
   }
 }
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 992px) {
   #serie-header #search .clear-button {
-    right: 9.5%;
+    top: 4px;
   }
 }
-@media only screen and (min-width: 880px) {
+@media only screen and (min-width: 1200px) {
   #serie-header #search .clear-button {
-    right: 9.5%;
-  }
-}
-@media only screen and (min-width: 1080px) {
-  #serie-header #search .clear-button {
-    right: 9%;
+    top: 5px;
   }
 }
 #serie-header #toggle-search {
@@ -669,8 +667,8 @@ nav .brand-logo {
   border: 2px solid #fbc02d;
 }
 #serie-header .check-v-angular .filled-in:checked + label:before {
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
 }
 #serie-header .check-v-angular .filled-in:not(:checked) + label:after {
   background-color: white;

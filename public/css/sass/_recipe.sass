@@ -22,7 +22,8 @@
 	#search
 		background-color: $dark-black
 		display: block
-		position: relative
+		.relative-for-clear-btn
+			position: relative
 		input
 			box-shadow: none
 			display: inline-block
@@ -31,19 +32,19 @@
 		.clear-button
 			position: absolute
 			color: #fff
-			font-size: 16px
+			font-size: 20px
 			&:hover
 				color: $custom-red
-			top: 15%
-			right: 8.5%
-			@media only screen and (min-width : 601px)
-				right: 10%
-			@media only screen and (min-width : 675px)
-				right: 9.5%
-			@media only screen and (min-width : 880px)
-				right: 9.5%
-			@media only screen and (min-width : 1080px)
-				right: 9%
+			top: 4px
+			right: 9px
+			@media only screen and (min-width : 381px)
+				right: 19px
+				font-size: 25px
+				top: 3px
+			@media only screen and (min-width : 992px)
+				top: 4px
+			@media only screen and (min-width : 1200px)
+				top: 5px
 	//end of CSS for search bar
 
 	//search button
@@ -88,8 +89,8 @@
 			background-color: $custom-red
 			border: 2px solid $custom-red
 		.filled-in:checked+label:before
-			border-right: 2px solid white
-			border-bottom: 2px solid white
+			border-right: 3px solid white
+			border-bottom: 3px solid white
 		.filled-in:not(:checked)+label:after
 			background-color: white
 			border: 2px solid #838383
