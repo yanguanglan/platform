@@ -18,6 +18,7 @@
 
                     <a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="recipesCtl.toggleSearchForm()">
                         <i class="large mdi-action-search"></i>
+                        <i class="large mdi-navigation-expand-less"></i>
                     </a>
 
                     <form action="#" class="check-v-angular left">
@@ -57,10 +58,10 @@
     </div>
 
     <div class="row white-text no-margin-bottom" id="search" ng-show="recipesCtl.showSearchForm">
-        <div class="container">
+        <div class="container relative-for-clear-btn">
             <form class="col s12 no-padding-left">
                 <input class="form-control" ng-model="recipesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
-                <a class="clear-button" href="javascript:void(0)" ng-click="recipesCtl.clearSearch()"><i class="mdi-navigation-cancel"></i></a>
+                <a class="clear-button" href="javascript:void(0)" ng-click="recipesCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
             </form>
         </div>
     </div>
