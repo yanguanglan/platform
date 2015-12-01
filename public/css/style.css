@@ -872,6 +872,19 @@ nav .brand-logo {
 #faq {
   margin-top: -100px;
 }
+#faq .faq-item {
+  margin-bottom: 2rem;
+}
+#faq h3 {
+  margin: 1rem 0;
+}
+#faq p {
+  font-size: 16px;
+  margin: 0 0 1rem;
+}
+#faq .divider {
+  margin: 1rem 0;
+}
 
 .card-recipe .card-banner {
   -moz-border-radius: 2px 2px 0 0;
