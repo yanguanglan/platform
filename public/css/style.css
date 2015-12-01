@@ -502,8 +502,13 @@ a {
 
 .list-tile {
   line-height: 1.2;
-  font-size: 18px;
+  font-size: 16px;
   margin: 10px 0 0;
+}
+@media only screen and (min-width: 400px) {
+  .list-tile {
+    font-size: 18px;
+  }
 }
 @media only screen and (min-width: 650px) {
   .list-tile {
@@ -515,7 +520,12 @@ a {
   display: inline-block;
   color: #727272 !important;
   margin: 5px 10px 0 0 !important;
-  font-size: 15px;
+  font-size: 14px;
+}
+@media only screen and (min-width: 400px) {
+  .list-date {
+    font-size: 15px;
+  }
 }
 @media only screen and (min-width: 601px) {
   .list-date {
@@ -553,6 +563,7 @@ a {
 
 .list-icons {
   margin-left: 12px;
+  font-size: 14px;
   font-size: 16px;
 }
 .list-icons i {
@@ -616,7 +627,7 @@ a {
 #recipes-list .chip {
   display: none;
   background: none;
-  color: #333333;
+  color: #d0021b;
   padding-left: 0;
   margin-right: 5px;
   font-size: 16px;
