@@ -624,7 +624,7 @@ a {
   }
 }
 
-#recipes-list .chip {
+.recipe-list-item .chip {
   display: none;
   background: none;
   color: #d0021b;
@@ -634,7 +634,7 @@ a {
   font-weight: 400;
 }
 @media only screen and (min-width: 601px) {
-  #recipes-list .chip {
+  .recipe-list-item .chip {
     display: inline-block;
   }
 }
