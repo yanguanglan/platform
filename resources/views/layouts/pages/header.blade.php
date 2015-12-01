@@ -26,9 +26,9 @@
 				<a id="logo-container" href="#!/" class="brand-logo waves-effect waves-light beta">Angular<span class="text-red">JS</span>
 				Recipes</a>
 				<ul class="right hide-on-med-and-down" active-menu>
-					<li><a href="#!/recipes" class="waves-effect waves-light">Recipes</a></li>
-					<li><a href="#!/series" class="waves-effect waves-light">Series</a></li>
-					<li><a href="#contactModal" class="waves-effect waves-light" modal>Contact</a></li>
+					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
+					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
+					<li><a href="#contactModal" class="waves-effect waves-light waves-fix" modal>Contact</a></li>
 				</ul>
 
 				<ul id="nav-mobile" class="side-nav" active-menu>
