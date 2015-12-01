@@ -19,6 +19,14 @@ h4 {
   font-size: 16px;
 }
 
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
 .text-red {
   color: #d0021b !important;
 }
