@@ -624,6 +624,14 @@ a {
   }
 }
 
+.recipe-list-item {
+  float: none !important;
+}
+.recipe-list-item:after {
+  clear: both;
+  content: "";
+  display: table;
+}
 .recipe-list-item .chip {
   display: none;
   background: none;

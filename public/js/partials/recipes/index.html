@@ -75,7 +75,7 @@
                     <!-- <recipe class="col s12 m6 l6" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe> -->
                   <div class="card">
                     <div class="card-content">
-                      <recipe-item class="col s12" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe-item>
+                      <recipe-item ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe-item>
                     </div>
                   </div>
                 </div>
