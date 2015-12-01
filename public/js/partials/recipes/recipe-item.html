@@ -1,7 +1,7 @@
 <div id="recipes-list">
     <a class="list-version pull-left" ng-href="#!/recipes/{{recipe.uuid}}" ng-class="{'l-v1': recipe.release == 1, 'l-v2': recipe.release == 2}" >
-      <img class="version-logo" ng-if="recipe.release == 1" ng-src="img/angular_list_1.svg" alt="angular version 1">
-      <img class="version-logo" ng-if="recipe.release == 2" ng-src="img/angular_list_2.svg" alt="angular version 2">
+      <img class="version-logo-list" ng-if="recipe.release == 1" ng-src="img/angular_list_1.svg" alt="angular version 1">
+      <img class="version-logo-list" ng-if="recipe.release == 2" ng-src="img/angular_list_2.svg" alt="angular version 2">
     </a>
     <div class="pull-left list-content">
     <a ng-href="#!/recipes/{{recipe.uuid}}"><h5 class="list-tile">{{recipe.title}}</h5></a>
