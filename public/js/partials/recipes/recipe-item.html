@@ -1,10 +1,15 @@
 <div>
-    <h3>{{recipe.title}}</h3>
-    <p>{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
-    <div class="">
-        <span ng-repeat="topic in recipe.topics">{{topic.title}}</span>
-        <span class="pull-right">{{recipe.views}}</span>
-        <span class="pull-right">{{recipe.likes}}</span>
+    <div class="list-version pull-left" ng-class="{'l-v1': recipe.release == 1, 'l-v2': recipe.release == 2}">
+      <img class="version-logo" ng-if="recipe.release == 1" ng-src="img/angular_list_1.svg" alt="angular version 1">
+      <img class="version-logo" ng-if="recipe.release == 2" ng-src="img/angular_list_2.svg" alt="angular version 2">
     </div>
+    <div class="pull-left list-content">
+      <h5 class="list-tile">{{recipe.title}}</h5>
+      <p class="list-date">{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
+      <span class="topic-list" ng-repeat="topic in recipe.topics">{{topic.title}}</span>
+
+        <span class="pull-right list-icons">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
+        <span class="pull-right list-icons">{{recipe.likes}}<i class="mdi-action-thumb-up card-icons"></i></span>
     <div class="divider"></div>
+    </div>
 </div>
