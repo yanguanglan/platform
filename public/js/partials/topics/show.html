@@ -50,6 +50,11 @@
                             </li>
                         </ul>
                     </div>
+                    <ul id="view-as-btns" class="left">
+          						<li class "View-like">View as:</li>
+          						<li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.toggleAppearance(true)" ng-class="{active: recipesCtl.listAppearance}"><i class="medium mdi-action-list"></i></a></li>
+          						<li><a class="btn-flat waves-effect waves-black" ng-click="recipesCtl.toggleAppearance(false)" ng-class="{active: !recipesCtl.listAppearance}"><i class="medium mdi-action-view-module"></i></a></li>
+          					</ul>
                 </div>
             </div>
         </div>
