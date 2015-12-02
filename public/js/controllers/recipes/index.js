@@ -20,6 +20,9 @@
 		recipesCtl.v1 = true;
 		recipesCtl.v2 = true;
 		recipesCtl.version = 'all';
+		recipesCtl.toggleAppearance = function(listAppearance) {
+			recipesCtl.listAppearance = listAppearance;
+		};
 		recipesCtl.toggleVersion = function() {
 			var v1 = recipesCtl.v1,
 				v2 = recipesCtl.v2,
