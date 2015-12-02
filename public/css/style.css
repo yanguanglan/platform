@@ -380,7 +380,15 @@ nav .brand-logo {
 }
 .gray-banner #sort-list {
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 10px;
+}
+.gray-banner #sort-list li {
+  padding-top: 2px;
+}
+@media only screen and (min-width: 992px) {
+  .gray-banner #sort-list li {
+    padding-top: 1px;
+  }
 }
 .gray-banner .btn-flat {
   background-color: white;
@@ -403,10 +411,10 @@ nav .brand-logo {
   background-color: #d0021b;
 }
 .gray-banner ul li + li {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .gray-banner ul li:first-child {
-  margin-left: 14px;
+  margin-left: 10px;
 }
 .gray-banner #sort-list {
   display: block;
@@ -492,6 +500,19 @@ nav .brand-logo {
 }
 @media only screen and (max-width: 760px) {
   .gray-banner .sort-button {
+    display: inline-block;
+  }
+}
+
+#view-as-btns {
+  display: none;
+  margin-left: 10px;
+}
+#view-as-btns a {
+  font-size: 16px;
+}
+@media only screen and (min-width: 890px) {
+  #view-as-btns {
     display: inline-block;
   }
 }

@@ -61,8 +61,6 @@
 			padding: 12px 9px
 			i
 				font-size: 25px
-
-
 	//End of CSS search button
 
 	//Check box for Angular version
@@ -103,7 +101,11 @@
 	//Sort By: Single 3 Buttons
 	#sort-list
 		display: inline-block
-		margin-left: 35px
+		margin-left: 10px
+		li
+			padding-top: 2px
+			@media only screen and (min-width : 992px)
+				padding-top: 1px
 	.btn-flat
 		background-color: white
 		padding: 0px 15px
@@ -121,10 +123,10 @@
 			color: white
 			background-color: $custom-red
 		li+li
-			margin-left: 10px
+			margin-left: 5px
 		li
 			&:first-child
-				margin-left: 14px
+				margin-left: 10px
 	#sort-list
 		display: block
 		@media only screen and (max-width : 760px)
@@ -186,6 +188,15 @@
 				color: white
 		@media only screen and (max-width : 760px)
 			display: inline-block
+
+#view-as-btns
+	display: none
+	margin-left: 10px
+	a
+		font-size: 16px
+	@media only screen and (min-width : 890px)
+		display: inline-block
+
 
 // Recipes-list-view
 a
