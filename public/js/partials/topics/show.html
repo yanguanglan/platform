@@ -61,10 +61,10 @@
 	</div>
 
 	<div class="row white-text no-margin-bottom" id="search" ng-show="topicCtl.showSearchForm">
-		<div class="container">
+		<div class="container relative-for-clear-btn">
 			<form class="col s12 no-padding-left">
 				<input class="form-control" ng-model="topicCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
-				<a class="clear-button" href="javascript:void(0)" ng-click="topicCtl.clearSearch()"><i class="mdi-navigation-cancel"></i></a>
+				<a class="clear-button" href="javascript:void(0)" ng-if="topicCtl.searchFilter" ng-click="topicCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
 			</form>
 		</div>
 	</div>
@@ -74,13 +74,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col l9 s12">
-				<div class="row" ng-class="{'ng-hide': topicCtl.listAppearance}" ng-cloak>
-					<recipe class="col s12 m6 l6" ng-repeat="recipe in topicCtl.filteredRecipes | offset: topicCtl.currentPage * topicCtl.pageItems | limitTo: topicCtl.pageItems"></recipe>
-				</div>
+				<div ng-if="topicCtl.filteredRecipes.length">
+					<div class="row" ng-class="{'ng-hide': topicCtl.listAppearance}" ng-cloak>
+						<recipe class="col s12 m6 l6" ng-repeat="recipe in topicCtl.filteredRecipes | offset: topicCtl.currentPage * topicCtl.pageItems | limitTo: topicCtl.pageItems"></recipe>
+					</div>
 
-				<div class="card" ng-class="{'ng-hide': !topicCtl.listAppearance}" ng-cloak>
-					<div class="card-content">
-						<recipe-item ng-repeat="recipe in topicCtl.filteredRecipes | offset: topicCtl.currentPage * topicCtl.pageItems | limitTo: topicCtl.pageItems"></recipe-item>
+					<div class="card" ng-class="{'ng-hide': !topicCtl.listAppearance}" ng-cloak>
+						<div class="card-content">
+							<recipe-item ng-repeat="recipe in topicCtl.filteredRecipes | offset: topicCtl.currentPage * topicCtl.pageItems | limitTo: topicCtl.pageItems"></recipe-item>
+						</div>
 					</div>
 				</div>
 
