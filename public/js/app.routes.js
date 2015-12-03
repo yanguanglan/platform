@@ -77,7 +77,7 @@
 							return topicService.all();
 						}
 					},
-					auth: true
+					auth: false
 				})
 				.when('/recipes/:uuid', {
 					controller: 'RecipeController as recipeCtl',
@@ -120,7 +120,7 @@
 							return serieService.all();
 						}
 					},
-					auth: true
+					auth: false
 				})
 				.when('/series/:uuid/lessons', {
 					controller: 'SerieController as serieCtl',
