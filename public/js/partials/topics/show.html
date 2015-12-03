@@ -64,7 +64,7 @@
 		<div class="row white-text no-margin-bottom" id="search" ng-show="topicCtl.showSearchForm">
 			<div class="container relative-for-clear-btn">
 				<form class="col s12 no-padding-left">
-					<input class="form-control" ng-model="topicCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
+					<input class="form-control" ng-model="topicCtl.searchFilter" type="text" name="searchFilter" placeholder="Search..." focus-me="topicCtl.showSearchForm">
 					<a class="clear-button" href="javascript:void(0)" ng-if="topicCtl.searchFilter" ng-click="topicCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
 				</form>
 			</div>
