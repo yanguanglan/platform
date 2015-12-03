@@ -8,6 +8,6 @@ public/.sass-cache/
 .env
 .idea
 .DS_Store
-**/.DS_Store
+*/.DS_Store
 composer.lock
 tests/_output/*
