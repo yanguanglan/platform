@@ -42,6 +42,18 @@
                         }
                     }
                 })
+                .when('/requests', {
+                    controller: 'RequestsController as requestsCtl',
+                    templateUrl: 'js/partials/requests.html'
+                })
+                .when('/login', {
+                    controller: 'LoginController as loginCtl',
+                    templateUrl: 'js/partials/users/login.html'
+                })
+                .when('/register', {
+                    controller: 'RegisterController as registerCtl',
+                    templateUrl: 'js/partials/users/register.html'
+                })
                 .when('/recipes', {
                     controller: 'RecipesController as recipesCtl',
                     templateUrl: 'js/partials/recipes/index.html',

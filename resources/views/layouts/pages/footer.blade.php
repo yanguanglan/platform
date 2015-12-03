@@ -208,6 +208,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/public/stats.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/error.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/request.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/requests.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/contact.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/recipes/index.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/recipes/show.js')}}"></script>
@@ -218,6 +219,8 @@
 <script type="text/javascript" src="{{asset('js/controllers/topics/show.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/posts/index.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/posts/show.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/users/login.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/users/register.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/recipe.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/topic.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/serie.js')}}"></script>

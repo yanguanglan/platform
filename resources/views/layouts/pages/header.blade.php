@@ -28,14 +28,16 @@
 				<ul class="right hide-on-med-and-down" active-menu>
 					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
-					<li><a href="#contactModal" class="waves-effect waves-light waves-fix" modal>Contact</a></li>
+					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
+					<li><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
 				</ul>
 
 				<ul id="nav-mobile" class="side-nav" active-menu>
 					<li><a href="#!/" class="waves-effect waves-light">Home</a></li>
 					<li><a href="#!/recipes" class="waves-effect waves-light">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light">Series</a></li>
-					<li><a href="#contactModal" class="waves-effect waves-light" modal>Contact</a></li>
+					<li><a href="#!/requests" class="waves-effect waves-light">Requests</a></li>
+					<li><a href="#!/login" class="waves-effect waves-light">Login</a></li>
 				</ul>
 				<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-closeonclick="true"><i class="mdi-navigation-menu"></i></a>
 			</div>
