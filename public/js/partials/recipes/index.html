@@ -118,7 +118,7 @@
 						<span class="card-title black-text">Topics</span>
 						<ul class="collection">
 							<a ng-href="#!/topics/{{topic.uuid}}/recipes" class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" ng-repeat="topic in recipesCtl.topics">
-								<div>{{topic.title}}
+								<div><span class="right-topic-title">{{topic.title}}</span>
 									<span class="badge custom-red white-text">{{topic.recipes.length}}</span>
 								</div>
 							</a>
