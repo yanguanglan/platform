@@ -668,6 +668,104 @@ a {
   }
 }
 
+.single-recipe-gray-bar .left-icons {
+  font-size: 25px;
+  margin-top: 14px;
+  margin-right: 20px;
+}
+.single-recipe-gray-bar .left-icons i {
+  padding-left: 5px;
+}
+.single-recipe-gray-bar .right-icons {
+  display: inline-block;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.single-recipe-gray-bar .sr-share-icon {
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.single-recipe-gray-bar .sr-share-icon:hover {
+  color: #d0021b;
+}
+
+.share-button {
+  display: inline-block;
+  line-height: 62px;
+  height: 64px;
+  width: 90px;
+}
+@media only screen and (max-width: 380px) {
+  .share-button {
+    font-size: 13px;
+    width: 75px;
+  }
+}
+.share-button ul {
+  margin-top: 0;
+}
+.share-button ul li {
+  height: 64px;
+  text-align: center;
+}
+.share-button ul li i {
+  font-size: 30px;
+}
+.share-button .dropdown-button {
+  margin: 0;
+  display: inline-block;
+  width: 90px;
+  color: white;
+  height: 64px;
+}
+@media only screen and (max-width: 380px) {
+  .share-button .dropdown-button {
+    font-size: 13px;
+    width: 75px;
+  }
+}
+.share-button .dropdown-buttonul {
+  margin: 0;
+}
+.share-button .dropdown-button a {
+  height: 64px;
+}
+.share-button .dropdown-button:hover {
+  background-color: #d0021b;
+}
+.share-button #dropdown2 {
+  background-color: white;
+  padding: 0px;
+}
+.share-button #dropdown2 li {
+  display: list-item;
+  margin-left: 0px;
+  text-align: left;
+  background-color: white;
+  border-bottom: 1px solid #F2F2F2;
+  height: 64px;
+}
+.share-button #dropdown2 li a {
+  text-align: center;
+  height: 64px;
+  color: #212121;
+  padding: 22px;
+}
+.share-button #dropdown2 li a:hover {
+  color: white;
+}
+@media only screen and (max-width: 380px) {
+  .share-button #dropdown2 {
+    width: 75px;
+  }
+}
+.share-button #dropdown2 .active {
+  color: white;
+}
+
 #serie-header {
   background-color: #fbc02d;
   color: #fff;

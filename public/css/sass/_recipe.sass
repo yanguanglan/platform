@@ -284,3 +284,73 @@ a
 		font-weight: 400
 		@media only screen and (min-width : 601px)
 			display: inline-block
+
+.single-recipe-gray-bar
+	.left-icons
+		font-size: 25px
+		margin-top: 14px
+		margin-right: 20px
+		i
+			padding-left: 5px
+	.right-icons
+		display: inline-block
+		font-size: 30px
+		margin-top: 10px
+		margin-left: 20px
+	.sr-share-icon
+		+transition(all 0.2s linear)
+		&:hover
+			color: $custom-red
+.share-button
+	display: inline-block
+	line-height: 62px
+	height: 64px
+	width: 90px
+	@media only screen and (max-width : 380px)
+		font-size: 13px
+		width: 75px
+	ul
+		margin-top: 0
+		li
+			height: 64px
+			text-align: center
+			i
+				font-size: 30px
+
+	.dropdown-button
+		margin: 0
+		display: inline-block
+		width: 90px
+		color: white
+		height: 64px
+		@media only screen and (max-width : 380px)
+			font-size: 13px
+			width: 75px
+		&ul
+			margin: 0
+		a
+			height: 64px
+
+		&:hover
+			background-color: $custom-red
+	#dropdown2
+		background-color: white
+		padding: 0px
+		li
+			display: list-item
+			margin-left: 0px
+			text-align: left
+			background-color: white
+			border-bottom: 1px solid #F2F2F2
+			height: 64px
+			a
+				text-align: center
+				height: 64px
+				color: $dark-black
+				padding: 22px
+				&:hover
+					color: white
+		@media only screen and (max-width : 380px)
+			width: 75px
+		.active
+			color: white

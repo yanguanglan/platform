@@ -1,12 +1,38 @@
 <div id="recipe-header">
     <div class="container">
-        <div class="row">
+        <div class="row no-margin-bottom">
             <div class="col s12">
                 <h1>{{recipeCtl.recipe.title}}</h1>
             </div>
         </div>
     </div>
+    <div class="gray-banner single-recipe-gray-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <span class="pull-left left-icons sr-view-icon">{{recipeCtl.recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
+              <a href="#"><span class="pull-left left-icons no-margin-left">{{recipeCtl.recipe.likes}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span></a>
+              <a href="#" class="pull-right sr-bookmark-icon active"><span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span></a>
+              <div class="share-button pull-right">
+    						<ul>
+    							<li>
+    								<a class="dropdown-button" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share"></i></a>
+    								<ul id='dropdown2' class='dropdown-content'>
+    									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('date')" ng-class="{active: recipesCtl.sortByType == 'date'}"><i class="fa fa-facebook-square"></i></a></li>
+    									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')" ng-class="{active: recipesCtl.sortByType == 'views'}"><i class="fa fa-twitter-square"></i></a></li>
+    									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}"><i class="fa fa-envelope"></i></a></li>
+                      <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}"><i class="fa fa-get-pocket"></i></a></li>
+    								</ul>
+    							</li>
+    						</ul>
+    					</div>
+
+            </div>
+          </div>
+        </div>
+    </div>
 </div>
+
 
 <div id="recipe">
     <div class="container">
