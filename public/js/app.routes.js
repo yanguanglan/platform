@@ -169,7 +169,7 @@
 					templateUrl: 'js/partials/error.html'
 				})
 				.otherwise({
-					redirectTo: '/'
+					redirectTo: '/error'
 				});
 		}]);
 })();
