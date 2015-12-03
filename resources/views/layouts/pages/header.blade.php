@@ -21,7 +21,7 @@
 
 <body ng-app="recipesApp" ng-cloak>
 	<div class="navbar-fixed">
-		<nav class="grey darken-4" role="navigation">
+		<nav class="grey darken-4" role="navigation" ng-controller="NavigationController as navCtl">
 			<div class="nav-wrapper container">
 				<a id="logo-container" href="#!/" class="brand-logo waves-effect waves-light beta">Angular<span class="text-red">JS</span>
 				Recipes</a>
@@ -29,7 +29,8 @@
 					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
-					<li><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
+					<li ng-if="!navCtl.user"><a href="#!/login" class="waves-effect waves-light waves-fix">Login @{{navCtl.user}}</a></li>
+					<li ng-if="navCtl.user"><a href="#" class="waves-effect waves-light waves-fix">@{{navCtl.user}}</a></li>
 				</ul>
 
 				<ul id="nav-mobile" class="side-nav" active-menu>

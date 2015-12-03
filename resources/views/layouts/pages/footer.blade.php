@@ -7,11 +7,11 @@
 					of paying for knowledge, experiences, recipes and tricks. Share your recipes and help build a strong
 					community. Because knowledge is power!</p>
 			</div>
-            <div class="col offset-l1 l2 s12">
+			<div class="col offset-l1 l2 s12">
 				<h5 class="white-text">Links</h5>
 				<ul>
 					<li><a class="grey-text text-lighten-3" href="#!/about">About</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!/blog">News</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/blog">News</a></li>
 					<li><a class="grey-text text-lighten-3" href="#!/faq">FAQ</a></li>
 					<li><a class="grey-text text-lighten-3" href="#contactModal" modal>Contact</a></li>
 				</ul>
@@ -21,7 +21,7 @@
 				<ul>
 					<li><a class="grey-text text-lighten-3" href="#!/recipes">Recipes</a></li>
 					<li><a class="grey-text text-lighten-3" href="#!/series">Series</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!/statistics">Statistics</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/statistics">Statistics</a></li>
 
 				</ul>
 			</div>
@@ -164,7 +164,7 @@
 					</div>
 				</div>
 			</div>
-            <div class="row">
+			<div class="row">
 				<div class="input-field col s12">
 					<i class="mdi-editor-mode-edit prefix"></i>
 					<textarea id="icon_prefix2" class="materialize-textarea validate" name="message"
@@ -203,6 +203,7 @@
 <script type="text/javascript" src="{{asset('js/app.module.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.routes.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/home.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/navigation.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/about.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/faq.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/stats.js')}}"></script>
@@ -221,6 +222,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/posts/show.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/login.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/register.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/auth.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/recipe.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/topic.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/serie.js')}}"></script>
