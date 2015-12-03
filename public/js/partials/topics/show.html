@@ -10,63 +10,64 @@
 			</div>
 		</div>
 	</div>
+	<div class="gray-bar fixed">
+		<div class="gray-banner">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 no-padding-left">
+						<a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="topicCtl.toggleSearchForm()">
+							<i class="large mdi-action-search" ng-hide="topicCtl.showSearchForm"></i>
+							<i class="large mdi-navigation-expand-less" ng-show="topicCtl.showSearchForm"></i>
+						</a>
 
-	<div class="gray-banner">
-		<div class="container">
-			<div class="row">
-				<div class="col s12 no-padding-left">
-					<a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="topicCtl.toggleSearchForm()">
-						<i class="large mdi-action-search" ng-hide="topicCtl.showSearchForm"></i>
-						<i class="large mdi-navigation-expand-less" ng-show="topicCtl.showSearchForm"></i>
-					</a>
+						<form action="#" class="check-v-angular left">
+							<p>Angular:</p>
+							<p>
+								<input type="checkbox" ng-model="topicCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="topicCtl.toggleVersion()" />
+								<label for="Angular-v-1">v.1</label>
+							</p>
+							<p>
+								<input type="checkbox" ng-model="topicCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="topicCtl.toggleVersion()" />
+								<label for="Angular-v-2">v.2</label>
+							</p>
+						</form>
 
-					<form action="#" class="check-v-angular left">
-						<p>Angular:</p>
-						<p>
-							<input type="checkbox" ng-model="topicCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="topicCtl.toggleVersion()" />
-							<label for="Angular-v-1">v.1</label>
-						</p>
-						<p>
-							<input type="checkbox" ng-model="topicCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="topicCtl.toggleVersion()" />
-							<label for="Angular-v-2">v.2</label>
-						</p>
-					</form>
+						<ul id="sort-list" class="left">
+							<li class "sort"> Sort By:</li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('date')" ng-class="{active: topicCtl.sortByType == 'date'}">Date</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('views')" ng-class="{active: topicCtl.sortByType == 'views'}">Views</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('likes')" ng-class="{active: topicCtl.sortByType == 'likes'}">Likes</a></li>
+						</ul>
 
-					<ul id="sort-list" class="left">
-						<li class "sort"> Sort By:</li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('date')" ng-class="{active: topicCtl.sortByType == 'date'}">Date</a></li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('views')" ng-class="{active: topicCtl.sortByType == 'views'}">Views</a></li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.sortBy('likes')" ng-class="{active: topicCtl.sortByType == 'likes'}">Likes</a></li>
-					</ul>
-
-					<div class="sort-button">
-						<ul>
-							<li>
-								<a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Sort By<i class="mdi-navigation-arrow-drop-down"></i></a>
-								<ul id='dropdown1' class='dropdown-content'>
-									<li><a class="waves-effect waves-black active" ng-click="topicCtl.sortBy('date')" ng-class="{active: topicCtl.sortByType == 'date'}">Date</a></li>
-									<li><a class="waves-effect waves-black" ng-click="topicCtl.sortBy('views')" ng-class="{active: topicCtl.sortByType == 'views'}">Views</a></li>
-									<li><a class="waves-effect waves-black" ng-click="topicCtl.sortBy('likes')" ng-class="{active: topicCtl.sortByType == 'likes'}">Likes</a></li>
-								</ul>
-							</li>
+						<div class="sort-button">
+							<ul>
+								<li>
+									<a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Sort By<i class="mdi-navigation-arrow-drop-down"></i></a>
+									<ul id='dropdown1' class='dropdown-content'>
+										<li><a class="waves-effect waves-black active" ng-click="topicCtl.sortBy('date')" ng-class="{active: topicCtl.sortByType == 'date'}">Date</a></li>
+										<li><a class="waves-effect waves-black" ng-click="topicCtl.sortBy('views')" ng-class="{active: topicCtl.sortByType == 'views'}">Views</a></li>
+										<li><a class="waves-effect waves-black" ng-click="topicCtl.sortBy('likes')" ng-class="{active: topicCtl.sortByType == 'likes'}">Likes</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<ul id="view-as-btns" class="left">
+							<li class "View-like">View as:</li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.toggleAppearance(true)" ng-class="{active: topicCtl.listAppearance}"><i class="medium mdi-action-list"></i></a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.toggleAppearance(false)" ng-class="{active: !topicCtl.listAppearance}"><i class="medium mdi-action-view-module"></i></a></li>
 						</ul>
 					</div>
-					<ul id="view-as-btns" class="left">
-						<li class "View-like">View as:</li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.toggleAppearance(true)" ng-class="{active: topicCtl.listAppearance}"><i class="medium mdi-action-list"></i></a></li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="topicCtl.toggleAppearance(false)" ng-class="{active: !topicCtl.listAppearance}"><i class="medium mdi-action-view-module"></i></a></li>
-					</ul>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row white-text no-margin-bottom" id="search" ng-show="topicCtl.showSearchForm">
-		<div class="container relative-for-clear-btn">
-			<form class="col s12 no-padding-left">
-				<input class="form-control" ng-model="topicCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
-				<a class="clear-button" href="javascript:void(0)" ng-if="topicCtl.searchFilter" ng-click="topicCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
-			</form>
+		<div class="row white-text no-margin-bottom" id="search" ng-show="topicCtl.showSearchForm">
+			<div class="container relative-for-clear-btn">
+				<form class="col s12 no-padding-left">
+					<input class="form-control" ng-model="topicCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
+					<a class="clear-button" href="javascript:void(0)" ng-if="topicCtl.searchFilter" ng-click="topicCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
