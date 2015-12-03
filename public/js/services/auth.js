@@ -10,7 +10,8 @@
     function authService($http, $location) {
         var user, service = {
             setUser: setUser,
-            isLoggedIn: isLoggedIn
+            isLoggedIn: isLoggedIn,
+            logout: logout
         };
 
         return service;
@@ -25,6 +26,10 @@
 
         function isLoggedIn() {
             return user ? user : false;
+        }
+
+        function logout() {
+            user = null;
         }
     }
 })();

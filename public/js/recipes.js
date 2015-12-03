@@ -52,7 +52,7 @@ angular
 			restrict: 'A',
 			link: function(scope, element, args) {
 				var activeClass = args.activeMenu || 'active',
-					links = element.find('li');
+					links = element.find('li').not('.divider');
 
 				scope.$on('$routeChangeStart', function() {
 					var path = $location.path();
@@ -63,6 +63,30 @@ angular
 							href = listItem.find('a').attr('href').replace(/!|#/g, '');
 						if (href == path) {
 							listItem.addClass(activeClass);
+						}
+					}
+				});
+			}
+		};
+	}])
+	.directive('toggleAuth', ['authService', function(authService) {
+		return {
+			restrict: 'A',
+			link: function(scope, element, args) {
+				var visible = args.toggleAuth;
+
+				scope.$on('$routeChangeStart', function() {
+					if (authService.isLoggedIn()) {
+						if (visible == 'auth') {
+							element.removeClass('ng-hide');
+						} else {
+							element.addClass('ng-hide');
+						}
+					} else {
+						if (visible == 'auth') {
+							element.addClass('ng-hide');
+						} else {
+							element.removeClass('ng-hide');
 						}
 					}
 				});

@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('LoginController', LoginController);
 
-	LoginController.$inject = ['authService', '$location'];
+	LoginController.$inject = ['authService', '$location', '$rootScope'];
 
-	function LoginController(authService, $location) {
+	function LoginController(authService, $location, $rootScope) {
 		var loginCtl = this;
 		loginCtl.user = {
 			email: '',
@@ -15,6 +15,7 @@
 		};
 		loginCtl.submit = function(valid) {
 			authService.setUser();
+			$rootScope.$emit('login');
 			$location.path('/');
 
 			// if (valid) {

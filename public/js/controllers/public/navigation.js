@@ -1,15 +1,23 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('recipesApp')
-		.controller('NavigationController', NavigationController);
+    angular
+        .module('recipesApp')
+        .controller('NavigationController', NavigationController);
 
-	NavigationController.$inject = ['authService'];
+    NavigationController.$inject = ['authService', '$rootScope', '$location'];
 
-	function NavigationController(authService) {
-		var navCtl = this;
-		navCtl.user = authService.isLoggedIn();
-		console.log(navCtl.user);
-	}
+    function NavigationController(authService, $rootScope, $location) {
+        var navCtl = this;
+        navCtl.user = authService.isLoggedIn();
+        navCtl.logout = function() {
+            authService.logout();
+            navCtl.user = authService.isLoggedIn();
+            $location.path('/');
+        };
+
+        $rootScope.$on('login', function() {
+            navCtl.user = authService.isLoggedIn();
+        });
+    }
 })();

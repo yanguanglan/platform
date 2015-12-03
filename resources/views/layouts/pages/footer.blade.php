@@ -222,6 +222,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/posts/show.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/login.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/register.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/users/show.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/auth.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/recipe.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/topic.js')}}"></script>

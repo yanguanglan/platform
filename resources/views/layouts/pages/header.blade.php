@@ -29,8 +29,14 @@
 					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
-					<li ng-if="!navCtl.user"><a href="#!/login" class="waves-effect waves-light waves-fix">Login @{{navCtl.user}}</a></li>
-					<li ng-if="navCtl.user"><a href="#" class="waves-effect waves-light waves-fix">@{{navCtl.user}}</a></li>
+					<li toggle-auth><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
+					<li toggle-auth="auth"><a href="#!/" class="waves-effect waves-light waves-fix dropdown-button" data-activates='dropdown3' dropdown>@{{navCtl.user.name}}</a></li>
+
+					<ul id='dropdown3' class='dropdown-content'>
+						<li><a href="#!/dashboard">Dashboard</a></li>
+						<li class="divider"></li>
+						<li><a href="#!/" ng-click="navCtl.logout()">Logout</a></li>
+					</ul>
 				</ul>
 
 				<ul id="nav-mobile" class="side-nav" active-menu>

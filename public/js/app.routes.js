@@ -66,6 +66,16 @@
 					controller: 'RegisterController as registerCtl',
 					templateUrl: 'js/partials/users/register.html'
 				})
+				.when('/dashboard', {
+					controller: 'UserController as userCtl',
+					templateUrl: 'js/partials/users/show.html',
+					resolve: {
+						user: function(authService) {
+							return authService.isLoggedIn();
+						}
+					},
+					auth: true
+				})
 				.when('/recipes', {
 					controller: 'RecipesController as recipesCtl',
 					templateUrl: 'js/partials/recipes/index.html',
@@ -76,8 +86,7 @@
 						topics: function(topicService) {
 							return topicService.all();
 						}
-					},
-					auth: false
+					}
 				})
 				.when('/recipes/:uuid', {
 					controller: 'RecipeController as recipeCtl',
