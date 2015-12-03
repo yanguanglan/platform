@@ -10,59 +10,60 @@
 			</div>
 		</div>
 	</div>
+	<div class="gray-bar fixed">
+		<div class="gray-banner-yellow">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 no-padding-left">
 
-	<div class="gray-banner-yellow">
-		<div class="container">
-			<div class="row">
-				<div class="col s12 no-padding-left">
+						<a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="seriesCtl.toggleSearchForm()">
+							<i class="large mdi-action-search" ng-hide="seriesCtl.showSearchForm"></i>
+							<i class="large mdi-navigation-expand-less" ng-show="seriesCtl.showSearchForm"></i>
+						</a>
 
-					<a href="javascript:void(0)" class="pull-right waves-effect waves-light" id="toggle-search" ng-click="seriesCtl.toggleSearchForm()">
-						<i class="large mdi-action-search" ng-hide="seriesCtl.showSearchForm"></i>
-						<i class="large mdi-navigation-expand-less" ng-show="seriesCtl.showSearchForm"></i>
-					</a>
+						<form action="#" class="check-v-angular left">
+							<p>Angular:</p>
+							<p>
+								<input type="checkbox" ng-model="seriesCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="seriesCtl.toggleVersion()" />
+								<label for="Angular-v-1">v.1</label>
+							</p>
+							<p>
+								<input type="checkbox" ng-model="seriesCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="seriesCtl.toggleVersion()" />
+								<label for="Angular-v-2">v.2</label>
+							</p>
+						</form>
 
-					<form action="#" class="check-v-angular left">
-						<p>Angular:</p>
-						<p>
-							<input type="checkbox" ng-model="seriesCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="seriesCtl.toggleVersion()" />
-							<label for="Angular-v-1">v.1</label>
-						</p>
-						<p>
-							<input type="checkbox" ng-model="seriesCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="seriesCtl.toggleVersion()" />
-							<label for="Angular-v-2">v.2</label>
-						</p>
-					</form>
-
-					<ul id="sort-list" class="left">
-						<li class "sort"> Sort By:</li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('date')" ng-class="{active: seriesCtl.sortByType == 'date'}">Date</a></li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('views')" ng-class="{active: seriesCtl.sortByType == 'views'}">Views</a></li>
-						<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('likes')" ng-class="{active: seriesCtl.sortByType == 'likes'}">Likes</a></li>
-					</ul>
-
-					<div class="sort-button">
-						<ul>
-							<li>
-								<a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Sort By<i class="mdi-navigation-arrow-drop-down"></i></a>
-								<ul id='dropdown1' class='dropdown-content'>
-									<li><a class="waves-effect waves-black active" ng-click="seriesCtl.sortBy('date')" ng-class="{active: seriesCtl.sortByType == 'date'}">Date</a></li>
-									<li><a class="waves-effect waves-black" ng-click="seriesCtl.sortBy('views')" ng-class="{active: seriesCtl.sortByType == 'views'}">Views</a></li>
-									<li><a class="waves-effect waves-black" ng-click="seriesCtl.sortBy('likes')" ng-class="{active: seriesCtl.sortByType == 'likes'}">Likes</a></li>
-								</ul>
-							</li>
+						<ul id="sort-list" class="left">
+							<li class "sort"> Sort By:</li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('date')" ng-class="{active: seriesCtl.sortByType == 'date'}">Date</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('views')" ng-class="{active: seriesCtl.sortByType == 'views'}">Views</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('likes')" ng-class="{active: seriesCtl.sortByType == 'likes'}">Likes</a></li>
 						</ul>
+
+						<div class="sort-button">
+							<ul>
+								<li>
+									<a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Sort By<i class="mdi-navigation-arrow-drop-down"></i></a>
+									<ul id='dropdown1' class='dropdown-content'>
+										<li><a class="waves-effect waves-black active" ng-click="seriesCtl.sortBy('date')" ng-class="{active: seriesCtl.sortByType == 'date'}">Date</a></li>
+										<li><a class="waves-effect waves-black" ng-click="seriesCtl.sortBy('views')" ng-class="{active: seriesCtl.sortByType == 'views'}">Views</a></li>
+										<li><a class="waves-effect waves-black" ng-click="seriesCtl.sortBy('likes')" ng-class="{active: seriesCtl.sortByType == 'likes'}">Likes</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row white-text no-margin-bottom" id="search" ng-show="seriesCtl.showSearchForm">
-		<div class="container relative-for-clear-btn">
-			<form class="col s12 no-padding-left">
-				<input class="form-control" ng-model="seriesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
-				<a class="clear-button" href="javascript:void(0)" ng-click="seriesCtl.clearSearch()" ng-if="seriesCtl.searchFilter"><i class="mdi-content-clear"></i></a>
-			</form>
+		<div class="row white-text no-margin-bottom" id="search" ng-show="seriesCtl.showSearchForm">
+			<div class="container relative-for-clear-btn">
+				<form class="col s12 no-padding-left">
+					<input class="form-control" ng-model="seriesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
+					<a class="clear-button" href="javascript:void(0)" ng-click="seriesCtl.clearSearch()" ng-if="seriesCtl.searchFilter"><i class="mdi-content-clear"></i></a>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
