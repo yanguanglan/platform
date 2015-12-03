@@ -2,16 +2,30 @@
 @import mixins
 @import colors
 @import typography
-@import header
-#banner
-	min-height: 600px
-	background: $medium-black url(../img/blackboard.png) no-repeat center
+#error-page
+	min-height: 350px
+	background: $medium-black url(../img/error_board.jpg) no-repeat center
 	background-size: cover
+	@media only screen and (min-width : 500px)
+		min-height: 450px
+	@media only screen and (min-width : 800px)
+		min-height: 550px
+	@media only screen and (min-width : 1200px)
+		min-height: 600px
 	h2
 		color: #ffffff
 		font-weight: 300
+		font-size: 24px
+		@media only screen and (min-width : 500px)
+			font-size: 28px
+		@media only screen and (min-width : 800px)
+			font-size: 30px
 	img
 		width: 100%
-		max-width: 500px
-
-@import footer
+		width: 300px
+		@media only screen and (min-width : 500px)
+			width: 400px
+		@media only screen and (min-width : 800px)
+			width: 500px
+		@media only screen and (min-width : 1200px)
+			width: 600px

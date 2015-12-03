@@ -1346,6 +1346,200 @@ a {
   background-image: linear-gradient(to top right, #0e66c4 0%, #044695 100%);
 }
 
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+.markdown-body p {
+  font-size: 16px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.text-red {
+  color: #d0021b !important;
+}
+
+.clear:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.beta, .ibeta, .fbeta {
+  position: relative;
+}
+.beta:after, .ibeta:after, .fbeta:after {
+  content: "beta";
+  position: absolute;
+  color: #fff;
+  font-weight: 100;
+  letter-spacing: 1.2px;
+}
+
+.beta:after {
+  top: -5px;
+  right: 4px;
+  font-size: 8px;
+}
+@media (min-width: 600px) {
+  .beta:after {
+    font-size: 9px;
+    right: 2px;
+  }
+}
+@media (min-width: 660px) {
+  .beta:after {
+    font-size: 10px;
+    right: 0px;
+  }
+}
+
+.ibeta:after {
+  top: -20px;
+  font-size: 8px;
+  right: -23px;
+  letter-spacing: 1px;
+}
+
+.fbeta:after {
+  top: -5px;
+  left: 14rem;
+  font-size: 10px;
+}
+
+.custom-red {
+  background-color: #d0021b;
+}
+.custom-red:hover {
+  background-color: #b70218;
+}
+.custom-red:focus {
+  background-color: #d0021b;
+}
+
+.custom-gray {
+  background-color: #9B9B9B;
+}
+.custom-gray:hover {
+  background-color: #8e8e8e;
+}
+.custom-gray:focus {
+  background-color: #9B9B9B;
+}
+
+.custom-yellow {
+  background-color: #fbc02d;
+}
+.custom-yellow:hover {
+  background-color: #fbb814;
+}
+.custom-yellow:focus {
+  background-color: #fbc02d;
+}
+
+.red-bg {
+  background-color: #d0021b;
+}
+
+.yellow-bg {
+  background-color: #fbc02d;
+}
+
+.decoration {
+  position: relative;
+}
+.decoration:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  border-bottom: 2px solid #d0021b;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.badge {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#error-page {
+  min-height: 350px;
+  background: #333333 url(../img/error_board.jpg) no-repeat center;
+  background-size: cover;
+}
+@media only screen and (min-width: 500px) {
+  #error-page {
+    min-height: 450px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #error-page {
+    min-height: 550px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #error-page {
+    min-height: 600px;
+  }
+}
+#error-page h2 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 24px;
+}
+@media only screen and (min-width: 500px) {
+  #error-page h2 {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #error-page h2 {
+    font-size: 30px;
+  }
+}
+#error-page img {
+  width: 100%;
+  width: 300px;
+}
+@media only screen and (min-width: 500px) {
+  #error-page img {
+    width: 400px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  #error-page img {
+    width: 500px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #error-page img {
+    width: 600px;
+  }
+}
+
 #banner {
   min-height: 600px;
   background: #333333 url(../img/blackboard.png) no-repeat center;
