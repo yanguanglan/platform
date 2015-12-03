@@ -12,6 +12,22 @@ angular
 			link: linkFunction
 		};
 	})
+	.directive('fixedTop', function() {
+		var linkFunction = function(scope, element, args) {
+			$(window).on('scroll', function() {
+				if ($(window).scrollTop() > 150) {
+					element.addClass('fixed-top');
+				} else {
+					element.removeClass('fixed-top');
+				}
+			});
+		};
+
+		return {
+			restrict: 'A',
+			link: linkFunction
+		};
+	})
 	.directive('scroller', function() {
 		var linkFunction = function(scope, element, args) {
 			element.on('click', function(e) {

@@ -226,6 +226,16 @@ nav ul li {
   top: -1px;
 }
 
+.fixed-top {
+  margin-bottom: 84px !important;
+}
+.fixed-top .fixed {
+  position: fixed;
+  top: 64px;
+  width: 100%;
+  z-index: 2;
+}
+
 nav .brand-logo {
   padding-right: 28px;
 }
