@@ -13,7 +13,7 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
     resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
     resource('posts', 'PostsController', ['only' => ['index', 'show']]);
     post('auth/login', 'AuthController@login');
-    get('auth/logout', 'AuthController@logout');
+    post('auth/register', 'AuthController@register');
     get('users/account', 'UsersController@account');
     get('users/dashboard', 'UsersController@dashboard');
 });

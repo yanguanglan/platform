@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('LoginController', LoginController);
 
-	LoginController.$inject = ['authService', '$auth', '$location', '$rootScope'];
+	LoginController.$inject = ['authService', '$auth', '$location', '$rootScope', '$scope'];
 
-	function LoginController(authService, $auth, $location, $rootScope) {
+	function LoginController(authService, $auth, $location, $rootScope, $scope) {
 		var loginCtl = this;
 		loginCtl.user = {
 			email: '',
@@ -28,7 +28,8 @@
 						console.log(err);
 					});
 			} else {
-				console.log('invalid');
+				$scope.loginForm.email.$setDirty();
+				$scope.loginForm.password.$setDirty();
 			}
 		};
 	}

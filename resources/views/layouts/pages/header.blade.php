@@ -29,6 +29,7 @@
 					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
+					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/register" class="waves-effect waves-light waves-fix">Register</a></li>
 					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#" class="waves-effect waves-light waves-fix dropdown-button" data-activates='dropdown3' dropdown><img gravatar-src="navCtl.user.email" gravatar-size="80" class="avatar-img"> @{{navCtl.user.name}}</a></li>
 
@@ -45,7 +46,12 @@
 					<li><a href="#!/recipes" class="waves-effect waves-light">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light">Requests</a></li>
-					<li><a href="#!/login" class="waves-effect waves-light">Login</a></li>
+					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/register" class="waves-effect waves-light">Register</a></li>
+					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/login" class="waves-effect waves-light">Login</a></li>
+					<li ng-if="navCtl.isAuthenticated()"><a href="#!/dashboard" class="waves-effect waves-light">Dashboard</a></li>
+					<li ng-if="navCtl.isAuthenticated()"><a href="#!/account" class="waves-effect waves-light">Account</a></li>
+					<li class="divider"></li>
+					<li ng-if="navCtl.isAuthenticated()"><a href="#!/" class="waves-effect waves-light" ng-click="navCtl.logout()">Logout</a></li>
 				</ul>
 				<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-closeonclick="true"><i class="mdi-navigation-menu"></i></a>
 			</div>

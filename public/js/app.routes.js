@@ -14,6 +14,7 @@
 		}])
 		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', '$authProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider, $authProvider) {
 			$authProvider.loginUrl = '/api/auth/login';
+			$authProvider.signupUrl = '/api/auth/register';
 			cfpLoadingBarProvider.includeSpinner = false;
 			$locationProvider.hashPrefix('!');
 			$routeProvider
