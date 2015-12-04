@@ -1103,26 +1103,122 @@ a {
   }
 }
 #faq-header {
-  min-height: 200px;
-  background: #333333 url(../img/blackboard.png) no-repeat center;
+  height: 150px;
+  background: #333333 url(../img/greenboard.png) no-repeat center;
   background-size: cover;
+  padding-top: 53px;
+}
+#faq-header h1 {
+  color: #fff;
+  margin: 0;
+}
+
+.faq-search {
+  display: inline-block;
+  background-color: #2F5247;
+  height: 64px;
+  width: 100%;
+}
+.faq-search .relative-for-clear-btn {
+  position: relative;
+}
+.faq-search input {
+  box-shadow: none;
+  display: inline-block;
+}
+.faq-search input:focus {
+  border-bottom: 1px solid #fff;
+}
+.faq-search .clear-button {
+  position: absolute;
+  color: #fff;
+  font-size: 20px;
+  top: 4px;
+  right: 12px;
+}
+.faq-search .clear-button:hover {
+  color: #9B9B9B;
+}
+@media only screen and (min-width: 381px) {
+  .faq-search .clear-button {
+    right: 15px;
+    font-size: 25px;
+    top: 3px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .faq-search .clear-button {
+    top: 4px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .faq-search .clear-button {
+    top: 5px;
+  }
 }
 
 #faq {
-  margin-top: -100px;
+  margin-top: 20px;
+}
+#faq .faq-side-bar {
+  padding: 0 !important;
+}
+#faq .faq-side-header {
+  background-color: #2F5247;
+  height: 64px;
+}
+#faq .card-title {
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  font-size: 30px;
+  padding-top: 8px;
+  padding-left: 3%;
+}
+#faq .faq-nav {
+  padding-left: 3%;
+}
+#faq .faq-nav h4 {
+  font-size: 18px;
+}
+#faq .card-content {
+  padding: 20px;
+}
+#faq .faq-img {
+  display: none;
+  margin: 0 0 20px 20px;
+  height: 100%;
+}
+@media only screen and (min-width: 750px) {
+  #faq .faq-img {
+    display: block;
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  #faq .faq-img {
+    width: 35%;
+  }
 }
 #faq .faq-item {
   margin-bottom: 2rem;
 }
 #faq h3 {
-  margin: 1rem 0;
+  margin: 4px 0 24px 0;
 }
 #faq p {
   font-size: 16px;
   margin: 0 0 1rem;
 }
-#faq .divider {
-  margin: 1rem 0;
+@media only screen and (min-width: 750px) {
+  #faq p {
+    max-width: 60%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  #faq p {
+    max-width: 65%;
+  }
 }
 
 .card-recipe .card-banner {
