@@ -5,4 +5,8 @@ interface UserInterface {
 
     public function exists($email);
 
+    public function account($id);
+
+    public function dashboard($id);
+
 }

@@ -36,4 +36,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		$this->attributes['password'] = bcrypt($value);
 	}
 
+	public function likedRecipes()
+	{
+		return $this->belongsToMany('App\Recipe', 'recipes_likes', 'user_id', 'recipe_id');
+	}
+
+    public function bookmarkedRecipes()
+	{
+		return $this->belongsToMany('App\Recipe', 'recipes_bookmarks', 'user_id', 'recipe_id');
+	}
+
 }

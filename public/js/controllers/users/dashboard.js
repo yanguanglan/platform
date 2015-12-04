@@ -5,10 +5,11 @@
 		.module('recipesApp')
 		.controller('DashboardController', DashboardController);
 
-	DashboardController.$inject = ['authService'];
+	DashboardController.$inject = ['user'];
 
-	function DashboardController(authService) {
+	function DashboardController(user) {
 		var dashCtl = this;
-		dashCtl.user = authService.isLoggedIn();
+		dashCtl.user = user.user;
+		console.log(dashCtl.user);
 	}
 })();

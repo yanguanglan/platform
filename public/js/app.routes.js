@@ -68,6 +68,11 @@
 				.when('/dashboard', {
 					controller: 'DashboardController as dashCtl',
 					templateUrl: 'js/partials/users/dashboard.html',
+					resolve: {
+						user: function(userService) {
+							return userService.dashboard();
+						}
+					},
 					auth: true
 				})
 				.when('/account', {
