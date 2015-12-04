@@ -22,11 +22,17 @@
 						email: registerCtl.user.email,
 						password: registerCtl.user.password
 					})
-					.then(function(data) {
-						$auth.setToken(data.data.token)
-						$rootScope.$emit('login', data.data.user);
-						authService.setUser(data.data.user);
-						$location.path('/dashboard');
+					.then(function(res) {
+						var data = res.data;
+
+						if (data.error) {
+							console.log(data.msg);
+						} else {
+							$auth.setToken(data.token)
+							$rootScope.$emit('login', data.user);
+							authService.setUser(data.user);
+							$location.path('/dashboard');
+						}
 					}, function(err) {
 						console.log(err);
 					});

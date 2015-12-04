@@ -50,7 +50,7 @@
 					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/login" class="waves-effect waves-light">Login</a></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#!/dashboard" class="waves-effect waves-light">Dashboard</a></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#!/account" class="waves-effect waves-light">Account</a></li>
-					<li class="divider"></li>
+					<li class="divider" ng-if="navCtl.isAuthenticated()"></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#!/" class="waves-effect waves-light" ng-click="navCtl.logout()">Logout</a></li>
 				</ul>
 				<a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-closeonclick="true"><i class="mdi-navigation-menu"></i></a>

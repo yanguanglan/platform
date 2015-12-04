@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\User\RegisterRequest;
 use App\Http\Controllers\Controller;
 use App\Repositories\User\UserInterface as User;
 use JWTAuth;
@@ -24,11 +25,11 @@ class AuthController extends Controller
 		try {
 			// verify the credentials and create a token for the user
 			if (! $token = JWTAuth::attempt($credentials)) {
-				return response()->json(['error' => 'invalid_credentials'], 401);
+				return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
 			}
 		} catch (JWTException $e) {
 			// something went wrong
-			return response()->json(['error' => 'could_not_create_token'], 500);
+			return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 500);
 		}
 
 		// if no errors are encountered we can return a JWT
@@ -38,7 +39,7 @@ class AuthController extends Controller
 		];
 	}
 
-	public function register(Request $request)
+	public function register(RegisterRequest $request)
 	{
 		$credentials = $request->only('name', 'email', 'password');
 
@@ -47,14 +48,13 @@ class AuthController extends Controller
 		try {
 			// verify the credentials and create a token for the user
 			if (! $token = JWTAuth::attempt($credentials)) {
-				return response()->json(['error' => 'invalid_credentials'], 401);
+				return response()->json(['error' => 'Please enter valid credentials'], 401);
 			}
 		} catch (JWTException $e) {
 			// something went wrong
-			return response()->json(['error' => 'could_not_create_token'], 500);
+			return response()->json(['error' => 'Please enter valid credentials'], 500);
 		}
 
-		// if no errors are encountered we can return a JWT
 		return [
 			'token' => $token,
 			'user' => \Auth::user()

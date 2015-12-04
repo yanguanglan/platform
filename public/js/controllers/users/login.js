@@ -20,10 +20,16 @@
 						email: loginCtl.user.email,
 						password: loginCtl.user.password
 					})
-					.then(function(data) {
-						$rootScope.$emit('login', data.data.user);
-						authService.setUser(data.data.user);
-						$location.path('/dashboard');
+					.then(function(res) {
+						var data = res.data;
+
+						if (data.error) {
+							console.log(data.msg);
+						} else {
+							$rootScope.$emit('login', data.user);
+							authService.setUser(data.user);
+							$location.path('/dashboard');
+						}
 					}, function(err) {
 						console.log(err);
 					});
