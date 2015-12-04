@@ -195,6 +195,7 @@
 <script type="text/javascript" src="{{asset('bower_components/angular-sanitize/angular-sanitize.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-gravatar/build/angular-gravatar.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-loading-bar/build/loading-bar.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/satellizer/satellizer.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/showdown/dist/showdown.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/ng-showdown/dist/ng-showdown.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.min.js')}}"></script>
@@ -226,6 +227,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/users/dashboard.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/account.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/auth.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/user.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/recipe.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/topic.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/serie.js')}}"></script>

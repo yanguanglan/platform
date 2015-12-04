@@ -8,7 +8,7 @@
     authService.$inject = ['$location'];
 
     function authService($http, $location) {
-        var user, service = {
+        var service = {
             setUser: setUser,
             isLoggedIn: isLoggedIn,
             logout: logout
@@ -16,20 +16,20 @@
 
         return service;
 
-        function setUser() {
-            user = {
-                name: 'John Doe',
-                username: 'john',
-                email: 'fakiolasmarios@gmail.com'
-            };
+        function setUser(auth) {
+            localStorage.setItem('user', JSON.stringify(auth));
+
+            return auth;
         }
 
         function isLoggedIn() {
+            var user = JSON.parse(localStorage.getItem('user'));
+
             return user ? user : false;
         }
 
         function logout() {
-            user = null;
+            localStorage.removeItem('user');
         }
     }
 })();

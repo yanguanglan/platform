@@ -27,6 +27,7 @@
     "github-markdown-css": "~2.1.0",
     "angularUtils-disqus": "angular-utils-disqus#~0.4.0",
     "angular-loading-bar": "~0.8.0",
-    "angular-gravatar": "~0.4.1"
+    "angular-gravatar": "~0.4.1",
+    "satellizer": "~0.13.1"
   }
 }

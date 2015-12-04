@@ -64,6 +64,11 @@ class AppServiceProvider extends ServiceProvider {
 			'App\Repositories\Topic\TopicInterface',
 			'App\Repositories\Topic\TopicRepository'
 		);
+
+		$this->app->bind(
+			'App\Repositories\User\UserInterface',
+			'App\Repositories\User\UserRepository'
+		);
 	}
 
 }

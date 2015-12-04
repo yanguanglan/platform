@@ -12,6 +12,10 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
     resource('lessons', 'LessonsController', ['only' => ['show']]);
     resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
     resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+    post('auth/login', 'AuthController@login');
+    get('auth/logout', 'AuthController@logout');
+    get('users/account', 'UsersController@account');
+    get('users/dashboard', 'UsersController@dashboard');
 });
 
 resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);

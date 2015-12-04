@@ -4,18 +4,16 @@
 	angular
 		.module('recipesApp')
 		.run(['$rootScope', '$location', 'authService', function($rootScope, $location, authService) {
-			$rootScope.$on('$routeChangeStart', function(event, next, current) {
-				if (!authService.isLoggedIn() && next.auth) {
-					console.log('DENY');
-					// event.preventDefault();
-					$location.path('/login');
-				} else {
-					console.log('ALLOW');
-					// $location.path('/');
-				}
-			});
+			$rootScope
+				.$on('$routeChangeStart', function(event, next, current) {
+					if (!authService.isLoggedIn() && next.auth) {
+						console.log('auth');
+						$location.path('/login');
+					}
+				});
 		}])
-		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider) {
+		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', '$authProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider, $authProvider) {
+			$authProvider.loginUrl = '/api/auth/login';
 			cfpLoadingBarProvider.includeSpinner = false;
 			$locationProvider.hashPrefix('!');
 			$routeProvider
@@ -69,21 +67,11 @@
 				.when('/dashboard', {
 					controller: 'DashboardController as dashCtl',
 					templateUrl: 'js/partials/users/dashboard.html',
-					resolve: {
-						user: function(authService) {
-							return authService.isLoggedIn();
-						}
-					},
 					auth: true
 				})
 				.when('/account', {
 					controller: 'AccountController as accountCtl',
 					templateUrl: 'js/partials/users/account.html',
-					resolve: {
-						user: function(authService) {
-							return authService.isLoggedIn();
-						}
-					},
 					auth: true
 				})
 				.when('/recipes', {
