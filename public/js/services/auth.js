@@ -20,7 +20,7 @@
             user = {
                 name: 'John Doe',
                 username: 'john',
-                email: 'john@gmail.com'
+                email: 'fakiolasmarios@gmail.com'
             };
         }
 

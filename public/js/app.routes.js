@@ -67,8 +67,18 @@
 					templateUrl: 'js/partials/users/register.html'
 				})
 				.when('/dashboard', {
-					controller: 'UserController as userCtl',
-					templateUrl: 'js/partials/users/show.html',
+					controller: 'DashboardController as dashCtl',
+					templateUrl: 'js/partials/users/dashboard.html',
+					resolve: {
+						user: function(authService) {
+							return authService.isLoggedIn();
+						}
+					},
+					auth: true
+				})
+				.when('/account', {
+					controller: 'AccountController as accountCtl',
+					templateUrl: 'js/partials/users/account.html',
 					resolve: {
 						user: function(authService) {
 							return authService.isLoggedIn();

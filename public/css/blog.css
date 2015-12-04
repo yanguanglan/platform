@@ -220,12 +220,15 @@ nav .brand-logo {
 }
 
 .avatar-img {
+  float: left;
+  margin: 10px 5px 0 0;
   vertical-align: middle;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  border: 2px solid #d0021b;
 }
 
 .dropdown-content li > a,

@@ -30,10 +30,11 @@
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
 					<li toggle-auth><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
-					<li toggle-auth="auth"><a href="#!/" class="waves-effect waves-light waves-fix dropdown-button" data-activates='dropdown3' dropdown>@{{navCtl.user.name}}</a></li>
+					<li toggle-auth="auth"><a href="#" class="waves-effect waves-light waves-fix dropdown-button" data-activates='dropdown3' dropdown><img gravatar-src="navCtl.user.email" gravatar-size="80" class="avatar-img"> @{{navCtl.user.name}}</a></li>
 
 					<ul id='dropdown3' class='dropdown-content'>
 						<li><a href="#!/dashboard">Dashboard</a></li>
+						<li><a href="#!/account">Account</a></li>
 						<li class="divider"></li>
 						<li><a href="#!/" ng-click="navCtl.logout()">Logout</a></li>
 					</ul>

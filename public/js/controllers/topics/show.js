@@ -12,7 +12,7 @@
 		topicCtl.topic = topic;
 		topicCtl.topics = topics;
 		topicCtl.showSearchForm = false;
-		topicCtl.listAppearance = true;
+		topicCtl.listAppearance = false;
 		topicCtl.searchFilter = '';
 		topicCtl.sortByType = 'date';
 		topicCtl.pageItems = 10;

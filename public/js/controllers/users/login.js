@@ -18,11 +18,11 @@
 			$rootScope.$emit('login');
 			$location.path('/');
 
-			// if (valid) {
-			// 	console.log('valid');
-			// } else {
-			// 	console.log('invalid');
-			// }
+			if (valid) {
+				console.log('valid');
+			} else {
+				console.log('invalid');
+			}
 		};
 	}
 })();
