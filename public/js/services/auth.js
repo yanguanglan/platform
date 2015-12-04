@@ -1,35 +1,45 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('recipesApp')
-        .factory('authService', authService);
+	angular
+		.module('recipesApp')
+		.factory('authService', authService);
 
-    authService.$inject = ['$location'];
+	authService.$inject = ['$http', '$location'];
 
-    function authService($http, $location) {
-        var service = {
-            setUser: setUser,
-            isLoggedIn: isLoggedIn,
-            logout: logout
-        };
+	function authService($http, $location) {
+		var service = {
+			duplicated: duplicated,
+			setUser: setUser,
+			isLoggedIn: isLoggedIn,
+			logout: logout
+		};
 
-        return service;
+		return service;
 
-        function setUser(auth) {
-            localStorage.setItem('user', JSON.stringify(auth));
+		function duplicated(email) {
+			return $http
+				.get('api/auth/users-availability', {
+					params: {
+						email: email
+					}
+				});
+		}
 
-            return auth;
-        }
+		function setUser(auth) {
+			localStorage.setItem('user', JSON.stringify(auth));
 
-        function isLoggedIn() {
-            var user = JSON.parse(localStorage.getItem('user'));
+			return auth;
+		}
 
-            return user ? user : false;
-        }
+		function isLoggedIn() {
+			var user = JSON.parse(localStorage.getItem('user'));
 
-        function logout() {
-            localStorage.removeItem('user');
-        }
-    }
+			return user ? user : false;
+		}
+
+		function logout() {
+			localStorage.removeItem('user');
+		}
+	}
 })();

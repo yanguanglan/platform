@@ -3,4 +3,6 @@
 
 interface UserInterface {
 
+    public function exists($email);
+
 }

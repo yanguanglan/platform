@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\User\RegisterRequest;
+use App\Http\Requests\User\AvailabilityRequest;
 use App\Http\Controllers\Controller;
 use App\Repositories\User\UserInterface as User;
 use JWTAuth;
@@ -24,7 +25,7 @@ class AuthController extends Controller
 
 		try {
 			// verify the credentials and create a token for the user
-			if (! $token = JWTAuth::attempt($credentials)) {
+			if (!$token = JWTAuth::attempt($credentials)) {
 				return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
 			}
 		} catch (JWTException $e) {
@@ -35,7 +36,7 @@ class AuthController extends Controller
 		// if no errors are encountered we can return a JWT
 		return [
 			'token' => $token,
-			'user' => \Auth::user()
+			'user' => \Auth::user(),
 		];
 	}
 
@@ -47,7 +48,7 @@ class AuthController extends Controller
 
 		try {
 			// verify the credentials and create a token for the user
-			if (! $token = JWTAuth::attempt($credentials)) {
+			if (!$token = JWTAuth::attempt($credentials)) {
 				return response()->json(['error' => 'Please enter valid credentials'], 401);
 			}
 		} catch (JWTException $e) {
@@ -57,7 +58,12 @@ class AuthController extends Controller
 
 		return [
 			'token' => $token,
-			'user' => \Auth::user()
+			'user' => \Auth::user(),
 		];
+	}
+
+	public function availability(AvailabilityRequest $request)
+	{
+		return ['error' => $this->user->exists($request->only('email')) ? true : false];
 	}
 }

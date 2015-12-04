@@ -26,15 +26,18 @@
 						<div class="row">
 							<div class="input-field col s12">
 								<i class="mdi-communication-email prefix"></i>
-								<input id="icon_email" type="email" class="validate" name="email" ng-model="registerCtl.user.email" required>
+								<input id="icon_email" type="email" class="validate" name="email" ng-model="registerCtl.user.email" email-duplicated required>
 								<label for="icon_email">Email</label>
 
 								<div ng-messages="registerForm.email.$error" ng-if="registerForm.email.$dirty">
 									<div ng-message="required">
-										<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter your email</p>
+										<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter your email address</p>
 									</div>
 									<div ng-message="email">
-										<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter a valid email</p>
+										<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter a valid email address</p>
+									</div>
+									<div ng-message="emailDuplicated">
+										<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> This email address is already registered</p>
 									</div>
 								</div>
 							</div>

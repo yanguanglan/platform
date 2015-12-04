@@ -24,18 +24,18 @@ class ContactController extends Controller {
 
 		$this->contact->create($input);
 
-        $auth = new OAuth2('Nw23CHNuHDdmkAp1fiAod85TvB4XCJ9hc1rcLBNM');
-        $client = new Client($auth);
-        $roomAPI = new RoomAPI($client);
-        $message = new Message([
-            'id' => str_random(),
-            'from' => $input['name'],
-            'color' => 'red',
-            'notify' => true,
-            'message' => 'Name: '.$input['name'].' | Email: '.$input['email'].' | Message: '.$input['message'],
-            'date' => \Carbon\Carbon::now()
-        ]);
-        $roomAPI->sendRoomNotification('Kasmades', $message);
+		$auth = new OAuth2('Nw23CHNuHDdmkAp1fiAod85TvB4XCJ9hc1rcLBNM');
+		$client = new Client($auth);
+		$roomAPI = new RoomAPI($client);
+		$message = new Message([
+			'id' => str_random(),
+			'from' => $input['name'],
+			'color' => 'red',
+			'notify' => true,
+			'message' => 'Name: '.$input['name'].' | Email: '.$input['email'].' | Message: '.$input['message'],
+			'date' => \Carbon\Carbon::now()
+		]);
+		$roomAPI->sendRoomNotification('Kasmades', $message);
 
 		return [
 			'error' => false

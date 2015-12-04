@@ -120,6 +120,26 @@ angular
 			}
 		}
 	})
+	.directive('emailDuplicated', ['authService', function(authService) {
+		var linkFunction = function(scope, element, args, ctrl) {
+			element.on('keyup input blur', function() {
+				var email = scope.registerCtl.user.email;
+				authService
+					.duplicated(email)
+					.then(function(res) {
+						ctrl.$setValidity('emailDuplicated', !res.data.error);
+
+						return email
+					});
+			});
+		};
+
+		return {
+			require: 'ngModel',
+			restrict: 'A',
+			link: linkFunction
+		};
+	}])
 	.directive('focusMe', function() {
 		var linkFunction = function(scope, element, args) {
 			scope.$watch(args.focusMe, function(value) {
