@@ -1,134 +1,160 @@
 <div id="faq-header">
-	<div class="container">
-		<h1>Help Center</h1>
-	</div>
+  <div class="container">
+    <img class="faq-header-img" src="../img/faq-header.svg">
+  </div>
 </div>
-
-<div class="gray-bar fixed">
-	<div class="faq-search">
-		<div class="container relative-for-clear-btn">
-			<div class="row white-text no-margin-bottom">
-				<form class="col s12 no-padding-left">
-					<input class="form-control" ng-model="recipesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
-					<a class="clear-button" href="javascript:void(0)" ng-if="recipesCtl.searchFilter" ng-click="recipesCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-
 <div id="faq">
-	<div class="container">
-		<div class="row">
-			<div class="col l4 hide-on-med-and-down">
-				<div class="card">
-					<div class="card-content faq-side-bar">
-						<div class="faq-side-header">
-							<span class="card-title white-text">FAQ's</span>
-						</div>
-						<div class="faq-search">
-							<div class="container relative-for-clear-btn">
-								<div class="row white-text no-margin-bottom">
-									<form class="col s12 no-padding-left">
-										<input class="form-control" ng-model="recipesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search...">
-										<a class="clear-button" href="javascript:void(0)" ng-if="recipesCtl.searchFilter" ng-click="recipesCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
-									</form>
-								</div>
-							</div>
-						</div>
-						<div class="faq-nav">
-							<a href="#">
-								<h4>What is a "Recipe"?</h4>
-						</div>
-						<div class="divider"></div>
-						<div class="faq-nav">
-							<a href="#">
-								<h4>What are Recipes "Topics"?</h4>
-						</div>
-						<div class="divider"></div>
-						<div class="faq-nav">
-							<a href="#">
-								<h4>What are Recipes "Resources"?</h4>
-						</div>
-						<div class="divider"></div>
-						<div class="faq-nav">
-							<a href="#">
-								<h4>What is a "Serie"?</h4>
-						</div>
-						<div class="divider"></div>
-						<div class="faq-nav">
-							<a href="#">
-								<h4>Can i request a "Recipe"?</h4>
-						</div>
-						<div class="divider"></div>
-						<div class="faq-nav">
-							<a href="#">
-								<h4>Can i request a "Serie"?</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col l8 s12">
-				<div class="card">
-					<div class="card-content">
-						<div class="faq-item">
-							<img class="faq-img pull-right" src="../img/faq_recipe.png">
-							<h3>What is a "Recipe"?</h3>
-							<p>Recipe is a quite specific AngularJS functionality. This functionality is explained in detail so our users can grasp the logic behind and re-use it in the future at will. Every recipe includes a fully functioning Codepen example so you can use
-								this as a playground. Apart from those we include some exercises per recipe based on its functionality. That way you can take your learning experience to a further step.</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-content">
-						<div class="faq-item">
-							<img class="faq-img pull-right" src="../img/faq_topics.png">
-							<h3>What are Recipes "Topics"?</h3>
-							<p>Topics is the way we try to group recipes into some basic categories. So for example "Controller" topic includes recipes with content dedicated to AngularJS controllers. Of course there are many cases where a recipe can belong to more than one
-								Topic because of its content.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-content">
-						<div class="faq-item">
-							<img class="faq-img pull-right" src="../img/faq_resources.png">
-							<h3>What are Recipes "Resources"?</h3>
-							<p>Resources are sections from the official AngularJS documentation on which every Recipe you study is based on. That way you can study a Recipe, check its Codepen example and then explore some more the framework's official documentation.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-content">
-						<div class="faq-item">
-							<img class="faq-img pull-right" src="../img/faq_series.png">
-							<h3>What is a "Serie"?</h3>
-							<p>Serie is a long tutorial divided into shorter lessons which are steps for the tutorial's end goal. Every Serie has a specific goal which is to build form A to Z a real life application with AngularJS.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-content">
-						<div class="faq-item">
-							<img class="faq-img pull-right" src="../img/faq_recipe_request.png">
-							<h3>Can i request a "Recipe"?</h3>
-							<p>Sure you can. This can be easily achieved by sending us an email describing there your request and thoughts.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-content">
-						<div class="faq-item">
-							<img class="faq-img pull-right" src="../img/faq_series_request.png">
-							<h3>Can i request a "Serie"?</h3>
-							<p>Sure you can. Since the creation of a Serie is not that easy or fast process we came up with following solution. Every 1st of each month we are going to announce 3 candidates series titles. Our members are going to get notified so they can vote
-								for the one they prefer. Voting results will be constantly visible so at the end of the month the winner serie will be announced. This serie is going to be delivered during the coming month while a new voting process will have already started
-								as described above. That way we hope you understand how valuable is your will for us.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col l4 hide-on-med-and-down pin-top fixed">
+                <div class="card">
+                    <div class="card-content faq-side-bar">
+                      <div class="faq-side-header">
+                        <span class="card-title white-text">FAQ's</span>
+                      </div>
+                      <div class="faq-search relative-for-clear-btn">
+                                  <form>
+                                      <input class="form-control" ng-model="recipesCtl.searchFilter" type="text" name="searchFilter" placeholder="Search..." >
+                                      <i class="mdi-action-search faq-left-search-icon"></i>
+                                      <a class="clear-button faq-left-clear" href="javascript:void(0)" ng-if="recipesCtl.searchFilter" ng-click="recipesCtl.clearSearch()"><i class="mdi-content-clear"></i></a>
+                                  </form>
+                      </div>
+                        <div class="faq-nav">
+                            <a href="#"><h4>What is a "Recipe"?</h4>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="faq-nav">
+                            <a href="#"><h4>What are Recipes "Topics"?</h4>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="faq-nav">
+                            <a href="#"><h4>What are Recipes "Resources"?</h4>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="faq-nav">
+                            <a href="#"><h4>What is a "Serie"?</h4>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="faq-nav">
+                            <a href="#"><h4>Can i request a "Recipe"?</h4>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="faq-nav">
+                            <a href="#"><h4>Can i request a "Serie"?</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l8 s12">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="faq-item">
+                          <div class="row">
+                              <div class="col s12 hide-on-med-and-up">
+                                  <img class="faq-img sm-img" src="../img/faq_recipe.png">
+                              </div>
+                              <div class="col s12 m7 l8">
+                                  <h3>What is a "Recipe"?</h3>
+                                  <p>Recipe is a quite specific AngularJS functionality. This functionality is explained in detail so our users can grasp the logic behind and re-use it in the future at will. Every recipe includes a fully functioning Codepen example so you can use this as a playground. Apart from those we include some exercises per recipe based on its functionality. That way you can take your learning experience to a further step.</p>
+                              </div>
+                                  <div class="col m5 l4 hide-on-small-only">
+                                      <img class="faq-img" src="../img/faq_recipe.png">
+                                  </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="faq-item">
+                          <div class="row">
+                              <div class="col s12 hide-on-med-and-up">
+                                  <img class="faq-img sm-img" src="../img/faq_topics.png">
+                              </div>
+                              <div class="col s12 m7 l8">
+                                  <h3>What are Recipes "Topics"?</h3>
+                                  <p>Topics is the way we try to group recipes into some basic categories. So for example "Controller" topic includes recipes with content dedicated to AngularJS controllers. Of course there are many cases where a recipe can belong to more than one Topic because of its content.</p>
+                              </div>
+                                  <div class="col m5 l4 hide-on-small-only">
+                                      <img class="faq-img" src="../img/faq_topics.png">
+                                  </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="faq-item">
+                          <div class="row">
+                              <div class="col s12 hide-on-med-and-up">
+                                  <img class="faq-img sm-img" src="../img/faq_resources.png">
+                              </div>
+                              <div class="col s12 m7 l8">
+                                <h3>What are Recipes "Resources"?</h3>
+                                <p>Resources are sections from the official AngularJS documentation on which every Recipe you study is based on. That way you can study a Recipe, check its Codepen example and then explore some more the framework's official documentation.</p>
+                              </div>
+                                  <div class="col m5 l4 hide-on-small-only">
+                                      <img class="faq-img" src="../img/faq_resources.png">
+                                  </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="faq-item">
+                          <div class="row">
+                              <div class="col s12 hide-on-med-and-up">
+                                  <img class="faq-img sm-img" src="../img/faq_series.png">
+                              </div>
+                              <div class="col s12 m7 l8">
+                                <h3>What is a "Serie"?</h3>
+                                <p>Serie is a long tutorial divided into shorter lessons which are steps for the tutorial's end goal. Every Serie has a specific goal which is to build form A to Z a real life application with AngularJS.</p>
+                              </div>
+                                  <div class="col m5 l4 hide-on-small-only">
+                                      <img class="faq-img" src="../img/faq_series.png">
+                                  </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="faq-item">
+                          <div class="row">
+                              <div class="col s12 hide-on-med-and-up">
+                                  <img class="faq-img sm-img" src="../img/faq_recipe_request.png">
+                              </div>
+                              <div class="col s12 m7 l8">
+                                <h3>Can i request a "Recipe"?</h3>
+                                <p>Sure you can. This can be easily achieved by sending us an email describing there your request and thoughts.</p>
+                              </div>
+                                  <div class="col m5 l4 hide-on-small-only">
+                                      <img class="faq-img" src="../img/faq_recipe_request.png">
+                                  </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="faq-item">
+                          <div class="row">
+                              <div class="col s12 hide-on-med-and-up">
+                                  <img class="faq-img sm-img" src="../img/faq_series_request.png">
+                              </div>
+                              <div class="col s12 m7 l8">
+                                <h3>Can i request a "Serie"?</h3>
+                                <p>Sure you can. Since the creation of a Serie is not that easy or fast process we came up with following solution. Every 1st of each month we are going to announce 3 candidates series titles. Our members are going to get notified so they can vote for the one they prefer. Voting results will be constantly visible so at the end of the month the winner serie will be announced. This serie is going to be delivered during the coming month while a new voting process will have already started as described above. That way we hope you understand how valuable is your will for us.</p>
+                              </div>
+                                  <div class="col m5 l4 hide-on-small-only">
+                                      <img class="faq-img" src="../img/faq_series_request.png">
+                                  </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
