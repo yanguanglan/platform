@@ -5,17 +5,15 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Serie\SerieInterface as Serie;
-use App\Repositories\User\UserInterface as User;
+use JWTAuth;
 
 class SeriesController extends Controller
 {
 	protected $serie;
-	protected $user;
 
-	public function __construct(Serie $serie, User $user)
+	public function __construct(Serie $serie)
 	{
 		$this->serie = $serie;
-		$this->user = $user;
 	}
 
 	public function index(Request $request)
@@ -42,37 +40,42 @@ class SeriesController extends Controller
 
 	public function like(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'serie_id');
+		$inputs =  $request->only('serie_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->likedSeries()->attach($inputs['serie_id']);
 	}
 
 	public function dislike(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'serie_id');
+		$inputs =  $request->only('serie_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->likedSeries()->detach($inputs['serie_id']);
 	}
 
 	public function book(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'serie_id');
+		$inputs =  $request->only('serie_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->bookmarkedSeries()->attach($inputs['serie_id']);
 	}
 
 	public function unbook(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'serie_id');
+		$inputs =  $request->only('serie_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->bookmarkedSeries()->detach($inputs['serie_id']);
+	}
+
+    private function getUser()
+	{
+		return JWTAuth::parseToken()->authenticate();
 	}
 }

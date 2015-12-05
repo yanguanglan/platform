@@ -63,10 +63,9 @@
 				});
 		}
 
-		function like(user_id, recipe_id) {
+		function like(recipe_id) {
 			return $http
 				.post('api/recipes-like', {
-					user_id: user_id,
 					recipe_id: recipe_id
 				})
 				.then(function(data) {
@@ -77,10 +76,9 @@
 				});
 		}
 
-		function dislike(user_id, recipe_id) {
+		function dislike(recipe_id) {
 			return $http
 				.post('api/recipes-dislike', {
-					user_id: user_id,
 					recipe_id: recipe_id
 				})
 				.then(function(data) {
@@ -91,10 +89,9 @@
 				});
 		}
 
-		function book(user_id, recipe_id) {
+		function book(recipe_id) {
 			return $http
 				.post('api/recipes-book', {
-					user_id: user_id,
 					recipe_id: recipe_id
 				})
 				.then(function(data) {
@@ -105,10 +102,9 @@
 				});
 		}
 
-		function unbook(user_id, recipe_id) {
+		function unbook(recipe_id) {
 			return $http
 				.post('api/recipes-unbook', {
-					user_id: user_id,
 					recipe_id: recipe_id
 				})
 				.then(function(data) {

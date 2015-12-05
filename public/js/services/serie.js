@@ -64,10 +64,9 @@
 				});
 		}
 
-		function like(user_id, serie_id) {
+		function like(serie_id) {
 			return $http
 				.post('api/series-like', {
-					user_id: user_id,
 					serie_id: serie_id
 				})
 				.then(function(data) {
@@ -78,10 +77,9 @@
 				});
 		}
 
-		function dislike(user_id, serie_id) {
+		function dislike(serie_id) {
 			return $http
 				.post('api/series-dislike', {
-					user_id: user_id,
 					serie_id: serie_id
 				})
 				.then(function(data) {
@@ -92,10 +90,9 @@
 				});
 		}
 
-		function book(user_id, serie_id) {
+		function book(serie_id) {
 			return $http
 				.post('api/series-book', {
-					user_id: user_id,
 					serie_id: serie_id
 				})
 				.then(function(data) {
@@ -106,10 +103,9 @@
 				});
 		}
 
-		function unbook(user_id, serie_id) {
+		function unbook(serie_id) {
 			return $http
 				.post('api/series-unbook', {
-					user_id: user_id,
 					serie_id: serie_id
 				})
 				.then(function(data) {

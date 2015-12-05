@@ -5,18 +5,16 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Recipe\RecipeInterface as Recipe;
-use App\Repositories\User\UserInterface as User;
+use JWTAuth;
 
 class RecipesController extends Controller
 {
 	protected $recipe;
-	protected $user;
 
-	public function __construct(Recipe $recipe, User $user)
+	public function __construct(Recipe $recipe)
 	{
 		$this->recipe = $recipe;
-		$this->user = $user;
-		$this->middleware('jwt.auth');
+		$this->middleware('jwt.auth', ['only' => ['like', 'dislike', 'book', 'unbook']]);
 	}
 
 	public function index(Request $request)
@@ -43,37 +41,42 @@ class RecipesController extends Controller
 
 	public function like(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'recipe_id');
+		$inputs =  $request->only('recipe_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->likedRecipes()->attach($inputs['recipe_id']);
 	}
 
 	public function dislike(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'recipe_id');
+		$inputs =  $request->only('recipe_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->likedRecipes()->detach($inputs['recipe_id']);
 	}
 
 	public function book(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'recipe_id');
+		$inputs =  $request->only('recipe_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->bookmarkedRecipes()->attach($inputs['recipe_id']);
 	}
 
 	public function unbook(Request $request)
 	{
-		$inputs =  $request->only('user_id', 'recipe_id');
+		$inputs =  $request->only('recipe_id');
 
-		$user = $this->user->byId($inputs['user_id']);
+		$user = self::getUser();
 
 		$user->bookmarkedRecipes()->detach($inputs['recipe_id']);
+	}
+
+	private function getUser()
+	{
+		return JWTAuth::parseToken()->authenticate();
 	}
 }

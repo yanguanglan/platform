@@ -20,11 +20,11 @@
 			if (recipeCtl.booked) {
 				Materialize.toast('This recipe is now booked!', 5000);
 
-				recipeService.book(recipeCtl.auth.id, recipeCtl.recipe.id);
+				recipeService.book(recipeCtl.recipe.id);
 			} else {
 				Materialize.toast('This recipe is not booked anymore!', 5000);
 
-				recipeService.unbook(recipeCtl.auth.id, recipeCtl.recipe.id);
+				recipeService.unbook(recipeCtl.recipe.id);
 			}
 		};
 		recipeCtl.toggleLike = function() {
@@ -33,11 +33,11 @@
 			if (recipeCtl.liked) {
 				Materialize.toast('This recipe is now one of your favourites!', 5000);
 
-				recipeService.like(recipeCtl.auth.id, recipeCtl.recipe.id);
+				recipeService.like(recipeCtl.recipe.id);
 			} else {
 				Materialize.toast('This recipe is not one of your favourites anymore!', 5000);
 
-				recipeService.dislike(recipeCtl.auth.id, recipeCtl.recipe.id);
+				recipeService.dislike(recipeCtl.recipe.id);
 			}
 		};
 		$scope.$watch(angular.bind(recipeCtl, function() {
