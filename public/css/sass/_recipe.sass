@@ -17,6 +17,9 @@
 		margin-bottom: 0
 	.no-padding-left
 		padding-left: 0
+	.bookmark, .like
+		&.active i
+			color: $custom-red
 
 	// search bar
 	#search
@@ -234,9 +237,6 @@ a
 	display: inline-block
 	@media only screen and (min-width : 420px)
 		display: none
-.bookmark, .like
-	&.active i
-		color: $custom-red
 .list-icons
 	margin-left: 12px
 	font-size: 14px
