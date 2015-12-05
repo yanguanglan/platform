@@ -43,4 +43,14 @@ class Recipe extends Model {
 		return $this->hasMany('App\Exercise');
 	}
 
+	public function likes()
+	{
+		return $this->belongsToMany('App\User', 'recipes_likes', 'recipe_id', 'user_id');
+	}
+
+	public function booked()
+	{
+		return $this->belongsToMany('App\User', 'recipes_bookmarks', 'recipe_id', 'user_id');
+	}
+
 }

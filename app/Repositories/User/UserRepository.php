@@ -1,10 +1,12 @@
-<?php namespace App\Repositories\User;
+<?php
+
+namespace App\Repositories\User;
 
 use App\User;
 use App\Repositories\AbstractRepository;
 
-class UserRepository extends AbstractRepository implements UserInterface {
-
+class UserRepository extends AbstractRepository implements UserInterface
+{
 	protected $model;
 
 	public function __construct(User $model)
@@ -21,10 +23,19 @@ class UserRepository extends AbstractRepository implements UserInterface {
 		return $model ? true : false;
 	}
 
+	public function session($id)
+	{
+		$model = $this->model
+		->with(['likedRecipes.topics', 'bookmarkedRecipes.topics'])
+		->findOrFail($id);
+
+		return $model;
+	}
+
 	public function account($id)
 	{
 		$model = $this->model
-		->find($id);
+		->findOrFail($id);
 
 		return $model;
 	}
@@ -33,7 +44,10 @@ class UserRepository extends AbstractRepository implements UserInterface {
 	{
 		$model = $this->model
 		->with(['likedRecipes.topics', 'bookmarkedRecipes.topics'])
-		->find($id);
+		->findOrFail($id);
+
+		$model->likedRecipesArray = $model->likedRecipes->fetch('id');
+		$model->bookmarkedRecipesArray = $model->bookmarkedRecipes->fetch('id');
 
 		return $model;
 	}

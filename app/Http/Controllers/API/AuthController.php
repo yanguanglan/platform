@@ -58,7 +58,7 @@ class AuthController extends Controller
 
 		return [
 			'token' => $token,
-			'user' => \Auth::user(),
+			'user' => $this->user->session(\Auth::id()),
 		];
 	}
 

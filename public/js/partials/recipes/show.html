@@ -1,129 +1,133 @@
 <div id="recipe-header">
-    <div class="container">
-        <div class="row no-margin-bottom">
-            <div class="col s12">
-                <h1>{{recipeCtl.recipe.title}}</h1>
-            </div>
-        </div>
-    </div>
-    <div class="gray-banner single-recipe-gray-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col s12">
-              <span class="pull-left left-icons sr-view-icon">{{recipeCtl.recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-              <a href="#"><span class="pull-left left-icons no-margin-left">{{recipeCtl.recipe.likes}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span></a>
-              <a href="#" class="pull-right sr-bookmark-icon active"><span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span></a>
-              <div class="share-button pull-right">
-    						<ul>
-    							<li>
-    								<a class="dropdown-button" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share"></i></a>
-    								<ul id='dropdown2' class='dropdown-content'>
-    									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('date')" ng-class="{active: recipesCtl.sortByType == 'date'}"><i class="fa fa-facebook-square"></i></a></li>
-    									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')" ng-class="{active: recipesCtl.sortByType == 'views'}"><i class="fa fa-twitter-square"></i></a></li>
-    									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}"><i class="fa fa-envelope"></i></a></li>
-                      <li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}"><i class="fa fa-get-pocket"></i></a></li>
-    								</ul>
-    							</li>
-    						</ul>
-    					</div>
+	<div class="container">
+		<div class="row no-margin-bottom">
+			<div class="col s12">
+				<h1>{{recipeCtl.recipe.title}}</h1>
+			</div>
+		</div>
+	</div>
+	<div class="gray-banner single-recipe-gray-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<span class="pull-left left-icons sr-view-icon">{{recipeCtl.recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
+					<a href="javascript:void(0)" class="like" ng-class="{active: recipeCtl.liked}" ng-click="recipeCtl.toggleLike()">
+						<span class="pull-left left-icons no-margin-left">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
+					</a>
+					<a href="javascript:void(0)" class="pull-right bookmark" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
+						<span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span>
+					</a>
+					<div class="share-button pull-right">
+						<ul>
+							<li>
+								<a class="dropdown-button" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share"></i></a>
+								<ul id='dropdown2' class='dropdown-content'>
+									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('date')" ng-class="{active: recipesCtl.sortByType == 'date'}"><i class="fa fa-facebook-square"></i></a></li>
+									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('views')" ng-class="{active: recipesCtl.sortByType == 'views'}"><i class="fa fa-twitter-square"></i></a></li>
+									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}"><i class="fa fa-envelope"></i></a></li>
+									<li><a class="waves-effect waves-black" ng-click="recipesCtl.sortBy('likes')" ng-class="{active: recipesCtl.sortByType == 'likes'}"><i class="fa fa-get-pocket"></i></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 
-            </div>
-          </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
 <div id="recipe">
-    <div class="container">
-        <div class="row">
-            <div class="col l9 m9 s12">
-                <!-- Recipe -->
-                <div class="card">
-                    <!-- Markdown -->
-                    <div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col l9 m9 s12">
+				<!-- Recipe -->
+				<div class="card">
+					<!-- Markdown -->
+					<div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div>
 
-                    <!-- Codepen -->
-                    <codepen recipe="recipeCtl.recipe"></codepen>
-                    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-                </div>
+					<!-- Codepen -->
+					<codepen recipe="recipeCtl.recipe"></codepen>
+					<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+				</div>
 
-                <div class="card" ng-if="recipeCtl.recipe.exercises.length">
-                    <div class="card-content">
-                        <div class="row">
-                            <div class="col s12">
-                                <h2>Exercises</h2>
-                                <div class="divider"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <ul class="collapsible" data-collapsible="accordion">
-                                    <li ng-repeat="exercise in recipeCtl.recipe.exercises">
-                                        <div class="collapsible-header">{{$index + 1}}. {{exercise.title}}</div>
-                                        <div class="collapsible-body">
-                                            <div class="markdown-body" markdown-to-html="exercise.content"></div>
+				<div class="card" ng-if="recipeCtl.recipe.exercises.length">
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12">
+								<h2>Exercises</h2>
+								<div class="divider"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12">
+								<ul class="collapsible" data-collapsible="accordion">
+									<li ng-repeat="exercise in recipeCtl.recipe.exercises">
+										<div class="collapsible-header">{{$index + 1}}. {{exercise.title}}</div>
+										<div class="collapsible-body">
+											<div class="markdown-body" markdown-to-html="exercise.content"></div>
 
-                                            <!-- Codepen -->
-                                            <codepen recipe="exercise"></codepen>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+											<!-- Codepen -->
+											<codepen recipe="exercise"></codepen>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <!-- Disqus Comments -->
-                <div class="card">
-                    <div class="card-content">
-                        <dir-disqus disqus-shortname="angularjs-recipes" disqus-identifier="{{ recipeCtl.recipe.uuid }}" disqus-url="http://localhost:8000/#!/recipes/{{ recipeCtl.recipe.uuid }}">
-                        </dir-disqus>
-                    </div>
-                </div>
-            </div>
+				<!-- Disqus Comments -->
+				<div class="card">
+					<div class="card-content">
+						<dir-disqus disqus-shortname="angularjs-recipes" disqus-identifier="{{ recipeCtl.recipe.uuid }}" disqus-url="http://localhost:8000/#!/recipes/{{ recipeCtl.recipe.uuid }}">
+						</dir-disqus>
+					</div>
+				</div>
+			</div>
 
-            <div class="col l3 m3 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Details</span>
-                        <ul class="collection">
-                            <li class="collection-item">
-                                <strong>Version</strong> {{recipeCtl.recipe.version}}
-                            </li>
-                            <li class="collection-item">
-                                <strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
-                            </li>
-                            <li class="collection-item" ng-if="recipeCtl.recipe.exercises.length">
-                                <strong>Exercises</strong> {{recipeCtl.recipe.exercises.length}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+			<div class="col l3 m3 s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Details</span>
+						<ul class="collection">
+							<li class="collection-item">
+								<strong>Version</strong> {{recipeCtl.recipe.version}}
+							</li>
+							<li class="collection-item">
+								<strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
+							</li>
+							<li class="collection-item" ng-if="recipeCtl.recipe.exercises.length">
+								<strong>Exercises</strong> {{recipeCtl.recipe.exercises.length}}
+							</li>
+						</ul>
+					</div>
+				</div>
 
-                <div class="card" ng-if="recipeCtl.recipe.resources.length">
-                    <div class="card-content">
-                        <span class="card-title black-text">Resources</span>
-                        <ul class="collection">
-                            <a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">{{resource.title}}
+				<div class="card" ng-if="recipeCtl.recipe.resources.length">
+					<div class="card-content">
+						<span class="card-title black-text">Resources</span>
+						<ul class="collection">
+							<a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">{{resource.title}}
 							</a>
-                        </ul>
-                    </div>
-                </div>
+						</ul>
+					</div>
+				</div>
 
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Topics</span>
-                        <ul class="collection">
-                            <a ng-href="#!/topics/{{topic.uuid}}/recipes" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" class="collection-item black-text" ng-repeat="topic in recipeCtl.topics">
-                                <div>{{topic.title}}
-                                    <span class="badge custom-red white-text">{{topic.recipes.length}}</span>
-                                </div>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Topics</span>
+						<ul class="collection">
+							<a ng-href="#!/topics/{{topic.uuid}}/recipes" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" class="collection-item black-text" ng-repeat="topic in recipeCtl.topics">
+								<div>{{topic.title}}
+									<span class="badge custom-red white-text">{{topic.recipes.length}}</span>
+								</div>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

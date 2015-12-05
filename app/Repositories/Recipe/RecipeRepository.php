@@ -19,7 +19,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
         if ($versionBy == 'all')
         {
             $models = $this->model
-            ->with(['level', 'topics' => function ($q) {
+            ->with(['likes', 'level', 'topics' => function ($q) {
                 $q->orderBy('title');
             }])
             ->get();
@@ -28,10 +28,14 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
         {
             $models = $this->model
             ->where('release', $versionBy)
-            ->with(['level', 'topics' => function ($q) {
+            ->with(['likes', 'level', 'topics' => function ($q) {
                 $q->orderBy('title');
             }])
             ->get();
+        }
+
+        foreach($models as $model) {
+            $model->likesArray = collect($model->likes)->fetch('id');
         }
 
         if ($sortBy == 'date') {
@@ -62,10 +66,13 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
     {
         $model = $this->model
         ->where('uuid', $uuid)
-        ->with(['exercises', 'level', 'resources' => function ($q) {
+        ->with(['likes', 'booked', 'exercises', 'level', 'resources' => function ($q) {
             $q->orderBy('title');
-        }, ])
+        }])
         ->firstOrFail();
+
+        $model->likesArray = $model->likes->fetch('id');
+        $model->bookedArray = $model->booked->fetch('id');
 
         return $model;
     }

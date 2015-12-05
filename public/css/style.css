@@ -600,6 +600,10 @@ a {
   }
 }
 
+.bookmark.active i, .like.active i {
+  color: #d0021b;
+}
+
 .list-icons {
   margin-left: 12px;
   font-size: 14px;
