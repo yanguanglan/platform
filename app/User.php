@@ -41,9 +41,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->belongsToMany('App\Recipe', 'recipes_likes', 'user_id', 'recipe_id');
 	}
 
-    public function bookmarkedRecipes()
+	public function bookmarkedRecipes()
 	{
 		return $this->belongsToMany('App\Recipe', 'recipes_bookmarks', 'user_id', 'recipe_id');
+	}
+
+	public function likedSeries()
+	{
+		return $this->belongsToMany('App\Serie', 'series_likes', 'user_id', 'serie_id');
+	}
+
+	public function bookmarkedSeries()
+	{
+		return $this->belongsToMany('App\Serie', 'series_bookmarks', 'user_id', 'serie_id');
 	}
 
 }

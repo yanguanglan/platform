@@ -11,8 +11,14 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	post('recipes-dislike', 'RecipesController@dislike');
 	post('recipes-book', 'RecipesController@book');
 	post('recipes-unbook', 'RecipesController@unbook');
+
 	resource('series', 'SeriesController', ['only' => ['index', 'show']]);
 	get('series-latest', 'SeriesController@latest');
+	post('series-like', 'SeriesController@like');
+	post('series-dislike', 'SeriesController@dislike');
+	post('recseriesipes-book', 'SeriesController@book');
+	post('series-unbook', 'SeriesController@unbook');
+    
 	resource('lessons', 'LessonsController', ['only' => ['show']]);
 	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
 	resource('posts', 'PostsController', ['only' => ['index', 'show']]);

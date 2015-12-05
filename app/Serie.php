@@ -28,4 +28,14 @@ class Serie extends Model {
 		return $this->hasMany('App\Lesson');
 	}
 
+    public function likes()
+	{
+		return $this->belongsToMany('App\User', 'series_likes', 'serie_id', 'user_id');
+	}
+
+	public function booked()
+	{
+		return $this->belongsToMany('App\User', 'series_bookmarks', 'serie_id', 'user_id');
+	}
+
 }
