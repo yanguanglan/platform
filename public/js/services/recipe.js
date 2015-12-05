@@ -11,7 +11,11 @@
         var service = {
             all: all,
             get: get,
-            latest: latest
+            latest: latest,
+            like: like,
+            dislike: dislike,
+            book: book,
+            unbook: unbook
         };
 
         return service;
@@ -56,6 +60,62 @@
                     return data.data;
                 }, function(err) {
                     $location.path('/error');
+                });
+        }
+
+        function like(user_id, recipe_id) {
+            return $http
+                .post('api/recipes-like', {
+                    user_id: user_id,
+                    recipe_id: recipe_id
+                })
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    console.log(err);
+                    // $location.path('/error');
+                });
+        }
+
+        function dislike(user_id, recipe_id) {
+            return $http
+                .post('api/recipes-dislike', {
+                    user_id: user_id,
+                    recipe_id: recipe_id
+                })
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    console.log(err);
+                    // $location.path('/error');
+                });
+        }
+
+        function book(user_id, recipe_id) {
+            return $http
+                .post('api/recipes-book', {
+                    user_id: user_id,
+                    recipe_id: recipe_id
+                })
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    console.log(err);
+                    // $location.path('/error');
+                });
+        }
+
+        function unbook(user_id, recipe_id) {
+            return $http
+                .post('api/recipes-unbook', {
+                    user_id: user_id,
+                    recipe_id: recipe_id
+                })
+                .then(function(data) {
+                    return data.data;
+                }, function(err) {
+                    console.log(err);
+                    // $location.path('/error');
                 });
         }
     }
