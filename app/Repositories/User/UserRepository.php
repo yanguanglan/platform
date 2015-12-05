@@ -43,11 +43,18 @@ class UserRepository extends AbstractRepository implements UserInterface
 	public function dashboard($id)
 	{
 		$model = $this->model
-		->with(['likedRecipes.likes', 'likedRecipes.topics', 'bookmarkedRecipes.topics', 'bookmarkedRecipes.likes'])
+		->with(['likedRecipes.likes', 'likedRecipes.bookings', 'likedRecipes.topics', 'bookmarkedRecipes.topics', 'bookmarkedRecipes.likes', 'bookmarkedRecipes.bookings'])
 		->findOrFail($id);
 
-		$model->likedRecipesArray = $model->likedRecipes->fetch('id');
-		$model->bookmarkedRecipesArray = $model->bookmarkedRecipes->fetch('id');
+		foreach($model->likedRecipes as $recipe) {
+			$recipe->likesArray = $recipe->likes->fetch('id');
+			$recipe->bookedArray = $recipe->bookings->fetch('id');
+		}
+
+		foreach($model->bookmarkedRecipes as $recipe) {
+			$recipe->likesArray = $recipe->likes->fetch('id');
+			$recipe->bookedArray = $recipe->bookings->fetch('id');
+		}
 
 		return $model;
 	}
