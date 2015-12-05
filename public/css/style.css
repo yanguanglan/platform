@@ -1106,18 +1106,15 @@ a {
   height: 150px;
   background: #333333 url(../img/greenboard.png) no-repeat center;
   background-size: cover;
-  padding-top: 53px;
-}
-#faq-header h1 {
-  color: #fff;
-  margin: 0;
+  padding-top: 7px;
 }
 
 .faq-search {
+  background-color: #9B9B9B;
   display: inline-block;
-  background-color: #2F5247;
   height: 64px;
   width: 100%;
+  padding: 0 3%;
 }
 .faq-search .relative-for-clear-btn {
   position: relative;
@@ -1125,9 +1122,12 @@ a {
 .faq-search input {
   box-shadow: none;
   display: inline-block;
+  color: #fff;
+  border-bottom: 1px solid #aaa;
 }
 .faq-search input:focus {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ccc !important;
+  box-shadow: none !important;
 }
 .faq-search .clear-button {
   position: absolute;
@@ -1137,7 +1137,7 @@ a {
   right: 12px;
 }
 .faq-search .clear-button:hover {
-  color: #9B9B9B;
+  color: #2F5247;
 }
 @media only screen and (min-width: 381px) {
   .faq-search .clear-button {
@@ -1155,6 +1155,18 @@ a {
   .faq-search .clear-button {
     top: 5px;
   }
+}
+.faq-search .clear-button.faq-left-clear {
+  top: 68px;
+}
+
+.faq-left-search-icon {
+  display: inline-block;
+  position: absolute;
+  top: 68px;
+  color: #fff;
+  font-size: 25px;
+  right: 15px;
 }
 
 #faq {
@@ -1185,40 +1197,20 @@ a {
   padding: 20px;
 }
 #faq .faq-img {
-  display: none;
-  margin: 0 0 20px 20px;
-  height: 100%;
+  width: 100%;
 }
-@media only screen and (min-width: 750px) {
-  #faq .faq-img {
-    display: block;
-    width: 40%;
-  }
-}
-@media only screen and (min-width: 993px) {
-  #faq .faq-img {
-    width: 35%;
-  }
+#faq .sm-img {
+  width: 100%;
 }
 #faq .faq-item {
   margin-bottom: 2rem;
 }
 #faq h3 {
-  margin: 4px 0 24px 0;
+  margin: 4px 0 20px 0;
 }
 #faq p {
   font-size: 16px;
   margin: 0 0 1rem;
-}
-@media only screen and (min-width: 750px) {
-  #faq p {
-    max-width: 60%;
-  }
-}
-@media only screen and (min-width: 993px) {
-  #faq p {
-    max-width: 65%;
-  }
 }
 
 .card-recipe .card-banner {
