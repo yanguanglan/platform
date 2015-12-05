@@ -1,3 +1,6 @@
+.card-serie .bookmark.active i, .card-serie .like.active i {
+  color: #d0021b;
+}
 .card-serie .card-banner {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;

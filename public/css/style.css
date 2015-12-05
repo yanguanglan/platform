@@ -688,6 +688,9 @@ a {
     display: inline-block;
   }
 }
+.recipe-list-item .bookmark.active i, .recipe-list-item .like.active i {
+  color: #d0021b;
+}
 
 .single-recipe-gray-bar .left-icons {
   font-size: 25px;
@@ -1219,6 +1222,9 @@ a {
   margin: 0 0 1rem;
 }
 
+.card-recipe .bookmark.active i, .card-recipe .like.active i {
+  color: #d0021b;
+}
 .card-recipe .card-banner {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;
@@ -1331,6 +1337,9 @@ a {
   max-width: 256px;
 }
 
+.card-serie .bookmark.active i, .card-serie .like.active i {
+  color: #d0021b;
+}
 .card-serie .card-banner {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;

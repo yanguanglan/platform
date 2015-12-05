@@ -1,91 +1,94 @@
-@import compass
+@import compass, colors
 .card-serie
-    .card-banner
-        +border-radius(2px 2px 0 0)
-        height: 151px
-        position: relative
-        z-index: 0
-        .version-logo
-            display: block
-            height: 145px
-            position: absolute
-            right: 0px
-            opacity: 0.7
-            top: 3px
-            z-index: -1
-        .serie-card-title
-            display: block
-            margin: auto
-            max-width: 90%
-            padding-top: 60px
-        .lessons-link
-            display: inline-block
-            position: absolute
-            bottom: 16px
-            color: #fff
-            left: 16px
-            font-size: 16px
-            font-weight: 400
-            height: 24px
-        .lessons-count
-            display: inline-block
-            width: 24px
-            height: 24px
-            padding-top: 2px
-            text-align: center
-            background-color: #fff
-            font-weight: 900
-            font-size: 14px
-            +border-radius(50%)
-            color: #2b2b2b
+	.bookmark, .like
+		&.active i
+			color: $custom-red
+	.card-banner
+		+border-radius(2px 2px 0 0)
+		height: 151px
+		position: relative
+		z-index: 0
+		.version-logo
+			display: block
+			height: 145px
+			position: absolute
+			right: 0px
+			opacity: 0.7
+			top: 3px
+			z-index: -1
+		.serie-card-title
+			display: block
+			margin: auto
+			max-width: 90%
+			padding-top: 60px
+		.lessons-link
+			display: inline-block
+			position: absolute
+			bottom: 16px
+			color: #fff
+			left: 16px
+			font-size: 16px
+			font-weight: 400
+			height: 24px
+		.lessons-count
+			display: inline-block
+			width: 24px
+			height: 24px
+			padding-top: 2px
+			text-align: center
+			background-color: #fff
+			font-weight: 900
+			font-size: 14px
+			+border-radius(50%)
+			color: #2b2b2b
 
 
-    .card-content
-        padding: 24px 16px
-        min-height: 195px
-        @media only screen and (min-width : 320px)
-            min-height: 165px
-        @media only screen and (min-width : 466px)
-            min-height: 135px
-        @media only screen and (min-width : 601px)
-            min-height: 195px
-        @media only screen and (min-width : 731px)
-            min-height: 165px
-        @media only screen and (min-width : 1321px)
-            min-height: 135px
-        .card-title
-            font-size: 22px
-            line-height: 28px
-            font-weight: 400
-            color: #212121
-            margin-bottom: 7px
-            display: block
-        .card-date
-            font-size: 16px
-            color: #727272
-            font-weight: 400
-    .card-action
-        border: none
-        padding: 0px 16px 24px
-        .card-view
-            font-size: 18px
-            color: #d0021b
-            &:hover
-                color: #000
-        .card-icons
-            font-size: 20px
-            padding-right: 16px
-            padding-left: 5px
-        .mdi-action-visibility
-            padding-right: 0px
-            &:before
-                position: relative
-                top: 2px
-    &.v1
-        .card-banner
-            background: #2b2b2b
-    &.v2
-        .lessons-count
-            color: #0C5EB9
-        .card-banner
-            +background-image(linear-gradient(to top right, #0E66C4 0%, #044695 100%))
+	.card-content
+		padding: 24px 16px
+		min-height: 195px
+		@media only screen and (min-width : 320px)
+			min-height: 165px
+		@media only screen and (min-width : 466px)
+			min-height: 135px
+		@media only screen and (min-width : 601px)
+			min-height: 195px
+		@media only screen and (min-width : 731px)
+			min-height: 165px
+		@media only screen and (min-width : 1321px)
+			min-height: 135px
+		.card-title
+			font-size: 22px
+			line-height: 28px
+			font-weight: 400
+			color: #212121
+			margin-bottom: 7px
+			display: block
+		.card-date
+			font-size: 16px
+			color: #727272
+			font-weight: 400
+	.card-action
+		border: none
+		padding: 0px 16px 24px
+		.card-view
+			font-size: 18px
+			color: #d0021b
+			&:hover
+				color: #000
+		.card-icons
+			font-size: 20px
+			padding-right: 16px
+			padding-left: 5px
+		.mdi-action-visibility
+			padding-right: 0px
+			&:before
+				position: relative
+				top: 2px
+	&.v1
+		.card-banner
+			background: #2b2b2b
+	&.v2
+		.lessons-count
+			color: #0C5EB9
+		.card-banner
+			+background-image(linear-gradient(to top right, #0E66C4 0%, #044695 100%))
