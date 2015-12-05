@@ -16,6 +16,7 @@ class RecipesController extends Controller
 	{
 		$this->recipe = $recipe;
 		$this->user = $user;
+		$this->middleware('jwt.auth');
 	}
 
 	public function index(Request $request)

@@ -15,7 +15,7 @@ class UsersController extends Controller
     public function __construct(User $user)
     {
         $this->user = $user;
-        // $this->middleware('jwt.auth');
+        $this->middleware('jwt.auth');
     }
 
     public function dashboard()
