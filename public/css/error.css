@@ -137,6 +137,21 @@ h4 {
   border-radius: 2px;
 }
 
+.tabs {
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.tabs .tab a {
+  color: #d0021b;
+}
+.tabs .indicator {
+  background-color: #d0021b;
+}
+
 #error-page {
   min-height: 350px;
   background: #333333 url(../img/error_board.jpg) no-repeat center;
