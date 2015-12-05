@@ -6,11 +6,22 @@
 				<li class="tab col s3"><a href="#test2">Favourites ({{dashCtl.user.liked_recipes.length}})</a></li>
 			</ul>
 		</div>
+	</div>
+	
+	<div class="row">
 		<div id="test1">
-			<recipe class="col s12 m6 l4" ng-repeat="recipe in dashCtl.user.bookmarked_recipes"></recipe>
+			<recipe class="col s12 m6 l4" ng-if="dashCtl.user.bookmarked_recipes.length" ng-repeat="recipe in dashCtl.user.bookmarked_recipes"></recipe>
+
+			<div class="col s12">
+				<h2 class="center" ng-if="!dashCtl.user.bookmarked_recipes.length">No recipes found</h2>
+			</div>
 		</div>
 		<div id="test2">
-			<recipe class="col s12 m6 l4" ng-repeat="recipe in dashCtl.user.liked_recipes"></recipe>
+			<recipe class="col s12 m6 l4" ng-if="dashCtl.user.liked_recipes.length" ng-repeat="recipe in dashCtl.user.liked_recipes"></recipe>
+
+			<div class="col s12">
+				<h2 class="center" ng-if="!dashCtl.user.liked_recipes.length">No recipes found</h2>
+			</div>
 		</div>
 	</div>
 </div>

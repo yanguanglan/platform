@@ -52,7 +52,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
     public function latest()
     {
         $models = $this->model
-        ->with(['level', 'topics' => function ($q) {
+        ->with(['likes', 'level', 'topics' => function ($q) {
             $q->orderBy('title');
         }])
         ->orderBy('updated_at', 'desc')
