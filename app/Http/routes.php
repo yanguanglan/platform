@@ -16,9 +16,9 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	get('series-latest', 'SeriesController@latest');
 	post('series-like', 'SeriesController@like');
 	post('series-dislike', 'SeriesController@dislike');
-	post('recseriesipes-book', 'SeriesController@book');
+	post('series-book', 'SeriesController@book');
 	post('series-unbook', 'SeriesController@unbook');
-    
+
 	resource('lessons', 'LessonsController', ['only' => ['show']]);
 	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
 	resource('posts', 'PostsController', ['only' => ['index', 'show']]);

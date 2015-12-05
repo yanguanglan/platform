@@ -48,7 +48,7 @@ class Recipe extends Model {
 		return $this->belongsToMany('App\User', 'recipes_likes', 'recipe_id', 'user_id');
 	}
 
-	public function booked()
+	public function bookings()
 	{
 		return $this->belongsToMany('App\User', 'recipes_bookmarks', 'recipe_id', 'user_id');
 	}

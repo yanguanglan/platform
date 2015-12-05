@@ -1,53 +1,79 @@
 <div id="serie-header">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <!-- <h1>{{serieCtl.serie.title}}</h1> -->
-                <!-- <img class="serie-card-title" ng-src="{{serie.image}}" alt="serie portofolio"> -->
-                <img class="serie-card-title" ng-src="{{serieCtl.serie.image}}" alt="serie portofolio">
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row no-margin-bottom">
+			<div class="col s12">
+				<img class="serie-card-title" ng-src="{{serieCtl.serie.image}}" alt="{{serieCtl.serie.title}} serie">
+			</div>
+		</div>
+	</div>
+    <div class="gray-banner single-recipe-gray-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<span class="pull-left left-icons sr-view-icon">{{serieCtl.serie.views}}<i class="mdi-action-visibility card-icons"></i></span>
+					<a href="javascript:void(0)" class="like" ng-class="{active: serieCtl.liked}" ng-click="serieCtl.toggleLike()">
+						<span class="pull-left left-icons no-margin-left">{{serieCtl.serie.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
+					</a>
+					<a href="javascript:void(0)" class="pull-right bookmark" ng-class="{active: serieCtl.booked}" ng-click="serieCtl.toggleBook()">
+						<span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span>
+					</a>
+					<div class="share-button pull-right">
+						<ul>
+							<li>
+								<a class="dropdown-button" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share"></i></a>
+								<ul id='dropdown2' class='dropdown-content'>
+									<li><a class="waves-effect waves-black"><i class="fa fa-facebook-square"></i></a></li>
+									<li><a class="waves-effect waves-black"><i class="fa fa-twitter-square"></i></a></li>
+									<li><a class="waves-effect waves-black"><i class="fa fa-envelope"></i></a></li>
+									<li><a class="waves-effect waves-black"><i class="fa fa-get-pocket"></i></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="serie">
-    <div class="container">
-        <div class="row">
-            <div class="col l9 m9 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Lessons</span>
-                        <ul class="collection" ng-if="serieCtl.serie.lessons.length">
-                            <li class="collection-item" ng-repeat="lesson in serieCtl.serie.lessons">
-                                <a ng-href="#!/series/{{serieCtl.serie.uuid}}/lessons/{{lesson.uuid}}" class="black-text">{{$index + 1}}. {{lesson.title}}</a>
-                                <span class="badge green white-text" ng-if="lesson.free == 1">FREE</span>
-                                <span class="badge custom-red white-text" ng-if="lesson.free === 0">PRO</span>
-                            </li>
-                        </ul>
-                        <p ng-if="!serieCtl.serie.lessons.length">
-                            Coming Soon
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col l3 m3 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Details</span>
-                        <ul class="collection">
-                            <li class="collection-item">
-                                <strong>Version</strong> {{serieCtl.serie.version}}
-                            </li>
-                            <li class="collection-item">
-                                <strong>Updated</strong> {{serieCtl.serie.human_read_updated_at}}
-                            </li>
-                            <li class="collection-item" ng-if="serieCtl.serie.lessons.length">
-                                <strong>Lessons</strong> {{serieCtl.serie.lessons.length}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col l9 m9 s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Lessons</span>
+						<ul class="collection" ng-if="serieCtl.serie.lessons.length">
+							<li class="collection-item" ng-repeat="lesson in serieCtl.serie.lessons">
+								<a ng-href="#!/series/{{serieCtl.serie.uuid}}/lessons/{{lesson.uuid}}" class="black-text">{{$index + 1}}. {{lesson.title}}</a>
+								<span class="badge green white-text" ng-if="lesson.free == 1">FREE</span>
+								<span class="badge custom-red white-text" ng-if="lesson.free === 0">PRO</span>
+							</li>
+						</ul>
+						<p ng-if="!serieCtl.serie.lessons.length">
+							Coming Soon
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col l3 m3 s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Details</span>
+						<ul class="collection">
+							<li class="collection-item">
+								<strong>Version</strong> {{serieCtl.serie.version}}
+							</li>
+							<li class="collection-item">
+								<strong>Updated</strong> {{serieCtl.serie.human_read_updated_at}}
+							</li>
+							<li class="collection-item" ng-if="serieCtl.serie.lessons.length">
+								<strong>Lessons</strong> {{serieCtl.serie.lessons.length}}
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -93,24 +93,38 @@ angular
 			}
 		};
 	}])
-	.directive('recipe', function() {
+	.directive('recipe', ['authService', function(authService) {
+		var linkFunction = function(scope, element, args) {
+			var auth = authService.isLoggedIn();
+			scope.recipe.liked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
+			scope.recipe.booked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
+		};
+
 		return {
 			restrict: 'E',
-			templateUrl: 'js/partials/recipes/recipe.html'
+			templateUrl: 'js/partials/recipes/recipe.html',
+			link: linkFunction
 		}
-	})
+	}])
 	.directive('recipeItem', function() {
 		return {
 			restrict: 'E',
 			templateUrl: 'js/partials/recipes/recipe-item.html'
 		}
 	})
-	.directive('serie', function() {
+	.directive('serie', ['authService', function(authService) {
+		var linkFunction = function(scope, element, args) {
+			var auth = authService.isLoggedIn();
+			scope.serie.liked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
+			scope.serie.booked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
+		};
+
 		return {
 			restrict: 'E',
-			templateUrl: 'js/partials/series/serie.html'
+			templateUrl: 'js/partials/series/serie.html',
+			link: linkFunction
 		}
-	})
+	}])
 	.directive('codepen', function() {
 		return {
 			restrict: 'E',

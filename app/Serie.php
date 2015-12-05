@@ -33,7 +33,7 @@ class Serie extends Model {
 		return $this->belongsToMany('App\User', 'series_likes', 'serie_id', 'user_id');
 	}
 
-	public function booked()
+	public function bookings()
 	{
 		return $this->belongsToMany('App\User', 'series_bookmarks', 'serie_id', 'user_id');
 	}
