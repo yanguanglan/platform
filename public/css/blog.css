@@ -441,7 +441,7 @@ footer .logo {
   transition: all 0.1s linear;
 }
 .modal-header a:hover {
-  color: #9B9B9B;
+  color: #000;
   text-shadow: rgba(128, 128, 128, 0.2) 0px 0px 10px;
 }
 .modal-header a:active {
