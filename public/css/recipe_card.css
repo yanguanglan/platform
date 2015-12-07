@@ -26,12 +26,6 @@
   font-size: 16px;
   font-weight: 300;
 }
-.card-recipe .card-banner .card-level {
-  position: absolute;
-  display: block;
-  right: 16px;
-  bottom: 8px;
-}
 .card-recipe .card-content {
   padding: 24px 16px;
   min-height: 195px;
