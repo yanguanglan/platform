@@ -36,7 +36,6 @@
 					<ul id='dropdown3' class='dropdown-content' ng-if="navCtl.isAuthenticated()">
 						<li><a href="#!/dashboard">Dashboard</a></li>
 						<li><a href="#!/account">Account</a></li>
-						<li class="divider"></li>
 						<li><a href="#!/" ng-click="navCtl.logout()">Logout</a></li>
 					</ul>
 				</ul>

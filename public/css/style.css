@@ -272,10 +272,31 @@ nav .brand-logo {
   border: 2px solid #d0021b;
 }
 
-.dropdown-content li > a,
-.dropdown-content li > span {
+#dropdown3 {
+  background-color: white;
+}
+#dropdown3 li {
+  background-color: white;
+  border-bottom: 1px solid #F2F2F2;
+  height: 64px;
+}
+#dropdown3 li:last-child {
+  border-bottom: none;
+  background-color: #9B9B9B;
+}
+#dropdown3 li:last-child a {
   color: #fff;
 }
+#dropdown3 li a {
+  text-align: center;
+  height: 64px;
+  color: #212121;
+  padding: 22px;
+}
+#dropdown3 li a:hover {
+  color: white;
+}
+
 .dropdown-content li > a:hover,
 .dropdown-content li > span:hover {
   background-color: #d0021b;

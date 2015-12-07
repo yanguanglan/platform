@@ -42,8 +42,6 @@ nav .brand-logo
 	padding-right: 28px
 // delete it after normal release
 
-
-
 .avatar-img
 	float: left
 	margin: 10px 5px 0 0
@@ -52,8 +50,26 @@ nav .brand-logo
 	height: 40px
 	+border-radius(50%)
 	border: 2px solid $custom-red
+#dropdown3
+	background-color: white
+	li
+		background-color: white
+		border-bottom: 1px solid #F2F2F2
+		height: 64px
+		&:last-child
+			border-bottom: none
+			background-color: $custom-gray
+			a
+				color: #fff
+
+		a
+			text-align: center
+			height: 64px
+			color: $dark-black
+			padding: 22px
+			&:hover
+				color: white
 .dropdown-content li>a,
 .dropdown-content li>span
-	color: #fff
 	&:hover
 		background-color: $custom-red
