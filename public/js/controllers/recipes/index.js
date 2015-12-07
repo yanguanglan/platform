@@ -12,7 +12,7 @@
 		recipesCtl.recipes = recipes;
 		recipesCtl.topics = topics;
 		recipesCtl.showSearchForm = false;
-		recipesCtl.listAppearance = false;
+		recipesCtl.listAppearance = window.innerWidth < 890 ? true : false;
 		recipesCtl.searchFilter = '';
 		recipesCtl.sortByType = 'date';
 		recipesCtl.pageItems = 10;
