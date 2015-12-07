@@ -56,7 +56,7 @@
 
 <div id="contactModal" class="modal" ng-controller="ContactController as contactCtl">
 	<div class="modal-content">
-		<div class="modal-header yellow-bg">
+		<div class="modal-header red-bg">
 			<h2 class="left-align decoration">Contact Us</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
@@ -113,7 +113,7 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 right-align">
-					<button type="submit" class="waves-effect waves-light btn custom-gray">Submit <i
+					<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i
 								class="mdi-content-send right"></i></button>
 				</div>
 			</div>
