@@ -1,0 +1,14 @@
+#loading-bar .bar {
+  background: #fff;
+  top: 65px;
+  height: 3px;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+  top: 65px;
+  height: 3px;
+  -moz-box-shadow: #ffffff 1px 0 6px 1px;
+  -webkit-box-shadow: #ffffff 1px 0 6px 1px;
+  box-shadow: #ffffff 1px 0 6px 1px;
+}
