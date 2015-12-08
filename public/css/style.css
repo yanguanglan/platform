@@ -1219,14 +1219,29 @@ a {
 .faq-search .clear-button.faq-left-clear {
   top: 68px;
 }
+.faq-search .clear-button.faq-top-clear {
+  top: 7px;
+  right: 5px;
+}
 
-.faq-left-search-icon {
+.faq-left-search-icon, .faq-top-search-icon {
   display: inline-block;
   position: absolute;
   top: 68px;
   color: #fff;
   font-size: 25px;
   right: 15px;
+}
+
+.faq-top-search-icon {
+  top: 5px;
+  right: 5px;
+}
+
+.relative-for-clear-btn-top {
+  padding-top: 5px;
+  position: relative;
+  width: 90%;
 }
 
 #faq {
@@ -1248,10 +1263,15 @@ a {
   padding-left: 3%;
 }
 #faq .faq-nav {
-  padding-left: 3%;
+  padding: 15px 3%;
+  height: 50px;
 }
 #faq .faq-nav h4 {
   font-size: 18px;
+  margin: 0;
+}
+#faq .divider {
+  margin: 0;
 }
 #faq .card-content {
   padding: 20px;
