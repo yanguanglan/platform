@@ -98,7 +98,9 @@
 
 		$(window).resize(function() {
 			$scope.$apply(function() {
-				topicCtl.listAppearance = window.innerWidth < 890 ? true : false;
+				if (window.innerWidth < 890) {
+					recipesCtl.listAppearance = true;
+				}
 			});
 		});
 

@@ -99,6 +99,7 @@ angular
 			scope.recipe.liked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
 			scope.recipe.booked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
 			scope.recipe.watched = auth ? (scope.recipe.watchedArray.indexOf(auth.id) > -1) : false;
+			scope.auth = auth;
 		};
 
 		return {
@@ -107,12 +108,18 @@ angular
 			link: linkFunction
 		}
 	}])
-	.directive('recipeItem', function() {
+	.directive('recipeItem', ['authService', function(authService) {
+		var linkFunction = function(scope, element, args) {
+			var auth = authService.isLoggedIn();
+			scope.auth = auth;
+		};
+
 		return {
 			restrict: 'E',
-			templateUrl: 'js/partials/recipes/recipe-item.html'
+			templateUrl: 'js/partials/recipes/recipe-item.html',
+			link: linkFunction
 		}
-	})
+	}])
 	.directive('serie', ['authService', function(authService) {
 		var linkFunction = function(scope, element, args) {
 			var auth = authService.isLoggedIn();
