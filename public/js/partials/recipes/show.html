@@ -25,6 +25,8 @@
 									<li><a class="waves-effect waves-black"><i class="fa fa-facebook-square"></i></a></li>
 									<li><a class="waves-effect waves-black"><i class="fa fa-twitter-square"></i></a></li>
 									<li><a href="mailto:" class="waves-effect waves-black"><i class="fa fa-envelope"></i></a></li>
+									<li><a class="waves-effect waves-black"><i class="fa fa-google-plus-square"></i></a></li>
+									<li><a class="waves-effect waves-black"><i class="fa fa-linkedin-square"></i></a></li>
 									<li><a class="waves-effect waves-black"><i class="fa fa-get-pocket"></i></a></li>
 								</ul>
 							</li>
@@ -39,7 +41,7 @@
 <div id="recipe">
 	<div class="container">
 		<div class="row">
-			<div class="col l9 m9 s12">
+			<div class="col l9 m12">
 				<!-- Recipe -->
 				<div class="card">
 					<!-- Markdown -->
@@ -85,7 +87,7 @@
 				</div>
 			</div>
 
-			<div class="col l3 m3 s12">
+			<div class="col l3 hide-on-med-and-down">
 				<div class="card">
 					<div class="card-content">
 						<span class="card-title black-text">Details</span>
@@ -107,8 +109,11 @@
 					<div class="card-content">
 						<span class="card-title black-text">Resources</span>
 						<ul class="collection">
-							<a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">{{resource.title}}
+							<div class="parent-right-topic-title">
+							<a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">
+									<span class="right-topic-title-resources">{{resource.title}}</span>
 							</a>
+						</div>
 						</ul>
 					</div>
 				</div>
