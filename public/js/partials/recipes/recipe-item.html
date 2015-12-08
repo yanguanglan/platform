@@ -15,7 +15,7 @@
 		-->
 
 		<div class="left-info-icons pull-right">
-			<span class="pull-right bookmark" ng-if="auth"><i class="mdi-action-bookmark"></i></span>
+			<span class="pull-right bookmark" ng-if="auth" ng-class="{active: recipe.booked}"><i class="mdi-action-bookmark"></i></span>
 			<span class="pull-right list-icons watched" ng-class="{active: recipe.watched}">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
 			<span class="pull-right list-icons no-margin-left liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}}<i class="mdi-action-thumb-up card-icons"></i></span>
 		</div>
@@ -27,7 +27,7 @@
 		<div class="right-info-icons">
 			<span class="list-icons no-margin-left liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}}<i class="mdi-action-thumb-up card-icons"></i></span>
 			<span class="list-icons watched" ng-class="{active: recipe.watched}">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-			<span class="pull-right bookmark" ng-if="auth"><i class="mdi-action-bookmark"></i></span>
+			<span class="pull-right bookmark" ng-if="auth" ng-class="{active: recipe.booked}"><i class="mdi-action-bookmark"></i></span>
 		</div>
 
 		<!--
