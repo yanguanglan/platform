@@ -1,4 +1,4 @@
-.card-serie .bookmark.active i, .card-serie .like.active i {
+.card-serie .bookmark.active i, .card-serie .liked.active i, .card-serie .watched.active i {
   color: #d0021b;
 }
 .card-serie .card-banner {

@@ -19,20 +19,21 @@ class SerieRepository extends AbstractRepository implements SerieInterface
 		if ($versionBy == 'all')
 		{
 			$models = $this->model
-			->with(['likes', 'bookings', 'lessons'])
+			->with(['likes', 'bookings', 'watches', 'lessons'])
 			->get();
 		}
 		else
 		{
 			$models = $this->model
 			->where('release', $versionBy)
-			->with(['likes', 'bookings', 'lessons'])
+			->with(['likes', 'bookings', 'watches', 'lessons'])
 			->get();
 		}
 
 		foreach($models as $model) {
 			$model->likesArray = $model->likes->fetch('id');
 			$model->bookedArray = $model->bookings->fetch('id');
+			$model->watchedArray = $model->watches->fetch('id');
 		}
 
 		if ($sortBy == 'date') {
@@ -49,7 +50,7 @@ class SerieRepository extends AbstractRepository implements SerieInterface
 	public function latest()
 	{
 		$models = $this->model
-		->with(['likes', 'bookings', 'lessons'])
+		->with(['likes', 'bookings', 'watches', 'lessons'])
 		->orderBy('updated_at', 'desc')
 		->take(3)
 		->get();
@@ -57,6 +58,7 @@ class SerieRepository extends AbstractRepository implements SerieInterface
 		foreach($models as $model) {
 			$model->likesArray = $model->likes->fetch('id');
 			$model->bookedArray = $model->bookings->fetch('id');
+			$model->watchedArray = $model->watches->fetch('id');
 		}
 
 		return $models;
@@ -66,13 +68,14 @@ class SerieRepository extends AbstractRepository implements SerieInterface
 	{
 		$model = $this->model
 		->where('uuid', $uuid)
-		->with(['likes', 'bookings', 'lessons' => function($q){
+		->with(['likes', 'bookings', 'watches', 'lessons' => function($q){
 			$q->orderBy('order');
 		}])
 		->firstOrFail();
 
 		$model->likesArray = $model->likes->fetch('id');
 		$model->bookedArray = $model->bookings->fetch('id');
+		$model->watchedArray = $model->watches->fetch('id');
 
 		return $model;
 	}

@@ -12,7 +12,7 @@
 		topicCtl.topic = topic;
 		topicCtl.topics = topics;
 		topicCtl.showSearchForm = false;
-		topicCtl.listAppearance = false;
+		topicService.listAppearance = window.innerWidth < 890 ? true : false;
 		topicCtl.searchFilter = '';
 		topicCtl.sortByType = 'date';
 		topicCtl.pageItems = 10;
@@ -95,6 +95,12 @@
 				});
 			}
 		};
+
+		$(window).resize(function() {
+			$scope.$apply(function() {
+				topicCtl.listAppearance = window.innerWidth < 890 ? true : false;
+			});
+		});
 
 		$scope.$watch(angular.bind(topicCtl, function() {
 			return topicCtl.topic.recipes;

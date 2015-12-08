@@ -53,4 +53,9 @@ class Recipe extends Model {
 		return $this->belongsToMany('App\User', 'recipes_bookmarks', 'recipe_id', 'user_id');
 	}
 
+	public function watches()
+	{
+		return $this->belongsToMany('App\User', 'recipes_watches', 'recipe_id', 'user_id');
+	}
+
 }

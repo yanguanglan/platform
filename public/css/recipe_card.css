@@ -1,4 +1,4 @@
-.card-recipe .bookmark.active i, .card-recipe .like.active i {
+.card-recipe .bookmark.active i, .card-recipe .liked.active i, .card-recipe .watched.active i {
   color: #d0021b;
 }
 .card-recipe .card-banner {

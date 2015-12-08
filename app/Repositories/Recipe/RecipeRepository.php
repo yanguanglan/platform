@@ -4,6 +4,8 @@ namespace App\Repositories\Recipe;
 
 use App\Recipe;
 use App\Repositories\AbstractRepository;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class RecipeRepository extends AbstractRepository implements RecipeInterface
 {
@@ -19,7 +21,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		if ($versionBy == 'all')
 		{
 			$models = $this->model
-			->with(['likes', 'bookings', 'level', 'topics' => function ($q) {
+			->with(['likes', 'bookings', 'watches', 'level', 'topics' => function ($q) {
 				$q->orderBy('title');
 			}])
 			->get();
@@ -28,7 +30,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		{
 			$models = $this->model
 			->where('release', $versionBy)
-			->with(['likes', 'bookings', 'level', 'topics' => function ($q) {
+			->with(['likes', 'bookings', 'watches', 'level', 'topics' => function ($q) {
 				$q->orderBy('title');
 			}])
 			->get();
@@ -37,6 +39,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		foreach($models as $model) {
 			$model->likesArray = $model->likes->fetch('id');
 			$model->bookedArray = $model->bookings->fetch('id');
+			$model->watchedArray = $model->watches->fetch('id');
 		}
 
 		if ($sortBy == 'date') {
@@ -53,7 +56,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 	public function latest()
 	{
 		$models = $this->model
-		->with(['likes', 'bookings', 'level', 'topics' => function ($q) {
+		->with(['likes', 'bookings', 'watches', 'level', 'topics' => function ($q) {
 			$q->orderBy('title');
 		}])
 		->orderBy('updated_at', 'desc')
@@ -63,6 +66,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		foreach($models as $model) {
 			$model->likesArray = $model->likes->fetch('id');
 			$model->bookedArray = $model->bookings->fetch('id');
+			$model->watchedArray = $model->watches->fetch('id');
 		}
 
 		return $models;
@@ -72,13 +76,14 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 	{
 		$model = $this->model
 		->where('uuid', $uuid)
-		->with(['likes', 'bookings', 'exercises', 'level', 'resources' => function ($q) {
+		->with(['likes', 'bookings', 'watches', 'exercises', 'level', 'resources' => function ($q) {
 			$q->orderBy('title');
 		}])
 		->firstOrFail();
 
 		$model->likesArray = $model->likes->fetch('id');
 		$model->bookedArray = $model->bookings->fetch('id');
+		$model->watchedArray = $model->watches->fetch('id');
 
 		return $model;
 	}

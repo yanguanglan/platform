@@ -12,7 +12,7 @@
 		recipesCtl.recipes = recipes;
 		recipesCtl.topics = topics;
 		recipesCtl.showSearchForm = false;
-		recipesCtl.listAppearance = false;
+		recipesCtl.listAppearance = window.innerWidth < 890 ? true : false;
 		recipesCtl.searchFilter = '';
 		recipesCtl.sortByType = 'date';
 		recipesCtl.pageItems = 10;
@@ -98,9 +98,7 @@
 
 		$(window).resize(function() {
 			$scope.$apply(function() {
-				if (window.innerWidth < 890) {
-					recipesCtl.listAppearance = true;
-				}
+				recipesCtl.listAppearance = window.innerWidth < 890 ? true : false;
 			});
 		});
 

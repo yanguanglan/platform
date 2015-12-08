@@ -4,6 +4,8 @@ namespace App\Repositories\User;
 
 use App\User;
 use App\Repositories\AbstractRepository;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class UserRepository extends AbstractRepository implements UserInterface
 {
@@ -12,6 +14,17 @@ class UserRepository extends AbstractRepository implements UserInterface
 	public function __construct(User $model)
 	{
 		$this->model = $model;
+	}
+
+	public function getAuth()
+	{
+		try {
+			$user = JWTAuth::parseToken()->authenticate();
+		} catch (JWTException $e) {
+			return false;
+		}
+
+		return $user;
 	}
 
 	public function exists($email)
@@ -23,37 +36,34 @@ class UserRepository extends AbstractRepository implements UserInterface
 		return $model ? true : false;
 	}
 
-	public function session($id)
+	public function account()
 	{
+		$auth_id = static::getAuth()->id;
+
 		$model = $this->model
-		->with(['likedRecipes.topics', 'bookmarkedRecipes.topics'])
-		->findOrFail($id);
+		->findOrFail($auth_id);
 
 		return $model;
 	}
 
-	public function account($id)
+	public function dashboard()
 	{
-		$model = $this->model
-		->findOrFail($id);
+		$auth_id = static::getAuth()->id;
 
-		return $model;
-	}
-
-	public function dashboard($id)
-	{
 		$model = $this->model
-		->with(['likedRecipes.likes', 'likedRecipes.bookings', 'likedRecipes.topics', 'bookmarkedRecipes.topics', 'bookmarkedRecipes.likes', 'bookmarkedRecipes.bookings'])
-		->findOrFail($id);
+		->with(['likedRecipes.likes', 'likedRecipes.bookings', 'likedRecipes.watches', 'likedRecipes.topics', 'bookmarkedRecipes.topics', 'bookmarkedRecipes.likes', 'bookmarkedRecipes.bookings', 'bookmarkedRecipes.watches'])
+		->findOrFail($auth_id);
 
 		foreach($model->likedRecipes as $recipe) {
 			$recipe->likesArray = $recipe->likes->fetch('id');
 			$recipe->bookedArray = $recipe->bookings->fetch('id');
+			$recipe->watchedArray = $recipe->watches->fetch('id');
 		}
 
 		foreach($model->bookmarkedRecipes as $recipe) {
 			$recipe->likesArray = $recipe->likes->fetch('id');
 			$recipe->bookedArray = $recipe->bookings->fetch('id');
+			$recipe->watchedArray = $recipe->watches->fetch('id');
 		}
 
 		return $model;

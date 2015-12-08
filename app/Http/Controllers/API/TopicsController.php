@@ -8,23 +8,23 @@ use App\Repositories\Topic\TopicInterface as Topic;
 
 class TopicsController extends Controller
 {
-    protected $topic;
+	protected $topic;
 
-    public function __construct(Topic $topic)
-    {
-        $this->topic = $topic;
-    }
+	public function __construct(Topic $topic)
+	{
+		$this->topic = $topic;
+	}
 
-    public function index(Request $request)
-    {
-        return $this->topic->index();
-    }
+	public function index(Request $request)
+	{
+		return $this->topic->index();
+	}
 
-    public function show(Request $request, $uuid)
-    {
-        $sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
-        $versionBy = $request->has('versionBy') ? $request->input('versionBy') : null;
+	public function show(Request $request, $uuid)
+	{
+		$sortBy = $request->has('sortBy') ? $request->input('sortBy') : null;
+		$versionBy = $request->has('versionBy') ? $request->input('versionBy') : null;
 
-        return $this->topic->show($uuid, $sortBy, $versionBy);
-    }
+		return $this->topic->show($uuid, $sortBy, $versionBy);
+	}
 }
