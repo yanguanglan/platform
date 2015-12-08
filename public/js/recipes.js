@@ -99,6 +99,7 @@ angular
 			scope.recipe.liked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
 			scope.recipe.booked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
 			scope.recipe.watched = auth ? (scope.recipe.watchedArray.indexOf(auth.id) > -1) : false;
+            scope.auth = auth;
 		};
 
 		return {

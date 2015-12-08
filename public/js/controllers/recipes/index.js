@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('RecipesController', RecipesController);
 
-	RecipesController.$inject = ['$scope', 'filterFilter', 'recipes', 'topics', 'recipeService', '$window'];
+	RecipesController.$inject = ['$scope', 'filterFilter', 'recipes', 'topics', 'recipeService'];
 
-	function RecipesController($scope, filterFilter, recipes, topics, recipeService, $window) {
+	function RecipesController($scope, filterFilter, recipes, topics, recipeService) {
 		var recipesCtl = this;
 		recipesCtl.recipes = recipes;
 		recipesCtl.topics = topics;
@@ -98,7 +98,9 @@
 
 		$(window).resize(function() {
 			$scope.$apply(function() {
-				recipesCtl.listAppearance = window.innerWidth < 890 ? true : false;
+				if (window.innerWidth < 890) {
+					recipesCtl.listAppearance = true;
+				}
 			});
 		});
 

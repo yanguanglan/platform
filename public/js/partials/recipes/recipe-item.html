@@ -1,30 +1,42 @@
 <div class="recipe-list-item">
-    <a class="list-version pull-left" ng-href="#!/recipes/{{recipe.uuid}}" ng-class="{'l-v1': recipe.release == 1, 'l-v2': recipe.release == 2}" >
-      <img class="version-logo-list" ng-if="recipe.release == 1" ng-src="img/angular_list_1.svg" alt="angular version 1">
-      <img class="version-logo-list" ng-if="recipe.release == 2" ng-src="img/angular_list_2.svg" alt="angular version 2">
-    </a>
-    <div class="pull-left list-content">
-    <a ng-href="#!/recipes/{{recipe.uuid}}"><h5 class="list-tile">{{recipe.title}}</h5></a>
+	<a class="list-version pull-left" ng-href="#!/recipes/{{recipe.uuid}}" ng-class="{'l-v1': recipe.release == 1, 'l-v2': recipe.release == 2}">
+		<img class="version-logo-list" ng-if="recipe.release == 1" ng-src="img/angular_list_1.svg" alt="angular version 1">
+		<img class="version-logo-list" ng-if="recipe.release == 2" ng-src="img/angular_list_2.svg" alt="angular version 2">
+	</a>
+	<div class="pull-left list-content">
+		<a ng-href="#!/recipes/{{recipe.uuid}}">
+			<h5 class="list-tile">{{recipe.title}}</h5>
+		</a>
 
-      <p class="list-date">{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
-      <div class="left-info-icons pull-right">
-        <a href="javascript:void(0)" class="pull-right bookmark" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
-    			<span class="right-icons list-icons"><i class="mdi-action-bookmark"></i></span>
-    		</a>
-        <span class="pull-right list-icons watched" ng-class="{active: recipe.watched}">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-        <span class="pull-right list-icons no-margin-left liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}}<i class="mdi-action-thumb-up card-icons"></i></span>
-      </div>
-      <div class="right-info-icons">
-        <span class="list-icons no-margin-left liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}}<i class="mdi-action-thumb-up card-icons"></i></span>
-        <span class="list-icons watched" ng-class="{active: recipe.watched}">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-        <a href="javascript:void(0)" class="pull-right bookmark" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
-    			<span class="right-icons list-icons"><i class="mdi-action-bookmark"></i></span>
-    		</a>
-      </div>
-        <a class="chip" ng-href="#!/topics/{{topic.uuid}}/recipes" ng-repeat="topic in recipe.topics" tooltipped data-position="top" data-delay="50" data-tooltip="All recipes about {{topic.title}}">
-            {{topic.title}}
-        </a>
-        <div class="divider"></div>
-    </div>
+		<p class="list-date">{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</p>
 
+		<!--
+		ΕΔΩ ΝΟΜΙΖΩ ΚΑΤΑ ΛΑΘΟΣ ΕΧΟΥΜΕ ΔΙΠΛΑ ΤΑ ΕΙΚΟΝΙΔΙΑ
+		-->
+
+		<div class="left-info-icons pull-right">
+			<span class="pull-right bookmark" ng-if="auth"><i class="mdi-action-bookmark"></i></span>
+			<span class="pull-right list-icons watched" ng-class="{active: recipe.watched}">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
+			<span class="pull-right list-icons no-margin-left liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}}<i class="mdi-action-thumb-up card-icons"></i></span>
+		</div>
+
+		<!--
+		ΕΔΩ ΝΟΜΙΖΩ ΚΑΤΑ ΛΑΘΟΣ ΕΧΟΥΜΕ ΔΙΠΛΑ ΤΑ ΕΙΚΟΝΙΔΙΑ
+		-->
+
+		<div class="right-info-icons">
+			<span class="list-icons no-margin-left liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}}<i class="mdi-action-thumb-up card-icons"></i></span>
+			<span class="list-icons watched" ng-class="{active: recipe.watched}">{{recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
+			<span class="pull-right bookmark" ng-if="auth"><i class="mdi-action-bookmark"></i></span>
+		</div>
+
+		<!--
+		ΕΔΩ ΝΟΜΙΖΩ ΚΑΤΑ ΛΑΘΟΣ ΕΧΟΥΜΕ ΔΙΠΛΑ ΤΑ ΕΙΚΟΝΙΔΙΑ
+		-->
+
+		<a class="chip" ng-href="#!/topics/{{topic.uuid}}/recipes" ng-repeat="topic in recipe.topics" tooltipped data-position="top" data-delay="50" data-tooltip="All recipes about {{topic.title}}">
+			{{topic.title}}
+		</a>
+		<div class="divider"></div>
+	</div>
 </div>
