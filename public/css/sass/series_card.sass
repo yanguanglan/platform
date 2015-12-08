@@ -80,10 +80,22 @@
 			padding-right: 16px
 			padding-left: 5px
 		.mdi-action-visibility
-			padding-right: 0px
 			&:before
 				position: relative
 				top: 2px
+		.bookmark
+			color: #000
+			margin-right: 0
+			padding-right: 0
+			&:hover
+				color: inherit
+			i
+				position: relative
+				top: 3px
+				font-size: 20px
+		.bookmark
+			&.active i
+				color: $custom-red
 	&.v1
 		.card-banner
 			background: #2b2b2b

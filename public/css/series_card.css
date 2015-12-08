@@ -106,12 +106,25 @@
   padding-right: 16px;
   padding-left: 5px;
 }
-.card-serie .card-action .mdi-action-visibility {
-  padding-right: 0px;
-}
 .card-serie .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
+}
+.card-serie .card-action .bookmark {
+  color: #000;
+  margin-right: 0;
+  padding-right: 0;
+}
+.card-serie .card-action .bookmark:hover {
+  color: inherit;
+}
+.card-serie .card-action .bookmark i {
+  position: relative;
+  top: 3px;
+  font-size: 20px;
+}
+.card-serie .card-action .bookmark.active i {
+  color: #d0021b;
 }
 .card-serie.v1 .card-banner {
   background: #2b2b2b;

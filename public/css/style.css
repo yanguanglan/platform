@@ -405,8 +405,13 @@ nav .brand-logo {
 #recipe-header .check-v-angular p {
   display: inline-block;
   padding-left: 5px;
-  font-size: 16px;
+  font-size: 13px;
   margin: 0 auto;
+}
+@media only screen and (min-width: 380px) {
+  #recipe-header .check-v-angular p {
+    font-size: 16px;
+  }
 }
 @media only screen and (max-width: 380px) {
   #recipe-header .check-v-angular {
@@ -646,12 +651,16 @@ a {
 }
 
 .list-icons {
-  margin-left: 12px;
-  font-size: 14px;
+  margin-left: 5px;
   font-size: 16px;
 }
-.list-icons i {
-  margin-left: 3px;
+@media only screen and (min-width: 400px) {
+  .list-icons {
+    font-size: 16px;
+  }
+  .list-icons i {
+    margin-left: 3px;
+  }
 }
 
 .no-margin-left {
@@ -1374,17 +1383,29 @@ a {
 .card-recipe .card-action .card-view:hover {
   color: #000;
 }
-.card-recipe .card-action .card-icons {
+.card-recipe .card-action .card-icons, .card-recipe .card-action .bookmark {
   font-size: 20px;
   padding-right: 16px;
   padding-left: 5px;
 }
-.card-recipe .card-action .mdi-action-visibility {
-  padding-right: 0px;
-}
 .card-recipe .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
+}
+.card-recipe .card-action .bookmark {
+  color: #000;
+  margin-right: 0;
+  padding-right: 0;
+}
+.card-recipe .card-action .bookmark:hover {
+  color: inherit;
+}
+.card-recipe .card-action .bookmark i {
+  position: relative;
+  top: 3px;
+}
+.card-recipe .card-action .bookmark.active i {
+  color: #d0021b;
 }
 .card-recipe.v1 .card-banner {
   background: #2b2b2b;
@@ -1510,12 +1531,25 @@ a {
   padding-right: 16px;
   padding-left: 5px;
 }
-.card-serie .card-action .mdi-action-visibility {
-  padding-right: 0px;
-}
 .card-serie .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
+}
+.card-serie .card-action .bookmark {
+  color: #000;
+  margin-right: 0;
+  padding-right: 0;
+}
+.card-serie .card-action .bookmark:hover {
+  color: inherit;
+}
+.card-serie .card-action .bookmark i {
+  position: relative;
+  top: 3px;
+  font-size: 20px;
+}
+.card-serie .card-action .bookmark.active i {
+  color: #d0021b;
 }
 .card-serie.v1 .card-banner {
   background: #2b2b2b;

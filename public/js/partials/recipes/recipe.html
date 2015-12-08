@@ -12,6 +12,9 @@
 	</div>
 	<div class="card-action">
 		<a class="card-view" ng-href="#!/recipes/{{recipe.uuid}}">View</a>
+		<a href="javascript:void(0)" class="pull-right bookmark" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
+			<span class="right-icons"><i class="mdi-action-bookmark"></i></span>
+		</a>
 		<span class="pull-right watched" ng-class="{active: recipe.watched}">{{recipe.views}} <i class="mdi-action-visibility card-icons"></i></span>
 		<span class="pull-right liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}} <i class="mdi-action-thumb-up card-icons"></i></span>
 	</div>
