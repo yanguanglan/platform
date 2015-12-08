@@ -14,6 +14,7 @@
 		recipeCtl.auth = authService.isLoggedIn();
 		recipeCtl.booked = recipeCtl.auth ? (recipeCtl.recipe.bookedArray.indexOf(recipeCtl.auth.id) > -1) : false;
 		recipeCtl.liked = recipeCtl.auth ? (recipeCtl.recipe.likesArray.indexOf(recipeCtl.auth.id) > -1) : false;
+		recipeCtl.watched = recipeCtl.auth ? (recipeCtl.recipe.watchedArray.indexOf(recipeCtl.auth.id) > -1) : false;
 		recipeCtl.toggleBook = function() {
 			recipeCtl.booked = !recipeCtl.booked;
 

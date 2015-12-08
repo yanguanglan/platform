@@ -98,9 +98,7 @@
 
 		$(window).resize(function() {
 			$scope.$apply(function() {
-				if (window.innerWidth < 890) {
-					recipesCtl.listAppearance = true;
-				}
+				recipesCtl.listAppearance = window.innerWidth < 890 ? true : false;
 			});
 		});
 

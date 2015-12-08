@@ -13,6 +13,7 @@
 		serieCtl.auth = authService.isLoggedIn();
 		serieCtl.booked = serieCtl.auth ? (serieCtl.serie.bookedArray.indexOf(serieCtl.auth.id) > -1) : false;
 		serieCtl.liked = serieCtl.auth ? (serieCtl.serie.likesArray.indexOf(serieCtl.auth.id) > -1) : false;
+		serieCtl.watched = serieCtl.auth ? (serieCtl.serie.watchedArray.indexOf(serieCtl.auth.id) > -1) : false;
 		serieCtl.toggleBook = function() {
 			serieCtl.booked = !serieCtl.booked;
 

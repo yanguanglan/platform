@@ -4,16 +4,20 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\User\UserInterface as User;
 use App\Repositories\Serie\SerieInterface as Serie;
 use JWTAuth;
 
 class SeriesController extends Controller
 {
+	protected $user;
 	protected $serie;
 
-	public function __construct(Serie $serie)
+	public function __construct(User $user, Serie $serie)
 	{
+		$this->user = $user;
 		$this->serie = $serie;
+		$this->middleware('jwt.auth', ['only' => ['like', 'dislike', 'book', 'unbook']]);
 	}
 
 	public function index(Request $request)
@@ -35,6 +39,12 @@ class SeriesController extends Controller
 			$this->serie->updateViews($uuid);
 		}
 
+		if ($user = $this->user->getAuth()) {
+			$serie = $this->serie->byAttribute('uuid', $uuid);
+
+			$user->watchedSeries()->attach($serie->id);
+		}
+
 		return $this->serie->show($uuid);
 	}
 
@@ -42,7 +52,7 @@ class SeriesController extends Controller
 	{
 		$inputs =  $request->only('serie_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->likedSeries()->attach($inputs['serie_id']);
 	}
@@ -51,7 +61,7 @@ class SeriesController extends Controller
 	{
 		$inputs =  $request->only('serie_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->likedSeries()->detach($inputs['serie_id']);
 	}
@@ -60,7 +70,7 @@ class SeriesController extends Controller
 	{
 		$inputs =  $request->only('serie_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->bookmarkedSeries()->attach($inputs['serie_id']);
 	}
@@ -69,13 +79,8 @@ class SeriesController extends Controller
 	{
 		$inputs =  $request->only('serie_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->bookmarkedSeries()->detach($inputs['serie_id']);
-	}
-
-    private function getUser()
-	{
-		return JWTAuth::parseToken()->authenticate();
 	}
 }

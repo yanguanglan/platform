@@ -3,12 +3,12 @@
 
 interface UserInterface {
 
-    public function exists($email);
+	public function getAuth();
 
-    public function session($id);
-    
-    public function account($id);
+	public function exists($email);
 
-    public function dashboard($id);
+	public function account();
+
+	public function dashboard();
 
 }

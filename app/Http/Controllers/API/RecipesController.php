@@ -4,15 +4,18 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\User\UserInterface as User;
 use App\Repositories\Recipe\RecipeInterface as Recipe;
 use JWTAuth;
 
 class RecipesController extends Controller
 {
+	protected $user;
 	protected $recipe;
 
-	public function __construct(Recipe $recipe)
+	public function __construct(User $user, Recipe $recipe)
 	{
+		$this->user = $user;
 		$this->recipe = $recipe;
 		$this->middleware('jwt.auth', ['only' => ['like', 'dislike', 'book', 'unbook']]);
 	}
@@ -34,6 +37,12 @@ class RecipesController extends Controller
 	{
 		if ($request->has('views')) {
 			$this->recipe->updateViews($uuid);
+
+			if ($user = $this->user->getAuth()) {
+				$recipe = $this->recipe->byAttribute('uuid', $uuid);
+
+				$user->watchedRecipes()->attach($recipe->id);
+			}
 		}
 
 		return $this->recipe->show($uuid);
@@ -41,9 +50,9 @@ class RecipesController extends Controller
 
 	public function like(Request $request)
 	{
-		$inputs =  $request->only('recipe_id');
+		$inputs = $request->only('recipe_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->likedRecipes()->attach($inputs['recipe_id']);
 	}
@@ -52,7 +61,7 @@ class RecipesController extends Controller
 	{
 		$inputs =  $request->only('recipe_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->likedRecipes()->detach($inputs['recipe_id']);
 	}
@@ -61,7 +70,7 @@ class RecipesController extends Controller
 	{
 		$inputs =  $request->only('recipe_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->bookmarkedRecipes()->attach($inputs['recipe_id']);
 	}
@@ -70,13 +79,8 @@ class RecipesController extends Controller
 	{
 		$inputs =  $request->only('recipe_id');
 
-		$user = self::getUser();
+		$user = $this->user->getAuth();
 
 		$user->bookmarkedRecipes()->detach($inputs['recipe_id']);
-	}
-
-	private function getUser()
-	{
-		return JWTAuth::parseToken()->authenticate();
 	}
 }
