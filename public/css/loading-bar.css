@@ -1,14 +1,19 @@
 #loading-bar .bar {
-  background: #fff;
-  top: 65px;
-  height: 3px;
+  background: #F1F5E7;
+  top: 55px;
+  height: 2px;
+}
+@media only screen and (min-width: 601px) {
+  #loading-bar .bar {
+    top: 64px;
+  }
 }
 
 /* Fancy blur effect */
 #loading-bar .peg {
-  top: 65px;
+  top: 35px;
   height: 3px;
-  -moz-box-shadow: #ffffff 1px 0 6px 1px;
-  -webkit-box-shadow: #ffffff 1px 0 6px 1px;
-  box-shadow: #ffffff 1px 0 6px 1px;
+  -moz-box-shadow: #F1F5E7 1px 0 6px 1px;
+  -webkit-box-shadow: #F1F5E7 1px 0 6px 1px;
+  box-shadow: #F1F5E7 1px 0 6px 1px;
 }
