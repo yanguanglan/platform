@@ -93,6 +93,12 @@ angular
 			}
 		};
 	}])
+	.directive('faqItem', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'js/partials/directives/faq.html'
+		}
+	})
 	.directive('recipe', ['authService', function(authService) {
 		var linkFunction = function(scope, element, args) {
 			var auth = authService.isLoggedIn();

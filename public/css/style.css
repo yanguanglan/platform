@@ -1299,6 +1299,10 @@ a {
 #faq .faq-nav {
   padding: 15px 3%;
   height: 50px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#faq .faq-nav:last-child {
+  border: none;
 }
 #faq .faq-nav h4 {
   font-size: 18px;

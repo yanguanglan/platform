@@ -1,11 +1,23 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('recipesApp')
-        .controller('FAQController', FAQController);
+	angular
+		.module('recipesApp')
+		.controller('FAQController', FAQController);
 
-    function FAQController() {
-        var faqCtl = this;
-    }
+	FAQController.$inject = ['items', 'filterFilter', '$scope'];
+
+	function FAQController(items, filterFilter, $scope) {
+		var faqCtl = this;
+		faqCtl.items = items;
+		faqCtl.searchFilter = '';
+        faqCtl.clearSearch = function() {
+			faqCtl.searchFilter = '';
+		};
+		$scope.$watch(angular.bind(faqCtl, function() {
+			return faqCtl.searchFilter;
+		}), function(newVal, oldVal) {
+			faqCtl.filteredItems = filterFilter(faqCtl.items, newVal);
+		});
+	}
 })();

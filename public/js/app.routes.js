@@ -36,7 +36,12 @@
 				})
 				.when('/faq', {
 					controller: 'FAQController as faqCtl',
-					templateUrl: 'js/partials/faq.html'
+					templateUrl: 'js/partials/faq.html',
+					resolve: {
+						items: function(faqService) {
+							return faqService.all();
+						}
+					}
 				})
 				.when('/statistics', {
 					controller: 'StatsController as statsCtl',
