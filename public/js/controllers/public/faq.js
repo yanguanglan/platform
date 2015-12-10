@@ -11,7 +11,7 @@
 		var faqCtl = this;
 		faqCtl.items = items;
 		faqCtl.searchFilter = '';
-        faqCtl.clearSearch = function() {
+		faqCtl.clearSearch = function() {
 			faqCtl.searchFilter = '';
 		};
 		$scope.$watch(angular.bind(faqCtl, function() {
