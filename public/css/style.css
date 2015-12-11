@@ -1332,7 +1332,7 @@ a {
 }
 #faq .fixed-position-side-bar {
   position: fixed;
-  top: 84px;
+  top: 64px;
   width: calc(170px + 12.5%);
   min-width: 270px;
   max-width: 435px;

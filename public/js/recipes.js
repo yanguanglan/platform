@@ -12,6 +12,22 @@ angular
 			link: linkFunction
 		};
 	})
+	.directive('faqFixed', function() {
+		var linkFunction = function(scope, element, args) {
+			$(window).on('scroll', function() {
+				if ($(window).scrollTop() > 150) {
+					element.addClass('fixed-position-side-bar');
+				} else {
+					element.removeClass('fixed-position-side-bar');
+				}
+			});
+		};
+
+		return {
+			restrict: 'A',
+			link: linkFunction
+		};
+	})
 	.directive('fixedTop', function() {
 		var linkFunction = function(scope, element, args) {
 			$(window).on('scroll', function() {
