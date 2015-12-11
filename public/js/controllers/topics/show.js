@@ -99,7 +99,7 @@
 		$(window).resize(function() {
 			$scope.$apply(function() {
 				if (window.innerWidth < 890) {
-					recipesCtl.listAppearance = true;
+					topicCtl.listAppearance = true;
 				}
 			});
 		});

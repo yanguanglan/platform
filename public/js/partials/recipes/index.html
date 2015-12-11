@@ -84,7 +84,7 @@
 
 					<div class="card" ng-class="{'ng-hide': !recipesCtl.listAppearance}" ng-cloak>
 						<div class="card-content">
-							<recipe-item ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe-item>
+							<recipe-item class="recipe-list-item" ng-repeat="recipe in recipesCtl.filteredRecipes | offset: recipesCtl.currentPage * recipesCtl.pageItems | limitTo: recipesCtl.pageItems"></recipe-item>
 						</div>
 					</div>
 				</div>
