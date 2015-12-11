@@ -132,6 +132,7 @@ angular
 			scope.serie.liked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
 			scope.serie.booked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
 			scope.serie.watched = auth ? (scope.serie.watchedArray.indexOf(auth.id) > -1) : false;
+			scope.auth = auth;
 		};
 
 		return {
