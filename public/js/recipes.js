@@ -14,9 +14,9 @@ angular
 	})
 	.directive('faqFixed', function() {
 		var linkFunction = function(scope, element, args) {
-			$(window).on('scroll', fixClasses);
-
-			fixClasses();
+			$(window).on('scroll', function() {
+				fixClasses();
+			});
 
 			function fixClasses() {
 				var scrollTop = $(window).scrollTop();
