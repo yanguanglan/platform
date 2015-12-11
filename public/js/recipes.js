@@ -14,17 +14,32 @@ angular
 	})
 	.directive('faqFixed', function() {
 		var linkFunction = function(scope, element, args) {
-			if ($(window).scrollTop() > 150) {
-				element.addClass('fixed-position-side-bar');
-			}
+			$(window).on('scroll', fixClasses);
 
-			$(window).on('scroll', function() {
-				if ($(window).scrollTop() > 150) {
+			fixClasses();
+
+			function fixClasses() {
+				var scrollTop = $(window).scrollTop();
+
+				if (scrollTop > 150) {
 					element.addClass('fixed-position-side-bar');
 				} else {
 					element.removeClass('fixed-position-side-bar');
 				}
-			});
+
+				var sidebar = $('.faq-side-bar').outerHeight(true),
+					footer = $('footer').outerHeight(true),
+					navbar = $('.navbar-fixed').outerHeight(true),
+					screenH = window.innerHeight,
+					docH = $(document).height(),
+					space = docH - scrollTop - footer - navbar;
+
+				if (scrollTop > 0 && space < 550) {
+					$('.faq-side-bar').addClass('fixed-height');
+				} else {
+					$('.faq-side-bar').removeClass('fixed-height');
+				}
+			}
 		};
 
 		return {

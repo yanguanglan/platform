@@ -1285,6 +1285,10 @@ a {
 #faq .faq-side-bar {
   padding: 0 !important;
 }
+#faq .faq-side-bar.fixed-height {
+  max-height: 450px;
+  overflow-y: auto;
+}
 #faq .faq-side-header {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;
