@@ -67,6 +67,51 @@ angular
 			link: linkFunction
 		};
 	})
+	.directive('shareLink', ['$location', function($location) {
+		var linkFunction = function(scope, element, args) {
+			element.on('click', function(e) {
+				e.preventDefault();
+
+				var socialNetwork = args.shareLink,
+					currentLocation = $location.absUrl(),
+					popupWidth = window.innerWidth > 500 ? 500 : window.innerWidth,
+					popupHeight = window.innerHeight > 400 ? 400 : window.innerHeight,
+					dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left,
+					dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+				width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+				height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+				var left = ((width / 2) - (popupWidth / 2)) + dualScreenLeft;
+				var top = ((height / 2) - (popupHeight / 2)) + dualScreenTop;
+
+				if (socialNetwork == 'facebook') {
+					strLink = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(currentLocation);
+				}
+
+				if (socialNetwork == 'twitter') {
+					strLink = 'http://twitter.com/share?url=' + encodeURIComponent(currentLocation);
+				}
+
+				if (socialNetwork == 'google') {
+					strLink = 'http://plus.google.com/share?url=' + encodeURIComponent(currentLocation);
+				}
+
+				if (socialNetwork == 'linkedin') {
+					strLink = 'http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(currentLocation);
+				}
+
+				var strTitle = ((typeof args.title !== 'undefined') ? args.title : 'Social Share'),
+					strParam = 'width=' + popupWidth + ',height=' + popupHeight + ',top=' + top + ',left=' + left + ',resizable=true',
+					objWindow = window.open(strLink, strTitle, strParam).focus();
+			});
+		};
+
+		return {
+			restrict: 'A',
+			link: linkFunction
+		};
+	}])
 	.directive('activeMenu', ['$location', function($location) {
 		return {
 			restrict: 'A',
