@@ -14,6 +14,10 @@ angular
 	})
 	.directive('faqFixed', function() {
 		var linkFunction = function(scope, element, args) {
+			if ($(window).scrollTop() > 150) {
+				element.addClass('fixed-position-side-bar');
+			}
+
 			$(window).on('scroll', function() {
 				if ($(window).scrollTop() > 150) {
 					element.addClass('fixed-position-side-bar');

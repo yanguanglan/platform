@@ -5,9 +5,9 @@
         .module('recipesApp')
         .controller('PostsController', PostsController);
 
-    PostsController.$inject = ['serie'];
+    PostsController.$inject = ['posts'];
 
-    function PostsController(serie) {
+    function PostsController(posts) {
         var postsCtl = this;
 		postsCtl.posts = posts;
     }
