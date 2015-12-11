@@ -1330,6 +1330,23 @@ a {
   font-size: 16px;
   margin: 0 0 1rem;
 }
+#faq .fixed-position-side-bar {
+  position: fixed;
+  top: 84px;
+  width: calc(170px + 12.5%);
+  min-width: 270px;
+  max-width: 435px;
+}
+@media only screen and (min-width: 1100px) {
+  #faq .fixed-position-side-bar {
+    width: calc(170px + 13.5%);
+  }
+}
+@media only screen and (min-width: 1250px) {
+  #faq .fixed-position-side-bar {
+    width: calc(170px + 16%);
+  }
+}
 
 .card-recipe .bookmark.active i, .card-recipe .liked.active i, .card-recipe .watched.active i {
   color: #d0021b;
