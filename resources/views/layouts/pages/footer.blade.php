@@ -54,6 +54,22 @@
 	</div>
 </footer>
 
+<div id="unsignedModal" class="modal">
+	<div class="modal-content">
+		<div class="modal-header red-bg">
+			<h2 class="left-align decoration">Invalid action</h2>
+			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
+				<i class="mdi-navigation-cancel"></i>
+			</a>
+		</div>
+
+		<div class="modal-form-padding center">
+			<h3>You cannot have access there. Please create an account or sign in first!</h3>
+			<a href="#!/login" class="btn custom-red modal-action modal-close">Login</a>
+		</div>
+	</div>
+</div>
+
 <div id="contactModal" class="modal" ng-controller="ContactController as contactCtl">
 	<div class="modal-content">
 		<div class="modal-header red-bg">

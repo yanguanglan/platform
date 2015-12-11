@@ -29,16 +29,20 @@
 			}
 		};
 		recipeCtl.toggleLike = function() {
-			recipeCtl.liked = !recipeCtl.liked;
+			if (recipeCtl.auth) {
+				recipeCtl.liked = !recipeCtl.liked;
 
-			if (recipeCtl.liked) {
-				Materialize.toast('This recipe is now one of your favourites!', 5000);
+				if (recipeCtl.liked) {
+					Materialize.toast('This recipe is now one of your favourites!', 5000);
 
-				recipeService.like(recipeCtl.recipe.id);
+					recipeService.like(recipeCtl.recipe.id);
+				} else {
+					Materialize.toast('This recipe is not one of your favourites anymore!', 5000);
+
+					recipeService.dislike(recipeCtl.recipe.id);
+				}
 			} else {
-				Materialize.toast('This recipe is not one of your favourites anymore!', 5000);
-
-				recipeService.dislike(recipeCtl.recipe.id);
+				$('#unsignedModal').openModal();
 			}
 		};
 		$scope.$watch(angular.bind(recipeCtl, function() {

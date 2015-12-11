@@ -11,10 +11,9 @@
 			<div class="row">
 				<div class="col s12">
 					<span class="pull-left left-icons sr-view-icon watched" ng-class="{active: serieCtl.watched}">{{serieCtl.serie.views}}<i class="mdi-action-visibility card-icons"></i></span>
-					<a href="javascript:void(0)" class="liked" ng-if="serieCtl.auth" ng-class="{active: serieCtl.liked}" ng-click="serieCtl.toggleLike()">
+					<a href="javascript:void(0)" class="liked" ng-class="{active: serieCtl.liked}" ng-click="serieCtl.toggleLike()">
 						<span class="pull-left left-icons no-margin-left liked" ng-class="{active: serieCtl.liked}">{{serieCtl.serie.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					</a>
-					<span class="pull-left left-icons no-margin-left liked" ng-if="!serieCtl.auth" ng-class="{active: serieCtl.liked}">{{serieCtl.serie.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					<a href="javascript:void(0)" class="pull-right bookmark" ng-if="serieCtl.auth" ng-class="{active: serieCtl.booked}" ng-click="serieCtl.toggleBook()">
 						<span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span>
 					</a>

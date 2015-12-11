@@ -28,16 +28,20 @@
 			}
 		};
 		serieCtl.toggleLike = function() {
-			serieCtl.liked = !serieCtl.liked;
+			if (serieCtl.auth) {
+				serieCtl.liked = !serieCtl.liked;
 
-			if (serieCtl.liked) {
-				Materialize.toast('This serie is now one of your favourites!', 5000);
+				if (serieCtl.liked) {
+					Materialize.toast('This serie is now one of your favourites!', 5000);
 
-				serieService.like(serieCtl.serie.id);
+					serieService.like(serieCtl.serie.id);
+				} else {
+					Materialize.toast('This serie is not one of your favourites anymore!', 5000);
+
+					serieService.dislike(serieCtl.serie.id);
+				}
 			} else {
-				Materialize.toast('This serie is not one of your favourites anymore!', 5000);
-
-				serieService.dislike(serieCtl.serie.id);
+				$('#unsignedModal').openModal();
 			}
 		};
 		$scope.$watch(angular.bind(serieCtl, function() {

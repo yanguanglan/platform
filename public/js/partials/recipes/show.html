@@ -11,10 +11,9 @@
 			<div class="row">
 				<div class="col s12">
 					<span class="pull-left left-icons sr-view-icon watched" ng-class="{active: recipeCtl.watched}">{{recipeCtl.recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-					<a href="javascript:void(0)" class="liked" ng-if="recipeCtl.auth" ng-class="{active: recipeCtl.liked}" ng-click="recipeCtl.toggleLike()">
+					<a href="javascript:void(0)" class="liked" ng-class="{active: recipeCtl.liked}" ng-click="recipeCtl.toggleLike()">
 						<span class="pull-left left-icons no-margin-left">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					</a>
-					<span class="pull-left left-icons no-margin-left" ng-if="!recipeCtl.auth">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					<a href="javascript:void(0)" class="pull-right bookmark" ng-if="recipeCtl.auth" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
 						<span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span>
 					</a>
