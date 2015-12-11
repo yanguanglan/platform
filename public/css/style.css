@@ -1,8 +1,10 @@
 @charset "UTF-8";
+/* line 1, sass/_app.sass */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
+/* line 3, sass/_app.sass */
 body {
   display: flex;
   min-height: 100vh;
@@ -10,62 +12,76 @@ body {
   background-color: #f2f2f2;
 }
 
+/* line 8, sass/_app.sass */
 main {
   flex: 1 0 auto;
 }
 
 @media (min-width: 992px) {
+  /* line 11, sass/_app.sass */
   .container {
     width: 85%;
   }
 }
+/* line 13, sass/_app.sass */
 .markdown-body {
   min-width: 100%;
   max-width: 100%;
   margin: 0 auto;
 }
 
+/* line 1, sass/_typography.sass */
 h1 {
   font-size: 40px;
 }
 
+/* line 4, sass/_typography.sass */
 h2 {
   font-size: 30px;
 }
 
+/* line 7, sass/_typography.sass */
 h3 {
   font-size: 24px;
 }
 
+/* line 10, sass/_typography.sass */
 h4 {
   font-size: 20px;
 }
 
+/* line 12, sass/_typography.sass */
 .markdown-body p {
   font-size: 16px;
 }
 
+/* line 14, sass/_typography.sass */
 .no-margin-bottom {
   margin-bottom: 0;
 }
 
+/* line 16, sass/_typography.sass */
 .no-padding-left {
   padding-left: 0;
 }
 
+/* line 18, sass/_typography.sass */
 .text-red {
   color: #d0021b !important;
 }
 
+/* line 21, sass/_typography.sass */
 .clear:after {
   display: table;
   clear: both;
   content: "";
 }
 
+/* line 26, sass/_typography.sass */
 .beta, .ibeta, .fbeta {
   position: relative;
 }
+/* line 28, sass/_typography.sass */
 .beta:after, .ibeta:after, .fbeta:after {
   content: "beta";
   position: absolute;
@@ -74,24 +90,28 @@ h4 {
   letter-spacing: 1.2px;
 }
 
+/* line 35, sass/_typography.sass */
 .beta:after {
   top: -5px;
   right: 4px;
   font-size: 8px;
 }
 @media (min-width: 600px) {
+  /* line 35, sass/_typography.sass */
   .beta:after {
     font-size: 9px;
     right: 2px;
   }
 }
 @media (min-width: 660px) {
+  /* line 35, sass/_typography.sass */
   .beta:after {
     font-size: 10px;
     right: 0px;
   }
 }
 
+/* line 46, sass/_typography.sass */
 .ibeta:after {
   top: -20px;
   font-size: 8px;
@@ -99,53 +119,67 @@ h4 {
   letter-spacing: 1px;
 }
 
+/* line 52, sass/_typography.sass */
 .fbeta:after {
   top: -5px;
   left: 14rem;
   font-size: 10px;
 }
 
+/* line 58, sass/_typography.sass */
 .custom-red {
   background-color: #d0021b;
 }
+/* line 60, sass/_typography.sass */
 .custom-red:hover {
   background-color: #b70218;
 }
+/* line 62, sass/_typography.sass */
 .custom-red:focus {
   background-color: #d0021b;
 }
 
+/* line 64, sass/_typography.sass */
 .custom-gray {
   background-color: #9B9B9B;
 }
+/* line 66, sass/_typography.sass */
 .custom-gray:hover {
   background-color: #8e8e8e;
 }
+/* line 68, sass/_typography.sass */
 .custom-gray:focus {
   background-color: #9B9B9B;
 }
 
+/* line 70, sass/_typography.sass */
 .custom-yellow {
   background-color: #fbc02d;
 }
+/* line 72, sass/_typography.sass */
 .custom-yellow:hover {
   background-color: #fbb814;
 }
+/* line 74, sass/_typography.sass */
 .custom-yellow:focus {
   background-color: #fbc02d;
 }
 
+/* line 76, sass/_typography.sass */
 .red-bg {
   background-color: #d0021b;
 }
 
+/* line 78, sass/_typography.sass */
 .yellow-bg {
   background-color: #fbc02d;
 }
 
+/* line 80, sass/_typography.sass */
 .decoration {
   position: relative;
 }
+/* line 82, sass/_typography.sass */
 .decoration:after {
   content: "";
   position: absolute;
@@ -158,12 +192,14 @@ h4 {
   right: 0;
 }
 
+/* line 92, sass/_typography.sass */
 .badge {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 
+/* line 95, sass/_typography.sass */
 .tabs {
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -172,23 +208,28 @@ h4 {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
+/* line 98, sass/_typography.sass */
 .tabs .tab a {
   color: #d0021b;
 }
+/* line 100, sass/_typography.sass */
 .tabs .indicator {
   background-color: #d0021b;
 }
 
+/* line 1, sass/_header.sass */
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+/* line 6, sass/_header.sass */
 main {
   flex: 1 0 auto;
 }
 
+/* line 8, sass/_header.sass */
 nav .brand-logo {
   font-size: 20px;
   padding-left: 28px;
@@ -197,17 +238,20 @@ nav .brand-logo {
   margin-left: 15px;
 }
 @media only screen and (min-width: 993px) {
+  /* line 8, sass/_header.sass */
   nav .brand-logo {
     margin-left: 0;
   }
 }
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+  /* line 8, sass/_header.sass */
   nav .brand-logo {
     background-image: url("../img/logo@2x.png");
     background-size: 25px auto;
   }
 }
 @media (min-width: 600px) {
+  /* line 8, sass/_header.sass */
   nav .brand-logo {
     padding-left: 38px;
     font-size: 26px;
@@ -215,6 +259,7 @@ nav .brand-logo {
   }
 }
 @media (min-width: 600px) and (min--moz-device-pixel-ratio: 1.3), (min-width: 600px) and (-o-min-device-pixel-ratio: 2.6 / 2), (min-width: 600px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 600px) and (min-device-pixel-ratio: 1.3), (min-width: 600px) and (min-resolution: 1.3dppx) {
+  /* line 8, sass/_header.sass */
   nav .brand-logo {
     background-image: url("../img/logo@2x.png");
     background-size: 35px auto;
@@ -222,34 +267,41 @@ nav .brand-logo {
 }
 
 @media (min-width: 660px) {
+  /* line 8, sass/_header.sass */
   nav .brand-logo {
     font-size: 30px;
     padding-left: 43px;
   }
 }
 @media (min-width: 660px) and (min--moz-device-pixel-ratio: 1.3), (min-width: 660px) and (-o-min-device-pixel-ratio: 2.6 / 2), (min-width: 660px) and (-webkit-min-device-pixel-ratio: 1.3), (min-width: 660px) and (min-device-pixel-ratio: 1.3), (min-width: 660px) and (min-resolution: 1.3dppx) {
+  /* line 8, sass/_header.sass */
   nav .brand-logo {
     background-image: url("../img/logo@2x.png");
     background-size: 40px auto;
   }
 }
 
+/* line 26, sass/_header.sass */
 nav ul li:hover,
 nav ul li.active {
   background-color: #d0021b;
 }
 
+/* line 29, sass/_header.sass */
 nav ul li {
   height: 64px;
 }
 
+/* line 31, sass/_header.sass */
 .waves-fix {
   top: -1px;
 }
 
+/* line 34, sass/_header.sass */
 .fixed-top {
   margin-bottom: 84px !important;
 }
+/* line 36, sass/_header.sass */
 .fixed-top .fixed {
   position: fixed;
   top: 56px;
@@ -257,15 +309,18 @@ nav ul li {
   z-index: 2;
 }
 @media only screen and (min-width: 601px) {
+  /* line 36, sass/_header.sass */
   .fixed-top .fixed {
     top: 64px;
   }
 }
 
+/* line 44, sass/_header.sass */
 nav .brand-logo {
   padding-right: 28px;
 }
 
+/* line 48, sass/_header.sass */
 .avatar-img {
   float: left;
   margin: 10px 5px 0 0;
@@ -278,77 +333,97 @@ nav .brand-logo {
   border: 2px solid #d0021b;
 }
 
+/* line 56, sass/_header.sass */
 #dropdown3 {
   background-color: white;
 }
+/* line 58, sass/_header.sass */
 #dropdown3 li {
   background-color: white;
   border-bottom: 1px solid #F2F2F2;
   height: 64px;
 }
+/* line 62, sass/_header.sass */
 #dropdown3 li:last-child {
   border-bottom: none;
   background-color: #9B9B9B;
 }
+/* line 65, sass/_header.sass */
 #dropdown3 li:last-child a {
   color: #fff;
 }
+/* line 68, sass/_header.sass */
 #dropdown3 li a {
   text-align: center;
   height: 64px;
   color: #212121;
   padding: 22px;
 }
+/* line 73, sass/_header.sass */
 #dropdown3 li a:hover {
   color: white;
 }
 
+/* line 77, sass/_header.sass */
 .dropdown-content li > a:hover,
 .dropdown-content li > span:hover {
   background-color: #d0021b;
 }
 
+/* line 3, sass/_recipe.sass */
 #recipe-header {
   background-color: #d0021b;
   color: #fff;
   margin-bottom: 20px;
 }
+/* line 7, sass/_recipe.sass */
 #recipe-header h1 {
   margin: 53px 0;
 }
+/* line 9, sass/_recipe.sass */
 #recipe-header p {
   font-size: 16px;
   margin: -52px 0 40px 0;
 }
+/* line 12, sass/_recipe.sass */
 #recipe-header p i {
   margin: 3px;
 }
+/* line 14, sass/_recipe.sass */
 #recipe-header .recipe-list-title {
   margin: 44px 0 44px 0;
 }
+/* line 16, sass/_recipe.sass */
 #recipe-header .no-margin-bottom {
   margin-bottom: 0;
 }
+/* line 18, sass/_recipe.sass */
 #recipe-header .no-padding-left {
   padding-left: 0;
 }
+/* line 21, sass/_recipe.sass */
 #recipe-header .bookmark.active i, #recipe-header .liked.active i, #recipe-header .watched.active i {
   color: #d0021b;
 }
+/* line 25, sass/_recipe.sass */
 #recipe-header #search {
   background-color: #212121;
   display: block;
 }
+/* line 28, sass/_recipe.sass */
 #recipe-header #search .relative-for-clear-btn {
   position: relative;
 }
+/* line 30, sass/_recipe.sass */
 #recipe-header #search input {
   box-shadow: none;
   display: inline-block;
 }
+/* line 33, sass/_recipe.sass */
 #recipe-header #search input:focus {
   border-bottom: 1px solid #d0021b;
 }
+/* line 35, sass/_recipe.sass */
 #recipe-header #search .clear-button {
   position: absolute;
   color: #fff;
@@ -356,10 +431,12 @@ nav .brand-logo {
   top: 4px;
   right: 12px;
 }
+/* line 39, sass/_recipe.sass */
 #recipe-header #search .clear-button:hover {
   color: #d0021b;
 }
 @media only screen and (min-width: 381px) {
+  /* line 35, sass/_recipe.sass */
   #recipe-header #search .clear-button {
     right: 15px;
     font-size: 25px;
@@ -367,41 +444,50 @@ nav .brand-logo {
   }
 }
 @media only screen and (min-width: 992px) {
+  /* line 35, sass/_recipe.sass */
   #recipe-header #search .clear-button {
     top: 4px;
   }
 }
 @media only screen and (min-width: 1200px) {
+  /* line 35, sass/_recipe.sass */
   #recipe-header #search .clear-button {
     top: 5px;
   }
 }
+/* line 54, sass/_recipe.sass */
 #recipe-header #toggle-search {
   height: 64px;
   display: block;
   padding: 5px 10px;
 }
+/* line 58, sass/_recipe.sass */
 #recipe-header #toggle-search i {
   font-size: 36px;
   color: white;
 }
+/* line 61, sass/_recipe.sass */
 #recipe-header #toggle-search:hover {
   background-color: #d0021b;
 }
 @media only screen and (max-width: 380px) {
+  /* line 54, sass/_recipe.sass */
   #recipe-header #toggle-search {
     padding: 12px 9px;
   }
+  /* line 65, sass/_recipe.sass */
   #recipe-header #toggle-search i {
     font-size: 25px;
   }
 }
+/* line 70, sass/_recipe.sass */
 #recipe-header .check-v-angular {
   margin-left: 5px;
   display: inline-block;
   height: 64px;
   padding-top: 20px;
 }
+/* line 75, sass/_recipe.sass */
 #recipe-header .check-v-angular p {
   display: inline-block;
   padding-left: 5px;
@@ -409,89 +495,110 @@ nav .brand-logo {
   margin: 0 auto;
 }
 @media only screen and (min-width: 380px) {
+  /* line 75, sass/_recipe.sass */
   #recipe-header .check-v-angular p {
     font-size: 16px;
   }
 }
 @media only screen and (max-width: 380px) {
+  /* line 70, sass/_recipe.sass */
   #recipe-header .check-v-angular {
     font-size: 13px;
   }
 }
+/* line 85, sass/_recipe.sass */
 #recipe-header .check-v-angular label {
   padding-left: 23px;
   color: white;
   font-size: 16px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 85, sass/_recipe.sass */
   #recipe-header .check-v-angular label {
     font-size: 13px;
   }
 }
+/* line 91, sass/_recipe.sass */
 #recipe-header .check-v-angular .filled-in:checked + label:after {
   background-color: #d0021b;
   border: 2px solid #d0021b;
 }
+/* line 94, sass/_recipe.sass */
 #recipe-header .check-v-angular .filled-in:checked + label:before {
   border-right: 3px solid white;
   border-bottom: 3px solid white;
 }
+/* line 97, sass/_recipe.sass */
 #recipe-header .check-v-angular .filled-in:not(:checked) + label:after {
   background-color: white;
   border: 2px solid #838383;
 }
 
+/* line 102, sass/_recipe.sass */
 .gray-banner {
   background-color: #9B9B9B;
   height: 64px;
   margin-bottom: 0px;
 }
+/* line 107, sass/_recipe.sass */
 .gray-banner #sort-list {
   display: inline-block;
   margin-left: 10px;
 }
+/* line 110, sass/_recipe.sass */
 .gray-banner #sort-list li {
   padding-top: 2px;
 }
 @media only screen and (min-width: 992px) {
+  /* line 110, sass/_recipe.sass */
   .gray-banner #sort-list li {
     padding-top: 1px;
   }
 }
+/* line 114, sass/_recipe.sass */
 .gray-banner .btn-flat {
   background-color: white;
   padding: 0px 15px;
   color: #212121;
 }
+/* line 118, sass/_recipe.sass */
 .gray-banner .btn-flat:hover {
   background-color: #d0021b;
   color: white;
 }
+/* line 122, sass/_recipe.sass */
 .gray-banner ul li {
   display: inline-block;
   font-size: 16px;
 }
+/* line 125, sass/_recipe.sass */
 .gray-banner ul li:hover {
   background-color: #9B9B9B;
 }
+/* line 127, sass/_recipe.sass */
 .gray-banner ul .active {
   color: white;
   background-color: #d0021b;
 }
+/* line 130, sass/_recipe.sass */
 .gray-banner ul li + li {
   margin-left: 5px;
 }
+/* line 133, sass/_recipe.sass */
 .gray-banner ul li:first-child {
   margin-left: 10px;
 }
+/* line 135, sass/_recipe.sass */
 .gray-banner #sort-list {
   display: block;
 }
 @media only screen and (max-width: 760px) {
+  /* line 135, sass/_recipe.sass */
   .gray-banner #sort-list {
     display: none;
   }
 }
+/* line 141, sass/_recipe.sass */
 .gray-banner .sort-button {
   display: none;
   line-height: 62px;
@@ -499,18 +606,22 @@ nav .brand-logo {
   width: 90px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 141, sass/_recipe.sass */
   .gray-banner .sort-button {
     font-size: 13px;
     width: 75px;
   }
 }
+/* line 149, sass/_recipe.sass */
 .gray-banner .sort-button ul {
   margin-top: 0;
 }
+/* line 151, sass/_recipe.sass */
 .gray-banner .sort-button ul li {
   height: 64px;
   text-align: center;
 }
+/* line 154, sass/_recipe.sass */
 .gray-banner .sort-button .dropdown-button {
   margin: 0;
   display: inline-block;
@@ -519,28 +630,35 @@ nav .brand-logo {
   height: 64px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 154, sass/_recipe.sass */
   .gray-banner .sort-button .dropdown-button {
     font-size: 13px;
     width: 75px;
   }
 }
+/* line 163, sass/_recipe.sass */
 .gray-banner .sort-button .dropdown-buttonul {
   margin: 0;
 }
+/* line 165, sass/_recipe.sass */
 .gray-banner .sort-button .dropdown-button a {
   height: 64px;
 }
+/* line 168, sass/_recipe.sass */
 .gray-banner .sort-button .dropdown-button:hover {
   background-color: #d0021b;
 }
+/* line 170, sass/_recipe.sass */
 .gray-banner .sort-button .dropdown-button span {
   display: inline-block;
   height: 64px;
 }
+/* line 173, sass/_recipe.sass */
 .gray-banner .sort-button #dropdown1 {
   background-color: white;
   padding: 0px;
 }
+/* line 176, sass/_recipe.sass */
 .gray-banner .sort-button #dropdown1 li {
   display: list-item;
   margin-left: 0px;
@@ -549,62 +667,75 @@ nav .brand-logo {
   border-bottom: 1px solid #F2F2F2;
   height: 64px;
 }
+/* line 183, sass/_recipe.sass */
 .gray-banner .sort-button #dropdown1 li a {
   text-align: center;
   height: 64px;
   color: #212121;
   padding: 22px;
 }
+/* line 188, sass/_recipe.sass */
 .gray-banner .sort-button #dropdown1 li a:hover {
   color: white;
 }
 @media only screen and (max-width: 380px) {
+  /* line 173, sass/_recipe.sass */
   .gray-banner .sort-button #dropdown1 {
     width: 75px;
   }
 }
+/* line 192, sass/_recipe.sass */
 .gray-banner .sort-button #dropdown1 .active {
   color: white;
 }
 @media only screen and (max-width: 760px) {
+  /* line 141, sass/_recipe.sass */
   .gray-banner .sort-button {
     display: inline-block;
   }
 }
 
+/* line 197, sass/_recipe.sass */
 #view-as-btns {
   display: none;
   margin-left: 10px;
 }
+/* line 200, sass/_recipe.sass */
 #view-as-btns a {
   font-size: 16px;
 }
 @media only screen and (min-width: 890px) {
+  /* line 197, sass/_recipe.sass */
   #view-as-btns {
     display: inline-block;
   }
 }
 
+/* line 207, sass/_recipe.sass */
 a {
   color: inherit;
 }
 
+/* line 209, sass/_recipe.sass */
 .list-tile {
   line-height: 1.2;
   font-size: 16px;
   margin: 10px 0 0;
 }
 @media only screen and (min-width: 400px) {
+  /* line 209, sass/_recipe.sass */
   .list-tile {
     font-size: 18px;
   }
 }
 @media only screen and (min-width: 650px) {
+  /* line 209, sass/_recipe.sass */
   .list-tile {
     font-size: 20px;
   }
 }
 
+/* line 218, sass/_recipe.sass */
 .list-date {
   display: inline-block;
   color: #727272 !important;
@@ -612,61 +743,74 @@ a {
   font-size: 14px;
 }
 @media only screen and (min-width: 400px) {
+  /* line 218, sass/_recipe.sass */
   .list-date {
     font-size: 15px;
   }
 }
 @media only screen and (min-width: 601px) {
+  /* line 218, sass/_recipe.sass */
   .list-date {
     display: block;
   }
 }
 
+/* line 229, sass/_recipe.sass */
 .divider {
   margin-top: 10px;
 }
 
+/* line 231, sass/_recipe.sass */
 .left-info-icons {
   display: none;
 }
 @media only screen and (min-width: 420px) {
+  /* line 231, sass/_recipe.sass */
   .left-info-icons {
     display: inline-block;
     padding-top: 3px;
   }
 }
 @media only screen and (min-width: 600px) {
+  /* line 231, sass/_recipe.sass */
   .left-info-icons {
     display: block;
   }
 }
 
+/* line 238, sass/_recipe.sass */
 .right-info-icons {
   display: inline-block;
 }
 @media only screen and (min-width: 420px) {
+  /* line 238, sass/_recipe.sass */
   .right-info-icons {
     display: none;
   }
 }
 
+/* line 242, sass/_recipe.sass */
 .list-icons {
   margin-left: 5px;
   font-size: 16px;
 }
 @media only screen and (min-width: 400px) {
+  /* line 242, sass/_recipe.sass */
   .list-icons {
     font-size: 16px;
   }
+  /* line 247, sass/_recipe.sass */
   .list-icons i {
     margin-left: 3px;
   }
 }
 
+/* line 251, sass/_recipe.sass */
 .no-margin-left {
   margin-left: 0;
 }
 
+/* line 253, sass/_recipe.sass */
 .list-version {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
@@ -677,16 +821,19 @@ a {
   margin-top: 10px;
 }
 @media only screen and (min-width: 650px) {
+  /* line 253, sass/_recipe.sass */
   .list-version {
     width: 70px;
     height: 70px;
   }
 }
 
+/* line 262, sass/_recipe.sass */
 .l-v1 {
   background: #2b2b2b;
 }
 
+/* line 264, sass/_recipe.sass */
 .l-v2 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlNjZjNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA0NDY5NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -696,6 +843,7 @@ a {
   background-image: linear-gradient(to top right, #0e66c4 0%, #044695 100%);
 }
 
+/* line 266, sass/_recipe.sass */
 .version-logo-list {
   display: block;
   margin: auto;
@@ -703,32 +851,39 @@ a {
   margin-top: 7px;
 }
 @media only screen and (min-width: 650px) {
+  /* line 266, sass/_recipe.sass */
   .version-logo-list {
     margin-top: 10px;
   }
 }
 
+/* line 273, sass/_recipe.sass */
 .recipe-list-item {
   float: none !important;
 }
+/* line 275, sass/_recipe.sass */
 .recipe-list-item:after {
   clear: both;
   content: "";
   display: table;
 }
+/* line 279, sass/_recipe.sass */
 .recipe-list-item .list-content {
   width: calc(100% - 70px);
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 10px;
 }
 @media only screen and (min-width: 650px) {
+  /* line 279, sass/_recipe.sass */
   .recipe-list-item .list-content {
     width: calc(100% - 90px);
   }
 }
+/* line 286, sass/_recipe.sass */
 .recipe-list-item:last-of-type .list-content {
   border: none;
 }
+/* line 288, sass/_recipe.sass */
 .recipe-list-item .chip {
   display: none;
   background: none;
@@ -739,38 +894,46 @@ a {
   font-weight: 400;
 }
 @media only screen and (min-width: 601px) {
+  /* line 288, sass/_recipe.sass */
   .recipe-list-item .chip {
     display: inline-block;
   }
 }
+/* line 299, sass/_recipe.sass */
 .recipe-list-item .bookmark.active i, .recipe-list-item .liked.active i, .recipe-list-item .watched.active i {
   color: #d0021b;
 }
 
+/* line 303, sass/_recipe.sass */
 .single-recipe-gray-bar .left-icons {
   font-size: 25px;
   margin-top: 14px;
   margin-right: 20px;
 }
+/* line 307, sass/_recipe.sass */
 .single-recipe-gray-bar .left-icons i {
   padding-left: 5px;
 }
+/* line 309, sass/_recipe.sass */
 .single-recipe-gray-bar .right-icons {
   display: inline-block;
   font-size: 30px;
   margin-top: 10px;
   margin-left: 20px;
 }
+/* line 314, sass/_recipe.sass */
 .single-recipe-gray-bar .sr-share-icon {
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+/* line 316, sass/_recipe.sass */
 .single-recipe-gray-bar .sr-share-icon:hover {
   color: #d0021b;
 }
 
+/* line 318, sass/_recipe.sass */
 .share-button {
   display: inline-block;
   line-height: 62px;
@@ -778,21 +941,26 @@ a {
   width: 90px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 318, sass/_recipe.sass */
   .share-button {
     font-size: 13px;
     width: 75px;
   }
 }
+/* line 326, sass/_recipe.sass */
 .share-button ul {
   margin-top: 0;
 }
+/* line 328, sass/_recipe.sass */
 .share-button ul li {
   height: 64px;
   text-align: center;
 }
+/* line 331, sass/_recipe.sass */
 .share-button ul li i {
   font-size: 30px;
 }
+/* line 334, sass/_recipe.sass */
 .share-button .dropdown-button {
   margin: 0;
   display: inline-block;
@@ -801,24 +969,30 @@ a {
   height: 64px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 334, sass/_recipe.sass */
   .share-button .dropdown-button {
     font-size: 13px;
     width: 75px;
   }
 }
+/* line 343, sass/_recipe.sass */
 .share-button .dropdown-buttonul {
   margin: 0;
 }
+/* line 345, sass/_recipe.sass */
 .share-button .dropdown-button a {
   height: 64px;
 }
+/* line 348, sass/_recipe.sass */
 .share-button .dropdown-button:hover {
   background-color: #d0021b;
 }
+/* line 350, sass/_recipe.sass */
 .share-button #dropdown2 {
   background-color: white;
   padding: 0px;
 }
+/* line 353, sass/_recipe.sass */
 .share-button #dropdown2 li {
   display: list-item;
   margin-left: 0px;
@@ -827,28 +1001,34 @@ a {
   border-bottom: 1px solid #F2F2F2;
   height: 64px;
 }
+/* line 360, sass/_recipe.sass */
 .share-button #dropdown2 li a {
   text-align: center;
   height: 64px;
   color: #212121;
   padding: 22px;
 }
+/* line 365, sass/_recipe.sass */
 .share-button #dropdown2 li a:hover {
   color: white;
 }
 @media only screen and (max-width: 380px) {
+  /* line 350, sass/_recipe.sass */
   .share-button #dropdown2 {
     width: 75px;
   }
 }
+/* line 369, sass/_recipe.sass */
 .share-button #dropdown2 .active {
   color: white;
 }
 
+/* line 371, sass/_recipe.sass */
 .parent-right-topic-title {
   padding: 3px 0 0;
 }
 
+/* line 373, sass/_recipe.sass */
 .right-topic-title, .right-topic-title-resources {
   display: inline-block;
   width: calc(100% - 45px);
@@ -857,47 +1037,59 @@ a {
   text-overflow: ellipsis;
 }
 
+/* line 379, sass/_recipe.sass */
 .right-topic-title-resources {
   width: 100%;
 }
 
+/* line 1, sass/_serie.sass */
 #serie-header {
   background-color: #fbc02d;
   color: #fff;
   margin-bottom: 20px;
 }
+/* line 5, sass/_serie.sass */
 #serie-header h1 {
   margin: 40px 0;
 }
+/* line 7, sass/_serie.sass */
 #serie-header .serie-card-title {
   display: block;
   margin: 53px 0;
   height: 44px;
 }
+/* line 11, sass/_serie.sass */
 #serie-header p {
   font-size: 16px;
   margin: -44px 0 40px 0;
 }
+/* line 14, sass/_serie.sass */
 #serie-header p i {
   margin: 3px;
 }
+/* line 17, sass/_serie.sass */
 #serie-header .bookmark.active i, #serie-header .liked.active i, #serie-header .watched.active i {
   color: #fbc02d;
 }
+/* line 21, sass/_serie.sass */
 #serie-header #search {
   background-color: #212121;
   display: block;
 }
+/* line 24, sass/_serie.sass */
 #serie-header #search .relative-for-clear-btn {
   position: relative;
 }
+/* line 26, sass/_serie.sass */
 #serie-header #search input {
   box-shadow: none;
   display: inline-block;
 }
+/* line 29, sass/_serie.sass */
 #serie-header #search input:focus {
   border-bottom: 1px solid #fbc02d;
 }
+/* line 31, sass/_serie.sass */
 #serie-header #search .clear-button {
   position: absolute;
   color: #fff;
@@ -905,10 +1097,12 @@ a {
   top: 4px;
   right: 9px;
 }
+/* line 35, sass/_serie.sass */
 #serie-header #search .clear-button:hover {
   color: #fbc02d;
 }
 @media only screen and (min-width: 381px) {
+  /* line 31, sass/_serie.sass */
   #serie-header #search .clear-button {
     right: 19px;
     font-size: 25px;
@@ -916,41 +1110,50 @@ a {
   }
 }
 @media only screen and (min-width: 992px) {
+  /* line 31, sass/_serie.sass */
   #serie-header #search .clear-button {
     top: 4px;
   }
 }
 @media only screen and (min-width: 1200px) {
+  /* line 31, sass/_serie.sass */
   #serie-header #search .clear-button {
     top: 5px;
   }
 }
+/* line 50, sass/_serie.sass */
 #serie-header #toggle-search {
   height: 64px;
   display: block;
   padding: 5px 15px;
 }
+/* line 54, sass/_serie.sass */
 #serie-header #toggle-search i {
   font-size: 36px;
   color: white;
 }
+/* line 57, sass/_serie.sass */
 #serie-header #toggle-search:hover {
   background-color: #fbc02d;
 }
 @media only screen and (max-width: 380px) {
+  /* line 50, sass/_serie.sass */
   #serie-header #toggle-search {
     padding: 12px 9px;
   }
+  /* line 61, sass/_serie.sass */
   #serie-header #toggle-search i {
     font-size: 25px;
   }
 }
+/* line 68, sass/_serie.sass */
 #serie-header .check-v-angular {
   margin-left: 5px;
   display: inline-block;
   height: 64px;
   padding-top: 20px;
 }
+/* line 73, sass/_serie.sass */
 #serie-header .check-v-angular p {
   display: inline-block;
   padding-left: 5px;
@@ -958,76 +1161,94 @@ a {
   margin: 0 auto;
 }
 @media only screen and (max-width: 380px) {
+  /* line 68, sass/_serie.sass */
   #serie-header .check-v-angular {
     font-size: 13px;
   }
 }
+/* line 81, sass/_serie.sass */
 #serie-header .check-v-angular label {
   padding-left: 23px;
   color: white;
   font-size: 16px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 81, sass/_serie.sass */
   #serie-header .check-v-angular label {
     font-size: 13px;
   }
 }
+/* line 87, sass/_serie.sass */
 #serie-header .check-v-angular .filled-in:checked + label:after {
   background-color: #fbc02d;
   border: 2px solid #fbc02d;
 }
+/* line 90, sass/_serie.sass */
 #serie-header .check-v-angular .filled-in:checked + label:before {
   border-right: 3px solid white;
   border-bottom: 3px solid white;
 }
+/* line 93, sass/_serie.sass */
 #serie-header .check-v-angular .filled-in:not(:checked) + label:after {
   background-color: white;
   border: 2px solid #838383;
 }
 
+/* line 98, sass/_serie.sass */
 .gray-banner-yellow {
   background-color: #9B9B9B;
   height: 64px;
   margin-bottom: 0px;
 }
+/* line 103, sass/_serie.sass */
 .gray-banner-yellow #sort-list {
   display: inline-block;
   margin-left: 35px;
 }
+/* line 106, sass/_serie.sass */
 .gray-banner-yellow .btn-flat {
   background-color: white;
   padding: 0px 15px;
   color: #212121;
 }
+/* line 110, sass/_serie.sass */
 .gray-banner-yellow .btn-flat:hover {
   background-color: #fbc02d;
   color: white;
 }
+/* line 114, sass/_serie.sass */
 .gray-banner-yellow ul li {
   display: inline-block;
   font-size: 16px;
 }
+/* line 117, sass/_serie.sass */
 .gray-banner-yellow ul li:hover {
   background-color: #9B9B9B;
 }
+/* line 119, sass/_serie.sass */
 .gray-banner-yellow ul .active {
   color: white;
   background-color: #fbc02d;
 }
+/* line 122, sass/_serie.sass */
 .gray-banner-yellow ul li + li {
   margin-left: 10px;
 }
+/* line 125, sass/_serie.sass */
 .gray-banner-yellow ul li:first-child {
   margin-left: 14px;
 }
+/* line 127, sass/_serie.sass */
 .gray-banner-yellow #sort-list {
   display: block;
 }
 @media only screen and (max-width: 760px) {
+  /* line 127, sass/_serie.sass */
   .gray-banner-yellow #sort-list {
     display: none;
   }
 }
+/* line 133, sass/_serie.sass */
 .gray-banner-yellow .sort-button {
   display: none;
   line-height: 62px;
@@ -1035,19 +1256,23 @@ a {
   width: 90px;
 }
 @media only screen and (max-width: 380px) {
+  /* line 133, sass/_serie.sass */
   .gray-banner-yellow .sort-button {
     font-size: 13px;
     width: 75px;
     display: inline-block;
   }
 }
+/* line 142, sass/_serie.sass */
 .gray-banner-yellow .sort-button ul {
   margin-top: 0;
 }
+/* line 144, sass/_serie.sass */
 .gray-banner-yellow .sort-button ul li {
   height: 64px;
   text-align: center;
 }
+/* line 147, sass/_serie.sass */
 .gray-banner-yellow .sort-button .dropdown-button {
   display: inline-block;
   width: 90px;
@@ -1056,31 +1281,39 @@ a {
   margin: 0 auto;
 }
 @media only screen and (max-width: 380px) {
+  /* line 147, sass/_serie.sass */
   .gray-banner-yellow .sort-button .dropdown-button {
     font-size: 13px;
     width: 75px;
   }
 }
+/* line 156, sass/_serie.sass */
 .gray-banner-yellow .sort-button .dropdown-buttonul {
   margin: 0;
 }
+/* line 158, sass/_serie.sass */
 .gray-banner-yellow .sort-button .dropdown-button a {
   height: 64px;
 }
+/* line 161, sass/_serie.sass */
 .gray-banner-yellow .sort-button .dropdown-button:hover {
   background-color: #fbc02d;
 }
+/* line 163, sass/_serie.sass */
 .gray-banner-yellow .sort-button .dropdown-button span {
   display: inline-block;
   height: 64px;
 }
+/* line 166, sass/_serie.sass */
 .gray-banner-yellow .sort-button .dropdown-button i {
   margin: 0 !important;
 }
+/* line 168, sass/_serie.sass */
 .gray-banner-yellow .sort-button #dropdown1 {
   background-color: white;
   padding: 0px;
 }
+/* line 171, sass/_serie.sass */
 .gray-banner-yellow .sort-button #dropdown1 li {
   display: list-item;
   margin-left: 0px;
@@ -1089,64 +1322,78 @@ a {
   border-bottom: 1px solid #F2F2F2;
   height: 64px;
 }
+/* line 178, sass/_serie.sass */
 .gray-banner-yellow .sort-button #dropdown1 li a {
   text-align: center;
   height: 64px;
   color: #212121;
   padding: 22px;
 }
+/* line 183, sass/_serie.sass */
 .gray-banner-yellow .sort-button #dropdown1 li a:hover {
   color: white;
   background-color: #fbc02d;
 }
 @media only screen and (max-width: 380px) {
+  /* line 168, sass/_serie.sass */
   .gray-banner-yellow .sort-button #dropdown1 {
     width: 75px;
   }
 }
+/* line 188, sass/_serie.sass */
 .gray-banner-yellow .sort-button #dropdown1 .active {
   color: white;
 }
 @media only screen and (max-width: 760px) {
+  /* line 133, sass/_serie.sass */
   .gray-banner-yellow .sort-button {
     display: inline-block;
   }
 }
 
+/* line 193, sass/_serie.sass */
 .no-padding-left {
   padding-left: 0 !important;
 }
 
+/* line 1, sass/_lesson.sass */
 #lesson-header {
   background-color: #fbc02d;
   color: #fff;
 }
+/* line 4, sass/_lesson.sass */
 #lesson-header h1 {
   margin: 50px 0;
 }
 
+/* line 1, sass/_post.sass */
 #post-header {
   background-color: #fbc02d;
   color: #fff;
 }
+/* line 4, sass/_post.sass */
 #post-header h1 {
   margin: 50px 0;
 }
 
+/* line 1, sass/_stats.sass */
 #stats-header {
   min-height: 200px;
   background: #333333 url(../img/blackboard.png) no-repeat center;
   background-size: cover;
 }
 
+/* line 5, sass/_stats.sass */
 #stats {
   margin-top: -100px;
 }
 
+/* line 7, sass/_stats.sass */
 .stats-item {
   position: relative;
   float: left;
 }
+/* line 10, sass/_stats.sass */
 .stats-item h2 {
   text-align: center;
   position: absolute;
@@ -1154,10 +1401,12 @@ a {
   margin: 0;
   width: 100%;
 }
+/* line 16, sass/_stats.sass */
 .stats-item svg {
   transform: rotate(-90deg);
 }
 
+/* line 18, sass/_stats.sass */
 .circle_animation {
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
@@ -1175,16 +1424,19 @@ a {
     stroke-dashoffset: 0;
   }
 }
+/* line 1, sass/_faq.sass */
 #faq-header {
   height: 150px;
   background: #333333 url(../img/greenboard.png) no-repeat center;
   background-size: cover;
   padding-top: 22px;
 }
+/* line 6, sass/_faq.sass */
 #faq-header .faq-header-img {
   display: inline-block;
   height: 100px;
 }
+/* line 9, sass/_faq.sass */
 #faq-header h1 {
   display: inline-block;
   color: #fff;
@@ -1192,18 +1444,22 @@ a {
   margin-top: 36px;
 }
 @media only screen and (min-width: 421px) {
+  /* line 1, sass/_faq.sass */
   #faq-header {
     padding-top: 17px;
   }
+  /* line 16, sass/_faq.sass */
   #faq-header .faq-header-img {
     height: 110px;
   }
+  /* line 18, sass/_faq.sass */
   #faq-header h1 {
     font-size: 40px;
     margin-top: 35px;
   }
 }
 
+/* line 21, sass/_faq.sass */
 .faq-search {
   background-color: #9B9B9B;
   display: inline-block;
@@ -1211,19 +1467,23 @@ a {
   width: 100%;
   padding: 0 3%;
 }
+/* line 27, sass/_faq.sass */
 .faq-search .relative-for-clear-btn {
   position: relative;
 }
+/* line 29, sass/_faq.sass */
 .faq-search input {
   box-shadow: none;
   display: inline-block;
   color: #fff;
   border-bottom: 1px solid #aaa;
 }
+/* line 34, sass/_faq.sass */
 .faq-search input:focus {
   border-bottom: 1px solid #ccc !important;
   box-shadow: none !important;
 }
+/* line 37, sass/_faq.sass */
 .faq-search .clear-button {
   position: absolute;
   color: #fff;
@@ -1231,10 +1491,12 @@ a {
   top: 4px;
   right: 12px;
 }
+/* line 43, sass/_faq.sass */
 .faq-search .clear-button:hover {
   color: #2F5247;
 }
 @media only screen and (min-width: 381px) {
+  /* line 37, sass/_faq.sass */
   .faq-search .clear-button {
     right: 15px;
     font-size: 25px;
@@ -1242,23 +1504,28 @@ a {
   }
 }
 @media only screen and (min-width: 992px) {
+  /* line 37, sass/_faq.sass */
   .faq-search .clear-button {
     top: 4px;
   }
 }
 @media only screen and (min-width: 1200px) {
+  /* line 37, sass/_faq.sass */
   .faq-search .clear-button {
     top: 5px;
   }
 }
+/* line 53, sass/_faq.sass */
 .faq-search .clear-button.faq-left-clear {
   top: 68px;
 }
+/* line 55, sass/_faq.sass */
 .faq-search .clear-button.faq-top-clear {
   top: 7px;
   right: 5px;
 }
 
+/* line 58, sass/_faq.sass */
 .faq-left-search-icon, .faq-top-search-icon {
   display: inline-block;
   position: absolute;
@@ -1268,27 +1535,33 @@ a {
   right: 15px;
 }
 
+/* line 65, sass/_faq.sass */
 .faq-top-search-icon {
   top: 5px;
   right: 5px;
 }
 
+/* line 68, sass/_faq.sass */
 .relative-for-clear-btn-top {
   padding-top: 5px;
   position: relative;
   width: 90%;
 }
 
+/* line 72, sass/_faq.sass */
 #faq {
   margin-top: 20px;
 }
+/* line 74, sass/_faq.sass */
 #faq .faq-side-bar {
   padding: 0 !important;
 }
+/* line 76, sass/_faq.sass */
 #faq .faq-side-bar.fixed-height {
   max-height: 450px;
   overflow-y: auto;
 }
+/* line 79, sass/_faq.sass */
 #faq .faq-side-header {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;
@@ -1296,6 +1569,7 @@ a {
   background-color: #2F5247;
   height: 64px;
 }
+/* line 83, sass/_faq.sass */
 #faq .card-title {
   display: inline-block;
   color: #fff;
@@ -1304,40 +1578,51 @@ a {
   padding-top: 8px;
   padding-left: 3%;
 }
+/* line 90, sass/_faq.sass */
 #faq .faq-nav {
   padding: 15px 3%;
   height: 50px;
   border-bottom: 1px solid #e0e0e0;
 }
+/* line 94, sass/_faq.sass */
 #faq .faq-nav:last-child {
   border: none;
 }
+/* line 96, sass/_faq.sass */
 #faq .faq-nav h4 {
   font-size: 18px;
   margin: 0;
 }
+/* line 99, sass/_faq.sass */
 #faq .divider {
   margin: 0;
 }
+/* line 101, sass/_faq.sass */
 #faq .card-content {
   padding: 20px;
 }
+/* line 103, sass/_faq.sass */
 #faq .faq-img {
   width: 100%;
 }
+/* line 105, sass/_faq.sass */
 #faq .sm-img {
   width: 100%;
 }
+/* line 107, sass/_faq.sass */
 #faq .faq-item {
   margin-bottom: 2rem;
 }
+/* line 109, sass/_faq.sass */
 #faq h3 {
   margin: 4px 0 20px 0;
 }
+/* line 111, sass/_faq.sass */
 #faq p {
   font-size: 16px;
   margin: 0 0 1rem;
 }
+/* line 114, sass/_faq.sass */
 #faq .fixed-position-side-bar {
   position: fixed;
   top: 64px;
@@ -1346,19 +1631,23 @@ a {
   max-width: 435px;
 }
 @media only screen and (min-width: 1100px) {
+  /* line 114, sass/_faq.sass */
   #faq .fixed-position-side-bar {
     width: calc(170px + 13.5%);
   }
 }
 @media only screen and (min-width: 1250px) {
+  /* line 114, sass/_faq.sass */
   #faq .fixed-position-side-bar {
     width: calc(170px + 16%);
   }
 }
 
+/* line 4, sass/recipe_card.sass */
 .card-recipe .bookmark.active i, .card-recipe .liked.active i, .card-recipe .watched.active i {
   color: #d0021b;
 }
+/* line 6, sass/recipe_card.sass */
 .card-recipe .card-banner {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;
@@ -1366,6 +1655,7 @@ a {
   height: 151px;
   position: relative;
 }
+/* line 10, sass/recipe_card.sass */
 .card-recipe .card-banner .version-logo {
   display: block;
   width: 90%;
@@ -1374,6 +1664,7 @@ a {
   margin: auto;
   margin-bottom: 20px;
 }
+/* line 17, sass/recipe_card.sass */
 .card-recipe .card-banner .chip {
   display: inline-block;
   background: none;
@@ -1384,35 +1675,42 @@ a {
   font-size: 16px;
   font-weight: 300;
 }
+/* line 26, sass/recipe_card.sass */
 .card-recipe .card-content {
   padding: 24px 16px;
   min-height: 195px;
 }
 @media only screen and (min-width: 320px) {
+  /* line 26, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 165px;
   }
 }
 @media only screen and (min-width: 466px) {
+  /* line 26, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 135px;
   }
 }
 @media only screen and (min-width: 601px) {
+  /* line 26, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 195px;
   }
 }
 @media only screen and (min-width: 731px) {
+  /* line 26, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 165px;
   }
 }
 @media only screen and (min-width: 1321px) {
+  /* line 26, sass/recipe_card.sass */
   .card-recipe .card-content {
     min-height: 135px;
   }
 }
+/* line 39, sass/recipe_card.sass */
 .card-recipe .card-content .card-title {
   font-size: 22px;
   line-height: 28px;
@@ -1421,49 +1719,61 @@ a {
   margin-bottom: 7px;
   display: block;
 }
+/* line 46, sass/recipe_card.sass */
 .card-recipe .card-content .card-date {
   font-size: 16px;
   color: #727272;
   font-weight: 400;
 }
+/* line 50, sass/recipe_card.sass */
 .card-recipe .card-action {
   border: none;
   padding: 0px 16px 24px;
 }
+/* line 53, sass/recipe_card.sass */
 .card-recipe .card-action .card-view {
   font-size: 18px;
   color: #d0021b;
 }
+/* line 56, sass/recipe_card.sass */
 .card-recipe .card-action .card-view:hover {
   color: #000;
 }
+/* line 58, sass/recipe_card.sass */
 .card-recipe .card-action .card-icons, .card-recipe .card-action .bookmark {
   font-size: 20px;
   padding-right: 16px;
   padding-left: 5px;
 }
+/* line 63, sass/recipe_card.sass */
 .card-recipe .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
 }
+/* line 66, sass/recipe_card.sass */
 .card-recipe .card-action .bookmark {
   color: #000;
   margin-right: 0;
   padding-right: 0;
 }
+/* line 70, sass/recipe_card.sass */
 .card-recipe .card-action .bookmark:hover {
   color: inherit;
 }
+/* line 72, sass/recipe_card.sass */
 .card-recipe .card-action .bookmark i {
   position: relative;
   top: 3px;
 }
+/* line 76, sass/recipe_card.sass */
 .card-recipe .card-action .bookmark.active i {
   color: #d0021b;
 }
+/* line 79, sass/recipe_card.sass */
 .card-recipe.v1 .card-banner {
   background: #2b2b2b;
 }
+/* line 82, sass/recipe_card.sass */
 .card-recipe.v2 .card-banner {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlNjZjNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA0NDY5NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -1472,14 +1782,17 @@ a {
   background-image: -webkit-linear-gradient(bottom, #0e66c4 0%, #044695 100%);
   background-image: linear-gradient(to top right, #0e66c4 0%, #044695 100%);
 }
+/* line 84, sass/recipe_card.sass */
 .card-recipe.v2 .version-logo {
   width: 73%;
   max-width: 256px;
 }
 
+/* line 4, sass/series_card.sass */
 .card-serie .bookmark.active i, .card-serie .liked.active i, .card-serie .watched.active i {
   color: #d0021b;
 }
+/* line 6, sass/series_card.sass */
 .card-serie .card-banner {
   -moz-border-radius: 2px 2px 0 0;
   -webkit-border-radius: 2px;
@@ -1488,6 +1801,7 @@ a {
   position: relative;
   z-index: 0;
 }
+/* line 11, sass/series_card.sass */
 .card-serie .card-banner .version-logo {
   display: block;
   height: 145px;
@@ -1497,12 +1811,14 @@ a {
   top: 3px;
   z-index: -1;
 }
+/* line 19, sass/series_card.sass */
 .card-serie .card-banner .serie-card-title {
   display: block;
   margin: auto;
   max-width: 90%;
   padding-top: 60px;
 }
+/* line 24, sass/series_card.sass */
 .card-serie .card-banner .lessons-link {
   display: inline-block;
   position: absolute;
@@ -1513,6 +1829,7 @@ a {
   font-weight: 400;
   height: 24px;
 }
+/* line 33, sass/series_card.sass */
 .card-serie .card-banner .lessons-count {
   display: inline-block;
   width: 24px;
@@ -1527,35 +1844,42 @@ a {
   border-radius: 50%;
   color: #2b2b2b;
 }
+/* line 46, sass/series_card.sass */
 .card-serie .card-content {
   padding: 24px 16px;
   min-height: 195px;
 }
 @media only screen and (min-width: 320px) {
+  /* line 46, sass/series_card.sass */
   .card-serie .card-content {
     min-height: 165px;
   }
 }
 @media only screen and (min-width: 466px) {
+  /* line 46, sass/series_card.sass */
   .card-serie .card-content {
     min-height: 135px;
   }
 }
 @media only screen and (min-width: 601px) {
+  /* line 46, sass/series_card.sass */
   .card-serie .card-content {
     min-height: 195px;
   }
 }
 @media only screen and (min-width: 731px) {
+  /* line 46, sass/series_card.sass */
   .card-serie .card-content {
     min-height: 165px;
   }
 }
 @media only screen and (min-width: 1321px) {
+  /* line 46, sass/series_card.sass */
   .card-serie .card-content {
     min-height: 135px;
   }
 }
+/* line 59, sass/series_card.sass */
 .card-serie .card-content .card-title {
   font-size: 22px;
   line-height: 28px;
@@ -1564,53 +1888,66 @@ a {
   margin-bottom: 7px;
   display: block;
 }
+/* line 66, sass/series_card.sass */
 .card-serie .card-content .card-date {
   font-size: 16px;
   color: #727272;
   font-weight: 400;
 }
+/* line 70, sass/series_card.sass */
 .card-serie .card-action {
   border: none;
   padding: 0px 16px 24px;
 }
+/* line 73, sass/series_card.sass */
 .card-serie .card-action .card-view {
   font-size: 18px;
   color: #d0021b;
 }
+/* line 76, sass/series_card.sass */
 .card-serie .card-action .card-view:hover {
   color: #000;
 }
+/* line 78, sass/series_card.sass */
 .card-serie .card-action .card-icons {
   font-size: 20px;
   padding-right: 16px;
   padding-left: 5px;
 }
+/* line 83, sass/series_card.sass */
 .card-serie .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
 }
+/* line 86, sass/series_card.sass */
 .card-serie .card-action .bookmark {
   color: #000;
   margin-right: 0;
   padding-right: 0;
 }
+/* line 90, sass/series_card.sass */
 .card-serie .card-action .bookmark:hover {
   color: inherit;
 }
+/* line 92, sass/series_card.sass */
 .card-serie .card-action .bookmark i {
   position: relative;
   top: 3px;
   font-size: 20px;
 }
+/* line 97, sass/series_card.sass */
 .card-serie .card-action .bookmark.active i {
   color: #d0021b;
 }
+/* line 100, sass/series_card.sass */
 .card-serie.v1 .card-banner {
   background: #2b2b2b;
 }
+/* line 103, sass/series_card.sass */
 .card-serie.v2 .lessons-count {
   color: #0C5EB9;
 }
+/* line 105, sass/series_card.sass */
 .card-serie.v2 .card-banner {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBlNjZjNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzA0NDY5NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -1620,47 +1957,58 @@ a {
   background-image: linear-gradient(to top right, #0e66c4 0%, #044695 100%);
 }
 
+/* line 1, sass/_typography.sass */
 h1 {
   font-size: 40px;
 }
 
+/* line 4, sass/_typography.sass */
 h2 {
   font-size: 30px;
 }
 
+/* line 7, sass/_typography.sass */
 h3 {
   font-size: 24px;
 }
 
+/* line 10, sass/_typography.sass */
 h4 {
   font-size: 20px;
 }
 
+/* line 12, sass/_typography.sass */
 .markdown-body p {
   font-size: 16px;
 }
 
+/* line 14, sass/_typography.sass */
 .no-margin-bottom {
   margin-bottom: 0;
 }
 
+/* line 16, sass/_typography.sass */
 .no-padding-left {
   padding-left: 0;
 }
 
+/* line 18, sass/_typography.sass */
 .text-red {
   color: #d0021b !important;
 }
 
+/* line 21, sass/_typography.sass */
 .clear:after {
   display: table;
   clear: both;
   content: "";
 }
 
+/* line 26, sass/_typography.sass */
 .beta, .ibeta, .fbeta {
   position: relative;
 }
+/* line 28, sass/_typography.sass */
 .beta:after, .ibeta:after, .fbeta:after {
   content: "beta";
   position: absolute;
@@ -1669,24 +2017,28 @@ h4 {
   letter-spacing: 1.2px;
 }
 
+/* line 35, sass/_typography.sass */
 .beta:after {
   top: -5px;
   right: 4px;
   font-size: 8px;
 }
 @media (min-width: 600px) {
+  /* line 35, sass/_typography.sass */
   .beta:after {
     font-size: 9px;
     right: 2px;
   }
 }
 @media (min-width: 660px) {
+  /* line 35, sass/_typography.sass */
   .beta:after {
     font-size: 10px;
     right: 0px;
   }
 }
 
+/* line 46, sass/_typography.sass */
 .ibeta:after {
   top: -20px;
   font-size: 8px;
@@ -1694,53 +2046,67 @@ h4 {
   letter-spacing: 1px;
 }
 
+/* line 52, sass/_typography.sass */
 .fbeta:after {
   top: -5px;
   left: 14rem;
   font-size: 10px;
 }
 
+/* line 58, sass/_typography.sass */
 .custom-red {
   background-color: #d0021b;
 }
+/* line 60, sass/_typography.sass */
 .custom-red:hover {
   background-color: #b70218;
 }
+/* line 62, sass/_typography.sass */
 .custom-red:focus {
   background-color: #d0021b;
 }
 
+/* line 64, sass/_typography.sass */
 .custom-gray {
   background-color: #9B9B9B;
 }
+/* line 66, sass/_typography.sass */
 .custom-gray:hover {
   background-color: #8e8e8e;
 }
+/* line 68, sass/_typography.sass */
 .custom-gray:focus {
   background-color: #9B9B9B;
 }
 
+/* line 70, sass/_typography.sass */
 .custom-yellow {
   background-color: #fbc02d;
 }
+/* line 72, sass/_typography.sass */
 .custom-yellow:hover {
   background-color: #fbb814;
 }
+/* line 74, sass/_typography.sass */
 .custom-yellow:focus {
   background-color: #fbc02d;
 }
 
+/* line 76, sass/_typography.sass */
 .red-bg {
   background-color: #d0021b;
 }
 
+/* line 78, sass/_typography.sass */
 .yellow-bg {
   background-color: #fbc02d;
 }
 
+/* line 80, sass/_typography.sass */
 .decoration {
   position: relative;
 }
+/* line 82, sass/_typography.sass */
 .decoration:after {
   content: "";
   position: absolute;
@@ -1753,12 +2119,14 @@ h4 {
   right: 0;
 }
 
+/* line 92, sass/_typography.sass */
 .badge {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 
+/* line 95, sass/_typography.sass */
 .tabs {
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -1767,91 +2135,137 @@ h4 {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
+/* line 98, sass/_typography.sass */
 .tabs .tab a {
   color: #d0021b;
 }
+/* line 100, sass/_typography.sass */
 .tabs .indicator {
   background-color: #d0021b;
 }
 
+/* line 5, sass/error.sass */
 #error-page {
   min-height: 350px;
   background: #333333 url(../img/error_board.jpg) no-repeat center;
   background-size: cover;
 }
 @media only screen and (min-width: 500px) {
+  /* line 5, sass/error.sass */
   #error-page {
     min-height: 450px;
   }
 }
 @media only screen and (min-width: 800px) {
+  /* line 5, sass/error.sass */
   #error-page {
     min-height: 550px;
   }
 }
 @media only screen and (min-width: 1200px) {
+  /* line 5, sass/error.sass */
   #error-page {
     min-height: 600px;
   }
 }
+/* line 15, sass/error.sass */
 #error-page h2 {
   color: #ffffff;
   font-weight: 300;
   font-size: 24px;
 }
 @media only screen and (min-width: 500px) {
+  /* line 15, sass/error.sass */
   #error-page h2 {
     font-size: 28px;
   }
 }
 @media only screen and (min-width: 800px) {
+  /* line 15, sass/error.sass */
   #error-page h2 {
     font-size: 30px;
   }
 }
+/* line 23, sass/error.sass */
 #error-page img {
   width: 100%;
   width: 300px;
 }
 @media only screen and (min-width: 500px) {
+  /* line 23, sass/error.sass */
   #error-page img {
     width: 400px;
   }
 }
 @media only screen and (min-width: 800px) {
+  /* line 23, sass/error.sass */
   #error-page img {
     width: 500px;
   }
 }
 @media only screen and (min-width: 1200px) {
+  /* line 23, sass/error.sass */
   #error-page img {
     width: 600px;
   }
 }
 
+/* line 4, sass/_signin.sass */
 .signin .card, .signup .card {
   width: 100%;
   max-width: 450px;
   margin-left: auto;
   margin-right: auto;
 }
+/* line 9, sass/_signin.sass */
 .signin .card .divider, .signup .card .divider {
   height: 2px;
   background-color: #d0021b;
 }
+/* line 12, sass/_signin.sass */
+.signin .card .social-btns, .signup .card .social-btns {
+  margin-bottom: 0;
+}
+/* line 14, sass/_signin.sass */
+.signin .card .social-btns .or, .signup .card .social-btns .or {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 19, sass/_signin.sass */
+.signin .card .social-btns .or:before, .signin .card .social-btns .or:after, .signup .card .social-btns .or:before, .signup .card .social-btns .or:after {
+  height: 1px;
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 8px;
+  content: "";
+  width: 44%;
+}
+/* line 26, sass/_signin.sass */
+.signin .card .social-btns .or:before, .signup .card .social-btns .or:before {
+  left: 0;
+}
+/* line 28, sass/_signin.sass */
+.signin .card .social-btns .or:after, .signup .card .social-btns .or:after {
+  right: 0;
+}
 
+/* line 4, sass/loading-bar.sass */
 #loading-bar .bar {
   background: #9B9B9B;
   top: 55px;
   height: 2px;
 }
 @media only screen and (min-width: 601px) {
+  /* line 4, sass/loading-bar.sass */
   #loading-bar .bar {
     top: 64px;
   }
 }
 
 /* Fancy blur effect */
+/* line 13, sass/loading-bar.sass */
 #loading-bar .peg {
   top: 0px;
   height: 2px;
@@ -1860,102 +2274,125 @@ h4 {
   box-shadow: #aaa 1px 0 8px 2px;
 }
 
+/* line 19, sass/style.sass */
 #banner {
   min-height: 600px;
   background: #333333 url(../img/blackboard.png) no-repeat center;
   background-size: cover;
 }
+/* line 23, sass/style.sass */
 #banner h2 {
   color: #ffffff;
   font-weight: 300;
 }
+/* line 26, sass/style.sass */
 #banner img {
   width: 100%;
   max-width: 300px;
 }
 
+/* line 30, sass/style.sass */
 #about h2 {
   font-weight: 500;
   margin: 10px 0;
   border-bottom: 1px solid #212121;
 }
+/* line 34, sass/style.sass */
 #about .module {
   margin-bottom: 50px;
 }
 @media (min-width: 600px) {
+  /* line 34, sass/style.sass */
   #about .module {
     display: table-row;
   }
 }
+/* line 38, sass/style.sass */
 #about .left-align, #about .right-align, #about .center-align {
   vertical-align: middle;
 }
 @media (min-width: 600px) {
+  /* line 38, sass/style.sass */
   #about .left-align, #about .right-align, #about .center-align {
     display: table-cell;
     width: 50%;
   }
 }
+/* line 43, sass/style.sass */
 #about .right-align {
   text-align: left;
 }
 @media (min-width: 600px) {
+  /* line 43, sass/style.sass */
   #about .right-align {
     text-align: right;
   }
 }
+/* line 47, sass/style.sass */
 #about img {
   width: 200px;
 }
 
+/* line 49, sass/style.sass */
 #intermediate {
   min-height: 200px;
   background: #333333 url(../img/blackboard.png) no-repeat center;
   background-size: cover;
 }
+/* line 53, sass/style.sass */
 #intermediate h2 {
   color: #ffffff;
   font-weight: 300;
 }
+/* line 56, sass/style.sass */
 #intermediate .left-align, #intermediate .right-align {
   text-align: center;
 }
 @media (min-width: 600px) {
+  /* line 59, sass/style.sass */
   #intermediate .left-align {
     text-align: left;
   }
+  /* line 61, sass/style.sass */
   #intermediate .right-align {
     text-align: right;
   }
 }
 
+/* line 64, sass/style.sass */
 #faq .collapsible-header {
   font-size: 14px;
   background-color: #333333;
   color: #fff;
 }
+/* line 68, sass/style.sass */
 #faq .collapsible-header.active {
   background-color: #d0021b;
 }
 @media (min-width: 600px) {
+  /* line 64, sass/style.sass */
   #faq .collapsible-header {
     font-size: 18px;
   }
 }
 
+/* line 73, sass/style.sass */
 #news {
   background-color: #eeeeee;
 }
 
+/* line 1, sass/_forms.sass */
 .help-block {
   font-size: 14px;
   margin: 0 0 0 3rem;
 }
 
+/* line 5, sass/_forms.sass */
 .input-field label {
   color: #000000;
 }
 
+/* line 7, sass/_forms.sass */
 .input-field input[type=text]:focus + label,
 .input-field input[type=email]:focus + label,
 .input-field input[type=password]:focus + label,
@@ -1963,6 +2400,7 @@ h4 {
   color: #000000;
 }
 
+/* line 13, sass/_forms.sass */
 .input-field input[type=text]:focus,
 .input-field input[type=email]:focus,
 .input-field input[type=password]:focus,
@@ -1971,6 +2409,7 @@ h4 {
   box-shadow: 0 1px 0 0 #000000;
 }
 
+/* line 20, sass/_forms.sass */
 .input-field input[type=text].valid,
 .input-field input[type=email].valid,
 .input-field input[type=password].valid,
@@ -1979,6 +2418,7 @@ h4 {
   box-shadow: 0 1px 0 0 #000000;
 }
 
+/* line 27, sass/_forms.sass */
 .input-field input[type=text].invalid,
 .input-field input[type=email].invalid,
 .input-field input[type=password].invalid,
@@ -1987,17 +2427,21 @@ h4 {
   box-shadow: 0 1px 0 0 #000000;
 }
 
+/* line 34, sass/_forms.sass */
 .input-field .prefix.active {
   color: #000000;
 }
 
+/* line 2, sass/_footer.sass */
 footer.page-footer {
   background-color: #333333;
   margin-top: 0;
 }
+/* line 5, sass/_footer.sass */
 footer.page-footer .footer-copyright {
   background-color: #212121;
 }
+/* line 7, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons {
   display: inline-block;
   margin: 20px auto;
@@ -2005,16 +2449,19 @@ footer.page-footer .footer-copyright .social-icons {
   padding: 0;
   font-size: 22px;
 }
+/* line 13, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li {
   margin-left: 20px;
   display: inline-block;
 }
+/* line 16, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li .social {
   display: inline-block;
   position: relative;
   width: 25px;
   height: 25px;
 }
+/* line 21, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li .social:before {
   position: absolute;
   font-family: FontAwesome;
@@ -2028,49 +2475,61 @@ footer.page-footer .footer-copyright .social-icons li .social:before {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+/* line 28, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li .social:hover:before {
   color: #d0021b;
 }
+/* line 31, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li .social.tw:before {
   content: "";
 }
+/* line 34, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li .social.gt:before {
   content: "";
 }
+/* line 37, sass/_footer.sass */
 footer.page-footer .footer-copyright .social-icons li .social.cp:before {
   content: "";
 }
+/* line 39, sass/_footer.sass */
 footer .logo {
   width: 20px;
   height: auto;
 }
 
+/* line 42, sass/_footer.sass */
 .modal {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
 
+/* line 44, sass/_footer.sass */
 .modal .modal-content {
   padding: 0;
 }
 
+/* line 46, sass/_footer.sass */
 .modal-form-padding {
   padding: 25px;
 }
 
+/* line 48, sass/_footer.sass */
 .modal-header {
   padding: 21px 15px;
   height: 64px;
 }
+/* line 51, sass/_footer.sass */
 .modal-header h2 {
   color: #fff;
   display: inline-block;
   font-size: 20px;
 }
+/* line 55, sass/_footer.sass */
 .modal-header h2:after {
   display: none;
 }
+/* line 57, sass/_footer.sass */
 .modal-header a {
   display: inline-block;
   color: #fff;
@@ -2081,10 +2540,12 @@ footer .logo {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
+/* line 63, sass/_footer.sass */
 .modal-header a:hover {
   color: #000;
   text-shadow: rgba(128, 128, 128, 0.2) 0px 0px 10px;
 }
+/* line 66, sass/_footer.sass */
 .modal-header a:active {
   color: #686868;
 }

@@ -38,5 +38,16 @@
 				$scope.loginForm.password.$setDirty();
 			}
 		};
+		loginCtl.socialLogin = function() {
+			console.log('github');
+
+			$auth.authenticate('github')
+				.then(function(response) {
+					console.log(response);
+				})
+				.catch(function(response) {
+					Materialize.toast('Oops, we couldn\'t get your email!', 5000);
+				});
+		};
 	}
 })();
