@@ -1,15 +1,15 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('recipesApp')
-        .controller('PostController', PostController);
+	angular
+		.module('recipesApp')
+		.controller('PostController', PostController);
 
-    PostController.$inject = ['posts'];
+	PostController.$inject = ['post', 'posts'];
 
-    function PostController(posts) {
-        var postCtl = this;
+	function PostController(post, posts) {
+		var postCtl = this;
 		postCtl.post = post;
 		postCtl.posts = posts;
-    }
+	}
 })();
