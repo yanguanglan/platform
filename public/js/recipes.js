@@ -117,7 +117,7 @@ angular
 				}
 
 				if (socialNetwork == 'pocket') {
-
+					console.log('pocket');
 				}
 
 				var strTitle = ((typeof args.title !== 'undefined') ? args.title : 'Social Share'),

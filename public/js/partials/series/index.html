@@ -5,7 +5,7 @@
 				<h1>Series List</h1>
 				<p>
 					<span class="recipes-count">{{seriesCtl.series.length}}</span>
-					<i class="mdi-action-extension card-icons"></i>Total Series
+					<i class="mdi-action-extension card-icons"></i>Total <ng-pluralize count="seriesCtl.series.length" when="{'one': 'Serie','other': 'Series'}"></ng-pluralize>
 				</p>
 			</div>
 		</div>

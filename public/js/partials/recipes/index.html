@@ -5,7 +5,8 @@
 				<h1 class="recipe-list-title">Recipes List</h1>
 				<p>
 					<span class="recipes-count">{{recipesCtl.recipes.length}}</span>
-					<i class="mdi-social-school card-icons"></i>Total Recipes
+					<i class="mdi-social-school card-icons"></i>Total
+					<ng-pluralize count="recipesCtl.recipes.length" when="{'one': 'Recipe','other': 'Recipes'}"></ng-pluralize>
 				</p>
 			</div>
 		</div>
