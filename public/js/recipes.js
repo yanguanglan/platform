@@ -82,7 +82,7 @@ angular
 			link: linkFunction
 		};
 	})
-	.directive('shareLink', ['$location', function($location) {
+	.directive('shareLink', ['$location', '$auth', function($location, $auth) {
 		var linkFunction = function(scope, element, args) {
 			element.on('click', function(e) {
 				e.preventDefault();
@@ -114,6 +114,10 @@ angular
 
 				if (socialNetwork == 'linkedin') {
 					strLink = 'http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(currentLocation);
+				}
+
+				if (socialNetwork == 'pocket') {
+
 				}
 
 				var strTitle = ((typeof args.title !== 'undefined') ? args.title : 'Social Share'),
