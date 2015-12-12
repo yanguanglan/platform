@@ -63,7 +63,12 @@
 				})
 				.when('/requests', {
 					controller: 'RequestsController as requestsCtl',
-					templateUrl: 'js/partials/requests.html'
+					templateUrl: 'js/partials/requests.html',
+					resolve: {
+						themes: function(themeService) {
+							return themeService.all();
+						}
+					}
 				})
 				.when('/login', {
 					controller: 'LoginController as loginCtl',

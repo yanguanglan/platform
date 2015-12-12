@@ -66,4 +66,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->belongsToMany('App\Serie', 'series_watches', 'user_id', 'serie_id');
 	}
 
+	public function voted()
+	{
+		return $this->belongsToMany('App\Theme', 'votes', 'user_id', 'theme_id');
+	}
+
 }

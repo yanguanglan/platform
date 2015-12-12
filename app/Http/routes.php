@@ -19,6 +19,8 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	post('series-book', 'SeriesController@book');
 	post('series-unbook', 'SeriesController@unbook');
 
+	resource('themes', 'ThemesController', ['only' => ['index']]);
+	post('themes-vote', 'ThemesController@vote');
 	resource('lessons', 'LessonsController', ['only' => ['show']]);
 	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
 	resource('posts', 'PostsController', ['only' => ['index', 'show']]);

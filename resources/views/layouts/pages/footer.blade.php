@@ -250,6 +250,7 @@
 <script type="text/javascript" src="{{asset('js/services/lesson.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/post.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/faq.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/services/theme.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/recipes.js')}}"></script>
 </body>
 </html>

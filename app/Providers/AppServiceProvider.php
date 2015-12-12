@@ -61,6 +61,11 @@ class AppServiceProvider extends ServiceProvider {
 		);
 
 		$this->app->bind(
+			'App\Repositories\Theme\ThemeInterface',
+			'App\Repositories\Theme\ThemeRepository'
+		);
+
+		$this->app->bind(
 			'App\Repositories\Topic\TopicInterface',
 			'App\Repositories\Topic\TopicRepository'
 		);
