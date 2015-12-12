@@ -3,9 +3,7 @@
 		<div class="row">
 			<div class="col l5 s12">
 				<h5 class="white-text fbeta">Angular<span class="text-red">JS</span> Recipes</h5>
-				<p class="grey-text text-lighten-4">This is a non-profitable project created by developers who are tired
-					of paying for knowledge, experiences, recipes and tricks. Share your recipes and help build a strong
-					community. Because knowledge is power!</p>
+				<p class="grey-text text-lighten-4">AngularJS Recipes is created for web developers who simply want to sharpen their knowledge. This service aims to become your right hand no matter if you are a novice or a well established developer.</p>
 			</div>
 			<div class="col offset-l1 l2 s12">
 				<h5 class="white-text">Links</h5>
