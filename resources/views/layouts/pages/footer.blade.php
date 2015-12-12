@@ -207,7 +207,7 @@
 <script type="text/javascript" src="{{asset('bower_components/angular-messages/angular-messages.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-animate/angular-animate.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-sanitize/angular-sanitize.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('bower_components/angular-gravatar/build/angular-gravatar.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-md5/angular-md5.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-loading-bar/build/loading-bar.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/satellizer/satellizer.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/showdown/dist/showdown.min.js')}}"></script>

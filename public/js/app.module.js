@@ -11,6 +11,6 @@
 		'ng-showdown',
 		'ui.materialize',
 		'angularUtils.directives.dirDisqus',
-		'ui.gravatar'
+		'angular-md5'
 	]);
 })();

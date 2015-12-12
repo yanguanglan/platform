@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('NavigationController', NavigationController);
 
-	NavigationController.$inject = ['authService', '$auth', '$rootScope', '$location'];
+	NavigationController.$inject = ['authService', '$auth', '$rootScope', '$location', 'md5'];
 
-	function NavigationController(authService, $auth, $rootScope, $location) {
+	function NavigationController(authService, $auth, $rootScope, $location, md5) {
 		var navCtl = this;
 		navCtl.user = authService.isLoggedIn();
 		navCtl.logout = function() {
@@ -18,6 +18,7 @@
 					navCtl.user = null;
 				});
 		};
+		navCtl.gravatar = 'http://www.gravatar.com/avatar/' + md5.createHash(navCtl.user.email) + '&s=80';
 		navCtl.isAuthenticated = function() {
 			return $auth.isAuthenticated();
 		};
