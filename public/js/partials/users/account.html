@@ -13,7 +13,7 @@
 			<div class="col s12">
 				<div class="card">
 					<div class="card-content">
-						<form class="modal-form-padding" name="profileForm" ng-submit="accountCtl.submit(profileForm.$valid)" novalidate>
+						<form class="modal-form-padding" name="profileForm" ng-submit="accountCtl.submitPassword(profileForm.$valid)" novalidate>
 							<div class="row">
 								<div class="input-field col s12 m12 l6">
 									<i class="mdi-action-account-box prefix"></i>
@@ -56,7 +56,45 @@
 		</div>
 		<div id="test2">
 			<div class="col s12">
+				<div class="card">
+					<div class="card-content">
+						<form class="modal-form-padding" name="passwordForm" ng-submit="accountCtl.submitPassword(passwordForm.$valid)" novalidate>
+							<div class="row">
+								<div class="input-field col s12 m12 l6">
+									<i class="mdi-action-lock prefix"></i>
+									<input id="icon_password" type="password" class="validate" name="password" ng-model="accountCtl.user.password" required>
+									<label for="icon_password">Password</label>
 
+									<div ng-messages="passwordForm.password.$error" ng-if="passwordForm.password.$dirty">
+										<div ng-message="required">
+											<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter your password</p>
+										</div>
+									</div>
+								</div>
+								<div class="input-field col s12 m12 l6">
+									<i class="mdi-action-lock prefix"></i>
+									<input id="icon_repeat_password" type="password" class="validate" name="repeat_password" ng-model="accountCtl.user.repeat_password" pw-check="icon_password" required>
+									<label for="icon_repeat_password">Repeat Password</label>
+
+									<div ng-messages="passwordForm.repeat_password.$error" ng-if="passwordForm.repeat_password.$dirty">
+										<div ng-message="required">
+											<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please repeat your new password</p>
+										</div>
+
+										<div ng-message="pwCheck">
+											<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Passwords do not match</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12 right-align">
+									<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i class="mdi-content-send right"></i></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

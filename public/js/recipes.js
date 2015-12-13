@@ -254,6 +254,20 @@ angular
 			link: linkFunction
 		};
 	}])
+	.directive('pwCheck', [function () {
+		return {
+			require: 'ngModel',
+			link: function (scope, el, attrs, ctrl) {
+				var firstPassword = '#' + attrs.pwCheck;
+				el.add(firstPassword).on('input', function () {
+					scope.$apply(function () {
+						var validity = el.val() === $(firstPassword).val();
+						ctrl.$setValidity('pwCheck', validity);
+					});
+				});
+			}
+		};
+	}])
 	.directive('focusMe', function() {
 		var linkFunction = function(scope, element, args) {
 			scope.$watch(args.focusMe, function(value) {

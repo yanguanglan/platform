@@ -11,7 +11,8 @@
 		var service = {
 			account: account,
 			dashboard: dashboard,
-			update: update
+			updateProfile: updateProfile,
+			updatePassword: updatePassword
 		};
 
 		return service;
@@ -50,11 +51,18 @@
 				});
 		}
 
-		function update(id, name, email) {
+		function updateProfile(id, name, email) {
 			return $http
 				.put('api/users/' + id, {
 					name: name,
 					email: email
+				});
+		}
+
+		function updatePassword(id, password) {
+			return $http
+				.put('api/users/update/password/' + id, {
+					password: password
 				});
 		}
 	}
