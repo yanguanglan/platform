@@ -10,6 +10,5 @@
 	function DashboardController(user) {
 		var dashCtl = this;
 		dashCtl.user = user.user;
-		console.log(dashCtl.user);
 	}
 })();

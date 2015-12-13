@@ -27,6 +27,7 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	post('auth/login', 'AuthController@login');
 	post('auth/register', 'AuthController@register');
 	get('auth/users-availability', 'AuthController@availability');
+	resource('users', 'UsersController', ['only' => ['update']]);
 	get('users/account', 'UsersController@account');
 	get('users/dashboard', 'UsersController@dashboard');
 });

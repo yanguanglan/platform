@@ -1,53 +1,61 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('recipesApp')
-        .factory('userService', userService);
+	angular
+		.module('recipesApp')
+		.factory('userService', userService);
 
-    userService.$inject = ['$http', '$location'];
+	userService.$inject = ['$http', '$location'];
 
-    function userService($http, $location) {
-        var service = {
-            account: account,
-            dashboard: dashboard
-        };
+	function userService($http, $location) {
+		var service = {
+			account: account,
+			dashboard: dashboard,
+			update: update
+		};
 
-        return service;
+		return service;
 
-        function account() {
-            var sortBy = sortBy || 'date',
-                versionBy = versionBy || 'all';
+		function account() {
+			var sortBy = sortBy || 'date',
+				versionBy = versionBy || 'all';
 
-            return $http
-                .get('api/users/account')
-                .then(function(data) {
-                    return data.data;
-                }, function(err) {
-                    if (err.data.error) {
-                        $location.path('/login');
-                    } else {
-                        $location.path('/error');
-                    }
-                    console.log(err);
-                });
-        }
+			return $http
+				.get('api/users/account')
+				.then(function(data) {
+					return data.data;
+				}, function(err) {
+					if (err.data.error) {
+						$location.path('/login');
+					} else {
+						$location.path('/error');
+					}
+					console.log(err);
+				});
+		}
 
-        function dashboard() {
-            var views = views || null;
-            return $http
-                .get('api/users/dashboard')
-                .then(function(data) {
-                    console.log(data.data);
-                    return data.data;
-                }, function(err) {
-                    if (err.data.error) {
-                        $location.path('/login');
-                    } else {
-                        $location.path('/error');
-                    }
-                    console.log(err);
-                });
-        }
-    }
+		function dashboard() {
+			var views = views || null;
+			return $http
+				.get('api/users/dashboard')
+				.then(function(data) {
+					return data.data;
+				}, function(err) {
+					if (err.data.error) {
+						$location.path('/login');
+					} else {
+						$location.path('/error');
+					}
+					console.log(err);
+				});
+		}
+
+		function update(id, name, email) {
+			return $http
+				.put('api/users/' + id, {
+					name: name,
+					email: email
+				});
+		}
+	}
 })();
