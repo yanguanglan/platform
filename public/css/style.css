@@ -308,6 +308,29 @@ nav .brand-logo {
   background-color: #d0021b;
 }
 
+#dashboard-header,
+#account-header {
+  background-color: #d0021b;
+  color: #fff;
+}
+#dashboard-header h1,
+#account-header h1 {
+  margin: 44px 0;
+}
+#dashboard-header p,
+#account-header p {
+  font-size: 16px;
+  margin: -52px 0 40px 0;
+}
+#dashboard-header .avatar-img,
+#account-header .avatar-img {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  top: -12px;
+  margin-right: 10px;
+}
+
 #recipe-header {
   background-color: #d0021b;
   color: #fff;

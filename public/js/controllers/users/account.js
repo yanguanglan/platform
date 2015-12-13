@@ -5,11 +5,12 @@
 		.module('recipesApp')
 		.controller('AccountController', AccountController);
 
-	AccountController.$inject = ['authService', 'userService', '$rootScope', '$scope'];
+	AccountController.$inject = ['authService', 'userService', '$rootScope', '$scope', 'md5'];
 
-	function AccountController(authService, userService, $rootScope, $scope) {
+	function AccountController(authService, userService, $rootScope, $scope, md5) {
 		var accountCtl = this;
 		accountCtl.user = authService.isLoggedIn();
+		accountCtl.gravatar = 'http://www.gravatar.com/avatar/' + md5.createHash(accountCtl.user.email) + '&s=120';
 		accountCtl.submitProfile = function(isValid) {
 			if (isValid) {
 				userService

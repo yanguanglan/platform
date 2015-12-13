@@ -1,26 +1,37 @@
-<div class="container section">
-	<div class="row">
-		<div class="col s12">
-			<ul class="tabs" tabs>
-				<li class="tab col s3"><a class="active" href="#test1">Bookmarks ({{dashCtl.user.bookmarked_recipes.length}})</a></li>
-				<li class="tab col s3"><a href="#test2">Favourites ({{dashCtl.user.liked_recipes.length}})</a></li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div id="test1">
-			<recipe class="col s12 m6 l4" ng-if="dashCtl.user.bookmarked_recipes.length" ng-repeat="recipe in dashCtl.user.bookmarked_recipes"></recipe>
-
+<div id="dashboard-header">
+	<div class="container">
+		<div class="row no-margin-bottom">
 			<div class="col s12">
-				<h2 class="center" ng-if="!dashCtl.user.bookmarked_recipes.length">No recipes found</h2>
+				<h1><img src="{{dashCtl.gravatar}}" class="avatar-img" alt="" /> {{dashCtl.user.name}}</h1>
+				<p>
+					My Dashboard
+				</p>
 			</div>
 		</div>
-		<div id="test2">
-			<recipe class="col s12 m6 l4" ng-if="dashCtl.user.liked_recipes.length" ng-repeat="recipe in dashCtl.user.liked_recipes"></recipe>
+	</div>
+</div>
 
-			<div class="col s12">
-				<h2 class="center" ng-if="!dashCtl.user.liked_recipes.length">No recipes found</h2>
+<ul class="tabs" tabs>
+    <li class="tab col s3"><a class="active" href="#dash1">Bookmarks ({{dashCtl.user.bookmarked_recipes.length}})</a></li>
+    <li class="tab col s3"><a href="#dash2">Favourites ({{dashCtl.user.liked_recipes.length}})</a></li>
+</ul>
+
+<div id="dashboard">
+	<div class="container section">
+		<div class="row">
+			<div id="dash1">
+				<recipe class="col s12 m6 l4" ng-if="dashCtl.user.bookmarked_recipes.length" ng-repeat="recipe in dashCtl.user.bookmarked_recipes"></recipe>
+
+				<div class="col s12">
+					<h2 class="center" ng-if="!dashCtl.user.bookmarked_recipes.length">No recipes found</h2>
+				</div>
+			</div>
+			<div id="dash2">
+				<recipe class="col s12 m6 l4" ng-if="dashCtl.user.liked_recipes.length" ng-repeat="recipe in dashCtl.user.liked_recipes"></recipe>
+
+				<div class="col s12">
+					<h2 class="center" ng-if="!dashCtl.user.liked_recipes.length">No recipes found</h2>
+				</div>
 			</div>
 		</div>
 	</div>
