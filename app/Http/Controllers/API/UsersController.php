@@ -46,6 +46,14 @@ class UsersController extends Controller
 			'password' => $request->input('password')
 		]);
 
-		return $this->user->byId($id);
+		$user = $this->user->byId($id);
+
+		\Mail::send(['text' => 'emails.user.password_announce'], ['user' => $user], function ($m) use ($user) {
+			$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
+
+			$m->to($user->email, $user->name)->subject('Password Updated');
+		});
+
+		return $user;
 	}
 }

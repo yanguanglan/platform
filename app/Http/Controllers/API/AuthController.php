@@ -56,9 +56,17 @@ class AuthController extends Controller
 			return response()->json(['error' => 'Please enter valid credentials'], 500);
 		}
 
+		$user = $this->user->byId(\Auth::id());
+
+		\Mail::send(['text' => 'emails.user.register'], ['user' => $user], function ($m) use ($user) {
+			$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
+
+			$m->to($user->email, $user->name)->subject('Welcome to AngularJS Recipes');
+		});
+
 		return [
 			'token' => $token,
-			'user' => $this->user->session(\Auth::id()),
+			'user' => $user
 		];
 	}
 
