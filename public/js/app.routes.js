@@ -3,13 +3,18 @@
 
 	angular
 		.module('recipesApp')
-		.run(['$rootScope', '$location', 'authService', function($rootScope, $location, authService) {
+		.run(['$rootScope', '$location', '$document', 'authService', function($rootScope, $location, $document, authService) {
 			$rootScope
 				.$on('$routeChangeStart', function(event, next, current) {
 					if (!authService.isLoggedIn() && next.auth) {
 						console.log('auth');
 						$location.path('/login');
 					}
+				});
+
+			$rootScope
+				.$on('$routeChangeSuccess', function() {
+					$document[0].body.scrollTop = $document[0].documentElement.scrollTop = 0;
 				});
 		}])
 		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', '$authProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider, $authProvider) {
