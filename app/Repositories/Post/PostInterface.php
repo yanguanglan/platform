@@ -7,4 +7,6 @@ interface PostInterface {
 
 	public function show($uuid);
 
+	public function createSlugs();
+
 }

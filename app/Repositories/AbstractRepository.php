@@ -42,4 +42,13 @@ abstract class AbstractRepository {
 	{
 		return $this->model->destroy($id);
 	}
+
+	public function createSlugs()
+	{
+		$models = $this->model->all();
+
+		foreach ($models as $model) {
+			$model->update(['slug' => str_slug($model->title)]);
+		}
+	}
 }
