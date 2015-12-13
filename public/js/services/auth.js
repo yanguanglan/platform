@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.factory('authService', authService);
 
-	authService.$inject = ['$http', '$location'];
+	authService.$inject = ['$http', '$location', '$auth'];
 
-	function authService($http, $location) {
+	function authService($http, $location, $auth) {
 		var service = {
 			duplicated: duplicated,
 			setUser: setUser,
@@ -35,7 +35,7 @@
 		function isLoggedIn() {
 			var user = JSON.parse(localStorage.getItem('user'));
 
-			return user ? user : false;
+			return $auth.isAuthenticated() ? user : false;
 		}
 
 		function logout() {
