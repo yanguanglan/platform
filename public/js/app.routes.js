@@ -105,7 +105,7 @@
 						}
 					}
 				})
-				.when('/recipes/:uuid', {
+				.when('/recipes/:uuid/:slug', {
 					controller: 'RecipeController as recipeCtl',
 					templateUrl: 'js/partials/recipes/show.html',
 					resolve: {
@@ -148,7 +148,7 @@
 					},
 					auth: false
 				})
-				.when('/series/:uuid/lessons', {
+				.when('/series/:uuid/:slug', {
 					controller: 'SerieController as serieCtl',
 					templateUrl: 'js/partials/series/show.html',
 					resolve: {
