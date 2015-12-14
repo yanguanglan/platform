@@ -1478,6 +1478,7 @@ a {
 .card-recipe .card-action .bookmark i {
   position: relative;
   top: 3px;
+  padding-left: 0;
 }
 .card-recipe .card-action .bookmark.active i {
   color: #d0021b;
@@ -1603,12 +1604,14 @@ a {
 }
 .card-serie .card-action .card-icons {
   font-size: 20px;
-  padding-right: 16px;
-  padding-left: 5px;
+  padding-left: 3px;
 }
 .card-serie .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
+}
+.card-serie .card-action .watched, .card-serie .card-action .liked, .card-serie .card-action .bookmark {
+  margin-left: 15px;
 }
 .card-serie .card-action .bookmark {
   color: #000;

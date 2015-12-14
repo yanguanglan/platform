@@ -99,6 +99,7 @@
 .card-recipe .card-action .bookmark i {
   position: relative;
   top: 3px;
+  padding-left: 0;
 }
 .card-recipe .card-action .bookmark.active i {
   color: #d0021b;
