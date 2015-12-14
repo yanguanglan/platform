@@ -960,7 +960,7 @@ a {
 #serie-header #toggle-search {
   height: 64px;
   display: block;
-  padding: 5px 15px;
+  padding: 5px 10px;
 }
 #serie-header #toggle-search i {
   font-size: 36px;
@@ -1147,6 +1147,14 @@ a {
 
 .no-padding-left {
   padding-left: 0 !important;
+}
+
+.share-button .dropdown-button:hover {
+  background-color: #fbc02d;
+}
+
+#dropdown2 a:hover {
+  background-color: #fbc02d;
 }
 
 #lesson-header {
