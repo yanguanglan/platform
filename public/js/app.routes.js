@@ -83,6 +83,10 @@
 					controller: 'RegisterController as registerCtl',
 					templateUrl: 'js/partials/users/register.html'
 				})
+				.when('/forgot', {
+					controller: 'ForgotController as forgotCtl',
+					templateUrl: 'js/partials/users/forgot.html'
+				})
 				.when('/dashboard', {
 					controller: 'DashboardController as dashCtl',
 					templateUrl: 'js/partials/users/dashboard.html',

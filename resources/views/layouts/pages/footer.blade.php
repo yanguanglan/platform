@@ -238,6 +238,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/posts/show.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/login.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/register.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/users/forgot.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/dashboard.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/account.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/auth.js')}}"></script>

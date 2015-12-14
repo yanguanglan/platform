@@ -1869,7 +1869,8 @@ h4 {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
 }
 .signin .card .social-btns .or:before, .signin .card .social-btns .or:after, .signup .card .social-btns .or:before, .signup .card .social-btns .or:after {
   height: 1px;
@@ -1884,6 +1885,13 @@ h4 {
 }
 .signin .card .social-btns .or:after, .signup .card .social-btns .or:after {
   right: 0;
+}
+.signin .card .extra-links, .signup .card .extra-links {
+  margin-bottom: 0;
+}
+.signin .card .extra-links a, .signup .card .extra-links a {
+  font-size: 14px;
+  text-decoration: underline;
 }
 
 #loading-bar .bar {
@@ -2035,6 +2043,10 @@ h4 {
 
 .input-field .prefix.active {
   color: #000000;
+}
+
+.input-field .prefix ~ label {
+  margin-left: 2.2rem;
 }
 
 footer.page-footer {
