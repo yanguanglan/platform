@@ -629,14 +629,19 @@ a {
 }
 
 .list-date {
-  display: inline-block;
+  display: block;
   color: #727272 !important;
   margin: 5px 10px 0 0 !important;
   font-size: 14px;
 }
 @media only screen and (min-width: 400px) {
   .list-date {
-    font-size: 15px;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 430px) {
+  .list-date {
+    display: inline-block;
   }
 }
 @media only screen and (min-width: 601px) {
@@ -649,33 +654,26 @@ a {
   margin-top: 10px;
 }
 
-.left-info-icons {
-  display: none;
+.info-icons {
+  float: left;
+  padding-top: 5px;
 }
-@media only screen and (min-width: 420px) {
-  .left-info-icons {
-    display: inline-block;
+@media only screen and (min-width: 430px) {
+  .info-icons {
+    float: right;
     padding-top: 3px;
+    display: inline-block;
   }
 }
 @media only screen and (min-width: 600px) {
-  .left-info-icons {
+  .info-icons {
     display: block;
   }
 }
 
-.right-info-icons {
-  display: inline-block;
-}
-@media only screen and (min-width: 420px) {
-  .right-info-icons {
-    display: none;
-  }
-}
-
 .list-icons {
-  margin-left: 5px;
-  font-size: 16px;
+  margin-left: 15px;
+  font-size: 14px;
 }
 @media only screen and (min-width: 400px) {
   .list-icons {
