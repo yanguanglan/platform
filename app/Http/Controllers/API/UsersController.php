@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Repositories\User\UserInterface as User;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -17,7 +18,7 @@ class UsersController extends Controller
 	public function __construct(User $user)
 	{
 		$this->user = $user;
-		$this->middleware('jwt.auth', ['except' => ['requestPassword']]);
+		$this->middleware('jwt.auth', ['except' => ['requestPassword', 'resetPassword']]);
 	}
 
 	public function dashboard()
@@ -60,13 +61,43 @@ class UsersController extends Controller
 	public function requestPassword(Request $request)
 	{
 		$user = $this->user->byAttribute('email', $request->input('email'));
+		$token = str_random(60);
+		$link = url('/#!/reset/' . $user->uuid . '/' . $token);
 
 		if ($user) {
-			\Mail::send(['text' => 'emails.user.password_request'], ['user' => $user], function ($m) use ($user) {
+			$this->user->update($user->id, [
+				'token' => $token,
+				'expires_at' => Carbon::now()->addHour()
+			]);
+
+			\Mail::send(['text' => 'emails.user.password_request'], ['user' => $user, 'link' => $link], function ($m) use ($user) {
 				$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
 
 				$m->to($user->email, $user->name)->subject('Password Reset');
 			});
 		}
+	}
+
+	public function resetPassword(Request $request)
+	{
+		$user = $this->user->byToken($request->input('uuid'), $request->input('token'));
+
+		if ($user) {
+			$diff = Carbon::now()->diffInMinutes($user->expires_at);
+
+			if ($diff > 0) {
+				$this->user->update($user->id, ['password' => $request->input('password')]);
+
+				return [
+					'error' => false,
+					'user' => $user
+				];
+			}
+		}
+
+		return [
+			'error' => true,
+			'msg' => 'Invalid request, please go to the forgot password page again!'
+		];
 	}
 }

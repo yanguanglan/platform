@@ -11,4 +11,6 @@ interface UserInterface {
 
 	public function dashboard();
 
+	public function byToken($uuid, $token);
+
 }

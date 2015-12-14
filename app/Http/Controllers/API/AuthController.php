@@ -44,7 +44,7 @@ class AuthController extends Controller
 	{
 		$credentials = $request->only('name', 'email', 'password');
 
-		$user = $this->user->create($credentials);
+		$user = $this->user->create(array_add($credentials, 'uuid', str_random(6)));
 
 		try {
 			// verify the credentials and create a token for the user

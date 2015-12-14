@@ -13,7 +13,8 @@
 			dashboard: dashboard,
 			updateProfile: updateProfile,
 			updatePassword: updatePassword,
-			requestPassword: requestPassword
+			requestPassword: requestPassword,
+			resetPassword: resetPassword
 		};
 
 		return service;
@@ -71,6 +72,15 @@
 			return $http
 				.post('api/users/request/password', {
 					email: email
+				});
+		}
+
+		function resetPassword(uuid, token, password) {
+			return $http
+				.put('api/users/reset/password', {
+					uuid: uuid,
+					token: token,
+					password: password
 				});
 		}
 	}

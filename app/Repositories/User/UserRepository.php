@@ -68,4 +68,14 @@ class UserRepository extends AbstractRepository implements UserInterface
 
 		return $model;
 	}
+
+	public function byToken($uuid, $token)
+	{
+		$model = $this->model
+		->where('uuid', $uuid)
+		->where('token', $token)
+		->first();
+
+		return $model;
+	}
 }

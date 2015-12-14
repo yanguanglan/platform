@@ -87,6 +87,10 @@
 					controller: 'ForgotController as forgotCtl',
 					templateUrl: 'js/partials/users/forgot.html'
 				})
+				.when('/reset/:uuid/:token', {
+					controller: 'ResetController as resetCtl',
+					templateUrl: 'js/partials/users/reset.html'
+				})
 				.when('/dashboard', {
 					controller: 'DashboardController as dashCtl',
 					templateUrl: 'js/partials/users/dashboard.html',

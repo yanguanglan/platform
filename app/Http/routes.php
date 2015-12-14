@@ -30,6 +30,7 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	resource('users', 'UsersController', ['only' => ['update']]);
 	put('users/update/password/{users}', 'UsersController@updatePassword');
 	post('users/request/password', 'UsersController@requestPassword');
+	put('users/reset/password', 'UsersController@resetPassword');
 	get('users/account', 'UsersController@account');
 	get('users/dashboard', 'UsersController@dashboard');
 });
