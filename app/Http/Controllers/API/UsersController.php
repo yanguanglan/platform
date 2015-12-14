@@ -17,7 +17,7 @@ class UsersController extends Controller
 	public function __construct(User $user)
 	{
 		$this->user = $user;
-		$this->middleware('jwt.auth');
+		$this->middleware('jwt.auth', ['except' => ['requestPassword']]);
 	}
 
 	public function dashboard()
@@ -55,5 +55,18 @@ class UsersController extends Controller
 		});
 
 		return $user;
+	}
+
+	public function requestPassword(Request $request)
+	{
+		$user = $this->user->byAttribute('email', $request->input('email'));
+
+		if ($user) {
+			\Mail::send(['text' => 'emails.user.password_request'], ['user' => $user], function ($m) use ($user) {
+				$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
+
+				$m->to($user->email, $user->name)->subject('Password Reset');
+			});
+		}
 	}
 }

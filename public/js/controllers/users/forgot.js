@@ -5,16 +5,18 @@
 		.module('recipesApp')
 		.controller('ForgotController', ForgotController);
 
-	ForgotController.$inject = ['authService', '$auth', '$location', '$rootScope', '$scope'];
+	ForgotController.$inject = ['userService'];
 
-	function ForgotController(authService, $auth, $location, $rootScope, $scope) {
+	function ForgotController(userService) {
 		var forgotCtl = this;
 		forgotCtl.user = {
 			email: ''
 		};
 		forgotCtl.submit = function(valid) {
 			if (valid) {
-                Materialize.toast('An email was sent please follow the procedure!', 5000);
+				Materialize.toast('An email was sent please follow the procedure!', 5000);
+				
+				userService.requestPassword(forgotCtl.user.email);
 			} else {
 				$scope.forgotForm.email.$setDirty();
 			}

@@ -12,7 +12,8 @@
 			account: account,
 			dashboard: dashboard,
 			updateProfile: updateProfile,
-			updatePassword: updatePassword
+			updatePassword: updatePassword,
+			requestPassword: requestPassword
 		};
 
 		return service;
@@ -63,6 +64,13 @@
 			return $http
 				.put('api/users/update/password/' + id, {
 					password: password
+				});
+		}
+
+		function requestPassword(email) {
+			return $http
+				.post('api/users/request/password', {
+					email: email
 				});
 		}
 	}
