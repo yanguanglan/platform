@@ -79,19 +79,19 @@
 .card-recipe .card-action .card-view:hover {
   color: #000;
 }
-.card-recipe .card-action .card-icons, .card-recipe .card-action .bookmark {
+.card-recipe .card-action .card-icons {
   font-size: 20px;
-  padding-right: 16px;
-  padding-left: 5px;
+  padding-left: 3px;
 }
 .card-recipe .card-action .mdi-action-visibility:before {
   position: relative;
   top: 2px;
 }
+.card-recipe .card-action .watched, .card-recipe .card-action .liked, .card-recipe .card-action .bookmark {
+  margin-left: 15px;
+}
 .card-recipe .card-action .bookmark {
   color: #000;
-  margin-right: 0;
-  padding-right: 0;
 }
 .card-recipe .card-action .bookmark:hover {
   color: inherit;
