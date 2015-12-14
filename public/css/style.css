@@ -662,31 +662,18 @@ a {
 
 .info-icons {
   float: left;
-  padding-top: 5px;
-}
-@media only screen and (min-width: 430px) {
-  .info-icons {
-    float: right;
-    padding-top: 3px;
-    display: inline-block;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .info-icons {
-    display: block;
-  }
 }
 
 .list-icons {
-  margin-left: 15px;
+  margin-left: 20px;
   font-size: 14px;
+}
+.list-icons i {
+  margin-left: 5px;
 }
 @media only screen and (min-width: 400px) {
   .list-icons {
     font-size: 16px;
-  }
-  .list-icons i {
-    margin-left: 3px;
   }
 }
 
@@ -744,9 +731,13 @@ a {
   display: table;
 }
 .recipe-list-item .list-content {
+  position: relative;
   width: calc(100% - 70px);
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 10px;
+}
+.recipe-list-item .list-content h5 {
+  width: calc(100% - 25px);
 }
 @media only screen and (min-width: 650px) {
   .recipe-list-item .list-content {
@@ -755,6 +746,9 @@ a {
 }
 .recipe-list-item:last-of-type .list-content {
   border: none;
+}
+.recipe-list-item .list-view-topics {
+  display: block;
 }
 .recipe-list-item .chip {
   display: none;
@@ -886,6 +880,17 @@ a {
 
 .right-topic-title-resources {
   width: 100%;
+}
+
+.list-bookmark {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  padding-right: 0;
+  margin-right: 0;
+}
+.list-bookmark i {
+  font-size: 25px;
 }
 
 #serie-header {
