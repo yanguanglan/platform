@@ -1158,9 +1158,6 @@ a {
   padding-left: 0 !important;
 }
 
-.yellow-share {
-  margin-right: 11px;
-}
 .yellow-share:hover {
   background-color: #fbc02d !important;
 }
@@ -1171,9 +1168,13 @@ a {
 #lesson-header {
   background-color: #fbc02d;
   color: #fff;
+  margin-bottom: 20px;
 }
 #lesson-header h1 {
-  margin: 50px 0;
+  margin: 53px 0;
+}
+#lesson-header .lesson-nav-buttons {
+  padding-top: 14px;
 }
 
 #post-header {

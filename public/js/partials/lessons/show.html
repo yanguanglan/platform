@@ -6,6 +6,20 @@
             </div>
         </div>
     </div>
+    <div class="gray-bar fixed custom-box-shadow">
+  		<div class="gray-banner-yellow">
+  			<div class="container">
+  				<div class="row">
+  					<div class="col s12">
+              <div class="lesson-nav-buttons">
+                <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous}}" class="btn left custom-yellow" ng-if="lessonCtl.previousPageExists()"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
+                <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next}}" class="btn right custom-yellow" ng-if="lessonCtl.nextPageExists()"><i class="mdi-navigation-chevron-right right"></i> Next</a>
+              </div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
 </div>
 
 <div id="lesson">
@@ -16,13 +30,6 @@
                 <div class="card">
                     <!-- Markdown -->
                     <div class="card-content markdown-body" markdown-to-html="lessonCtl.lesson.content"></div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content clear">
-                        <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous}}" class="btn left custom-red" ng-if="lessonCtl.previousPageExists()"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
-                        <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next}}" class="btn right custom-red" ng-if="lessonCtl.nextPageExists()"><i class="mdi-navigation-chevron-right right"></i> Next</a>
-                    </div>
                 </div>
             </div>
 
