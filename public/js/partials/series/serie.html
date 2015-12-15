@@ -14,7 +14,9 @@
 		<span class="card-date">{{serie.updated_at | dateToISO | date:'d MMMM y'}}</span>
 	</div>
 	<div class="card-action">
+		<div class="parent-card-view">
 		<a class="card-view" ng-href="#!/series/{{serie.uuid}}/{{serie.slug}}">View</a>
+	</div>
 		<a href="javascript:void(0)" class="pull-right bookmark" ng-if="auth" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
 			<span class="right-icons"><i class="mdi-action-bookmark"></i></span>
 		</a>

@@ -119,3 +119,11 @@
   width: 73%;
   max-width: 256px;
 }
+
+.parent-card-view {
+  display: inline-block;
+  margin-top: 4px;
+}
+.parent-card-view a {
+  margin-right: 0 !important;
+}
