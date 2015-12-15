@@ -67,6 +67,13 @@ nav ul li {
   top: -1px;
 }
 
+.side-nav li {
+  padding: 0;
+}
+.side-nav a {
+  padding-left: 30px;
+}
+
 .fixed-top {
   margin-bottom: 84px !important;
 }
