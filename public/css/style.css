@@ -145,6 +145,10 @@ h4 {
   background-color: #d0021b;
 }
 
+.red {
+  background-color: #d0021b !important;
+}
+
 .yellow-bg {
   background-color: #fbc02d;
 }
