@@ -1739,6 +1739,16 @@ a {
   }
 }
 
+.signin .login-header, .signup .login-header {
+  margin-top: 0;
+  height: 100px;
+}
+.signin .login-header h2, .signup .login-header h2 {
+  margin: 0;
+  padding-top: 35px;
+  color: #fff;
+  letter-spacing: 1px;
+}
 .signin .card, .signup .card {
   width: 100%;
   max-width: 450px;
@@ -1756,7 +1766,7 @@ a {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin-top: 20px;
+  margin: 40px 0 15px;
   text-align: center;
 }
 .signin .card .social-btns .or:before, .signin .card .social-btns .or:after, .signup .card .social-btns .or:before, .signup .card .social-btns .or:after {
@@ -1775,6 +1785,7 @@ a {
 }
 .signin .card .extra-links, .signup .card .extra-links {
   margin-bottom: 0;
+  padding-top: 15px;
 }
 .signin .card .extra-links a, .signup .card .extra-links a {
   font-size: 14px;
