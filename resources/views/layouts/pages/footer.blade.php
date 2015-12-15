@@ -52,17 +52,17 @@
 	</div>
 </footer>
 
-<div id="unsignedModal" class="modal">
+<div id="unsignedModal" class="modal small-modal">
 	<div class="modal-content">
 		<div class="modal-header red-bg">
-			<h2 class="left-align decoration">Invalid action</h2>
+			<h2 class="left-align decoration">Action not Allowed</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
 			</a>
 		</div>
 
 		<div class="modal-form-padding center">
-			<h3>You cannot have access there. Please create an account or sign in first!</h3>
+			<h4>You cannot have access there. Please create an account or sign in first!</h4>
 			<a href="#!/login" class="btn custom-red modal-action modal-close">Login</a>
 		</div>
 	</div>
