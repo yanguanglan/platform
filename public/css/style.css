@@ -1756,6 +1756,9 @@ a {
 }
 
 .signin .login-header, .signup .login-header {
+  -moz-border-radius: 2px 2px 0 0;
+  -webkit-border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   margin-top: 0;
   height: 100px;
 }
