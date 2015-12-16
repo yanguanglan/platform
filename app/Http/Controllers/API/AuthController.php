@@ -59,7 +59,7 @@ class AuthController extends Controller
 		$user = $this->user->byId(\Auth::id());
 
 		\Mail::send(['text' => 'emails.user.register'], ['user' => $user], function ($m) use ($user) {
-			$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
+			$m->from(config('mail.from.address'), config('mail.from.name'));
 
 			$m->to($user->email, $user->name)->subject('Welcome to AngularJS Recipes');
 		});

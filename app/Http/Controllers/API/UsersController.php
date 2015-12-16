@@ -50,7 +50,7 @@ class UsersController extends Controller
 		$user = $this->user->byId($id);
 
 		\Mail::send(['text' => 'emails.user.password_announce'], ['user' => $user], function ($m) use ($user) {
-			$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
+			$m->from(config('mail.from.address'), config('mail.from.name'));
 
 			$m->to($user->email, $user->name)->subject('Password Updated');
 		});
@@ -71,7 +71,7 @@ class UsersController extends Controller
 			]);
 
 			\Mail::send(['text' => 'emails.user.password_request'], ['user' => $user, 'link' => $link], function ($m) use ($user) {
-				$m->from('no-reply@angularjs-recipes.com', 'AngularJS Recipes');
+				$m->from(config('mail.from.address'), config('mail.from.name'));
 
 				$m->to($user->email, $user->name)->subject('Password Reset');
 			});
