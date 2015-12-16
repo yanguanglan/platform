@@ -1810,6 +1810,9 @@ a {
   font-size: 14px;
   text-decoration: underline;
 }
+.signin .card .input-field .prefix ~ label, .signup .card .input-field .prefix ~ label {
+  margin-left: 2.2rem;
+}
 
 #loading-bar .bar {
   background: #9B9B9B;
@@ -1960,10 +1963,6 @@ a {
 
 .input-field .prefix.active {
   color: #000000;
-}
-
-.input-field .prefix ~ label {
-  margin-left: 2.2rem;
 }
 
 footer.page-footer {
