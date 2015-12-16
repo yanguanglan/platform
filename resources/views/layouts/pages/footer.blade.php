@@ -201,6 +201,7 @@
 		</form>
 	</div>
 </div>
+@if(env('APP_ENV') == 'local')
 <script type="text/javascript" src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular/angular.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-route/angular-route.min.js')}}"></script>
@@ -252,5 +253,9 @@
 <script type="text/javascript" src="{{asset('js/services/faq.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/theme.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/recipes.js')}}"></script>
+@else
+<script type="text/javascript" src="{{asset('js/assets.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/production.min.js')}}"></script>
+@endif
 </body>
 </html>
