@@ -101,6 +101,13 @@ module.exports = function(grunt) {
 				src: ['js/tmp/']
 			}
 		},
+		exec: {
+			create_slugs: {
+				cmd: function() {
+					return 'cd .. && php artisan recipes:slugs';
+				}
+			}
+		},
 		watch: {
 			css: {
 				files: ['css/sass/*.sass'],
@@ -119,7 +126,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-exec');
 
-	grunt.registerTask('production', ['concat:js', 'uglify:dist', 'clean:tmp']);
+	grunt.registerTask('slugs', ['exec:create_slugs']);
+	grunt.registerTask('production', ['concat:js', 'uglify:dist', 'clean:tmp', 'exec:create_slugs']);
 	grunt.registerTask('default', ['compass', 'watch']);
 };
