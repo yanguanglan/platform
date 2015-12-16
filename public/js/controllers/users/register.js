@@ -29,7 +29,7 @@
 							console.log(data.msg);
 						} else {
 							$auth.setToken(data.token)
-							$rootScope.$emit('login', data.user);
+							$rootScope.$emit('update', data.user);
 							authService.setUser(data.user);
 							$location.path('/dashboard');
 						}

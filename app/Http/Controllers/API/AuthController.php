@@ -33,10 +33,14 @@ class AuthController extends Controller
 			return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 500);
 		}
 
+		$user = \Auth::user();
+
+		event('user.login', $user);
+
 		// if no errors are encountered we can return a JWT
 		return [
 			'token' => $token,
-			'user' => \Auth::user(),
+			'user' => $user
 		];
 	}
 
@@ -58,11 +62,7 @@ class AuthController extends Controller
 
 		$user = $this->user->byId(\Auth::id());
 
-		\Mail::send(['text' => 'emails.user.register'], ['user' => $user], function ($m) use ($user) {
-			$m->from(config('mail.from.address'), config('mail.from.name'));
-
-			$m->to($user->email, $user->name)->subject('Welcome to AngularJS Recipes');
-		});
+		event('user.register', $user);
 
 		return [
 			'token' => $token,

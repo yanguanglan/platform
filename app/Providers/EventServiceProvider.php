@@ -14,6 +14,18 @@ class EventServiceProvider extends ServiceProvider {
 		'event.name' => [
 			'EventListener',
 		],
+		'user.login' => [
+			'App\Events\UserEventsHandler@onUserLogin'
+		],
+		'user.register' => [
+			'App\Events\UserEventsHandler@onUserRegister'
+		],
+		'user.passwordUpdate' => [
+			'App\Events\UserEventsHandler@onUserPasswordUpdate'
+		],
+		'user.passwordReset' => [
+			'App\Events\UserEventsHandler@onUserPasswordReset'
+		]
 	];
 
 	/**

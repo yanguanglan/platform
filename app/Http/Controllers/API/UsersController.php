@@ -49,11 +49,7 @@ class UsersController extends Controller
 
 		$user = $this->user->byId($id);
 
-		\Mail::send(['text' => 'emails.user.password_announce'], ['user' => $user], function ($m) use ($user) {
-			$m->from(config('mail.from.address'), config('mail.from.name'));
-
-			$m->to($user->email, $user->name)->subject('Password Updated');
-		});
+		event('user.passwordUpdate', $user);
 
 		return $user;
 	}
@@ -70,11 +66,7 @@ class UsersController extends Controller
 				'expires_at' => Carbon::now()->addHour()
 			]);
 
-			\Mail::send(['text' => 'emails.user.password_request'], ['user' => $user, 'link' => $link], function ($m) use ($user) {
-				$m->from(config('mail.from.address'), config('mail.from.name'));
-
-				$m->to($user->email, $user->name)->subject('Password Reset');
-			});
+			event('user.passwordReset', [['user' => $user, 'link' => $link]]);
 		}
 	}
 

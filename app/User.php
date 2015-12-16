@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password', 'token', 'expires_at'];
+	protected $fillable = ['uuid', 'name', 'email', 'password', 'token', 'expires_at', 'last_login'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -33,7 +33,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function getDates()
 	{
-		return ['created_at', 'updated_at', 'expires_at'];
+		return ['created_at', 'updated_at', 'expires_at', 'last_login'];
 	}
 
 	public function setPasswordAttribute($value)
