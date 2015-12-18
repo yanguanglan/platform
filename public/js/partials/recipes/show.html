@@ -12,15 +12,15 @@
 				<div class="col s12">
 					<span class="pull-left left-icons sr-view-icon watched" ng-class="{active: recipeCtl.watched}">{{recipeCtl.recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
 					<a href="javascript:void(0)" class="liked" ng-class="{active: recipeCtl.liked}" ng-click="recipeCtl.toggleLike()">
-						<span class="pull-left left-icons no-margin-left">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
+						<span class="pull-left left-icons no-margin-left" tooltipped data-position="top" data-delay="50" data-tooltip="Like it!">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					</a>
 					<a href="javascript:void(0)" class="pull-right bookmark" ng-if="recipeCtl.auth" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
-						<span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span>
+						<span class="right-icons no-margin-left" tooltipped data-position="top" data-delay="50" data-tooltip="Bookmark it!"><i class="mdi-action-bookmark"></i></span>
 					</a>
 					<div class="share-button pull-right">
 						<ul>
 							<li>
-								<a class="dropdown-button" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share"></i></a>
+								<a class="dropdown-button" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share" tooltipped data-position="top" data-delay="50" data-tooltip="Share it!"></i></a>
 								<ul id='dropdown2' class='dropdown-content'>
 									<li><a class="waves-effect waves-black" share-link="facebook"><i class="fa fa-facebook-square"></i></a></li>
 									<li><a class="waves-effect waves-black" share-link="twitter"><i class="fa fa-twitter-square"></i></a></li>

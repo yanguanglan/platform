@@ -12,15 +12,15 @@
 				<div class="col s12">
 					<span class="pull-left left-icons sr-view-icon watched" ng-class="{active: serieCtl.watched}">{{serieCtl.serie.views}}<i class="mdi-action-visibility card-icons"></i></span>
 					<a href="javascript:void(0)" class="liked" ng-class="{active: serieCtl.liked}" ng-click="serieCtl.toggleLike()">
-						<span class="pull-left left-icons no-margin-left liked" ng-class="{active: serieCtl.liked}">{{serieCtl.serie.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
+						<span class="pull-left left-icons no-margin-left liked" ng-class="{active: serieCtl.liked}" tooltipped data-position="top" data-delay="50" data-tooltip="Like it!">{{serieCtl.serie.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					</a>
 					<a href="javascript:void(0)" class="pull-right bookmark" ng-if="serieCtl.auth" ng-class="{active: serieCtl.booked}" ng-click="serieCtl.toggleBook()">
-						<span class="right-icons no-margin-left"><i class="mdi-action-bookmark"></i></span>
+						<span class="right-icons no-margin-left" tooltipped data-position="top" data-delay="50" data-tooltip="Bookmark it!"><i class="mdi-action-bookmark"></i></span>
 					</a>
 					<div class="share-button pull-right">
 						<ul>
 							<li>
-								<a class="dropdown-button yellow-share" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share"></i></a>
+								<a class="dropdown-button yellow-share" href="#!" data-activates="dropdown2" dropdown><i class="mdi-social-share" tooltipped data-position="top" data-delay="50" data-tooltip="Share it!"></i></a>
 								<ul id='dropdown2' class='dropdown-content yellow-share'>
 									<li><a class="waves-effect waves-black" share-link="facebook"><i class="fa fa-facebook-square"></i></a></li>
 									<li><a class="waves-effect waves-black" share-link="twitter"><i class="fa fa-twitter-square"></i></a></li>

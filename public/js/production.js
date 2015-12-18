@@ -1177,9 +1177,9 @@
 		.module('recipesApp')
 		.controller('ForgotController', ForgotController);
 
-	ForgotController.$inject = ['userService'];
+	ForgotController.$inject = ['userService', '$scope'];
 
-	function ForgotController(userService) {
+	function ForgotController(userService, $scope) {
 		var forgotCtl = this;
 		forgotCtl.user = {
 			email: ''
@@ -1187,7 +1187,7 @@
 		forgotCtl.submit = function(valid) {
 			if (valid) {
 				Materialize.toast('An email was sent please follow the procedure!', 5000);
-				
+
 				userService.requestPassword(forgotCtl.user.email);
 			} else {
 				$scope.forgotForm.email.$setDirty();
@@ -2094,7 +2094,7 @@ angular
 		var linkFunction = function(scope, element, args) {
 			var auth = authService.isLoggedIn();
 			scope.recipe.liked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
-			scope.recipe.booked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
+			scope.recipe.booked = auth ? (scope.recipe.bookedArray.indexOf(auth.id) > -1) : false;
 			scope.recipe.watched = auth ? (scope.recipe.watchedArray.indexOf(auth.id) > -1) : false;
 			scope.auth = auth;
 		};
@@ -2121,7 +2121,7 @@ angular
 		var linkFunction = function(scope, element, args) {
 			var auth = authService.isLoggedIn();
 			scope.serie.liked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
-			scope.serie.booked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
+			scope.serie.booked = auth ? (scope.serie.bookedArray.indexOf(auth.id) > -1) : false;
 			scope.serie.watched = auth ? (scope.serie.watchedArray.indexOf(auth.id) > -1) : false;
 			scope.auth = auth;
 		};
