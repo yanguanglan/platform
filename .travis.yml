@@ -10,3 +10,6 @@ before_script:
 
 script:
     # - vendor/bin/phpunit
+
+notifications:
+  slack: angularjsrecipes:aIYCzMyreDRBXh0BMoaF1czk
