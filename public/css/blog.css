@@ -56,15 +56,24 @@ nav .brand-logo {
 
 nav ul li:hover,
 nav ul li.active {
-  background-color: #d0021b;
+  background-color: #333333;
+}
+
+nav ul li a {
+  text-transform: uppercase;
+}
+
+nav ul li.no-btn a {
+  padding: 0 15px;
+}
+
+nav ul li.no-btn:hover,
+nav ul li.no-btn.active {
+  background-color: #212121;
 }
 
 nav ul li {
   height: 64px;
-}
-
-.waves-fix {
-  top: -1px;
 }
 
 .side-nav li {

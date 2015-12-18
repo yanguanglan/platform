@@ -11,7 +11,7 @@
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/github-markdown-css/github-markdown.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" media="screen,projection" />
 	@else
-	
+
 	@endif
 	<title>AngularJS Recipes</title>
 	<base href="{{url('/')}}" />
@@ -28,13 +28,13 @@
 	<div class="navbar-fixed">
 		<nav class="grey darken-4" role="navigation" ng-controller="NavigationController as navCtl">
 			<div class="nav-wrapper container">
-				<a id="logo-container" href="#!/" class="brand-logo waves-effect waves-light beta">Angular<span class="text-red">JS</span>
+				<a id="logo-container" href="#!/" class="brand-logo beta">Angular<span class="text-red">JS</span>
 				Recipes</a>
 				<ul class="right hide-on-med-and-down" active-menu>
 					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
-					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/register" class="waves-effect waves-light waves-fix">Register</a></li>
+					<li ng-if="!navCtl.isAuthenticated()" class="no-btn"><a href="#!/register" class="btn custom-red waves-effect waves-light waves-fix">Register</a></li>
 					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#" class="waves-effect waves-light waves-fix dropdown-button" data-activates='dropdown3' dropdown><img ng-src="@{{navCtl.gravatar}}" class="avatar-img"> @{{navCtl.user.name}}</a></li>
 

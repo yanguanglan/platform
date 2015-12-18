@@ -25,11 +25,18 @@ nav .brand-logo
 		+image-2x('../img/logo@2x.png', 40px, auto)
 nav ul li:hover,
 nav ul li.active
-	background-color: $custom-red
+	background-color: $medium-black
+nav ul li
+	a
+		text-transform: uppercase
+nav ul li.no-btn
+	a
+		padding: 0 15px
+nav ul li.no-btn:hover,
+nav ul li.no-btn.active
+	background-color: $dark-black
 nav ul li
 	height: 64px
-.waves-fix
-	top: -1px
 .side-nav
 	li
 		padding: 0
