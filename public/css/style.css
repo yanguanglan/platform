@@ -211,6 +211,20 @@ h4 {
   line-height: 1.4em;
 }
 
+.master-red .modal .modal-header {
+  background-color: #d0021b;
+}
+.master-red .modal .btn {
+  background-color: #d0021b;
+}
+
+.master-yellow .modal .modal-header {
+  background-color: #fbc02d;
+}
+.master-yellow .modal .btn {
+  background-color: #fbc02d;
+}
+
 body {
   display: flex;
   min-height: 100vh;

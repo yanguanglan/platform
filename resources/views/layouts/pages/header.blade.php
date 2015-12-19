@@ -24,7 +24,7 @@
 	<!-- end Mixpanel -->
 </head>
 
-<body ng-app="recipesApp" ng-cloak>
+<body ng-app="recipesApp" master-color ng-cloak>
 	<div class="navbar-fixed">
 		<nav class="grey darken-4" role="navigation" ng-controller="NavigationController as navCtl">
 			<div class="nav-wrapper container">

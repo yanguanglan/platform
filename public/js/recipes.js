@@ -131,6 +131,19 @@ angular
 			link: linkFunction
 		};
 	}])
+	.directive('masterColor', ['$location', function($location) {
+		return {
+			restrict: 'A',
+			link: function(scope, element, args) {
+				scope.$on('$routeChangeStart', function() {
+					var path = $location.path();
+					console.log(path, path.substring(7, 1));
+					element.removeClass('master-red master-yellow');
+					element.addClass(path.substring(7, 1) == 'series' ? 'master-yellow' : 'master-red');
+				});
+			}
+		};
+	}])
 	.directive('activeMenu', ['$location', function($location) {
 		return {
 			restrict: 'A',

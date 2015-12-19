@@ -54,7 +54,7 @@
 
 <div id="unsignedModal" class="modal small-modal">
 	<div class="modal-content">
-		<div class="modal-header red-bg">
+		<div class="modal-header">
 			<h2 class="left-align decoration">Join Us!</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
@@ -63,14 +63,14 @@
 
 		<div class="modal-form-padding center">
 			<h4>You can participate in our learning community but first you must create an account or sign in and have fun!</h4>
-			<a href="#!/login" class="btn custom-red modal-action modal-close">Login</a>
+			<a href="#!/login" class="btn modal-action modal-close">Login</a>
 		</div>
 	</div>
 </div>
 
 <div id="contactModal" class="modal" ng-controller="ContactController as contactCtl">
 	<div class="modal-content">
-		<div class="modal-header red-bg">
+		<div class="modal-header">
 			<h2 class="left-align decoration">Contact Us</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
@@ -127,7 +127,7 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 right-align">
-					<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i
+					<button type="submit" class="waves-effect waves-light btn">Submit <i
 								class="mdi-content-send right"></i></button>
 				</div>
 			</div>
@@ -137,7 +137,7 @@
 
 <div id="requestModal" class="modal" ng-controller="RequestController as requestCtl">
 	<div class="modal-content">
-		<div class="modal-header red-bg">
+		<div class="modal-header">
 			<h2 class="left-align decoration">Request a Recipe</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
@@ -195,7 +195,7 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 right-align">
-					<button type="submit" class="waves-effect waves-light btn custom-red">Submit <i class="mdi-content-send right"></i></button>
+					<button type="submit" class="waves-effect waves-light btn">Submit <i class="mdi-content-send right"></i></button>
 				</div>
 			</div>
 		</form>
