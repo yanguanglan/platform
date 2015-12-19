@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 		'Maknz\Slack\SlackServiceProvider',
+		'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -196,7 +197,8 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'JWTAuth'   => 'Tymon\JWTAuth\Facades\JWTAuth',
 		'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
-		'Slack' => 'Maknz\Slack\Facades\Slack'
+		'Slack' => 'Maknz\Slack\Facades\Slack',
+		'Bugsnag' => 'Bugsnag\BugsnagLaravel\BugsnagFacade'
 
 	],
 
