@@ -20,7 +20,7 @@
 			return lessonCtl.lesson.order != lessonCtl.serie.lessons.length;
 		};
 		lessonCtl.activeLesson = function(current, loop) {
-			return current == loop ? 'red-text' : 'black-text';
+			return current == loop ? 'active-text' : 'black-text';
 		};
 		angular.forEach(lessonCtl.serie.lessons, function(lesson) {
 			if (lessonCtl.previousPageExists()) {

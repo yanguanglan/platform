@@ -34,7 +34,7 @@
 					<li><a href="#!/recipes" class="waves-effect waves-light waves-fix">Recipes</a></li>
 					<li><a href="#!/series" class="waves-effect waves-light waves-fix">Series</a></li>
 					<li><a href="#!/requests" class="waves-effect waves-light waves-fix">Requests</a></li>
-					<li ng-if="!navCtl.isAuthenticated()" class="no-btn"><a href="#!/register" class="btn custom-red waves-effect waves-light waves-fix">Register</a></li>
+					<li ng-if="!navCtl.isAuthenticated()" class="no-btn"><a href="#!/register" class="btn waves-effect waves-light waves-fix">Register</a></li>
 					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/login" class="waves-effect waves-light waves-fix">Login</a></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#" class="waves-effect waves-light waves-fix dropdown-button" data-activates='dropdown3' dropdown><img ng-src="@{{navCtl.gravatar}}" class="avatar-img"> @{{navCtl.user.name}}</a></li>
 

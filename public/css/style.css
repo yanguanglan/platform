@@ -211,6 +211,12 @@ h4 {
   line-height: 1.4em;
 }
 
+.master-red .no-btn a {
+  background-color: #d0021b;
+}
+.master-red .active-text.collection-item {
+  color: #d0021b;
+}
 .master-red .modal .modal-header {
   background-color: #d0021b;
 }
@@ -218,6 +224,12 @@ h4 {
   background-color: #d0021b;
 }
 
+.master-yellow .no-btn a {
+  background-color: #fbc02d;
+}
+.master-yellow .active-text.collection-item {
+  color: #fbc02d;
+}
 .master-yellow .modal .modal-header {
   background-color: #fbc02d;
 }
@@ -409,7 +421,6 @@ nav .brand-logo {
   transform: translateY(-50%);
   height: 130px;
   width: auto;
-  opacity: 0.9;
 }
 #recipe-header h1 {
   margin: 53px 0;
@@ -1257,7 +1268,6 @@ a {
   transform: translateY(-50%);
   height: 130px;
   width: auto;
-  opacity: 0.9;
 }
 #lesson-header h1 {
   margin: 53px 0;
