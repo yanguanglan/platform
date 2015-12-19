@@ -29,5 +29,8 @@
     "angular-loading-bar": "~0.8.0",
     "satellizer": "~0.13.1",
     "angular-md5": "~0.1.10"
+  },
+  "resolutions": {
+    "angular": "1.4.8"
   }
 }

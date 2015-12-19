@@ -179,6 +179,7 @@ h4 {
 }
 
 .material-tooltip {
+  background-color: #333333;
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -220,6 +221,9 @@ main {
   flex: 1 0 auto;
 }
 
+nav {
+  font-size: 0;
+}
 nav .brand-logo {
   font-size: 20px;
   padding-left: 28px;
@@ -265,26 +269,20 @@ nav .brand-logo {
   }
 }
 
-nav ul li:hover,
-nav ul li.active {
-  background-color: #333333;
+nav ul li {
+  height: 64px;
 }
-
 nav ul li a {
   text-transform: uppercase;
 }
-
+nav ul li:hover, nav ul li.active {
+  background-color: #333333;
+}
 nav ul li.no-btn a {
   padding: 0 15px;
 }
-
-nav ul li.no-btn:hover,
-nav ul li.no-btn.active {
+nav ul li.no-btn:hover, nav ul li.no-btn.active {
   background-color: #212121;
-}
-
-nav ul li {
-  height: 64px;
 }
 
 .side-nav li {
@@ -809,6 +807,9 @@ a {
   color: #d0021b;
 }
 
+.single-recipe-gray-bar a {
+  display: inline-block;
+}
 .single-recipe-gray-bar .left-icons {
   font-size: 25px;
   margin-top: 14px;
@@ -1792,6 +1793,9 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+.signin .card form, .signup .card form {
+  padding: 25px;
+}
 .signin .card .divider, .signup .card .divider {
   height: 2px;
   background-color: #d0021b;
@@ -1850,6 +1854,16 @@ a {
   -moz-box-shadow: #aaa 1px 0 8px 2px;
   -webkit-box-shadow: #aaa 1px 0 8px 2px;
   box-shadow: #aaa 1px 0 8px 2px;
+}
+
+#requests-header {
+  min-height: 200px;
+  background: #333333 url(../img/blackboard.png) no-repeat center;
+  background-size: cover;
+}
+
+#requests {
+  margin: -100px auto 50px;
 }
 
 #banner {
@@ -2042,28 +2056,25 @@ footer .logo {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-
 .modal .modal-content {
   padding: 0;
 }
-
-.modal-form-padding {
+.modal .modal-form-padding {
   padding: 25px;
 }
-
-.modal-header {
+.modal .modal-header {
   padding: 21px 15px;
   height: 64px;
 }
-.modal-header h2 {
+.modal .modal-header h2 {
   color: #fff;
   display: inline-block;
   font-size: 20px;
 }
-.modal-header h2:after {
+.modal .modal-header h2:after {
   display: none;
 }
-.modal-header a {
+.modal .modal-header a {
   display: inline-block;
   color: #fff;
   font-size: 25px;
@@ -2073,10 +2084,10 @@ footer .logo {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
-.modal-header a:hover {
+.modal .modal-header a:hover {
   color: #000;
   text-shadow: rgba(128, 128, 128, 0.2) 0px 0px 10px;
 }
-.modal-header a:active {
+.modal .modal-header a:active {
   color: #686868;
 }

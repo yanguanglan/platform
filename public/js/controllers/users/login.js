@@ -28,7 +28,7 @@
 						} else {
 							$rootScope.$emit('update', data.user);
 							authService.setUser(data.user);
-							$location.path('/dashboard');
+							$location.path('/');
 						}
 					}, function(err) {
 						console.log(err);

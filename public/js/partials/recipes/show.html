@@ -11,8 +11,8 @@
 			<div class="row">
 				<div class="col s12">
 					<span class="pull-left left-icons sr-view-icon watched" ng-class="{active: recipeCtl.watched}">{{recipeCtl.recipe.views}}<i class="mdi-action-visibility card-icons"></i></span>
-					<a href="javascript:void(0)" class="liked" ng-class="{active: recipeCtl.liked}" ng-click="recipeCtl.toggleLike()">
-						<span class="pull-left left-icons no-margin-left" tooltipped data-position="top" data-delay="50" data-tooltip="Like it!">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
+					<a href="javascript:void(0)" class="liked" ng-class="{active: recipeCtl.liked}" ng-click="recipeCtl.toggleLike()" tooltipped data-position="top" data-delay="50" data-tooltip="Like it!">
+						<span class="pull-left left-icons no-margin-left">{{recipeCtl.recipe.likesArray.length}}<i class="mdi-action-thumb-up card-icons sr-like-icon"></i></span>
 					</a>
 					<a href="javascript:void(0)" class="pull-right bookmark" ng-if="recipeCtl.auth" ng-class="{active: recipeCtl.booked}" ng-click="recipeCtl.toggleBook()">
 						<span class="right-icons no-margin-left" tooltipped data-position="top" data-delay="50" data-tooltip="Bookmark it!"><i class="mdi-action-bookmark"></i></span>
@@ -24,10 +24,10 @@
 								<ul id='dropdown2' class='dropdown-content'>
 									<li><a class="waves-effect waves-black" share-link="facebook"><i class="fa fa-facebook-square"></i></a></li>
 									<li><a class="waves-effect waves-black" share-link="twitter"><i class="fa fa-twitter-square"></i></a></li>
-									<li><a href="mailto:" class="waves-effect waves-black"><i class="fa fa-envelope"></i></a></li>
 									<li><a class="waves-effect waves-black" share-link="google"><i class="fa fa-google-plus-square"></i></a></li>
 									<li><a class="waves-effect waves-black" share-link="linkedin"><i class="fa fa-linkedin-square"></i></a></li>
-									<li><a class="waves-effect waves-black" share-link="pocket"><i class="fa fa-get-pocket"></i></a></li>
+									<li><a href="mailto:" class="waves-effect waves-black"><i class="fa fa-envelope"></i></a></li>
+									<!-- <li><a class="waves-effect waves-black" share-link="pocket"><i class="fa fa-get-pocket"></i></a></li> -->
 								</ul>
 							</li>
 						</ul>
@@ -110,7 +110,7 @@
 						<span class="card-title black-text">Resources</span>
 						<ul class="collection">
 							<a class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="Read about {{resource.title}}" ng-repeat="resource in recipeCtl.recipe.resources" ng-href="{{resource.url}}" target="_blank">
-									<span class="right-topic-title-resources">{{resource.title}}</span>
+								<span class="right-topic-title-resources">{{resource.title}}</span>
 							</a>
 						</ul>
 					</div>
