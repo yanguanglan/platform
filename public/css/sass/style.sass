@@ -10,6 +10,7 @@
 @import lesson
 @import post
 @import stats
+@import about
 @import faq
 @import recipe_card
 @import series_card
@@ -28,26 +29,6 @@
 	img
 		width: 100%
 		max-width: 300px
-#about
-	h2
-		font-weight: 500
-		margin: 10px 0
-		border-bottom: 1px solid $dark-black
-	.module
-		margin-bottom: 50px
-		+respond-to(600px)
-			display: table-row
-	.left-align, .right-align, .center-align
-		vertical-align: middle
-		+respond-to(600px)
-			display: table-cell
-			width: 50%
-	.right-align
-		text-align: left
-		+respond-to(600px)
-			text-align: right
-	img
-		width: 200px
 #intermediate
 	min-height: 200px
 	background: $medium-black url(../img/blackboard.png) no-repeat center

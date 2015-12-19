@@ -1,0 +1,42 @@
+@import compass, mixins, colors
+
+#about-header
+	background: $medium-black url(../img/ide2.png) no-repeat center
+	background-size: cover
+	h1
+		color: #fff
+		font-size: 3rem
+		+text-shadow(1px 1px 0 rgba(0,0,0,.2))
+		+respond-to(992px)
+			font-size: 4rem
+			margin-top: 7rem
+		+respond-to(1100px)
+			margin-top: 9rem
+	img
+		width: 100%
+		max-width: 600px
+		margin: 1rem auto 3rem
+		+respond-to(992px)
+			margin: 3rem auto
+#about
+	&.section
+		padding: 4rem 0
+	h2
+		font-weight: 500
+		margin: 10px 0
+		border-bottom: 1px solid $dark-black
+	.module
+		margin-bottom: 50px
+		+respond-to(600px)
+			display: table-row
+	.left-align, .right-align, .center-align
+		vertical-align: middle
+		+respond-to(600px)
+			display: table-cell
+			width: 50%
+	.right-align
+		text-align: left
+		+respond-to(600px)
+			text-align: right
+	img
+		width: 200px

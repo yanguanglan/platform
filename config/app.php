@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+		'Maknz\Slack\SlackServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -194,7 +195,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'JWTAuth'   => 'Tymon\JWTAuth\Facades\JWTAuth',
-		'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory'
+		'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
+		'Slack' => 'Maknz\Slack\Facades\Slack'
 
 	],
 
