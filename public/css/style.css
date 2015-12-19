@@ -1259,10 +1259,6 @@ a {
 #lesson-header .lesson-nav-buttons {
   padding-top: 14px;
 }
-#lesson-header .gray-bar {
-  position: relative;
-  z-index: 1;
-}
 
 #post-header {
   background-color: #fbc02d;
