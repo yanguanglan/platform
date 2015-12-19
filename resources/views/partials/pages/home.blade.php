@@ -2,7 +2,7 @@
 
 <main>
 
-    <ng-view class="page-transition hero-transition"></ng-view>
+	<ng-view></ng-view>
 
 </main>
 

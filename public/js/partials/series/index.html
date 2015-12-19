@@ -35,9 +35,9 @@
 
 						<ul id="sort-list" class="left">
 							<li class "sort"> Sort By:</li>
-							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('date')" ng-class="{active: seriesCtl.sortByType == 'date'}">Date</a></li>
-							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('views')" ng-class="{active: seriesCtl.sortByType == 'views'}">Views</a></li>
-							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('likes')" ng-class="{active: seriesCtl.sortByType == 'likes'}">Likes</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('date')" ng-class="{active: seriesCtl.sortByType == 'date', 'custom-box-shadow': seriesCtl.sortByType != 'date'}">Date</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('views')" ng-class="{active: seriesCtl.sortByType == 'views', 'custom-box-shadow': seriesCtl.sortByType != 'views'}">Views</a></li>
+							<li><a class="btn-flat waves-effect waves-black" ng-click="seriesCtl.sortBy('likes')" ng-class="{active: seriesCtl.sortByType == 'likes', 'custom-box-shadow': seriesCtl.sortByType != 'likes'}">Likes</a></li>
 						</ul>
 
 						<div class="sort-button">

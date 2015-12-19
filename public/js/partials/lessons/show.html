@@ -1,65 +1,66 @@
-<div id="lesson-header">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h1>{{lessonCtl.lesson.title}}</h1>
-            </div>
-        </div>
-    </div>
-    <div class="gray-bar fixed custom-box-shadow">
-  		<div class="gray-banner-yellow">
-  			<div class="container">
-  				<div class="row">
-  					<div class="col s12">
-              <div class="lesson-nav-buttons">
-                <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous}}" class="btn left custom-yellow" ng-if="lessonCtl.previousPageExists()"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
-                <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next}}" class="btn right custom-yellow" ng-if="lessonCtl.nextPageExists()"><i class="mdi-navigation-chevron-right right"></i> Next</a>
-              </div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
+<div id="lesson-header" fixed-top>
+	<div class="container">
+		<div class="row no-margin-bottom">
+			<div class="col s12">
+				<h1>{{lessonCtl.lesson.title}}</h1>
+				<img ng-if="lessonCtl.lesson.img" class="hide-on-small-and-down" ng-src="img/lessons/{{lessonCtl.lesson.img}}" alt="" />
+			</div>
+		</div>
+	</div>
+	<div class="gray-bar fixed custom-box-shadow">
+		<div class="gray-banner-yellow">
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<div class="lesson-nav-buttons">
+							<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous}}" class="btn left custom-yellow" ng-if="lessonCtl.previousPageExists()"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
+							<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next}}" class="btn right custom-yellow" ng-if="lessonCtl.nextPageExists()"><i class="mdi-navigation-chevron-right right"></i> Next</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="lesson">
-    <div class="container">
-        <div class="row">
-            <div class="col l9 m9 s12">
-                <!-- lesson -->
-                <div class="card">
-                    <!-- Markdown -->
-                    <div class="card-content markdown-body" markdown-to-html="lessonCtl.lesson.content"></div>
-                </div>
-            </div>
+	<div class="container">
+		<div class="row">
+			<div class="col l9 m9 s12">
+				<!-- lesson -->
+				<div class="card">
+					<!-- Markdown -->
+					<div class="card-content markdown-body" markdown-to-html="lessonCtl.lesson.content"></div>
+				</div>
+			</div>
 
-            <div class="col l3 m3 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Details</span>
-                        <ul class="collection">
-                            <li class="collection-item">
-                                <strong>Version</strong> {{lessonCtl.serie.version}}
-                            </li>
-                            <li class="collection-item">
-                                <strong>Updated</strong> {{lessonCtl.lesson.human_read_updated_at}}
-                            </li>
-                            <li class="collection-item">
-                                <a ng-href="{{lessonCtl.serie.github}}" class="btn btn-block black" target="_blank"><i class="fa fa-github"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+			<div class="col l3 m3 s12">
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Details</span>
+						<ul class="collection">
+							<li class="collection-item">
+								<strong>Version</strong> {{lessonCtl.serie.version}}
+							</li>
+							<li class="collection-item">
+								<strong>Updated</strong> {{lessonCtl.lesson.human_read_updated_at}}
+							</li>
+							<li class="collection-item">
+								<a ng-href="{{lessonCtl.serie.github}}" class="btn btn-block black" target="_blank"><i class="fa fa-github"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title black-text">Lessons</span>
-                        <ul class="collection">
-                            <a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lesson.uuid}}" class="collection-item" ng-class="lessonCtl.activeLesson(lesson.uuid, lessonCtl.lesson.uuid)" ng-repeat="lesson in lessonCtl.serie.lessons">{{$index + 1}}. {{lesson.title}}</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="card">
+					<div class="card-content">
+						<span class="card-title black-text">Lessons</span>
+						<ul class="collection">
+							<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lesson.uuid}}" class="collection-item" ng-class="lessonCtl.activeLesson(lesson.uuid, lessonCtl.lesson.uuid)" ng-repeat="lesson in lessonCtl.serie.lessons">{{$index + 1}}. {{lesson.title}}</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

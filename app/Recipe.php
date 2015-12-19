@@ -6,11 +6,16 @@ class Recipe extends Model {
 
 	protected $guarded = ['id', 'created_at', 'updated_at'];
 
-	public $appends = ['codepen_url', 'human_read_created_at', 'human_read_updated_at'];
+	public $appends = ['img', 'codepen_url', 'human_read_created_at', 'human_read_updated_at'];
 
 	public function getCodepenUrlAttribute()
 	{
 		return $this->attributes['codepen'] ? 'http://codepen.io/angularjs-recipes/pen/' . $this->attributes['codepen'] : null;
+	}
+
+	public function getImgAttribute()
+	{
+		return $this->attributes['release'] == 1 ? 'angularjs-1.png' : 'angularjs-2.png';
 	}
 
 	public function getHumanReadCreatedAtAttribute()

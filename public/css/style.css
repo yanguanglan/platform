@@ -381,8 +381,32 @@ nav .brand-logo {
   color: #fff;
   margin-bottom: 20px;
 }
+#recipe-header > .container {
+  position: relative;
+  overflow: hidden;
+}
+#recipe-header > .container img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 130px;
+  width: auto;
+  opacity: 0.9;
+}
 #recipe-header h1 {
   margin: 53px 0;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 600px) {
+  #recipe-header h1 {
+    padding-right: 140px;
+  }
 }
 #recipe-header p {
   font-size: 16px;
@@ -943,6 +967,7 @@ a {
 }
 #serie-header h1 {
   margin: 40px 0;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 #serie-header .serie-card-title {
   display: block;
@@ -1200,15 +1225,43 @@ a {
 }
 
 #lesson-header {
-  background-color: #fbc02d;
+  background: #fbc02d;
   color: #fff;
   margin-bottom: 20px;
 }
+#lesson-header > .container {
+  position: relative;
+  overflow: hidden;
+}
+#lesson-header > .container img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 130px;
+  width: auto;
+  opacity: 0.9;
+}
 #lesson-header h1 {
   margin: 53px 0;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 600px) {
+  #lesson-header h1 {
+    padding-right: 140px;
+  }
 }
 #lesson-header .lesson-nav-buttons {
   padding-top: 14px;
+}
+#lesson-header .gray-bar {
+  position: relative;
+  z-index: 1;
 }
 
 #post-header {
