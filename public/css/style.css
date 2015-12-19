@@ -195,9 +195,15 @@ h4 {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+  height: 64px;
+  overflow: hidden;
+}
+.tabs .tab {
+  height: 64px;
 }
 .tabs .tab a {
   color: #d0021b;
+  line-height: 64px;
 }
 .tabs .indicator {
   background-color: #d0021b;
@@ -346,7 +352,14 @@ nav .brand-logo {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+.master-red .avatar-img {
   border: 2px solid #d0021b;
+}
+
+.master-yellow .avatar-img {
+  border: 2px solid #fbc02d;
 }
 
 #dropdown3 {

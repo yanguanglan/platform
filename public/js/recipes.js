@@ -137,7 +137,6 @@ angular
 			link: function(scope, element, args) {
 				scope.$on('$routeChangeStart', function() {
 					var path = $location.path();
-					console.log(path, path.substring(7, 1));
 					element.removeClass('master-red master-yellow');
 					element.addClass(path.substring(7, 1) == 'series' ? 'master-yellow' : 'master-red');
 				});

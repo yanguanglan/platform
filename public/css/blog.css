@@ -108,7 +108,14 @@ nav .brand-logo {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+.master-red .avatar-img {
   border: 2px solid #d0021b;
+}
+
+.master-yellow .avatar-img {
+  border: 2px solid #fbc02d;
 }
 
 #dropdown3 {
