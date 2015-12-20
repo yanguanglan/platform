@@ -33,27 +33,54 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 
 		if ($versionBy == 'all')
 		{
-			$model = $this->model
-			->where('uuid', $uuid)
-			->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
-				$q->orderBy('title');
-			}])
-			->with(['recipes' => function ($q) use ($sortBy) {
-				$q->orderBy($sortBy, 'desc');
-			}])
-			->firstOrFail();
+			if ($sortBy = 'likes')
+			{
+				$model = $this->model
+				->where('uuid', $uuid)
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+					$q->orderBy('title');
+				}])
+				->firstOrFail();
+			}
+			else
+			{
+				$model = $this->model
+				->where('uuid', $uuid)
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+					$q->orderBy('title');
+				}])
+				->with(['recipes' => function ($q) use ($sortBy) {
+					$q->orderBy($sortBy, 'desc');
+				}])
+				->firstOrFail();
+			}
 		}
 		else
 		{
-			$model = $this->model
-			->where('uuid', $uuid)
-			->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
-				$q->orderBy('title');
-			}])
-			->with(['recipes' => function ($q) use ($sortBy, $versionBy) {
-				$q->where('release', $versionBy)->orderBy($sortBy, 'desc');
-			}])
-			->firstOrFail();
+			if ($sortBy = 'likes')
+			{
+				$model = $this->model
+				->where('uuid', $uuid)
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+					$q->orderBy('title');
+				}])
+				->with(['recipes' => function ($q) use ($sortBy, $versionBy) {
+					$q->where('release', $versionBy);
+				}])
+				->firstOrFail();
+			}
+			else
+			{
+				$model = $this->model
+				->where('uuid', $uuid)
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+					$q->orderBy('title');
+				}])
+				->with(['recipes' => function ($q) use ($sortBy, $versionBy) {
+					$q->where('release', $versionBy)->orderBy($sortBy, 'desc');
+				}])
+				->firstOrFail();
+			}
 		}
 
 		foreach($model->recipes as $recipe) {
