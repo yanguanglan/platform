@@ -13,8 +13,10 @@
 			email: '',
 			password: ''
 		};
+		loginCtl.submitted = false;
 		loginCtl.submit = function(valid) {
 			if (valid) {
+				loginCtl.submitted = true;
 				$auth
 					.login({
 						email: loginCtl.user.email,
@@ -22,7 +24,7 @@
 					})
 					.then(function(res) {
 						var data = res.data;
-
+						loginCtl.submitted = false;
 						if (data.error) {
 							console.log(data.msg);
 						} else {
@@ -31,6 +33,7 @@
 							$location.path('/');
 						}
 					}, function(err) {
+						loginCtl.submitted = false;
 						console.log(err);
 					});
 			} else {

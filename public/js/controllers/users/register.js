@@ -14,8 +14,10 @@
 			email: '',
 			password: ''
 		};
+		registerCtl.submitted = false;
 		registerCtl.submit = function(valid) {
 			if (valid) {
+				registerCtl.submitted = true;
 				$auth
 					.signup({
 						name: registerCtl.user.name,
@@ -24,7 +26,7 @@
 					})
 					.then(function(res) {
 						var data = res.data;
-
+						registerCtl.submitted = false;
 						if (data.error) {
 							console.log(data.msg);
 						} else {
@@ -34,6 +36,7 @@
 							$location.path('/dashboard');
 						}
 					}, function(err) {
+						registerCtl.submitted = false;
 						console.log(err);
 					});
 			} else {

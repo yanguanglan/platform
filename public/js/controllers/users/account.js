@@ -11,11 +11,14 @@
 		var accountCtl = this;
 		accountCtl.user = authService.isLoggedIn();
 		accountCtl.gravatar = 'http://www.gravatar.com/avatar/' + md5.createHash(accountCtl.user.email) + '&s=120';
+		accountCtl.submitted = false;
 		accountCtl.submitProfile = function(isValid) {
 			if (isValid) {
+				accountCtl.submitted = true;
 				userService
 					.updateProfile(accountCtl.user.id, accountCtl.user.name, accountCtl.user.email)
 					.then(function(data) {
+						accountCtl.submitted = false;
 						if (data.error) {
 
 						} else {
@@ -33,9 +36,11 @@
 		accountCtl.user.repeat_password = '';
 		accountCtl.submitPassword = function(isValid) {
 			if (isValid) {
+				accountCtl.submitted = true;
 				userService
 					.updatePassword(accountCtl.user.id, accountCtl.user.password)
 					.then(function(data) {
+						accountCtl.submitted = false;
 						if (data.error) {
 
 						} else {
