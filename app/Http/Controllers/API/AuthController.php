@@ -70,6 +70,11 @@ class AuthController extends Controller
 		];
 	}
 
+	public function github(Request $request)
+	{
+		return $request->input('code');
+	}
+
 	public function availability(AvailabilityRequest $request)
 	{
 		return ['error' => $this->user->exists($request->only('email')) ? true : false];

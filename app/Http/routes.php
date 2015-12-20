@@ -24,6 +24,7 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	resource('lessons', 'LessonsController', ['only' => ['show']]);
 	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
 	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+	post('auth/github', 'AuthController@github');
 	post('auth/login', 'AuthController@login');
 	post('auth/register', 'AuthController@register');
 	get('auth/users-availability', 'AuthController@availability');
@@ -35,6 +36,7 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 	get('users/dashboard', 'UsersController@dashboard');
 });
 
+get('preview/{category}/{template}', 'EmailsController@preview');
 resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
 resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
 resource('contact', 'ContactController', ['only' => ['store']]);
