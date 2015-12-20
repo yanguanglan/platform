@@ -33,7 +33,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 
 		if ($versionBy == 'all')
 		{
-			if ($sortBy = 'likes')
+			if ($sortBy == 'likes')
 			{
 				$model = $this->model
 				->where('uuid', $uuid)
@@ -57,7 +57,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 		}
 		else
 		{
-			if ($sortBy = 'likes')
+			if ($sortBy == 'likes')
 			{
 				$model = $this->model
 				->where('uuid', $uuid)
