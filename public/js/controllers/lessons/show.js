@@ -1,18 +1,24 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('recipesApp')
-        .controller('LessonController', LessonController);
+	angular
+		.module('recipesApp')
+		.controller('LessonController', LessonController);
 
-    LessonController.$inject = ['lesson', 'serie'];
+	LessonController.$inject = ['lesson', 'serie'];
 
-    function LessonController(lesson, serie) {
-        var lessonCtl = this;
+	function LessonController(lesson, serie) {
+		var lessonCtl = this;
 		lessonCtl.lesson = lesson;
 		lessonCtl.serie = serie;
-		lessonCtl.previous = null;
-		lessonCtl.next = null;
+		lessonCtl.previous = {
+			uuid: null,
+			title: null
+		};
+		lessonCtl.next = {
+			uuid: null,
+			title: null
+		};
 		lessonCtl.previousPageExists = function() {
 			return lessonCtl.lesson.order != 1;
 		};
@@ -25,15 +31,21 @@
 		angular.forEach(lessonCtl.serie.lessons, function(lesson) {
 			if (lessonCtl.previousPageExists()) {
 				if (lesson.order == lessonCtl.lesson.order - 1) {
-					lessonCtl.previous = lesson.uuid;
+					lessonCtl.previous = {
+						uuid: lesson.uuid,
+						title: lesson.title
+					};
 				}
 			}
 
 			if (lessonCtl.nextPageExists()) {
 				if (lesson.order == lessonCtl.lesson.order + 1) {
-					lessonCtl.next = lesson.uuid;
+					lessonCtl.next = {
+						uuid: lesson.uuid,
+						title: lesson.title
+					};
 				}
 			}
 		});
-    }
+	}
 })();

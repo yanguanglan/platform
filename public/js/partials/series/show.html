@@ -48,8 +48,8 @@
 						<ul class="collection" ng-if="serieCtl.serie.lessons.length">
 							<li class="collection-item" ng-repeat="lesson in serieCtl.serie.lessons">
 								<a ng-href="#!/series/{{serieCtl.serie.uuid}}/lessons/{{lesson.uuid}}" class="black-text">{{$index + 1}}. {{lesson.title}}</a>
-								<span class="badge green white-text" ng-if="lesson.free == 1">FREE</span>
-								<span class="badge custom-red white-text" ng-if="lesson.free === 0">PRO</span>
+								<!-- <span class="badge green white-text" ng-if="lesson.free == 1">FREE</span>
+								<span class="badge custom-red white-text" ng-if="lesson.free === 0">PRO</span> -->
 							</li>
 						</ul>
 						<p ng-if="!serieCtl.serie.lessons.length">
