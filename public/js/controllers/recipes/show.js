@@ -13,8 +13,11 @@
 		recipeCtl.topics = topics;
 		recipeCtl.auth = authService.isLoggedIn();
 		recipeCtl.booked = recipeCtl.auth ? (recipeCtl.recipe.bookedArray.indexOf(recipeCtl.auth.id) > -1) : false;
+		recipeCtl.bookedMsg = recipeCtl.booked ? 'Bookmarked one!' : 'Not Bookmarked yet!';
 		recipeCtl.liked = recipeCtl.auth ? (recipeCtl.recipe.likesArray.indexOf(recipeCtl.auth.id) > -1) : false;
+		recipeCtl.likedMsg = recipeCtl.liked ? 'Favourited one!' : 'Not favourited yet!';
 		recipeCtl.watched = recipeCtl.auth ? (recipeCtl.recipe.watchedArray.indexOf(recipeCtl.auth.id) > -1) : false;
+		recipeCtl.watchedMsg = recipeCtl.watched ? 'Already visited!' : 'Not visited yet!';
 		recipeCtl.toggleBook = function() {
 			recipeCtl.booked = !recipeCtl.booked;
 
@@ -34,11 +37,9 @@
 
 				if (recipeCtl.liked) {
 					Materialize.toast('This recipe is now one of your favourites!', 5000);
-
 					recipeService.like(recipeCtl.recipe.id);
 				} else {
 					Materialize.toast('This recipe is not one of your favourites anymore!', 5000);
-
 					recipeService.dislike(recipeCtl.recipe.id);
 				}
 			} else {
@@ -52,8 +53,24 @@
 				var index = recipeCtl.recipe.likesArray.indexOf(recipeCtl.auth.id);
 				if (index > -1) {
 					recipeCtl.recipe.likesArray.splice(index, 1);
+					recipeCtl.likedMsg = 'Not favourited yet!';
 				} else {
 					recipeCtl.recipe.likesArray.push(recipeCtl.auth.id);
+					recipeCtl.likedMsg = 'Favourited one!';
+				}
+			}
+		});
+		$scope.$watch(angular.bind(recipeCtl, function() {
+			return recipeCtl.booked;
+		}), function(newVal, oldVal) {
+			if (newVal != oldVal) {
+				var index = recipeCtl.recipe.bookedArray.indexOf(recipeCtl.auth.id);
+				if (index > -1) {
+					recipeCtl.recipe.bookedArray.splice(index, 1);
+					recipeCtl.bookedMsg = 'Not bookmarked yet!';
+				} else {
+					recipeCtl.recipe.bookedArray.push(recipeCtl.auth.id);
+					recipeCtl.bookedMsg = 'Bookmarked one!';
 				}
 			}
 		});
