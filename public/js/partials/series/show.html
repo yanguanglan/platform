@@ -67,6 +67,9 @@
 								<strong>Version</strong> {{serieCtl.serie.version}}
 							</li>
 							<li class="collection-item">
+								<strong>Created</strong> {{serieCtl.serie.created_at | dateToISO | date:'d MMMM y'}}
+							</li>
+							<li class="collection-item">
 								<strong>Updated</strong> {{serieCtl.serie.human_read_updated_at}}
 							</li>
 							<li class="collection-item" ng-if="serieCtl.serie.lessons.length">

@@ -8,7 +8,7 @@
 	</div>
 	<div class="card-content">
 		<a class="card-title" ng-href="#!/recipes/{{recipe.uuid}}/{{recipe.slug}}">{{recipe.title}}</a>
-		<span class="card-date">{{recipe.updated_at | dateToISO | date:'d MMMM y'}}</span>
+		<span class="card-date">{{recipe.created_at | dateToISO | date:'d MMMM y'}}</span>
 	</div>
 	<div class="card-action">
 		<div class="parent-card-view">

@@ -43,13 +43,13 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		}
 
 		if ($sortBy == 'date') {
-			return $models->sortByDesc('updated_at')->values();
+			return $models->sortByDesc('created_at')->values();
 		} elseif ($sortBy == 'views') {
 			return $models->sortByDesc('views')->values();
 		} elseif ($sortBy == 'likes') {
 			return $models->sortByDesc('likes')->values();
 		} else {
-			return $models->sortByDesc('updated_at')->values();
+			return $models->sortByDesc('created_at')->values();
 		}
 	}
 
@@ -59,7 +59,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		->with(['likes', 'bookings', 'watches', 'level', 'topics' => function ($q) {
 			$q->orderBy('title');
 		}])
-		->orderBy('updated_at', 'desc')
+		->orderBy('created_at', 'desc')
 		->take(3)
 		->get();
 

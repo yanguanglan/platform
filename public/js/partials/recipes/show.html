@@ -97,6 +97,9 @@
 								<strong>Version</strong> {{recipeCtl.recipe.version}}
 							</li>
 							<li class="collection-item">
+								<strong>Created</strong> {{recipeCtl.recipe.created_at | dateToISO | date:'d MMMM y'}}
+							</li>
+							<li class="collection-item">
 								<strong>Updated</strong> {{recipeCtl.recipe.human_read_updated_at}}
 							</li>
 							<li class="collection-item" ng-if="recipeCtl.recipe.exercises.length">

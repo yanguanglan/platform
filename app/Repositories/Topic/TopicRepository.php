@@ -28,7 +28,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 	public function show($uuid, $sortBy = 'date', $versionBy = 'all')
 	{
 		if ($sortBy == 'date') {
-			$sortBy = 'updated_at';
+			$sortBy = 'created_at';
 		}
 
 		if ($versionBy == 'all')
