@@ -59,6 +59,11 @@
 					recipeCtl.likedMsg = 'Favourited one!';
 				}
 			}
+
+			angular.element('.tooltipped').tooltip('remove');
+			setTimeout(function(){
+				angular.element('.tooltipped').tooltip();
+			}, 100);
 		});
 		$scope.$watch(angular.bind(recipeCtl, function() {
 			return recipeCtl.booked;
@@ -73,6 +78,11 @@
 					recipeCtl.bookedMsg = 'Bookmarked one!';
 				}
 			}
+
+			angular.element('.tooltipped').tooltip('remove');
+			setTimeout(function(){
+				angular.element('.tooltipped').tooltip();
+			}, 100);
 		});
 	}
 })();

@@ -60,6 +60,11 @@
 					serieCtl.likedMsg = 'Favourited one!';
 				}
 			}
+
+			angular.element('.tooltipped').tooltip('remove');
+			setTimeout(function(){
+				angular.element('.tooltipped').tooltip();
+			}, 100);
 		});
 		$scope.$watch(angular.bind(serieCtl, function() {
 			return serieCtl.booked;
@@ -73,6 +78,11 @@
 					serieCtl.serie.bookedArray.push(serieCtl.auth.id);
 					serieCtl.bookedMsg = 'Bookmarked one!';
 				}
+
+				angular.element('.tooltipped').tooltip('remove');
+				setTimeout(function(){
+					angular.element('.tooltipped').tooltip();
+				}, 100);
 			}
 		});
 	}
