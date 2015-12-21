@@ -199,8 +199,11 @@ angular
 		var linkFunction = function(scope, element, args) {
 			var auth = authService.isLoggedIn();
 			scope.recipe.liked = auth ? (scope.recipe.likesArray.indexOf(auth.id) > -1) : false;
+			scope.recipe.likedMsg = scope.recipe.liked ? 'Favourited one!' : 'Not favourited yet!';
 			scope.recipe.booked = auth ? (scope.recipe.bookedArray.indexOf(auth.id) > -1) : false;
+			scope.recipe.bookedMsg = scope.recipe.booked ? 'Bookmarked one!' : 'Not Bookmarked yet!';
 			scope.recipe.watched = auth ? (scope.recipe.watchedArray.indexOf(auth.id) > -1) : false;
+			scope.recipe.watchedMsg = scope.recipe.watched ? 'Already visited!' : 'Not visited yet!';
 			scope.auth = auth;
 		};
 
@@ -226,8 +229,11 @@ angular
 		var linkFunction = function(scope, element, args) {
 			var auth = authService.isLoggedIn();
 			scope.serie.liked = auth ? (scope.serie.likesArray.indexOf(auth.id) > -1) : false;
+			scope.serie.likedMsg = scope.serie.liked ? 'Favourited one!' : 'Not favourited yet!';
 			scope.serie.booked = auth ? (scope.serie.bookedArray.indexOf(auth.id) > -1) : false;
+			scope.serie.bookedMsg = scope.serie.booked ? 'Bookmarked one!' : 'Not Bookmarked yet!';
 			scope.serie.watched = auth ? (scope.serie.watchedArray.indexOf(auth.id) > -1) : false;
+			scope.serie.watchedMsg = scope.serie.watched ? 'Already visited!' : 'Not visited yet!';
 			scope.auth = auth;
 		};
 

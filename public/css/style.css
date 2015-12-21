@@ -876,6 +876,7 @@ a {
   font-size: 25px;
   margin-top: 14px;
   margin-right: 20px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 .single-recipe-gray-bar .left-icons i {
   padding-left: 5px;
@@ -885,6 +886,7 @@ a {
   font-size: 30px;
   margin-top: 10px;
   margin-left: 20px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 .single-recipe-gray-bar .sr-share-icon {
   -moz-transition: all 0.2s linear;
@@ -925,6 +927,7 @@ a {
   width: 90px;
   color: white;
   height: 64px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 @media only screen and (max-width: 380px) {
   .share-button .dropdown-button {
@@ -1745,14 +1748,15 @@ a {
   height: 151px;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 }
 .card-serie .card-banner .version-logo {
   display: block;
   height: 145px;
   position: absolute;
-  right: 0px;
+  right: -2px;
   opacity: 0.7;
-  top: 3px;
+  top: 35px;
   z-index: -1;
 }
 .card-serie .card-banner .serie-card-title {
@@ -1850,17 +1854,18 @@ a {
   margin-left: 15px;
 }
 .card-serie .card-action .bookmark {
-  color: #000;
+  color: #fff;
   margin-right: 0;
   padding-right: 0;
-}
-.card-serie .card-action .bookmark:hover {
-  color: inherit;
+  position: absolute;
+  right: 10px;
+  top: -22px;
 }
 .card-serie .card-action .bookmark i {
+  font-size: 40px;
   position: relative;
   top: 3px;
-  font-size: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 .card-serie .card-action .bookmark.active i {
   color: #d0021b;

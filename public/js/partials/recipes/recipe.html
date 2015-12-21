@@ -14,8 +14,8 @@
 		<div class="parent-card-view">
 			<a class="card-view" ng-href="#!/recipes/{{recipe.uuid}}/{{recipe.slug}}">View</a>
 		</div>
-		<span class="pull-right bookmark" ng-if="auth" ng-class="{active: recipe.booked}"><i class="mdi-action-bookmark card-icons"></i></span>
-		<span class="pull-right watched" ng-class="{active: recipe.watched}">{{recipe.views}} <i class="mdi-action-visibility card-icons"></i></span>
-		<span class="pull-right liked" ng-class="{active: recipe.liked}">{{recipe.likes.length}} <i class="mdi-action-thumb-up card-icons"></i></span>
+		<span class="pull-right bookmark" ng-if="auth" ng-class="{active: recipe.booked}" tooltipped data-position="top" data-delay="50" data-tooltip="{{recipe.bookedMsg}}"><i class="mdi-action-bookmark card-icons"></i></span>
+		<span class="pull-right watched" ng-class="{active: recipe.watched}" tooltipped data-position="top" data-delay="50" data-tooltip="{{recipe.watchedMsg}}">{{recipe.views}} <i class="mdi-action-visibility card-icons"></i></span>
+		<span class="pull-right liked" ng-class="{active: recipe.liked}" tooltipped data-position="top" data-delay="50" data-tooltip="{{recipe.likedMsg}}">{{recipe.likes.length}} <i class="mdi-action-thumb-up card-icons"></i></span>
 	</div>
 </div>
