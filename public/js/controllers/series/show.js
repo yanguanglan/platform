@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('SerieController', SerieController);
 
-	SerieController.$inject = ['serie', 'authService', 'serieService', '$scope'];
+	SerieController.$inject = ['serie', 'authService', 'serieService', '$scope', '$timeout'];
 
-	function SerieController(serie, authService, serieService, $scope) {
+	function SerieController(serie, authService, serieService, $scope, $timeout) {
 		var serieCtl = this;
 		serieCtl.serie = serie;
 		serieCtl.auth = authService.isLoggedIn();
@@ -47,6 +47,12 @@
 				$('#unsignedModal').openModal();
 			}
 		};
+		serieCtl.clearTooltip = function() {
+			angular.element('.tooltipped').tooltip('remove');
+			$timeout(function(){
+				angular.element('.tooltipped').tooltip();
+			}, 100);
+		};
 		$scope.$watch(angular.bind(serieCtl, function() {
 			return serieCtl.liked;
 		}), function(newVal, oldVal) {
@@ -59,12 +65,9 @@
 					serieCtl.serie.likesArray.push(serieCtl.auth.id);
 					serieCtl.likedMsg = 'Favourited one!';
 				}
-			}
 
-			angular.element('.tooltipped').tooltip('remove');
-			setTimeout(function(){
-				angular.element('.tooltipped').tooltip();
-			}, 100);
+				serieCtl.clearTooltip();
+			}
 		});
 		$scope.$watch(angular.bind(serieCtl, function() {
 			return serieCtl.booked;
@@ -79,10 +82,7 @@
 					serieCtl.bookedMsg = 'Bookmarked one!';
 				}
 
-				angular.element('.tooltipped').tooltip('remove');
-				setTimeout(function(){
-					angular.element('.tooltipped').tooltip();
-				}, 100);
+				serieCtl.clearTooltip
 			}
 		});
 	}

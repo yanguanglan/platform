@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('RecipeController', RecipeController);
 
-	RecipeController.$inject = ['recipe', 'topics', 'authService', '$scope', 'recipeService'];
+	RecipeController.$inject = ['recipe', 'topics', 'authService', '$scope', 'recipeService', '$timeout'];
 
-	function RecipeController(recipe, topics, authService, $scope, recipeService) {
+	function RecipeController(recipe, topics, authService, $scope, recipeService, $timeout) {
 		var recipeCtl = this;
 		recipeCtl.recipe = recipe;
 		recipeCtl.topics = topics;
@@ -46,6 +46,12 @@
 				$('#unsignedModal').openModal();
 			}
 		};
+		recipeCtl.clearTooltip = function() {
+			angular.element('.tooltipped').tooltip('remove');
+			$timeout(function(){
+				angular.element('.tooltipped').tooltip();
+			}, 100);
+		};
 		$scope.$watch(angular.bind(recipeCtl, function() {
 			return recipeCtl.liked;
 		}), function(newVal, oldVal) {
@@ -58,12 +64,9 @@
 					recipeCtl.recipe.likesArray.push(recipeCtl.auth.id);
 					recipeCtl.likedMsg = 'Favourited one!';
 				}
-			}
 
-			angular.element('.tooltipped').tooltip('remove');
-			setTimeout(function(){
-				angular.element('.tooltipped').tooltip();
-			}, 100);
+				recipeCtl.clearTooltip();
+			}
 		});
 		$scope.$watch(angular.bind(recipeCtl, function() {
 			return recipeCtl.booked;
@@ -77,12 +80,9 @@
 					recipeCtl.recipe.bookedArray.push(recipeCtl.auth.id);
 					recipeCtl.bookedMsg = 'Bookmarked one!';
 				}
-			}
 
-			angular.element('.tooltipped').tooltip('remove');
-			setTimeout(function(){
-				angular.element('.tooltipped').tooltip();
-			}, 100);
+				recipeCtl.clearTooltip();
+			}
 		});
 	}
 })();
