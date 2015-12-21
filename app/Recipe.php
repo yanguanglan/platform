@@ -15,7 +15,7 @@ class Recipe extends Model {
 
 	public function getImgAttribute()
 	{
-		return $this->attributes['release'] == 1 ? 'angularjs-1.png' : 'angularjs-2.png';
+		return $this->attributes['release'] == 1 ? 'angularjs-11.png' : 'angularjs-2.png';
 	}
 
 	public function getHumanReadCreatedAtAttribute()
