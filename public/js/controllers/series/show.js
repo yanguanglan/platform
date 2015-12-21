@@ -82,7 +82,7 @@
 					serieCtl.bookedMsg = 'Bookmarked one!';
 				}
 
-				serieCtl.clearTooltip
+				serieCtl.clearTooltip();
 			}
 		});
 	}
