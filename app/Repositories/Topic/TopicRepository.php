@@ -41,6 +41,14 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 					$q->orderBy('title');
 				}])
 				->firstOrFail();
+
+				$recipes = $model->recipes->sortByDesc(function($recipe) {
+					return $recipe->likes->count();
+				})->values();
+
+				unset($model->recipes);
+
+				$model->recipes = $recipes;
 			}
 			else
 			{
@@ -64,10 +72,18 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
 				}])
-				->with(['recipes' => function ($q) use ($sortBy, $versionBy) {
+				->with(['recipes' => function ($q) use ($versionBy) {
 					$q->where('release', $versionBy);
 				}])
 				->firstOrFail();
+
+				$recipes = $model->recipes->sortByDesc(function($recipe) {
+					return $recipe->likes->count();
+				});
+
+				unset($model->recipes);
+
+				$model->recipes = $recipes;
 			}
 			else
 			{

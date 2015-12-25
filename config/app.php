@@ -135,6 +135,8 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+		'Illuminate\Broadcasting\BroadcastServiceProvider',
+		
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 		'Maknz\Slack\SlackServiceProvider',
 		'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',

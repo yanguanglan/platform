@@ -31,10 +31,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	public function getDates()
-	{
-		return ['created_at', 'updated_at', 'expires_at', 'last_login'];
-	}
+	protected $dates = ['created_at', 'updated_at', 'expires_at', 'last_login'];
 
 	public function setPasswordAttribute($value)
 	{
