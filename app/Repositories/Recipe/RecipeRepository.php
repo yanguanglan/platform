@@ -21,6 +21,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		if ($versionBy == 'all')
 		{
 			$models = $this->model
+			->where('published', 1)
 			->with(['likes', 'bookings', 'watches', 'topics' => function ($q) {
 				$q->orderBy('title');
 			}])
@@ -29,6 +30,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		else
 		{
 			$models = $this->model
+			->where('published', 1)
 			->where('release', $versionBy)
 			->with(['likes', 'bookings', 'watches', 'topics' => function ($q) {
 				$q->orderBy('title');
@@ -56,6 +58,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 	public function latest()
 	{
 		$models = $this->model
+		->where('published', 1)
 		->with(['likes', 'bookings', 'watches', 'topics' => function ($q) {
 			$q->orderBy('title');
 		}])
@@ -75,6 +78,7 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 	public function show($uuid)
 	{
 		$model = $this->model
+		->where('published', 1)
 		->where('uuid', $uuid)
 		->with(['likes', 'bookings', 'watches', 'exercises', 'resources' => function ($q) {
 			$q->orderBy('title');

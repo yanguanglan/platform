@@ -25,6 +25,9 @@ class EventServiceProvider extends ServiceProvider {
 		],
 		'user.passwordReset' => [
 			'App\Events\UserEventsHandler@onUserPasswordReset'
+		],
+		'recipe.creation' => [
+			'App\Events\RecipeEventsHandler@onRecipeCreation'
 		]
 	];
 

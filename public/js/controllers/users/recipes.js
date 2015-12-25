@@ -34,8 +34,26 @@
 					.then(function(data) {
 						myRecipesCtl.submitted = false;
 
-						console.log(data);
-					})
+						if (data.error) {
+							Materialize.toast('Please enter valid data!', 5000);
+						} else {
+							Materialize.toast(myRecipesCtl.user.name + ' your recipe is saved, we will publish it after some quick review!', 5000);
+
+							myRecipesCtl.recipe = {
+								title: '',
+								content: '',
+								release: 'AngularJS 1',
+								version: ''
+							};
+
+							$scope.newRecipeForm.title.$setPristine();
+							$scope.newRecipeForm.content.$setPristine();
+							$scope.newRecipeForm.version.$setPristine();
+							$scope.newRecipeForm.release.$setPristine();
+						}
+					}, function(err) {
+
+					});
 			} else {
 				$scope.newRecipeForm.title.$setDirty();
 				$scope.newRecipeForm.content.$setDirty();
@@ -43,6 +61,18 @@
 				$scope.newRecipeForm.release.$setDirty();
 			}
 		};
+
+		$scope.$watch(angular.bind(myRecipesCtl, function() {
+			return myRecipesCtl.recipe.release;
+		}), function(newVal, oldVal) {
+			if (newVal == 'AngularJS 1') {
+				myRecipesCtl.versions = ['1.2.x', '1.4.x', '1.5.x'];
+				myRecipesCtl.recipe.version = '1.4.x';
+			} else {
+				myRecipesCtl.versions = ['2.0.0-beta'];
+				myRecipesCtl.recipe.version = '2.0.0-beta';
+			}
+		});
 	}
 
 })();

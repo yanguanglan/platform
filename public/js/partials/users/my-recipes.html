@@ -50,27 +50,17 @@
 									</div>
 									<div class="input-field col s12 m12 l12">
 										<i class="mdi-communication-email prefix"></i>
-										<select class="" id="icon_release" ng-model="myRecipesCtl.recipe.release" name="release" material-select>
+										<select class="" id="icon_release" ng-model="myRecipesCtl.recipe.release" name="release" material-select watch>
 											<option ng-repeat="value in myRecipesCtl.releases">{{value}}</option>
 										</select>
 										<label for="icon_release">Release</label>
-
-										<div ng-messages="newRecipeForm.release.$error" ng-if="newRecipeForm.release.$dirty">
-											<div ng-message="required">
-												<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please select version</p>
-											</div>
-										</div>
 									</div>
 									<div class="input-field col s12 m12 l12">
 										<i class="mdi-communication-email prefix"></i>
-										<input id="icon_version" type="text" class="validate" name="version" ng-model="myRecipesCtl.recipe.version" required>
+										<select class="" id="icon_version" ng-model="myRecipesCtl.recipe.version" name="version" material-select watch>
+											<option ng-repeat="value in myRecipesCtl.versions">{{value}}</option>
+										</select>
 										<label for="icon_version">Version</label>
-
-										<div ng-messages="newRecipeForm.version.$error" ng-if="newRecipeForm.version.$dirty">
-											<div ng-message="required">
-												<p class="help-block text-red"><i class="mdi-action-highlight-remove"></i> Please enter a minor version</p>
-											</div>
-										</div>
 									</div>
 								</div>
 								<div class="row">

@@ -36,6 +36,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			if ($sortBy == 'likes')
 			{
 				$model = $this->model
+				->where('published', 1)
 				->where('uuid', $uuid)
 				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
@@ -53,6 +54,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			else
 			{
 				$model = $this->model
+				->where('published', 1)
 				->where('uuid', $uuid)
 				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
@@ -68,6 +70,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			if ($sortBy == 'likes')
 			{
 				$model = $this->model
+				->where('published', 1)
 				->where('uuid', $uuid)
 				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
@@ -88,6 +91,7 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			else
 			{
 				$model = $this->model
+				->where('published', 1)
 				->where('uuid', $uuid)
 				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');

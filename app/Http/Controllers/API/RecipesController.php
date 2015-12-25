@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Recipe\CreateRequest;
 use App\Http\Controllers\Controller;
 use App\Repositories\User\UserInterface as User;
 use App\Repositories\Recipe\RecipeInterface as Recipe;
@@ -48,7 +49,7 @@ class RecipesController extends Controller
 		return $this->recipe->show($uuid);
 	}
 
-	public function store(Request $request)
+	public function store(CreateRequest $request)
 	{
 		$input = $request->only('title', 'content', 'user_id', 'release', 'version');
 
@@ -63,6 +64,8 @@ class RecipesController extends Controller
 		];
 
 		$this->recipe->create($data);
+
+		event('recipe.creation', $data);
 
 		return [
 			'error' => false
