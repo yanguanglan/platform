@@ -19,19 +19,19 @@ abstract class AbstractRepository {
 		return $this->model->orderBy($orderAttribute, $orderType)->get();
 	}
 
-	public function create($data)
+	public function create(array $data)
 	{
 		return $this->model->create($data);
 	}
 
-	public function update($id, $data)
+	public function update($id, array $data)
 	{
 		$model = $this->model->findOrFail($id);
 
 		return $model->update($data);
 	}
 
-	public function updateByAttribute($key, $value, $data)
+	public function updateByAttribute($key, $value, array $data)
 	{
 		$model = $this->model->where($key, $value)->firstOrFail;
 
