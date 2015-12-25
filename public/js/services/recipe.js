@@ -15,7 +15,8 @@
 			like: like,
 			dislike: dislike,
 			book: book,
-			unbook: unbook
+			unbook: unbook,
+			create: create
 		};
 
 		return service;
@@ -112,6 +113,17 @@
 				}, function(err) {
 					console.log(err);
 					// $location.path('/error');
+				});
+		}
+
+		function create(data) {
+			return $http
+				.post('api/recipes', {
+					user_id: data.user_id,
+					title: data.title,
+					content: data.content,
+					release: data.release,
+					version: data.version
 				});
 		}
 	}

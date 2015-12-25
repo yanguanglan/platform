@@ -5,7 +5,7 @@ Route::group(['namespace' => 'DEMO', 'prefix' => 'demo'], function () {
 });
 
 Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
-	resource('recipes', 'RecipesController', ['only' => ['index', 'show']]);
+	resource('recipes', 'RecipesController', ['only' => ['index', 'show', 'store']]);
 	get('recipes-latest', 'RecipesController@latest');
 	post('recipes-like', 'RecipesController@like');
 	post('recipes-dislike', 'RecipesController@dislike');

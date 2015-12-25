@@ -102,6 +102,11 @@
 					},
 					auth: true
 				})
+				.when('/my-recipes', {
+					controller: 'MyRecipesController as myRecipesCtl',
+					templateUrl: 'js/partials/users/my-recipes.html',
+					auth: true
+				})
 				.when('/account', {
 					controller: 'AccountController as accountCtl',
 					templateUrl: 'js/partials/users/account.html',

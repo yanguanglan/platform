@@ -239,6 +239,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/users/reset.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/dashboard.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/users/account.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/users/recipes.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/auth.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/user.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/services/recipe.js')}}"></script>

@@ -17,7 +17,7 @@ class RecipesController extends Controller
 	{
 		$this->user = $user;
 		$this->recipe = $recipe;
-		$this->middleware('jwt.auth', ['only' => ['like', 'dislike', 'book', 'unbook']]);
+		$this->middleware('jwt.auth', ['only' => ['store', 'like', 'dislike', 'book', 'unbook']]);
 	}
 
 	public function index(Request $request)
@@ -46,6 +46,27 @@ class RecipesController extends Controller
 		}
 
 		return $this->recipe->show($uuid);
+	}
+
+	public function store(Request $request)
+	{
+		$input = $request->only('title', 'content', 'user_id', 'release', 'version');
+
+		$data = [
+			'uuid' => str_random(6),
+			'title' => $input['title'],
+			'slug' => str_slug($input['title']),
+			'content' => $input['content'],
+			'user_id' => $input['user_id'],
+			'version' => $input['version'],
+			'release' => $input['release'] == 'AngularJS 1' ? 1 : 2
+		];
+
+		$this->recipe->create($data);
+
+		return [
+			'error' => false
+		];
 	}
 
 	public function like(Request $request)

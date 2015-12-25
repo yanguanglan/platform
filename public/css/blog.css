@@ -143,11 +143,6 @@ nav .brand-logo {
   color: white;
 }
 
-.dropdown-content li > a:hover,
-.dropdown-content li > span:hover {
-  background-color: #d0021b;
-}
-
 #blog {
   background: #eee url(../img/blackboard.png) no-repeat center top;
   background-size: 100% 300px;

@@ -76,4 +76,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 		return $this->belongsToMany('App\Theme', 'votes', 'user_id', 'theme_id');
 	}
 
+	public function authored()
+	{
+		return $this->hasMany('App\Recipe');
+	}
+
 }

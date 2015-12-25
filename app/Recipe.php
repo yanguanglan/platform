@@ -15,7 +15,7 @@ class Recipe extends Model {
 
 	public function getImgAttribute()
 	{
-		return $this->attributes['release'] == 1 ? 'angularjs-11.png' : 'angularjs-2.png';
+		return $this->attributes['release'] == 1 ? 'angularjs-11.png' : 'angularjs-22.png';
 	}
 
 	public function getHumanReadCreatedAtAttribute()
@@ -26,11 +26,6 @@ class Recipe extends Model {
 	public function getHumanReadUpdatedAtAttribute()
 	{
 		return $this->updated_at->diffForHumans();
-	}
-
-	public function level()
-	{
-		return $this->belongsTo('App\Level');
 	}
 
 	public function topics()
@@ -61,6 +56,11 @@ class Recipe extends Model {
 	public function watches()
 	{
 		return $this->belongsToMany('App\User', 'recipes_watches', 'recipe_id', 'user_id');
+	}
+
+	public function author()
+	{
+		return $this->belongsTo('App\User');
 	}
 
 }
