@@ -6,6 +6,7 @@
 		'ngMessages',
 		'ngSanitize',
 		'ngAnimate',
+		'ngAria',
 		'satellizer',
 		'angular-loading-bar',
 		'ng-showdown',

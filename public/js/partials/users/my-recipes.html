@@ -66,6 +66,15 @@
 									</div>
 								</div>
 								<div class="row">
+									<div class="input-field col s12">
+										<i class="mdi-image-style prefix"></i>
+										<select class="" id="icon_topic" ng-model="myRecipesCtl.recipe.topics" name="topic" material-select multiple>
+											<option ng-repeat="value in myRecipesCtl.topics">{{value}}</option>
+										</select>
+										<label for="icon_topic">Topics</label>
+									</div>
+								</div>
+								<div class="row">
 									<div class="input-field col s12 right-align">
 										<button type="submit" class="waves-effect waves-light btn custom-red" ng-disabled="myRecipesCtl.submitted">Submit <i class="mdi-content-send right"></i></button>
 									</div>

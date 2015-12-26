@@ -1,51 +1,62 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('recipesApp')
-        .factory('topicService', topicService);
+	angular
+		.module('recipesApp')
+		.factory('topicService', topicService);
 
-    topicService.$inject = ['$http', '$location'];
+	topicService.$inject = ['$http', '$location'];
 
-    function topicService($http, $location) {
-        var service = {
-            all: all,
-            get: get
-        };
+	function topicService($http, $location) {
+		var service = {
+			all: all,
+			get: get,
+			list: list
+		};
 
-        return service;
+		return service;
 
-        function all(take) {
-            var take = take || null;
-            return $http
-                .get('api/topics', {
-                    params: {
-                        take: take
-                    }
-                })
-                .then(function(data) {
-                    return data.data;
-                }, function(err) {
-                    $location.path('/error');
-                });
-        }
+		function all(take) {
+			var take = take || null;
+			return $http
+				.get('api/topics', {
+					params: {
+						take: take
+					}
+				})
+				.then(function(data) {
+					return data.data;
+				}, function(err) {
+					$location.path('/error');
+				});
+		}
 
-        function get(uuid, sortBy, versionBy) {
-            var sortBy = sortBy || 'date',
-                versionBy = versionBy || 'all';
+		function get(uuid, sortBy, versionBy) {
+			var sortBy = sortBy || 'date',
+				versionBy = versionBy || 'all';
 
-            return $http
-                .get('api/topics/' + uuid, {
-                    params: {
-                        sortBy: sortBy,
-                        versionBy: versionBy
-                    }
-                })
-                .then(function(data) {
-                    return data.data;
-                }, function(err) {
-                    $location.path('/error');
-                });
-        }
-    }
+			return $http
+				.get('api/topics/' + uuid, {
+					params: {
+						sortBy: sortBy,
+						versionBy: versionBy
+					}
+				})
+				.then(function(data) {
+					return data.data;
+				}, function(err) {
+					$location.path('/error');
+				});
+		}
+
+		function list() {
+			return $http
+				.get('api/topics-list')
+				.then(function(data) {
+					return data.data;
+				}, function(err) {
+					$location.path('/error');
+				});
+		}
+	}
 })();

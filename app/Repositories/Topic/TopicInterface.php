@@ -7,4 +7,6 @@ interface TopicInterface {
 
 	public function show($uuid, $sortBy, $versionBy);
 
+	public function getList();
+
 }

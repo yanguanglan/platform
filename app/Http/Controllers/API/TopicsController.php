@@ -27,4 +27,9 @@ class TopicsController extends Controller
 
 		return $this->topic->show($uuid, $sortBy, $versionBy);
 	}
+
+	public function getList(Request $request)
+	{
+		return $this->topic->getList();
+	}
 }

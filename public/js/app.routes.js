@@ -105,6 +105,11 @@
 				.when('/my-recipes', {
 					controller: 'MyRecipesController as myRecipesCtl',
 					templateUrl: 'js/partials/users/my-recipes.html',
+					resolve: {
+						topics: function(topicService) {
+							return topicService.list();
+						}
+					},
 					auth: true
 				})
 				.when('/account', {

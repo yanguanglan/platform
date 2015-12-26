@@ -21,9 +21,14 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 
 	resource('themes', 'ThemesController', ['only' => ['index']]);
 	post('themes-vote', 'ThemesController@vote');
+
 	resource('lessons', 'LessonsController', ['only' => ['show']]);
+
 	resource('topics', 'TopicsController', ['only' => ['index', 'show']]);
+	get('topics-list', 'TopicsController@getList');
+
 	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
+
 	post('auth/github', 'AuthController@github');
 	post('auth/login', 'AuthController@login');
 	post('auth/register', 'AuthController@register');

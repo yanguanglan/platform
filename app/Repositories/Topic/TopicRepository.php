@@ -18,7 +18,9 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 	{
 		$models = $this->model
 		->has('recipes')
-		->with('recipes')
+		->with(['recipes' => function($q) {
+			$q->where('published', 1);
+		}])
 		->orderBy('title')
 		->get();
 
@@ -36,10 +38,12 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			if ($sortBy == 'likes')
 			{
 				$model = $this->model
-				->where('published', 1)
 				->where('uuid', $uuid)
-				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
+				}])
+				->with(['recipes' => function($q) {
+					$q->where('published', 1);
 				}])
 				->firstOrFail();
 
@@ -54,13 +58,12 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			else
 			{
 				$model = $this->model
-				->where('published', 1)
 				->where('uuid', $uuid)
-				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
 				}])
 				->with(['recipes' => function ($q) use ($sortBy) {
-					$q->orderBy($sortBy, 'desc');
+					$q->where('published', 1)->orderBy($sortBy, 'desc');
 				}])
 				->firstOrFail();
 			}
@@ -70,13 +73,12 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			if ($sortBy == 'likes')
 			{
 				$model = $this->model
-				->where('published', 1)
 				->where('uuid', $uuid)
-				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
 				}])
 				->with(['recipes' => function ($q) use ($versionBy) {
-					$q->where('release', $versionBy);
+					$q->where('published', 1)->where('release', $versionBy);
 				}])
 				->firstOrFail();
 
@@ -91,13 +93,12 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 			else
 			{
 				$model = $this->model
-				->where('published', 1)
 				->where('uuid', $uuid)
-				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.level', 'recipes.topics' => function ($q) {
+				->with(['recipes.likes', 'recipes.bookings', 'recipes.watches', 'recipes.topics' => function ($q) {
 					$q->orderBy('title');
 				}])
 				->with(['recipes' => function ($q) use ($sortBy, $versionBy) {
-					$q->where('release', $versionBy)->orderBy($sortBy, 'desc');
+					$q->where('published', 1)->where('release', $versionBy)->orderBy($sortBy, 'desc');
 				}])
 				->firstOrFail();
 			}
@@ -110,5 +111,14 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 		}
 
 		return $model;
+	}
+
+	public function getList()
+	{
+		$models = $this->model
+		->orderBy('title')
+		->lists('title');
+
+		return $models;
 	}
 }
