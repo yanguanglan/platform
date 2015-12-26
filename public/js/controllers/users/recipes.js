@@ -50,6 +50,9 @@
 							$scope.newRecipeForm.content.$setPristine();
 							$scope.newRecipeForm.version.$setPristine();
 							$scope.newRecipeForm.release.$setPristine();
+
+							// Reset textarea autogrow effect
+							angular.element('.materialize-textarea').css('height', '3rem');
 						}
 					}, function(err) {
 

@@ -65,7 +65,7 @@ class RecipesController extends Controller
 
 		$this->recipe->create($data);
 
-		event('recipe.creation', $data);
+		event('recipe.creation', [['title' => $data['title']]]);
 
 		return [
 			'error' => false

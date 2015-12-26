@@ -27,9 +27,9 @@
 							<form class="modal-form-padding" name="newRecipeForm" ng-submit="myRecipesCtl.submitRecipe(newRecipeForm.$valid)" novalidate>
 								<div class="row">
 									<div class="input-field col s12 m12 l12">
-										<i class="mdi-action-account-box prefix"></i>
-										<input id="icon_name" type="text" class="validate" name="title" ng-model="myRecipesCtl.recipe.title" required>
-										<label for="icon_name">Title</label>
+										<i class="mdi-content-create prefix"></i>
+										<input id="icon_title" type="text" class="validate" name="title" ng-model="myRecipesCtl.recipe.title" required>
+										<label for="icon_title">Title</label>
 
 										<div ng-messages="newRecipeForm.title.$error" ng-if="newRecipeForm.title.$dirty">
 											<div ng-message="required">
@@ -38,9 +38,9 @@
 										</div>
 									</div>
 									<div class="input-field col s12 m12 l12">
-										<i class="mdi-communication-email prefix"></i>
-										<textarea id="icon_email" name="content" ng-model="myRecipesCtl.recipe.content" required class="materialize-textarea" rows="16" cols="40"></textarea>
-										<label for="icon_email">Content</label>
+										<i class="mdi-action-description prefix"></i>
+										<textarea id="icon_content" name="content" ng-model="myRecipesCtl.recipe.content" required class="materialize-textarea" rows="16" cols="40"></textarea>
+										<label for="icon_content">Content</label>
 
 										<div ng-messages="newRecipeForm.content.$error" ng-if="newRecipeForm.content.$dirty">
 											<div ng-message="required">
@@ -48,15 +48,17 @@
 											</div>
 										</div>
 									</div>
-									<div class="input-field col s12 m12 l12">
-										<i class="mdi-communication-email prefix"></i>
+								</div>
+								<div class="row">
+									<div class="input-field col s12 m6 l6">
+										<i class="mdi-toggle-star prefix"></i>
 										<select class="" id="icon_release" ng-model="myRecipesCtl.recipe.release" name="release" material-select watch>
 											<option ng-repeat="value in myRecipesCtl.releases">{{value}}</option>
 										</select>
 										<label for="icon_release">Release</label>
 									</div>
-									<div class="input-field col s12 m12 l12">
-										<i class="mdi-communication-email prefix"></i>
+									<div class="input-field col s12 m6 l6">
+										<i class="mdi-image-style prefix"></i>
 										<select class="" id="icon_version" ng-model="myRecipesCtl.recipe.version" name="version" material-select watch>
 											<option ng-repeat="value in myRecipesCtl.versions">{{value}}</option>
 										</select>
