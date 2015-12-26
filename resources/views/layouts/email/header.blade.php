@@ -5,8 +5,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="format-detection" content="date=no">
-	<title>angularjs-recipes.com :: we make learning fun again! :</title>
+	<title>AngularJS Recipes</title>
+	<style type="text/css"></style>
 	<style media="screen">
+		@media only screen and (max-width: 600px) {
+			table[class=body] img {
+				width: auto !important;
+				height: auto !important;
+			}
+		}
+
 		@media only screen and (max-width: 600px) {
 			table[class=body] center {
 				min-width: 0 !important;
@@ -194,37 +202,53 @@
 		}
 	</style>
 	<style media="screen">
+		@media only screen and (max-width: 600px) {
+			table[class=body] .right-text-pad {
+				padding-left: 10px !important;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			table[class=body] .left-text-pad {
+				padding-right: 10px !important;
+			}
+		}
+
+		@media only screen and (max-width: 450px) {
+			.template-label {
+				font-size: 12px;
+			}
+		}
+
 		@media only screen and (max-width: 450px) {
 			.header .columns .last {
 				vertical-align: top !important;
 			}
 		}
 	</style>
-	<style type="text/css"></style>
 </head>
 
-<body style="background-color: #f2f2f2; color: #222222; font-size: 14px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; min-width: 100%; font-family: 'Roboto', sans-serif; font-weight: normal; text-align: left; line-height: 1.6em; width: 100%;">
+<body style="color: #222222; background-color: #f2f2f2; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; min-width: 100%; font-family: 'Roboto', Arial; font-weight: normal; text-align: left; line-height: 19px; font-size: 14px; width: 100%;">
 
-	<table class="body" style="background-color: #f2f2f2; border-spacing: 0; vertical-align: top; border-collapse: collapse; font-size: 14px; text-align: left; height: 100%; padding: 0; color: #222222; font-family: 'Roboto', sans-serif; font-weight: normal; margin: 0; line-height: 19px; width: 100%;">
+	<table class="body" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; background-color: #f2f2f2; text-align: left; height: 100%; width: 100%; padding: 0; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; margin: 0; line-height: 19px; font-size: 14px; color: #222222;">
 		<tr style="padding: 0; vertical-align: top; text-align: left;">
-			<td class="center" align="center" valign="top" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; padding: 0; vertical-align: top; -webkit-hyphens: auto; color: #222222; font-family: 'Roboto', sans-serif; font-weight: normal; margin: 0; text-align: center; border-collapse: collapse;">
+			<td class="center" align="center" valign="top" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; padding: 0; vertical-align: top; -webkit-hyphens: auto; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; margin: 0; text-align: center; border-collapse: collapse;">
 				<center style="width: 100%; min-width: 580px;">
-					<table class="row header" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; background: #FFFFFF; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); padding: 0px; width: 100%; position: relative;">
+					<table class="row header" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; background: #212121; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); padding: 0px; width: 100%; position: relative;">
 						<tr style="padding: 0; vertical-align: top; text-align: left;">
-							<td class="center" align="center" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; padding: 0; vertical-align: top; -webkit-hyphens: auto; color: #222222; font-family: 'Roboto', sans-serif; font-weight: normal; margin: 0; text-align: center; border-collapse: collapse;">
-								<center class="black-bg" style="width: 100%; min-width: 580px; background-color: black;">
+							<td class="center" align="center" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; padding: 0; vertical-align: top; -webkit-hyphens: auto; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; margin: 0; text-align: center; border-collapse: collapse;">
+								<center style="width: 100%; min-width: 580px;">
 									<table class="container" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: inherit; width: 580px; margin: 0 auto;">
 										<tr style="padding: 0; vertical-align: top; text-align: left;">
-											<td class="wrapper last" style="vertical-align: top; font-size: 14px; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; line-height: 19px; font-weight: normal; font-family: 'Roboto', sans-serif; text-align: left; color: #222222; position: relative; padding: 10px 20px 0px 0px; padding-right: 0px; margin: 0 auto; width: 92%; border-collapse: collapse;">
+											<td class="wrapper last" style="vertical-align: top; font-size: 14px; word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; line-height: 19px; font-weight: normal; font-family: 'Helvetica', 'Arial', sans-serif; text-align: left; color: #222222; position: relative; padding: 10px 20px 0px 0px; padding-right: 0px; margin: 0 auto; width: 92%; border-collapse: collapse;">
 												<table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 92%; margin: 0 auto;">
 													<tr style="padding: 0; vertical-align: top; text-align: left;">
-														<td class="center" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; margin: 0; vertical-align: top; -webkit-hyphens: auto; color: #222222; font-family: 'Roboto', sans-serif; font-weight: normal; text-align: center; padding: 0px 0px 10px; border-collapse: collapse;">
-															<a href="http://angularjs-recipes.com/" target="_blank" style="line-height: 150%; padding-top: o; font-size: 23px; text-decoration: none; color: white;" class="a-logo">
-																<img src="https://gallery.mailchimp.com/977072de3b242ab732e920547/images/4da8e73c-55cf-4442-ad46-15516f9cdf22.png" class="logo" width="168" height="75" alt="mist.io logo" style="outline: none; text-decora§on: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; display: inline-block; border: none; height: 40px; vertical-align: middle;"> Angular
-																<span class="text-red" style="color: #d0021b;">JS</span>Recipes</a>
-															<p class="beta" style="text-align: center; margin: 0; font-family: 'Roboto', sans-serif; font-weight: 300; padding: 0; margin-bottom: 10px; line-height: 150%; font-size: 12px; color: white; display: inline-block; vertical-align: top;">beta</p>
+														<td class="twelve columns" style="text-align: left; word-break: break-word; -moz-hyphens: auto; hyphens: auto; line-height: 19px; margin: 0; vertical-align: top; -webkit-hyphens: auto; font-weight: normal; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; padding: 0px 0px 10px; width: 100%; border-collapse: collapse;">
+															<a href="http://angularjs-recipes.com" target="_blank" style="color: #212121; font-family: 'Roboto', Arial; font-size: 16px; line-height: 150%; text-decoration: none;">
+																<img src="https://gallery.mailchimp.com/7f8118cc8fb95f5779e51f62f/images/c6e4b482-d433-4360-9ddc-0ea11aa86336.png" class="center logo" width="350" height="48" alt="AngularJS Recipes logo" style="outline: none; text-decora§on: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; display: block; border: none; float: none; margin: 0 auto;">
+															</a>
 														</td>
-														<td class="expander" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; margin: 0; vertical-align: top; text-align: left; -webkit-hyphens: auto; font-weight: normal; color: #222222; font-family: 'Roboto', sans-serif; width: 0px; visibility: hidden; padding: 0; border-collapse: collapse;"></td>
+														<td class="expander" style="word-break: break-word; font-size: 14px; -moz-hyphens: auto; hyphens: auto; line-height: 19px; margin: 0; vertical-align: top; text-align: left; -webkit-hyphens: auto; font-weight: normal; color: #222222; font-family: 'Helvetica', 'Arial', sans-serif; width: 0px; visibility: hidden; padding: 0; border-collapse: collapse;"></td>
 													</tr>
 												</table>
 											</td>
