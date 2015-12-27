@@ -14,9 +14,9 @@
 		serieCtl.booked = serieCtl.auth ? (serieCtl.serie.bookedArray.indexOf(serieCtl.auth.id) > -1) : false;
 		serieCtl.bookedMsg = serieCtl.booked ? 'Bookmarked one!' : 'Not Bookmarked yet!';
 		serieCtl.liked = serieCtl.auth ? (serieCtl.serie.likesArray.indexOf(serieCtl.auth.id) > -1) : false;
-		serieCtl.likedMsg = serieCtl.liked ? 'Favourited one!' : 'Not favourited yet!';
+		serieCtl.likedMsg = serieCtl.auth ? (serieCtl.liked ? 'Favourited one!' : 'Not favourited yet!') : serieCtl.serie.likesArray.length + ' likes!';
 		serieCtl.watched = serieCtl.auth ? (serieCtl.serie.watchedArray.indexOf(serieCtl.auth.id) > -1) : false;
-		serieCtl.watchedMsg = serieCtl.watched ? 'Already visited!' : 'Not visited yet!';
+		serieCtl.watchedMsg = serieCtl.auth ? (serieCtl.watched ? 'Already visited!' : 'Not visited yet!') : serieCtl.serie.views + ' views!';
 		serieCtl.toggleBook = function() {
 			serieCtl.booked = !serieCtl.booked;
 

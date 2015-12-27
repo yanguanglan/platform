@@ -15,9 +15,9 @@
 		recipeCtl.booked = recipeCtl.auth ? (recipeCtl.recipe.bookedArray.indexOf(recipeCtl.auth.id) > -1) : false;
 		recipeCtl.bookedMsg = recipeCtl.booked ? 'Bookmarked one!' : 'Not Bookmarked yet!';
 		recipeCtl.liked = recipeCtl.auth ? (recipeCtl.recipe.likesArray.indexOf(recipeCtl.auth.id) > -1) : false;
-		recipeCtl.likedMsg = recipeCtl.liked ? 'Favourited one!' : 'Not favourited yet!';
+		recipeCtl.likedMsg = recipeCtl.auth ? (recipeCtl.liked ? 'Favourited one!' : 'Not favourited yet!') : recipeCtl.recipe.likesArray.length + ' likes!';
 		recipeCtl.watched = recipeCtl.auth ? (recipeCtl.recipe.watchedArray.indexOf(recipeCtl.auth.id) > -1) : false;
-		recipeCtl.watchedMsg = recipeCtl.watched ? 'Already visited!' : 'Not visited yet!';
+		recipeCtl.watchedMsg = recipeCtl.auth ? (recipeCtl.watched ? 'Already visited!' : 'Not visited yet!') : recipeCtl.recipe.views + ' views!';
 		recipeCtl.toggleBook = function() {
 			recipeCtl.booked = !recipeCtl.booked;
 
