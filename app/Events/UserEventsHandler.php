@@ -23,7 +23,7 @@ class UserEventsHandler {
 	{
 		$user = $event;
 
-		\Mail::send(['html' => 'emails.user.register'], ['user' => $user], function ($m) use ($user) {
+		\Mail::queue(['html' => 'emails.user.register'], ['user' => $user], function ($m) use ($user) {
 			$m->from(config('mail.from.address'), config('mail.from.name'));
 
 			$m->to($user->email, $user->name)->subject('Welcome to AngularJS Recipes');
@@ -34,7 +34,7 @@ class UserEventsHandler {
 	{
 		$user = $event;
 
-		\Mail::send(['html' => 'emails.user.password_announce'], ['user' => $user], function ($m) use ($user) {
+		\Mail::queue(['html' => 'emails.user.password_announce'], ['user' => $user], function ($m) use ($user) {
 			$m->from(config('mail.from.address'), config('mail.from.name'));
 
 			$m->to($user->email, $user->name)->subject('Password Update');
@@ -46,7 +46,7 @@ class UserEventsHandler {
 		$user = $event['user'];
 		$link = $event['link'];
 
-		\Mail::send(['html' => 'emails.user.password_request'], ['user' => $user, 'link' => $link], function ($m) use ($user) {
+		\Mail::queue(['html' => 'emails.user.password_request'], ['user' => $user, 'link' => $link], function ($m) use ($user) {
 			$m->from(config('mail.from.address'), config('mail.from.name'));
 
 			$m->to($user->email, $user->name)->subject('Password Reset');
