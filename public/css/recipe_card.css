@@ -74,7 +74,7 @@
 }
 .card-recipe .card-action .card-view {
   font-size: 18px;
-  color: #d0021b;
+  color: #d0021b !important;
 }
 .card-recipe .card-action .card-view:hover {
   color: #000;
