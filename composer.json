@@ -10,7 +10,8 @@
 		"guzzlehttp/guzzle": "~5.3|~6.0",
 		"maknz/slack": "^1.7",
 		"bugsnag/bugsnag-laravel": "1.*",
-		"barryvdh/laravel-debugbar": "^2.0"
+		"barryvdh/laravel-debugbar": "^2.0",
+		"pda/pheanstalk": "~3.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0"
