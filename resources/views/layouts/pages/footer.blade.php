@@ -213,6 +213,7 @@
 <script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-materialize/src/angular-materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angularUtils-disqus/dirDisqus.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/prism/prism.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('js/app.module.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.routes.js')}}"></script>

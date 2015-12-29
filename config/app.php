@@ -140,6 +140,7 @@ return [
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 		'Maknz\Slack\SlackServiceProvider',
 		'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
+		'GrahamCampbell\Markdown\MarkdownServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -179,7 +180,7 @@ return [
 		'Eloquent'  => 'Illuminate\Database\Eloquent\Model',
 		'Event'     => 'Illuminate\Support\Facades\Event',
 		'File'      => 'Illuminate\Support\Facades\File',
-        'Gate' => Illuminate\Support\Facades\Gate::class,
+		'Gate' => Illuminate\Support\Facades\Gate::class,
 		'Hash'      => 'Illuminate\Support\Facades\Hash',
 		'Input'     => 'Illuminate\Support\Facades\Input',
 		'Inspiring' => 'Illuminate\Foundation\Inspiring',
@@ -202,7 +203,8 @@ return [
 		'JWTAuth'   => 'Tymon\JWTAuth\Facades\JWTAuth',
 		'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
 		'Slack' => 'Maknz\Slack\Facades\Slack',
-		'Bugsnag' => 'Bugsnag\BugsnagLaravel\BugsnagFacade'
+		'Bugsnag' => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
+		'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
 
 	],
 

@@ -253,6 +253,12 @@ h4 {
   color: #fff;
 }
 
+pre[class*="language-"] {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
 body {
   display: flex;
   min-height: 100vh;
@@ -1020,6 +1026,23 @@ a {
 }
 .list-bookmark i {
   font-size: 25px;
+}
+
+.recipe-content {
+  font-size: 16px;
+}
+.recipe-content p {
+  margin: 1em 0 !important;
+}
+.recipe-content p code {
+  background-color: #f5f2f0;
+  color: #212121;
+  font-size: 1rem;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  padding: 1px 3px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 #serie-header {

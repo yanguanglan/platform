@@ -272,13 +272,13 @@ angular
 			link: linkFunction
 		};
 	}])
-	.directive('pwCheck', [function () {
+	.directive('pwCheck', [function() {
 		return {
 			require: 'ngModel',
-			link: function (scope, el, attrs, ctrl) {
+			link: function(scope, el, attrs, ctrl) {
 				var firstPassword = '#' + attrs.pwCheck;
-				el.add(firstPassword).on('input', function () {
-					scope.$apply(function () {
+				el.add(firstPassword).on('input', function() {
+					scope.$apply(function() {
 						var validity = el.val() === $(firstPassword).val();
 						ctrl.$setValidity('pwCheck', validity);
 					});
@@ -302,6 +302,31 @@ angular
 			link: linkFunction
 		};
 	})
+	.directive('nagPrism', ['$compile', function($compile) {
+		return {
+			restrict: 'A',
+			transclude: true,
+			scope: {
+				source: '@'
+			},
+			link: function(scope, element, attrs, controller, transclude) {
+				scope.$watch('source', function(v) {
+					element.find(".recipe-content").html(v);
+					angular.forEach(element.find(".language-javascript, .language-html"), function(el) {
+						Prism.highlightElement(el);
+					});
+				});
+
+				transclude(function(clone) {
+					if (clone.html() !== undefined) {
+						element.find("code").html(clone.html());
+						$compile(element.contents())(scope.$parent);
+					}
+				});
+			},
+			template: '<div class="recipe-content"></div>'
+		};
+	}])
 	.filter('offset', function() {
 		return function(input, start) {
 			start = +start;

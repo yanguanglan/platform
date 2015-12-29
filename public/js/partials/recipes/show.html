@@ -46,7 +46,10 @@
 				<!-- Recipe -->
 				<div class="card">
 					<!-- Markdown -->
-					<div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div>
+					<!-- <div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div> -->
+					<div class="card-content">
+						<div nag-prism source="{{recipeCtl.recipe.content_converted}}"></div>
+					</div>
 
 					<!-- Codepen -->
 					<codepen recipe="recipeCtl.recipe"></codepen>

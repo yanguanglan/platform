@@ -58,6 +58,7 @@ class RecipesController extends Controller
 			'title' => $input['title'],
 			'slug' => str_slug($input['title']),
 			'content' => $input['content'],
+			'content_converted' => \Markdown::convertToHtml($input['content']),
 			'user_id' => $input['user_id'],
 			'version' => $input['version'],
 			'release' => $input['release'] == 'AngularJS 1' ? 1 : 2

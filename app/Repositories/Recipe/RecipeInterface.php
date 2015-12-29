@@ -11,4 +11,6 @@ interface RecipeInterface {
 
 	public function updateViews($uuid);
 
+	public function createContent();
+
 }

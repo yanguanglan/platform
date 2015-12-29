@@ -98,4 +98,13 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		->where('uuid', $uuid)
 		->increment('views');
 	}
+
+	public function createContent()
+	{
+		$models = $this->model->all();
+
+		foreach ($models as $model) {
+			$model->update(['content_converted' => \Markdown::convertToHtml($model->content)]);
+		}
+	}
 }
