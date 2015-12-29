@@ -213,6 +213,7 @@
 <script type="text/javascript" src="{{asset('bower_components/angularUtils-disqus/dirDisqus.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/prism/prism.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/prism/components/prism-php.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/prism/plugins/show-language/prism-show-language.min.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('js/app.module.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.routes.js')}}"></script>

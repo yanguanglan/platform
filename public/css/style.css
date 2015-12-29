@@ -259,6 +259,13 @@ pre[class*="language-"] {
   border-radius: 2px;
 }
 
+div.prism-show-language > div.prism-show-language-label[data-language] {
+  -moz-border-radius: 0 2px 0 2px;
+  -webkit-border-radius: 0;
+  border-radius: 0 2px 0 2px;
+  color: #fff;
+}
+
 body {
   display: flex;
   min-height: 100vh;
