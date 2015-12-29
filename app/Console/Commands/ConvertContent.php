@@ -4,7 +4,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use App\Repositories\Recipe\RecipeInterface as Recipe;
-use App\Repositories\LEsson\LEssonInterface as LEsson;
+use App\Repositories\LEsson\LessonInterface as LEsson;
 use App\Repositories\Exercise\ExerciseInterface as Exercise;
 
 class ConvertContent extends Command {
