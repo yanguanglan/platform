@@ -9,7 +9,6 @@
 		'ngAria',
 		'satellizer',
 		'angular-loading-bar',
-		'ng-showdown',
 		'ui.materialize',
 		'angularUtils.directives.dirDisqus',
 		'angular-md5'

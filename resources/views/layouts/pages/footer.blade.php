@@ -208,12 +208,11 @@
 <script type="text/javascript" src="{{asset('bower_components/angular-md5/angular-md5.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-loading-bar/build/loading-bar.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/satellizer/satellizer.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('bower_components/showdown/dist/showdown.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('bower_components/ng-showdown/dist/ng-showdown.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/materialize/dist/js/materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular-materialize/src/angular-materialize.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angularUtils-disqus/dirDisqus.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/prism/prism.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/prism/components/prism-php.min.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('js/app.module.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.routes.js')}}"></script>

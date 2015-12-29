@@ -312,7 +312,7 @@ angular
 			link: function(scope, element, attrs, controller, transclude) {
 				scope.$watch('source', function(v) {
 					element.find(".recipe-content").html(v);
-					angular.forEach(element.find(".language-javascript, .language-html, .language-markdown, .language-php, .language-css, .language-bash"), function(el) {
+					angular.forEach(element.find(".language-javascript, .language-html, .language-markdown, .language-php, .language-css, .language-bash, pre"), function(el) {
 						Prism.highlightElement(el);
 					});
 				});
