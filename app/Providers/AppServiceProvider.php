@@ -36,6 +36,11 @@ class AppServiceProvider extends ServiceProvider {
 		);
 
 		$this->app->bind(
+			'App\Repositories\Exercise\ExerciseInterface',
+			'App\Repositories\Exercise\ExerciseRepository'
+		);
+
+		$this->app->bind(
 			'App\Repositories\Newsletter\NewsletterInterface',
 			'App\Repositories\Newsletter\NewsletterRepository'
 		);

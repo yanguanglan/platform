@@ -32,7 +32,6 @@ class CreateSlugs extends Command {
 	{
 		// Recipes
 		$this->recipe->createSlugs();
-		$this->recipe->createContent();
 		$this->info('Recipes slugs created successfully!');
 
 		// Series

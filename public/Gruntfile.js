@@ -106,6 +106,11 @@ module.exports = function(grunt) {
 				cmd: function() {
 					return 'cd .. && php artisan recipes:slugs';
 				}
+			},
+			convert_content: {
+				cmd: function() {
+					return 'cd .. && php artisan recipes:content';
+				}
 			}
 		},
 		watch: {
@@ -129,6 +134,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-exec');
 
 	grunt.registerTask('slugs', ['exec:create_slugs']);
+	grunt.registerTask('content', ['exec:convert_content']);
 	grunt.registerTask('production', ['concat:js', 'uglify:dist', 'clean:tmp', 'exec:create_slugs']);
 	grunt.registerTask('default', ['compass', 'watch']);
 };

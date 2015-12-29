@@ -51,4 +51,13 @@ abstract class AbstractRepository {
 			$model->update(['slug' => str_slug($model->title)]);
 		}
 	}
+
+	public function createContent()
+	{
+		$models = $this->model->all();
+
+		foreach ($models as $model) {
+			$model->update(['content_converted' => \Markdown::convertToHtml($model->content)]);
+		}
+	}
 }

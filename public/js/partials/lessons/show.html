@@ -30,7 +30,9 @@
 				<!-- lesson -->
 				<div class="card">
 					<!-- Markdown -->
-					<div class="card-content markdown-body" markdown-to-html="lessonCtl.lesson.content"></div>
+					<div class="card-content">
+						<div nag-prism source="{{lessonCtl.lesson.content_converted}}"></div>
+					</div>
 				</div>
 			</div>
 

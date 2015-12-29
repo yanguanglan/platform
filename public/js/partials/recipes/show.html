@@ -70,7 +70,7 @@
 									<li ng-repeat="exercise in recipeCtl.recipe.exercises">
 										<div class="collapsible-header">{{$index + 1}}. {{exercise.title}}</div>
 										<div class="collapsible-body">
-											<div class="markdown-body" markdown-to-html="exercise.content"></div>
+											<div nag-prism source="{{exercise.content_converted}}"></div>
 
 											<!-- Codepen -->
 											<codepen recipe="exercise"></codepen>
