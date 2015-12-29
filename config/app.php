@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Broadcasting\BroadcastServiceProvider',
+		'Laravel\Socialite\SocialiteServiceProvider',
 
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 		'Maknz\Slack\SlackServiceProvider',
@@ -204,7 +205,8 @@ return [
 		'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
 		'Slack' => 'Maknz\Slack\Facades\Slack',
 		'Bugsnag' => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
-		'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
+		'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
+		'Socialite' => Laravel\Socialite\Facades\Socialite::class
 
 	],
 

@@ -70,9 +70,19 @@ class AuthController extends Controller
 		];
 	}
 
-	public function github(Request $request)
+	public function githubRedirect()
 	{
-		return $request->input('code');
+        return \Socialite::driver('github')->redirect();
+        // if ($code = $request->input('code'))
+        // {
+        //
+        // }
+	}
+
+	public function githubHandle()
+	{
+        $user = Socialite::driver('github')->user();
+        return $user;
 	}
 
 	public function availability(AvailabilityRequest $request)
