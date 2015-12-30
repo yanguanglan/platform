@@ -48,10 +48,26 @@
 	</div>
 </footer>
 
+<div id="notificationModal" class="modal small-modal" ng-controller="NotificationController as notifyCtl">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h2 class="left-align">@{{notifyCtl.modal.title}}</h2>
+			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
+				<i class="mdi-navigation-cancel"></i>
+			</a>
+		</div>
+
+		<div class="modal-form-padding center">
+			<h4>@{{notifyCtl.modal.content}}</h4>
+			<a ng-href="@{{notifyCtl.modal.btn.href}}" ng-if="notifyCtl.modal.btn.title" class="btn modal-action modal-close">@{{notifyCtl.modal.btn.title}}</a>
+		</div>
+	</div>
+</div>
+
 <div id="unsignedModal" class="modal small-modal">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h2 class="left-align decoration">Join Us!</h2>
+			<h2 class="left-align">Join Us!</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
 			</a>
@@ -67,7 +83,7 @@
 <div id="contactModal" class="modal" ng-controller="ContactController as contactCtl">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h2 class="left-align decoration">Contact Us</h2>
+			<h2 class="left-align">Contact Us</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
 			</a>
@@ -134,7 +150,7 @@
 <div id="requestModal" class="modal" ng-controller="RequestController as requestCtl">
 	<div class="modal-content">
 		<div class="modal-header">
-			<h2 class="left-align decoration">Request a Recipe</h2>
+			<h2 class="left-align">Request a Recipe</h2>
 			<a class="pull-right modal-action modal-close" href="javascript:void(0)" aria-label="Close">
 				<i class="mdi-navigation-cancel"></i>
 			</a>
@@ -230,6 +246,7 @@
 <script type="text/javascript" src="{{asset('js/controllers/public/request.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/requests.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/public/contact.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/controllers/public/notification.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/recipes/index.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/recipes/show.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/controllers/series/index.js')}}"></script>

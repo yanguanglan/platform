@@ -26,7 +26,14 @@
 						var data = res.data;
 						loginCtl.submitted = false;
 						if (data.error) {
-							console.log(data.msg);
+							$rootScope.$emit('notification', {
+								title: 'Login Failed',
+								content: data.msg,
+								btn: {
+									title: null,
+									href: null
+								}
+							});
 						} else {
 							$rootScope.$emit('update', data.user);
 							authService.setUser(data.user);
@@ -34,7 +41,14 @@
 						}
 					}, function(err) {
 						loginCtl.submitted = false;
-						console.log(err);
+						$rootScope.$emit('notification', {
+							title: 'Login Failed',
+							content: err.data.msg,
+							btn: {
+								title: null,
+								href: null
+							}
+						});
 					});
 			} else {
 				$scope.loginForm.email.$setDirty();
@@ -71,6 +85,14 @@
 									loginCtl.submitted = false;
 									if (data.error) {
 										console.log(data.msg);
+										$rootScope.$emit('notification', {
+											title: 'Login Failed',
+											content: res.data.msg,
+											btn: {
+												title: null,
+												href: null
+											}
+										});
 									} else {
 										$rootScope.$emit('update', data.user);
 										authService.setUser(data.user);
@@ -79,12 +101,34 @@
 								}, function(err) {
 									loginCtl.submitted = false;
 									console.log(err);
+									$rootScope.$emit('notification', {
+										title: 'Login Failed',
+										content: err.data.msg,
+										btn: {
+											title: null,
+											href: null
+										}
+									});
 								});
 						}, function(e) {
-							alert('Whoops! ' + e.error.message);
+							$rootScope.$emit('notification', {
+								title: 'Server Error',
+								content: 'We feel sorry but our servers could get your credentials and sign you in. Please try a bit later or submit an issue!',
+								btn: {
+									title: null,
+									href: null
+								}
+							});
 						});
 				}, function(e) {
-					alert('Signin error: ' + e.error.message);
+					$rootScope.$emit('notification', {
+						title: 'Server Error',
+						content: 'We feel sorry but our servers could not establish communication with vendor\'s datacenter. Please try a bit later or submit an issue!',
+						btn: {
+							title: null,
+							href: null
+						}
+					});
 				});
 		};
 	}

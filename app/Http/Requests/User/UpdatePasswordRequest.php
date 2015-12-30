@@ -30,7 +30,7 @@ class UpdatePasswordRequest extends Request {
 	{
 		return response()->json([
 			'error' => true,
-			'msg'   => 'Please enter valid credentials'
+			'msg'   => 'Please enter valid credentials and retry!'
 		]);
 	}
 

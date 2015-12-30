@@ -254,7 +254,7 @@ angular
 	})
 	.directive('emailDuplicated', ['authService', function(authService) {
 		var linkFunction = function(scope, element, args, ctrl) {
-			element.on('input', function() {
+			element.on('input blur keyup', function() {
 				scope.$watch('registerCtl.user.email', function(newVal, oldVal) {
 					if (newVal != oldVal) {
 						authService

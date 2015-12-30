@@ -29,6 +29,14 @@
 						registerCtl.submitted = false;
 						if (data.error) {
 							console.log(data.msg);
+							$rootScope.$emit('notification', {
+								title: 'Registration Failed',
+								content: res.data.msg,
+								btn: {
+									title: null,
+									href: null
+								}
+							});
 						} else {
 							$auth.setToken(data.token)
 							$rootScope.$emit('update', data.user);
@@ -38,6 +46,14 @@
 					}, function(err) {
 						registerCtl.submitted = false;
 						console.log(err);
+						$rootScope.$emit('notification', {
+							title: 'Registration Failed',
+							content: err.data.msg,
+							btn: {
+								title: null,
+								href: null
+							}
+						});
 					});
 			} else {
 				$scope.registerForm.name.$setDirty();
@@ -75,6 +91,14 @@
 									registerCtl.submitted = false;
 									if (data.error) {
 										console.log(data);
+										$rootScope.$emit('notification', {
+											title: 'Registration Failed',
+											content: res.data.msg,
+											btn: {
+												title: null,
+												href: null
+											}
+										});
 									} else {
 										$auth.setToken(data.token)
 										$rootScope.$emit('update', data.user);
@@ -84,12 +108,34 @@
 								}, function(err) {
 									registerCtl.submitted = false;
 									console.log(err);
+									$rootScope.$emit('notification', {
+										title: 'Registration Failed',
+										content: err.data.msg,
+										btn: {
+											title: null,
+											href: null
+										}
+									});
 								});
 						}, function(e) {
-							alert('Whoops! ' + e.error.message);
+							$rootScope.$emit('notification', {
+								title: 'Server Error',
+								content: 'We feel sorry but our servers could not establish communication with vendor\'s datacenter. Please try a bit later or submit an issue!',
+								btn: {
+									title: null,
+									href: null
+								}
+							});
 						});
 				}, function(e) {
-					alert('Signin error: ' + e.error.message);
+					$rootScope.$emit('notification', {
+						title: 'Server Error',
+						content: 'We feel sorry but our servers could not establish communication with vendor\'s datacenter. Please try a bit later or submit an issue!',
+						btn: {
+							title: null,
+							href: null
+						}
+					});
 				});
 		};
 	}

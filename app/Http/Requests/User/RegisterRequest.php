@@ -25,7 +25,7 @@ class RegisterRequest extends Request
 	{
 		return [
 			'name' => 'required',
-			'email' => 'required|email|unique:users',
+			'email' => $this->social ? 'required|email' : 'required|email|unique:users',
 			'password' => 'required_without:social',
 		];
 	}
@@ -34,7 +34,7 @@ class RegisterRequest extends Request
 	{
 		return response()->json([
 			'error' => true,
-			'msg' => 'Please enter valid credentials',
+			'msg' => 'Please enter valid credentials and retry!'
 		]);
 	}
 }

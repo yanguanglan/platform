@@ -89,7 +89,7 @@ class UsersController extends Controller
 
 		return [
 			'error' => true,
-			'msg' => 'Invalid request, please go to the forgot password page again!'
+			'msg' => 'Invalid request, please go to the forgot password page and retry!'
 		];
 	}
 }
