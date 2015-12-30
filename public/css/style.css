@@ -1996,7 +1996,7 @@ a {
 }
 .signin .login-header h2, .signup .login-header h2 {
   margin: 0;
-  padding-top: 35px;
+  line-height: 100px;
   color: #fff;
   letter-spacing: 1px;
 }

@@ -35,6 +35,7 @@
 						uuid: lesson.uuid,
 						title: lesson.title
 					};
+                    console.log(lessonCtl.previous);
 				}
 			}
 
@@ -44,6 +45,7 @@
 						uuid: lesson.uuid,
 						title: lesson.title
 					};
+                    console.log(lessonCtl.next);
 				}
 			}
 		});
