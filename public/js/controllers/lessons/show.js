@@ -12,12 +12,12 @@
 		lessonCtl.lesson = lesson;
 		lessonCtl.serie = serie;
 		lessonCtl.previous = {
-			uuid: null,
-			title: null
+			uuid: "",
+			title: ""
 		};
 		lessonCtl.next = {
-			uuid: null,
-			title: null
+			uuid: "",
+			title: ""
 		};
 		lessonCtl.previousPageExists = function() {
 			return lessonCtl.lesson.order != 1;
