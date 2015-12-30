@@ -19,33 +19,29 @@
 			uuid: "",
 			title: ""
 		};
-		lessonCtl.previousPageExists = function() {
-			return lessonCtl.lesson.order != 1;
-		};
-		lessonCtl.nextPageExists = function() {
-			return lessonCtl.lesson.order != lessonCtl.serie.lessons.length;
-		};
+		lessonCtl.previousPageExists = lessonCtl.lesson.order != 1 ? true : false;
+		lessonCtl.nextPageExists = lessonCtl.lesson.order != lessonCtl.serie.lessons.length ? true : false;
 		lessonCtl.activeLesson = function(current, loop) {
 			return current == loop ? 'active-text' : 'black-text';
 		};
 		angular.forEach(lessonCtl.serie.lessons, function(lesson) {
-			if (lessonCtl.previousPageExists()) {
+			if (lessonCtl.previousPageExists) {
 				if (lesson.order == lessonCtl.lesson.order - 1) {
 					lessonCtl.previous = {
 						uuid: lesson.uuid,
 						title: lesson.title
 					};
-                    console.log(lessonCtl.previous);
+					console.log(lessonCtl.previous);
 				}
 			}
 
-			if (lessonCtl.nextPageExists()) {
+			if (lessonCtl.nextPageExists) {
 				if (lesson.order == lessonCtl.lesson.order + 1) {
 					lessonCtl.next = {
 						uuid: lesson.uuid,
 						title: lesson.title
 					};
-                    console.log(lessonCtl.next);
+					console.log(lessonCtl.next);
 				}
 			}
 		});
