@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('RegisterController', RegisterController);
 
-	RegisterController.$inject = ['authService', '$auth', '$scope', '$rootScope', '$location'];
+	RegisterController.$inject = ['authService', '$auth', '$scope', '$rootScope', '$location', '$window'];
 
-	function RegisterController(authService, $auth, $scope, $rootScope, $location) {
+	function RegisterController(authService, $auth, $scope, $rootScope, $location, $window) {
 		var registerCtl = this;
 		registerCtl.user = {
 			name: '',
@@ -48,7 +48,7 @@
 		registerCtl.socialLogin = function() {
 			console.log('github');
 			hello.init({
-				github: 'f8f2e77b448821cc1ac5'
+				github: $window.recipes.GITHUB_CLIENT_ID
 			});
 
 			hello('github')

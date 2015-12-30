@@ -32,12 +32,6 @@ return [
 	'stripe' => [
 		'model'  => 'App\User',
 		'secret' => '',
-	],
-
-	'github' => [
-		'client_id' => 'f8f2e77b448821cc1ac5',
-		'client_secret' => '0d7817024af8b2a31e58ebcd088e175d0fb68dea',
-		'redirect' => 'http://localhost:8001/api/auth/github/handle'
-	],
+	]
 
 ];

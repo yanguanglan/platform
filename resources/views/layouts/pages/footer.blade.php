@@ -197,6 +197,9 @@
 		</form>
 	</div>
 </div>
+
+@include('partials.js')
+
 @if(env('APP_ENV') == 'local')
 <script type="text/javascript" src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/angular/angular.min.js')}}"></script>

@@ -20,10 +20,6 @@
 		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', '$authProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider, $authProvider) {
 			$authProvider.loginUrl = '/api/auth/login';
 			$authProvider.signupUrl = '/api/auth/register';
-			$authProvider.github({
-				url: 'api/auth/github',
-				clientId: 'f8f2e77b448821cc1ac5'
-			});
 			cfpLoadingBarProvider.includeSpinner = false;
 			$locationProvider.hashPrefix('!');
 			$routeProvider

@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('LoginController', LoginController);
 
-	LoginController.$inject = ['authService', '$auth', '$location', '$rootScope', '$scope', '$http'];
+	LoginController.$inject = ['authService', '$auth', '$location', '$rootScope', '$scope', '$http', '$window'];
 
-	function LoginController(authService, $auth, $location, $rootScope, $scope, $http) {
+	function LoginController(authService, $auth, $location, $rootScope, $scope, $http, $window) {
 		var loginCtl = this;
 		loginCtl.user = {
 			email: '',
@@ -44,7 +44,7 @@
 		loginCtl.socialLogin = function() {
 			console.log('github');
 			hello.init({
-				github: 'f8f2e77b448821cc1ac5'
+				github: $window.recipes.GITHUB_CLIENT_ID
 			});
 
 			hello('github')
