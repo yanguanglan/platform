@@ -254,15 +254,18 @@ angular
 	})
 	.directive('emailDuplicated', ['authService', function(authService) {
 		var linkFunction = function(scope, element, args, ctrl) {
-			element.on('keyup input blur', function() {
-				var email = scope.registerCtl.user.email;
-				authService
-					.duplicated(email)
-					.then(function(res) {
-						ctrl.$setValidity('emailDuplicated', !res.data.error);
+			element.on('input', function() {
+				scope.$watch('registerCtl.user.email', function(newVal, oldVal) {
+					if (newVal != oldVal) {
+						authService
+							.duplicated(newVal)
+							.then(function(res) {
+								ctrl.$setValidity('emailDuplicated', !res.data.error);
 
-						return email
-					});
+								return newVal;
+							});
+					}
+				});
 			});
 		};
 
