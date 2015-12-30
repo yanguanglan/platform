@@ -148,8 +148,7 @@ angular
 			restrict: 'A',
 			link: function(scope, element, args) {
 				var activeClass = args.activeMenu || 'active',
-					links = element.find('li').not('.divider');
-
+					links = element.find('li').not('.ng-hide');
 				scope.$on('$routeChangeStart', function() {
 					var path = $location.path();
 					links.removeClass(activeClass);
@@ -289,22 +288,6 @@ angular
 			}
 		};
 	}])
-	.directive('focusMe', function() {
-		var linkFunction = function(scope, element, args) {
-			scope.$watch(args.focusMe, function(value) {
-				if (value === true) {
-					console.log(element[0], element.attr('class'));
-					element[0].focus();
-					scope[args.focusMe] = false;
-				}
-			});
-		};
-
-		return {
-			restrict: 'A',
-			link: linkFunction
-		};
-	})
 	.directive('nagPrism', ['$compile', function($compile) {
 		return {
 			restrict: 'A',

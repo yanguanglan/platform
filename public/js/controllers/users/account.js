@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('AccountController', AccountController);
 
-	AccountController.$inject = ['authService', 'userService', '$rootScope', '$scope', 'md5'];
+	AccountController.$inject = ['$auth', 'authService', 'userService', '$rootScope', '$scope', 'md5', '$location'];
 
-	function AccountController(authService, userService, $rootScope, $scope, md5) {
+	function AccountController($auth, authService, userService, $rootScope, $scope, md5, $location) {
 		var accountCtl = this;
 		accountCtl.user = authService.isLoggedIn();
 		accountCtl.gravatar = 'http://www.gravatar.com/avatar/' + md5.createHash(accountCtl.user.email) + '&s=120';
@@ -56,5 +56,20 @@
 				$scope.passwordForm.repeat_password.$setDirty();
 			}
 		};
+		accountCtl.setPassword = function() {
+			console.log('set');
+			Materialize.toast('An email was sent to your account ' + accountCtl.user.email + ' please follow the procedure!', 5000);
+
+			$auth
+				.logout()
+				.then(function() {
+					authService.logout();
+					$location.path('/');
+					userService.requestPassword(accountCtl.user.email);
+				});
+		};
+		$scope.$$postDigest(function() {
+			$('ul.tabs').tabs();
+		});
 	}
 })();

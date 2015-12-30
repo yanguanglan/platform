@@ -36,6 +36,13 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
 	protected $dates = ['created_at', 'updated_at', 'expires_at', 'last_login'];
 
+	public $appends = ['hasPassword'];
+
+	public function getHasPasswordAttribute()
+	{
+		return $this->password ? true : false;
+	}
+
 	public function setPasswordAttribute($value)
 	{
 		$this->attributes['password'] = $value ? bcrypt($value) : null;

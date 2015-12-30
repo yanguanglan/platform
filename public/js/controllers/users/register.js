@@ -42,6 +42,14 @@
 							$rootScope.$emit('update', data.user);
 							authService.setUser(data.user);
 							$location.path('/dashboard');
+							$rootScope.$emit('notification', {
+								title: 'Welcome to AngularJS Recipes',
+								content: 'Dear ' + registerCtl.user.name + ', welcome! Since we are still in beta every comment or idea of yours is highly appreciated!',
+								btn: {
+									title: null,
+									href: null
+								}
+							});
 						}
 					}, function(err) {
 						registerCtl.submitted = false;
@@ -104,6 +112,14 @@
 										$rootScope.$emit('update', data.user);
 										authService.setUser(data.user);
 										$location.path('/dashboard');
+										$rootScope.$emit('notification', {
+											title: 'Welcome to AngularJS Recipes',
+											content: 'Dear ' + json.name + ', welcome! Since we are still in beta every comment or idea of yours is highly appreciated!',
+											btn: {
+												title: null,
+												href: null
+											}
+										});
 									}
 								}, function(err) {
 									registerCtl.submitted = false;
