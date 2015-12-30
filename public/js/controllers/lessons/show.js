@@ -31,17 +31,15 @@
 						uuid: lesson.uuid,
 						title: lesson.title
 					};
-					console.log(lessonCtl.previous);
 				}
 			}
 
 			if (lessonCtl.nextPageExists) {
-				if (lesson.order == lessonCtl.lesson.order + 1) {
+				if (lesson.order == +lessonCtl.lesson.order + 1) {
 					lessonCtl.next = {
 						uuid: lesson.uuid,
 						title: lesson.title
 					};
-					console.log(lessonCtl.next);
 				}
 			}
 		});
