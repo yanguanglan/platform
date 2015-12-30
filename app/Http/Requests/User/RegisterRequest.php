@@ -1,9 +1,11 @@
-<?php namespace App\Http\Requests\User;
+<?php
+
+namespace App\Http\Requests\User;
 
 use App\Http\Requests\Request;
 
-class RegisterRequest extends Request {
-
+class RegisterRequest extends Request
+{
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
@@ -22,9 +24,9 @@ class RegisterRequest extends Request {
 	public function rules()
 	{
 		return [
-			'name'    => 'required',
-			'email'   => 'required|email|unique:users',
-			'password' => 'required'
+			'name' => 'required',
+			'email' => 'required|email|unique:users',
+			'password' => 'required_without:social',
 		];
 	}
 
@@ -32,8 +34,7 @@ class RegisterRequest extends Request {
 	{
 		return response()->json([
 			'error' => true,
-			'msg'   => 'Please enter valid credentials'
+			'msg' => 'Please enter valid credentials',
 		]);
 	}
-
 }

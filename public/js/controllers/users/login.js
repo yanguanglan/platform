@@ -5,9 +5,9 @@
 		.module('recipesApp')
 		.controller('LoginController', LoginController);
 
-	LoginController.$inject = ['authService', '$auth', '$location', '$rootScope', '$scope'];
+	LoginController.$inject = ['authService', '$auth', '$location', '$rootScope', '$scope', '$http'];
 
-	function LoginController(authService, $auth, $location, $rootScope, $scope) {
+	function LoginController(authService, $auth, $location, $rootScope, $scope, $http) {
 		var loginCtl = this;
 		loginCtl.user = {
 			email: '',
@@ -43,13 +43,48 @@
 		};
 		loginCtl.socialLogin = function() {
 			console.log('github');
+			hello.init({
+				github: 'f8f2e77b448821cc1ac5'
+			});
 
-			$auth.authenticate('github')
-				.then(function(response) {
-					console.log(response);
+			hello('github')
+				.login({
+					scope: 'name, email'
 				})
-				.catch(function(response) {
-					Materialize.toast('Oops, we couldn\'t get your email!', 5000);
+				.then(function(data) {
+					console.log(data);
+					hello('github')
+						.api('me')
+						.then(function(json) {
+							console.log(json);
+							$auth
+								.login({
+									email: json.email
+								}, {
+									params: {
+										social: true
+									}
+								})
+								.then(function(res) {
+									console.log(res);
+									var data = res.data;
+									loginCtl.submitted = false;
+									if (data.error) {
+										console.log(data.msg);
+									} else {
+										$rootScope.$emit('update', data.user);
+										authService.setUser(data.user);
+										$location.path('/');
+									}
+								}, function(err) {
+									loginCtl.submitted = false;
+									console.log(err);
+								});
+						}, function(e) {
+							alert('Whoops! ' + e.error.message);
+						});
+				}, function(e) {
+					alert('Signin error: ' + e.error.message);
 				});
 		};
 	}

@@ -29,8 +29,6 @@ Route::group(['namespace' => 'API', 'prefix' => 'api'], function () {
 
 	resource('posts', 'PostsController', ['only' => ['index', 'show']]);
 
-	post('auth/github', 'AuthController@githubRedirect');
-	get('auth/github/handle', 'AuthController@githubHandle');
 	post('auth/login', 'AuthController@login');
 	post('auth/register', 'AuthController@register');
 	get('auth/users-availability', 'AuthController@availability');

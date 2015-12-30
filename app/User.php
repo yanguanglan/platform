@@ -38,7 +38,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
 	public function setPasswordAttribute($value)
 	{
-		$this->attributes['password'] = bcrypt($value);
+		$this->attributes['password'] = $value ? bcrypt($value) : null;
 	}
 
 	public function likedRecipes()

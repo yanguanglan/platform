@@ -12,81 +12,106 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthController extends Controller
 {
-	protected $user;
+    protected $user;
 
-	public function __construct(User $user)
-	{
-		$this->user = $user;
-	}
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
 
-	public function login(Request $request)
-	{
-		$credentials = $request->only('email', 'password');
+    public function login(Request $request)
+    {
+        if ($request->input('social')) {
+            $credentials = $request->only('email');
 
-		try {
-			// verify the credentials and create a token for the user
-			if (!$token = JWTAuth::attempt($credentials)) {
-				return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
-			}
-		} catch (JWTException $e) {
-			// something went wrong
-			return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 500);
-		}
+            $user = $this->user->exists($credentials['email']);
 
-		$user = \Auth::user();
+            if ($user) {
+                try {
+                    // verify the credentials and create a token for the user
+                    if (!$token = JWTAuth::fromUser($user)) {
+                        return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
+                    }
+                } catch (JWTException $e) {
+                    // something went wrong
+                    return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 500);
+                }
+            } else {
+                return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
+            }
+        } else {
+            $credentials = $request->only('email', 'password');
 
-		event('user.login', $user);
+            try {
+                // verify the credentials and create a token for the user
+                if (!$token = JWTAuth::attempt($credentials)) {
+                    return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
+                }
+            } catch (JWTException $e) {
+                // something went wrong
+                return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 500);
+            }
 
-		// if no errors are encountered we can return a JWT
-		return [
-			'token' => $token,
-			'user' => $user
-		];
-	}
+            $user = \Auth::user();
+        }
 
-	public function register(RegisterRequest $request)
-	{
-		$credentials = $request->only('name', 'email', 'password');
+        event('user.login', $user);
 
-		$user = $this->user->create(array_add($credentials, 'uuid', str_random(6)));
+        // if no errors are encountered we can return a JWT
+        return [
+            'token' => $token,
+            'user' => $user,
+        ];
+    }
 
-		try {
-			// verify the credentials and create a token for the user
-			if (!$token = JWTAuth::attempt($credentials)) {
-				return response()->json(['error' => 'Please enter valid credentials'], 401);
-			}
-		} catch (JWTException $e) {
-			// something went wrong
-			return response()->json(['error' => 'Please enter valid credentials'], 500);
-		}
+    public function register(RegisterRequest $request)
+    {
+        if ($request->input('social')) {
+            $credentials = $request->only('name', 'email');
 
-		$user = $this->user->byId(\Auth::id());
+            $user = $this->user->exists($credentials['email']);
 
-		event('user.register', $user);
+            if ($user) {
+                return response()->json(['error' => true, 'msg' => 'This user already exists'], 401);
+            } else {
+                $user = $this->user->create(array_add($credentials, 'uuid', str_random(6)));
 
-		return [
-			'token' => $token,
-			'user' => $user
-		];
-	}
+                try {
+                    // verify the credentials and create a token for the user
+                    if (!$token = JWTAuth::fromUser($user)) {
+                        return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 401);
+                    }
+                } catch (JWTException $e) {
+                    // something went wrong
+                    return response()->json(['error' => true, 'msg' => 'Please enter valid credentials'], 500);
+                }
+            }
+        } else {
+            $credentials = $request->only('name', 'email', 'password');
 
-	public function githubRedirect()
-	{
-        return \Socialite::driver('github')->redirect();
-        // if ($code = $request->input('code'))
-        // {
-        //
-        // }
-	}
+            $user = $this->user->create(array_add($credentials, 'uuid', str_random(6)));
 
-	public function githubHandle()
-	{
-        $user = Socialite::driver('github')->user();
-        return $user;
-	}
+            try {
+                // verify the credentials and create a token for the user
+            if (!$token = JWTAuth::fromUser($user)) {
+                return response()->json(['error' => 'Please enter valid credentials'], 401);
+            }
+            } catch (JWTException $e) {
+                // something went wrong
+            return response()->json(['error' => 'Please enter valid credentials'], 500);
+            }
+        }
 
-	public function availability(AvailabilityRequest $request)
-	{
-		return ['error' => $this->user->exists($request->only('email')) ? true : false];
-	}
+        event('user.register', $user);
+
+        return [
+            'token' => $token,
+            'user' => $user,
+        ];
+    }
+
+    public function availability(AvailabilityRequest $request)
+    {
+        return ['error' => $this->user->exists($request->only('email')) ? true : false];
+    }
 }

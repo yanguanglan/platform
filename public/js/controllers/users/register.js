@@ -47,13 +47,49 @@
 		};
 		registerCtl.socialLogin = function() {
 			console.log('github');
+			hello.init({
+				github: 'f8f2e77b448821cc1ac5'
+			});
 
-			$auth.authenticate('github')
-				.then(function(response) {
-					console.log(response);
+			hello('github')
+				.login({
+					scope: 'name, email'
 				})
-				.catch(function(response) {
-					Materialize.toast('Oops, we couldn\'t get your email!', 5000);
+				.then(function(data) {
+					console.log(data);
+					hello('github')
+						.api('me')
+						.then(function(json) {
+							console.log(json);
+							$auth
+								.signup({
+									name: json.name,
+									email: json.email
+								}, {
+									params: {
+										social: true
+									}
+								})
+								.then(function(res) {
+									var data = res.data;
+									registerCtl.submitted = false;
+									if (data.error) {
+										console.log(data);
+									} else {
+										$auth.setToken(data.token)
+										$rootScope.$emit('update', data.user);
+										authService.setUser(data.user);
+										$location.path('/dashboard');
+									}
+								}, function(err) {
+									registerCtl.submitted = false;
+									console.log(err);
+								});
+						}, function(e) {
+							alert('Whoops! ' + e.error.message);
+						});
+				}, function(e) {
+					alert('Signin error: ' + e.error.message);
 				});
 		};
 	}

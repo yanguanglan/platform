@@ -33,7 +33,7 @@ class UserRepository extends AbstractRepository implements UserInterface
 		->where('email', $email)
 		->first();
 
-		return $model ? true : false;
+		return $model ?: false;
 	}
 
 	public function account()

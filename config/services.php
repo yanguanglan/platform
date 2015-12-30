@@ -37,7 +37,7 @@ return [
 	'github' => [
 		'client_id' => 'f8f2e77b448821cc1ac5',
 		'client_secret' => '0d7817024af8b2a31e58ebcd088e175d0fb68dea',
-		'redirect' => 'http://46.101.73.29/api/auth/github/handle'
+		'redirect' => 'http://localhost:8001/api/auth/github/handle'
 	],
 
 ];
