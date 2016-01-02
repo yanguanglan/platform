@@ -94,6 +94,14 @@ nav ul li.no-btn:hover, nav ul li.no-btn.active {
     top: 64px;
   }
 }
+.fixed-top.v1-header .fixed {
+  background: #9B9B9B url(../img/recipes/angularjs-11.png) no-repeat center;
+  background-size: auto 54px;
+}
+.fixed-top.v2-header .fixed {
+  background: #9B9B9B url(../img/recipes/angularjs-22.png) no-repeat center;
+  background-size: auto 54px;
+}
 
 nav .brand-logo {
   padding-right: 28px;

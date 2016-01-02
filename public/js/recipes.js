@@ -242,6 +242,22 @@ angular
 			link: linkFunction
 		}
 	}])
+	.directive('noSerie', function() {
+		var linkFunction = function(scope, element, args) {
+			$(window)
+				.resize(function() {
+					var h = angular.element('.card-serie').height() - 20;
+					element.find('.no-serie-inner').css('min-height', h);
+				})
+				.resize();
+		};
+
+		return {
+			restrict: 'E',
+			templateUrl: 'js/partials/series/no-serie.html',
+			link: linkFunction
+		}
+	})
 	.directive('codepen', function() {
 		return {
 			restrict: 'E',

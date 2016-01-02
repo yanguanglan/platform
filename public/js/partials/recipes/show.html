@@ -45,11 +45,12 @@
 			<div class="col l9 m12 s12">
 				<!-- Recipe -->
 				<div class="card">
-					<!-- Markdown -->
-					<!-- <div class="card-content markdown-body" markdown-to-html="recipeCtl.recipe.content"></div> -->
 					<div class="card-content">
 						<div nag-prism source="{{recipeCtl.recipe.content_converted}}"></div>
 					</div>
+
+					<!-- Plunker -->
+					<iframe ng-if="recipeCtl.recipe.plunker" style="width: 100%; height: 300px" ng-src="{{recipeCtl.recipe.plunker_url}}" frameborder="0" allowfullscren="allowfullscren"></iframe>
 
 					<!-- Codepen -->
 					<codepen recipe="recipeCtl.recipe"></codepen>

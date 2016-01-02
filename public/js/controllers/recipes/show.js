@@ -5,11 +5,12 @@
 		.module('recipesApp')
 		.controller('RecipeController', RecipeController);
 
-	RecipeController.$inject = ['recipe', 'topics', 'authService', '$scope', 'recipeService', '$timeout'];
+	RecipeController.$inject = ['recipe', 'topics', 'authService', '$scope', 'recipeService', '$timeout', '$sce'];
 
-	function RecipeController(recipe, topics, authService, $scope, recipeService, $timeout) {
+	function RecipeController(recipe, topics, authService, $scope, recipeService, $timeout, $sce) {
 		var recipeCtl = this;
 		recipeCtl.recipe = recipe;
+		recipeCtl.recipe.plunker_url = $sce.trustAsResourceUrl(recipeCtl.recipe.plunker_url);
 		recipeCtl.topics = topics;
 		recipeCtl.auth = authService.isLoggedIn();
 		recipeCtl.booked = recipeCtl.auth ? (recipeCtl.recipe.bookedArray.indexOf(recipeCtl.auth.id) > -1) : false;

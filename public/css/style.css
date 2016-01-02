@@ -363,6 +363,14 @@ nav ul li.no-btn:hover, nav ul li.no-btn.active {
     top: 64px;
   }
 }
+.fixed-top.v1-header .fixed {
+  background: #9B9B9B url(../img/recipes/angularjs-11.png) no-repeat center;
+  background-size: auto 54px;
+}
+.fixed-top.v2-header .fixed {
+  background: #9B9B9B url(../img/recipes/angularjs-22.png) no-repeat center;
+  background-size: auto 54px;
+}
 
 nav .brand-logo {
   padding-right: 28px;
@@ -1791,6 +1799,21 @@ a {
   margin-right: 0 !important;
 }
 
+.card-serie.no-serie {
+  padding: 10px;
+  background: url(../img/wood.jpg) no-repeat center;
+  background-size: cover;
+}
+.card-serie.no-serie .no-serie-inner {
+  background: #333333 url(../img/blackboard.png) no-repeat center;
+  min-height: 321px;
+  -moz-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.card-serie.no-serie .no-serie-inner .btn-large {
+  margin: 0 auto;
+}
 .card-serie .bookmark.active i, .card-serie .liked.active i, .card-serie .watched.active i {
   color: #d0021b;
 }

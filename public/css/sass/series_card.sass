@@ -1,5 +1,15 @@
 @import compass, colors
 .card-serie
+	&.no-serie
+		padding: 10px
+		background: url(../img/wood.jpg) no-repeat center
+		background-size: cover
+		.no-serie-inner
+			background: $medium-black url(../img/blackboard.png) no-repeat center
+			min-height: 321px
+			+box-shadow(inset 0px 0px 10px rgba(0,0,0,.5))
+			.btn-large
+				margin: 0 auto
 	.bookmark, .liked, .watched
 		&.active i
 			color: $custom-red

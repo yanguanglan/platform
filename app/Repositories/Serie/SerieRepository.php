@@ -19,12 +19,14 @@ class SerieRepository extends AbstractRepository implements SerieInterface
 		if ($versionBy == 'all')
 		{
 			$models = $this->model
+			->where('published', 1)
 			->with(['likes', 'bookings', 'watches', 'lessons'])
 			->get();
 		}
 		else
 		{
 			$models = $this->model
+			->where('published', 1)
 			->where('release', $versionBy)
 			->with(['likes', 'bookings', 'watches', 'lessons'])
 			->get();
@@ -50,6 +52,7 @@ class SerieRepository extends AbstractRepository implements SerieInterface
 	public function latest()
 	{
 		$models = $this->model
+		->where('published', 1)
 		->with(['likes', 'bookings', 'watches', 'lessons'])
 		->orderBy('updated_at', 'desc')
 		->take(3)
