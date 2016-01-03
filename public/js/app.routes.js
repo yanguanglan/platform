@@ -195,7 +195,7 @@
 						}
 					}
 				})
-				.when('/posts/:uuid', {
+				.when('/posts/:uuid/:slug', {
 					controller: 'PostController as postCtl',
 					templateUrl: 'js/partials/posts/show.html',
 					resolve: {

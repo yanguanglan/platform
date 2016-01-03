@@ -1057,7 +1057,15 @@ a {
 }
 
 .recipe-content {
+  font-size: 18px;
+}
+.recipe-content pre {
   font-size: 16px;
+}
+.recipe-content h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #aaa;
 }
 .recipe-content p {
   margin: 1em 0 !important;
@@ -1071,6 +1079,10 @@ a {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+}
+.recipe-content p a {
+  text-decoration: underline;
+  color: #d0021b;
 }
 
 #serie-header {
@@ -1372,12 +1384,57 @@ a {
   padding-top: 14px;
 }
 
-#post-header {
-  background-color: #fbc02d;
+#blog-header {
+  background: #fff url(../img/ide3.png) no-repeat center;
+  background-size: cover;
   color: #fff;
 }
-#post-header h1 {
-  margin: 50px 0;
+#blog-header h1 {
+  color: #333333;
+  font-size: 3rem;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 992px) {
+  #blog-header h1 {
+    font-size: 4rem;
+    margin-top: 7rem;
+  }
+}
+@media (min-width: 1100px) {
+  #blog-header h1 {
+    margin-top: 9rem;
+  }
+}
+
+#blog .post.card .card-content .card-title {
+  line-height: 1.4em;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 10px;
+}
+#blog .post.card .card-content .card-date {
+  font-size: 16px;
+  color: #727272;
+  font-weight: 400;
+}
+#blog .post.card .card-action .card-view {
+  color: #d0021b !important;
+  font-size: 18px;
+}
+
+#post-header {
+  height: 300px;
+  background-size: cover;
+}
+#post-header .valign-wrapper {
+  height: 300px;
+}
+#post-header .valign-wrapper h1 {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  color: #212121;
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
 }
 
 #stats-header {

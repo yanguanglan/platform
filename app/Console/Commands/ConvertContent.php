@@ -4,8 +4,9 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use App\Repositories\Recipe\RecipeInterface as Recipe;
-use App\Repositories\Lesson\LessonInterface as LEsson;
+use App\Repositories\Lesson\LessonInterface as Lesson;
 use App\Repositories\Exercise\ExerciseInterface as Exercise;
+use App\Repositories\Post\PostInterface as Post;
 
 class ConvertContent extends Command {
 
@@ -13,14 +14,16 @@ class ConvertContent extends Command {
 	protected $recipe;
 	protected $lesson;
 	protected $exercise;
-	protected $description = 'Convert recipes / lessons / exercises markdown content to html';
+	protected $post;
+	protected $description = 'Convert recipes / lessons / exercises / posts markdown content to html';
 
-	public function __construct(Recipe $recipe, Lesson $lesson, Exercise $exercise)
+	public function __construct(Recipe $recipe, Lesson $lesson, Exercise $exercise, Post $post)
 	{
 		parent::__construct();
 		$this->recipe = $recipe;
 		$this->lesson = $lesson;
 		$this->exercise = $exercise;
+		$this->post = $post;
 	}
 
 	/**
@@ -41,6 +44,10 @@ class ConvertContent extends Command {
 		// Exercises
 		$this->exercise->createContent();
 		$this->info('Exercises content created successfully!');
+
+		// Posts
+		$this->post->createContent();
+		$this->info('Posts content created successfully!');
 	}
 
 }
