@@ -73,7 +73,8 @@
 		<div class="row">
 			<div class="col s12">
 				<div class="row" ng-if="seriesCtl.filteredSeries.length">
-					<serie class="col l4 m6 s12" ng-repeat="serie in seriesCtl.filteredSeries | offset: seriesCtl.currentPage * seriesCtl.pageItems | limitTo: seriesCtl.pageItems"></serie>
+					<serie class="col l6 m6 s12" ng-repeat="serie in seriesCtl.filteredSeries | offset: seriesCtl.currentPage * seriesCtl.pageItems | limitTo: seriesCtl.pageItems"></serie>
+					<no-serie class="col l6 m6 s12 hide-on-small-only"></no-serie>
 				</div>
 
 				<div class="row" ng-if="seriesCtl.filteredSeries.length > 10">

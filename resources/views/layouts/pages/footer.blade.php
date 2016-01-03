@@ -22,9 +22,8 @@
 			</div>
 			<div class="col l2 m2 s4">
 				<ul>
-					<li><a class="grey-text text-lighten-3" href="https://angularjs.org/" target="_blank">AngularJS
-							1</a></li>
-					<li><a class="grey-text text-lighten-3" href="https://angular.io/" target="_blank">AngularJS 2</a>
+					<li><a class="grey-text text-lighten-3" href="https://angularjs.org/" target="_blank">AngularJS</a></li>
+					<li><a class="grey-text text-lighten-3" href="https://angular.io/" target="_blank">Angular 2</a>
 					</li>
 				</ul>
 			</div>

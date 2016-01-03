@@ -49,8 +49,9 @@ angular
 	})
 	.directive('fixedTop', function() {
 		var linkFunction = function(scope, element, args) {
+			var h = element.height() - 64;
 			$(window).on('scroll', function() {
-				if ($(window).scrollTop() > 150) {
+				if ($(window).scrollTop() > h) {
 					element.addClass('fixed-top');
 				} else {
 					element.removeClass('fixed-top');
@@ -59,7 +60,7 @@ angular
 		};
 
 		return {
-			restrict: 'A',
+			restrict: 'AC',
 			link: linkFunction
 		};
 	})

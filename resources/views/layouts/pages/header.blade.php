@@ -41,7 +41,7 @@
 
 					<ul id='dropdown3' class='dropdown-content' ng-class="{'ng-hide': !navCtl.isAuthenticated()}">
 						<li><a href="#!/dashboard">Dashboard</a></li>
-						<li><a href="#!/my-recipes">My Recipes</a></li>
+						<!-- <li><a href="#!/my-recipes">My Recipes</a></li> -->
 						<li><a href="#!/account">Account</a></li>
 						<li><a href="#!/" ng-click="navCtl.logout()">Logout</a></li>
 					</ul>
@@ -55,7 +55,7 @@
 					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/register" class="waves-effect waves-light">Register</a></li>
 					<li ng-if="!navCtl.isAuthenticated()"><a href="#!/login" class="waves-effect waves-light">Login</a></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#!/dashboard" class="waves-effect waves-light">Dashboard</a></li>
-					<li ng-if="navCtl.isAuthenticated()"><a href="#!/my-recipes" class="waves-effect waves-light">My Recipes</a></li>
+					<!-- <li ng-if="navCtl.isAuthenticated()"><a href="#!/my-recipes" class="waves-effect waves-light">My Recipes</a></li> -->
 					<li ng-if="navCtl.isAuthenticated()"><a href="#!/account" class="waves-effect waves-light">Account</a></li>
 					<li class="divider" ng-if="navCtl.isAuthenticated()"></li>
 					<li ng-if="navCtl.isAuthenticated()"><a href="#!/" class="waves-effect waves-light" ng-click="navCtl.logout()">Logout</a></li>

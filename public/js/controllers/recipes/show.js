@@ -11,6 +11,9 @@
 		var recipeCtl = this;
 		recipeCtl.recipe = recipe;
 		recipeCtl.recipe.plunker_url = $sce.trustAsResourceUrl(recipeCtl.recipe.plunker_url);
+		angular.forEach(recipeCtl.recipe.exercises, function(exercise) {
+			exercise.plunker_url = $sce.trustAsResourceUrl(exercise.plunker_url);
+		});
 		recipeCtl.topics = topics;
 		recipeCtl.auth = authService.isLoggedIn();
 		recipeCtl.booked = recipeCtl.auth ? (recipeCtl.recipe.bookedArray.indexOf(recipeCtl.auth.id) > -1) : false;

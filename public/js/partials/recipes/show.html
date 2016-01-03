@@ -53,8 +53,8 @@
 					<iframe ng-if="recipeCtl.recipe.plunker" style="width: 100%; height: 300px" ng-src="{{recipeCtl.recipe.plunker_url}}" frameborder="0" allowfullscren="allowfullscren"></iframe>
 
 					<!-- Codepen -->
-					<codepen recipe="recipeCtl.recipe"></codepen>
-					<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+					<!-- <codepen recipe="recipeCtl.recipe"></codepen>
+					<script async src="//assets.codepen.io/assets/embed/ei.js"></script> -->
 				</div>
 
 				<div class="card" ng-if="recipeCtl.recipe.exercises.length">
@@ -74,7 +74,10 @@
 											<div nag-prism source="{{exercise.content_converted}}"></div>
 
 											<!-- Codepen -->
-											<codepen recipe="exercise"></codepen>
+											<!-- <codepen recipe="exercise"></codepen> -->
+
+											<!-- Plunker -->
+											<iframe ng-if="recipeCtl.recipe.plunker" style="width: 100%; height: 300px" ng-src="{{exercise.plunker_url}}" frameborder="0" allowfullscren="allowfullscren"></iframe>
 										</div>
 									</li>
 								</ul>
