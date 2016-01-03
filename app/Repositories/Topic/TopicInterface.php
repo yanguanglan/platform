@@ -3,7 +3,7 @@
 
 interface TopicInterface {
 
-	public function index();
+	public function index($versionBy);
 
 	public function show($uuid, $sortBy, $versionBy);
 

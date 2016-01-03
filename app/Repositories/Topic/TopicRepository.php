@@ -14,15 +14,29 @@ class TopicRepository extends AbstractRepository implements TopicInterface
 		$this->model = $model;
 	}
 
-	public function index()
+	public function index($versionBy = 'all')
 	{
-		$models = $this->model
-		->has('recipes')
-		->with(['recipes' => function($q) {
-			$q->where('published', 1);
-		}])
-		->orderBy('title')
-		->get();
+		if ($versionBy == 'all')
+		{
+			$models = $this->model
+			->has('recipes')
+			->with(['recipes' => function($q) {
+				$q->where('published', 1);
+			}])
+			->orderBy('title')
+			->get();
+		}
+		else
+		{
+			$models = $this->model
+			->has('recipes')
+			->where('release', $versionBy)
+			->with(['recipes' => function($q) {
+				$q->where('published', 1);
+			}])
+			->orderBy('title')
+			->get();
+		}
 
 		return $models;
 	}

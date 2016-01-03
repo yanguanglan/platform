@@ -23,11 +23,11 @@
 						<form action="#" class="check-v-angular left">
 							<p>Angular:</p>
 							<p>
-								<input type="checkbox" ng-model="topicCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-change="topicCtl.toggleVersion()" />
+								<input type="checkbox" ng-model="topicCtl.v1" class="filled-in" id="Angular-v-1" checked="checked" ng-disabled="topicCtl.topic.release == 2" ng-change="topicCtl.toggleVersion()" />
 								<label for="Angular-v-1">v.1</label>
 							</p>
 							<p>
-								<input type="checkbox" ng-model="topicCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-change="topicCtl.toggleVersion()" />
+								<input type="checkbox" ng-model="topicCtl.v2" class="filled-in" id="Angular-v-2" checked="checked" ng-disabled="topicCtl.topic.release == 1" ng-change="topicCtl.toggleVersion()" />
 								<label for="Angular-v-2">v.2</label>
 							</p>
 						</form>
@@ -117,7 +117,7 @@
 					<div class="card-content">
 						<span class="card-title black-text">Topics</span>
 						<ul class="collection">
-							<a ng-href="#!/topics/{{topic.uuid}}/recipes" class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" ng-repeat="topic in topicCtl.topics">
+							<a ng-href="#!/topics/{{topic.uuid}}/{{topic.release}}/recipes" class="collection-item black-text" tooltipped data-position="top" data-delay="50" data-tooltip="View recipes about {{topic.title}}" ng-repeat="topic in topicCtl.topics">
 								<div class="parent-right-topic-title">
 									<span class="right-topic-title">{{topic.title}}</span>
 									<span class="badge custom-red white-text">{{topic.recipes.length}}</span>

@@ -17,8 +17,8 @@
 		topicCtl.sortByType = 'date';
 		topicCtl.pageItems = 10;
 		topicCtl.currentPage = 0;
-		topicCtl.v1 = true;
-		topicCtl.v2 = true;
+		topicCtl.v1 = topicCtl.topic.release == 1;
+		topicCtl.v2 = topicCtl.topic.release == 2;
 		topicCtl.version = 'all';
 		topicCtl.toggleAppearance = function(listAppearance) {
 			topicCtl.listAppearance = listAppearance;

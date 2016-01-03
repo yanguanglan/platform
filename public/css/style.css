@@ -618,6 +618,13 @@ nav .brand-logo {
   background-color: white;
   border: 2px solid #838383;
 }
+#recipe-header .check-v-angular .filled-in:disabled:not(:checked) + label:after {
+  background-color: #838383;
+  border: 2px solid #838383;
+}
+#recipe-header .check-v-angular .filled-in:disabled:not(:checked) + label:hover:after {
+  cursor: not-allowed;
+}
 
 .gray-banner {
   background-color: #9B9B9B;

@@ -17,7 +17,9 @@ class TopicsController extends Controller
 
 	public function index(Request $request)
 	{
-		return $this->topic->index();
+		$versionBy = $request->has('versionBy') ? $request->input('versionBy') : null;
+
+		return $this->topic->index($versionBy);
 	}
 
 	public function show(Request $request, $uuid)

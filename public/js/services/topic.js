@@ -16,12 +16,12 @@
 
 		return service;
 
-		function all(take) {
-			var take = take || null;
+		function all(versionBy) {
+			var versionBy = versionBy || 'all';
 			return $http
 				.get('api/topics', {
 					params: {
-						take: take
+						versionBy: versionBy
 					}
 				})
 				.then(function(data) {

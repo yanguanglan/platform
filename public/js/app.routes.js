@@ -125,15 +125,15 @@
 						}
 					}
 				})
-				.when('/recipes/:uuid/:slug', {
+				.when('/recipes/:uuid/:versionID/:slug', {
 					controller: 'RecipeController as recipeCtl',
 					templateUrl: 'js/partials/recipes/show.html',
 					resolve: {
 						recipe: function(recipeService, $route) {
 							return recipeService.get($route.current.params.uuid, true);
 						},
-						topics: function(topicService) {
-							return topicService.all();
+						topics: function(topicService, $route) {
+							return topicService.all($route.current.params.versionID);
 						}
 					}
 				})
@@ -146,12 +146,12 @@
 						}
 					}
 				})
-				.when('/topics/:uuid/recipes', {
+				.when('/topics/:uuid/:versionID/recipes', {
 					controller: 'TopicController as topicCtl',
 					templateUrl: 'js/partials/topics/show.html',
 					resolve: {
-						topics: function(topicService) {
-							return topicService.all();
+						topics: function(topicService, $route) {
+							return topicService.all($route.current.params.versionID);
 						},
 						topic: function(topicService, $route) {
 							return topicService.get($route.current.params.uuid);

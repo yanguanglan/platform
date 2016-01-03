@@ -117,6 +117,11 @@
 		.filled-in:not(:checked)+label:after
 			background-color: white
 			border: 2px solid #838383
+		.filled-in:disabled:not(:checked)+label:after
+			background-color: #838383
+			border: 2px solid #838383
+		.filled-in:disabled:not(:checked)+label:hover:after
+			cursor: not-allowed
 	// End CSS Check box for Angular version
 
 .gray-banner
