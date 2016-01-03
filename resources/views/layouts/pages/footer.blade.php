@@ -233,6 +233,8 @@
 <script type="text/javascript" src="{{asset('bower_components/prism/components/prism-php.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/prism/plugins/show-language/prism-show-language.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('bower_components/hello/dist/hello.all.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/Chart.js/Chart.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bower_components/angular-chart.js/dist/angular-chart.min.js')}}"></script>
 
 <script type="text/javascript" src="{{asset('js/app.module.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/app.routes.js')}}"></script>

@@ -6,6 +6,7 @@ use App\Recipe;
 use App\Repositories\AbstractRepository;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Carbon\Carbon;
 
 class RecipeRepository extends AbstractRepository implements RecipeInterface
 {
@@ -73,6 +74,39 @@ class RecipeRepository extends AbstractRepository implements RecipeInterface
 		}
 
 		return $models;
+	}
+
+	public function stats()
+	{
+		// $models = $this->model
+		// ->select(\DB::raw('*, count(*) as count, title, Month(created_at) as month, Year(created_at) as year'))
+		// ->groupBy('release')
+		// ->groupBy('year')
+		// ->groupBy('month')
+		// ->get();
+        //
+		// $data = collect();
+        //
+		// foreach ($models as $model) {
+		// 	$data->push([
+		// 		'month' => $model->month,
+		// 		'year' => $model->year,
+		// 		'release' => $model->release,
+		// 		'count' => $model->count
+		// 	]);
+		// }
+
+		// return $data;
+
+		$v1 = $this->model
+		->where('release', 1)
+		->get();
+
+		$v2 = $this->model
+		->where('release', 2)
+		->get();
+
+		return compact('v1', 'v2');
 	}
 
 	public function show($uuid)

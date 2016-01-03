@@ -14,14 +14,17 @@
 
 			$rootScope
 				.$on('$routeChangeSuccess', function() {
-					$window.scrollTo(0,0);
+					$window.scrollTo(0, 0);
 				});
 		}])
-		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', '$authProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider, $authProvider) {
+		.config(['$locationProvider', '$routeProvider', 'cfpLoadingBarProvider', '$authProvider', 'ChartJsProvider', function($locationProvider, $routeProvider, cfpLoadingBarProvider, $authProvider, ChartJsProvider) {
 			$authProvider.loginUrl = '/api/auth/login';
 			$authProvider.signupUrl = '/api/auth/register';
 			cfpLoadingBarProvider.includeSpinner = false;
 			$locationProvider.hashPrefix('!');
+			ChartJsProvider.setOptions({
+				colours: ['#d0021b', '#9B9B9B']
+			});
 			$routeProvider
 				.when('/', {
 					controller: 'HomeController as homeCtl',
@@ -53,13 +56,7 @@
 					templateUrl: 'js/partials/stats.html',
 					resolve: {
 						recipes: function(recipeService) {
-							return recipeService.all();
-						},
-						topics: function(topicService) {
-							return topicService.all();
-						},
-						posts: function(postService) {
-							return postService.all();
+							return recipeService.stats();
 						}
 					}
 				})

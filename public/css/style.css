@@ -168,7 +168,7 @@ h4 {
   display: inline-block;
   width: 50px;
   border-bottom: 2px solid #d0021b;
-  bottom: 0;
+  bottom: -10px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -1388,6 +1388,12 @@ a {
 
 #stats {
   margin-top: -100px;
+}
+#stats img {
+  max-width: 100px;
+}
+#stats .card {
+  margin-bottom: 50px;
 }
 
 .stats-item {

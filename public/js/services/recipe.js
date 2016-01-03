@@ -10,6 +10,7 @@
 	function recipeService($http, $location) {
 		var service = {
 			all: all,
+			stats: stats,
 			get: get,
 			latest: latest,
 			like: like,
@@ -32,6 +33,16 @@
 						versionBy: versionBy
 					}
 				})
+				.then(function(data) {
+					return data.data;
+				}, function(err) {
+					$location.path('/error');
+				});
+		}
+
+		function stats() {
+			return $http
+				.get('api/recipes-stats')
 				.then(function(data) {
 					return data.data;
 				}, function(err) {

@@ -11,6 +11,7 @@
 		'angular-loading-bar',
 		'ui.materialize',
 		'angularUtils.directives.dirDisqus',
-		'angular-md5'
+		'angular-md5',
+		'chart.js'
 	]);
 })();

@@ -10,6 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/angular-loading-bar/build/loading-bar.min.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/prism/themes/prism.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/prism/plugins/show-language/prism-show-language.css')}}" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="{{asset('bower_components/angular-chart.js/dist/angular-chart.min.css')}}" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}" media="screen,projection" />
 	@else
 

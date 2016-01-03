@@ -7,6 +7,8 @@ interface RecipeInterface {
 
 	public function latest();
 
+	public function stats();
+
 	public function show($uuid);
 
 	public function updateViews($uuid);

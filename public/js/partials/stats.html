@@ -1,60 +1,55 @@
 <div id="stats-header"></div>
 
 <div id="stats">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="row">
-                            <div class="col s12">
-                                <h1>Statistics</h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <div class="stats-item">
-                                    <h2>Posts</h2>
-                                    <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <title>Layer 1</title>
-                                            <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none" />
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="stats-item">
-                                    <h2>Topics</h2>
-                                    <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <title>Layer 1</title>
-                                            <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none" />
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="stats-item">
-                                    <h2>Recipes</h2>
-                                    <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <title>Layer 1</title>
-                                            <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none" />
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p>
-                            Posts: {{statsCtl.posts.length}}
-                        </p>
-                        <p>
-                            Recipes Categories: {{statsCtl.topics.length}}
-                        </p>
-                        <p>
-                            Recipes: {{statsCtl.recipes.length}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12">
+								<h1 class="decoration center">Head to Head</h1>
+							</div>
+						</div>
+						<div class="row hide-on-med-and-up">
+							<div class="col s6 center">
+								<img src="img/1.png" alt="" />
+								<h4>{{statsCtl.v1.length}} Recipes</h4>
+							</div>
+							<div class="col s6 center">
+								<img src="img/2.png" alt="" />
+								<h4>{{statsCtl.v2.length}} Recipes</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col l3 m3 s6 center hide-on-small-only">
+								<img src="img/1.png" alt="" />
+								<h4>{{statsCtl.v1.length}} Recipes</h4>
+							</div>
+							<div class="col l6 m6 s12 center">
+								<canvas id="doughnut" class="chart chart-doughnut" chart-data="statsCtl.donut.data" chart-labels="statsCtl.donut.labels"></canvas>
+							</div>
+							<div class="col l3 m3 s6 center hide-on-small-only">
+								<img src="img/2.png" alt="" />
+								<h4>{{statsCtl.v2.length}} Recipes</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col s12">
+								<h1 class="decoration center">Recipes by Month and Version</h1>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12 center">
+								<canvas id="bar" class="chart chart-bar" chart-data="statsCtl.bar.data" chart-labels="statsCtl.bar.labels" chart-series="statsCtl.bar.series">
+								</canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

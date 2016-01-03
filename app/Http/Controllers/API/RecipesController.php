@@ -34,6 +34,11 @@ class RecipesController extends Controller
 		return $this->recipe->latest();
 	}
 
+	public function stats()
+	{
+		return $this->recipe->stats();
+	}
+
 	public function show(Request $request, $uuid)
 	{
 		if ($request->has('views')) {
