@@ -1,4 +1,4 @@
-<div id="lesson-header" fixed-top>
+<div id="lesson-header" fixed-top ng-class="{'v1-header': lessonCtl.serie.release == 1, 'v2-header': lessonCtl.serie.release == 2}">
 	<div class="container">
 		<div class="row no-margin-bottom">
 			<div class="col s12">
@@ -7,15 +7,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="gray-bar fixed custom-box-shadow">
-		<div class="gray-banner-yellow">
-			<div class="container">
-				<div class="row">
-					<div class="col s12">
-						<div class="lesson-nav-buttons">
-							<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous.uuid}}" class="btn left custom-yellow" ng-if="lessonCtl.previousPageExists" tooltipped data-position="top" data-delay="50" data-tooltip="{{lessonCtl.previous.title}}"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
-							<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next.uuid}}" class="btn right custom-yellow" ng-if="lessonCtl.nextPageExists" tooltipped data-position="top" data-delay="50" data-tooltip="{{lessonCtl.next.title}}"><i class="mdi-navigation-chevron-right right"></i> Next</a>
-						</div>
+	<div class="gray-bar gray-banner-yellow fixed custom-box-shadow">
+		<div class="container">
+			<div class="row">
+				<div class="col s12">
+					<div class="lesson-nav-buttons">
+						<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.previous.uuid}}" class="btn left custom-yellow" ng-if="lessonCtl.previousPageExists" tooltipped data-position="top" data-delay="50" data-tooltip="{{lessonCtl.previous.title}}"><i class="mdi-navigation-chevron-left left"></i> Prev</a>
+						<a ng-href="#!/series/{{lessonCtl.serie.uuid}}/lessons/{{lessonCtl.next.uuid}}" class="btn right custom-yellow" ng-if="lessonCtl.nextPageExists" tooltipped data-position="top" data-delay="50" data-tooltip="{{lessonCtl.next.title}}"><i class="mdi-navigation-chevron-right right"></i> Next</a>
 					</div>
 				</div>
 			</div>
