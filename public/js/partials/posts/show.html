@@ -1,8 +1,11 @@
 <div id="post-header" ng-style="{'background-image': 'url({{postCtl.post.img}})'}">
 	<div class="container">
 		<div class="row">
-			<div class="col s12 valign-wrapper">
-				<h1 class="valign">{{postCtl.post.title}}</h1>
+			<div class="col s12">
+				<h1>{{postCtl.post.title}}</h1>
+				<p>
+					{{postCtl.post.created_at | dateToISO | date:'d MMMM y'}}
+				</p>
 			</div>
 		</div>
 	</div>
@@ -15,6 +18,14 @@
 				<div class="card">
 					<div class="card-content">
 						<div nag-prism source="{{postCtl.post.content_converted}}"></div>
+					</div>
+				</div>
+
+				<!-- Disqus Comments -->
+				<div class="card">
+					<div class="card-content">
+						<dir-disqus disqus-shortname="angularjs-recipes" disqus-identifier="{{ postCtl.post.uuid }}" disqus-url="http://localhost:8000/#!/posts/{{ postCtl.post.uuid }}/{{postCtl.post.slug}}">
+						</dir-disqus>
 					</div>
 				</div>
 			</div>

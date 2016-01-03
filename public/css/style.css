@@ -1063,9 +1063,10 @@ a {
   font-size: 16px;
 }
 .recipe-content h2 {
+  font-weight: 300;
   margin: 10px 0;
   padding-bottom: 10px;
-  border-bottom: 2px solid #aaa;
+  border-bottom: 1px solid #e0e0e0;
 }
 .recipe-content p {
   margin: 1em 0 !important;
@@ -1083,6 +1084,17 @@ a {
 .recipe-content p a {
   text-decoration: underline;
   color: #d0021b;
+}
+.recipe-content p img {
+  width: 100%;
+  height: auto;
+  margin: 1em 0 !important;
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 #serie-header {
@@ -1423,18 +1435,21 @@ a {
 }
 
 #post-header {
-  height: 300px;
+  min-height: 150px;
   background-size: cover;
 }
-#post-header .valign-wrapper {
-  height: 300px;
+#post-header h1 {
+  margin: 44px 0;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
-#post-header .valign-wrapper h1 {
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-  color: #212121;
-  font-size: 3rem;
-  text-align: center;
-  width: 100%;
+#post-header p {
+  font-size: 16px;
+  color: #fff;
+  margin: -40px 0 40px 0;
+}
+#post-header p i {
+  margin: 3px;
 }
 
 #stats-header {
