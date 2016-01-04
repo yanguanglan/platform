@@ -336,9 +336,19 @@ angular
 			return input.slice(start);
 		}
 	})
+	// .filter('dateStamp', function() {
+	// 	return function(input) {
+	// 	var input = input.split(/[- :]/);
+	// 		return new Date(input[0], input[1]-1, input[2], input[3], input[4], input[5]).getTime();
+	// 	}
+	// })
 	.filter('dateToISO', function() {
 		return function(input) {
-			input = new Date(input).toISOString();
-			return input;
-		};
+				var input = input.split(/[- :]/);
+				return new Date(input[0], input[1] - 1, input[2], input[3], input[4], input[5]).getTime();
+			}
+			// return function(input) {
+			// 	input = new Date(input).toISOString();
+			// 	return input;
+			// };
 	});
