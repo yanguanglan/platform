@@ -8,8 +8,8 @@
 			<div class="col l2 m2 s4">
 				<ul>
 					<li><a class="grey-text text-lighten-3" href="#!/about">About</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!/blog">News</a></li>
 					<li><a class="grey-text text-lighten-3" href="#!/faq">FAQ</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/statistics">Statistics</a></li>
 					<li><a class="grey-text text-lighten-3" href="#contactModal" modal>Contact</a></li>
 				</ul>
 			</div>
@@ -17,7 +17,7 @@
 				<ul>
 					<li><a class="grey-text text-lighten-3" href="#!/recipes">Recipes</a></li>
 					<li><a class="grey-text text-lighten-3" href="#!/series">Series</a></li>
-					<li><a class="grey-text text-lighten-3" href="#!/statistics">Statistics</a></li>
+					<li><a class="grey-text text-lighten-3" href="#!/blog">Blog</a></li>
 				</ul>
 			</div>
 			<div class="col l2 m2 s4">
