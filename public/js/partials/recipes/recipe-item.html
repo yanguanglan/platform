@@ -10,7 +10,7 @@
 	<p class="list-date">{{recipe.created_at | dateToISO | date:'d MMMM y'}}</p>
 	<span class="bookmark list-bookmark" ng-if="auth" ng-class="{active: recipe.booked}" tooltipped data-position="top" data-delay="50" data-tooltip="{{recipe.bookedMsg}}"><i class="mdi-action-bookmark"></i></span>
 	<div class="list-view-topics">
-		<a class="chip" ng-href="#!/topics/{{topic.uuid}}/recipes" ng-repeat="topic in recipe.topics" tooltipped data-position="top" data-delay="50" data-tooltip="All recipes about {{topic.title}}">
+		<a class="chip" ng-href="#!/topics/{{topic.uuid}}/{{topic.release}}/recipes" ng-repeat="topic in recipe.topics" tooltipped data-position="top" data-delay="50" data-tooltip="All recipes about {{topic.title}}">
 			{{topic.title}}
 			</a>
 	</div>
